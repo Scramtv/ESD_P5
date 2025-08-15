@@ -1,0 +1,1 @@
+In this folder upload all your PCB/Gerber files
