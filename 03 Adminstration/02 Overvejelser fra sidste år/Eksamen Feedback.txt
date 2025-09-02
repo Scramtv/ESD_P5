@@ -1,0 +1,48 @@
+Feedback rapport:
+Lidt rodet at læse, fordi fx miller kondensator snakkes om før stabilitet
+- Her kunne det have givet mening først at se stabilitet var et problem
+
+Problemformulering er lidt for åben/løse
+
+Kravspec burde have en test specifikation lige efter sig
+
+Parallelt arbejde fungere fint hvis man systemnebryder korrekt. AKA lav god kravspec og interface "aftaler". Det skal være på en sådan måde, at to uafhængige grupper kan arbejde og udføres arbejdet uden at snakke
+
+
+Vi skulle have gjort det mere tydelig hvornår og hvorfor vi bruger fx global/lokalt negativt feedback
+
+Fx figur 4.13:
+- Når strømmen står i et knudepunkt, ved man jo faktisk ikke hvilken vej den løber
+- Minimere decimaler
+
+Vær mere konsekvent med R_E/r_E/r_e/R_e
+
+Pas på at bruge tid/ressourcer på ting der ikke giver mening.
+
+
+Også krav til fx forstærkning i PA -> kan laves udfra en opamp analyse
+
+
+preampen trækker voldsomt ned
+
+
+Mangler en præsentation hvor tingene kommer fra og hvorfor de kommer -> Hvilke "kasse" kigger man i?
+
+
+Når der ses noget mærkeligt, fx en pukkel, og hvorfor den er der, hvor den kommer fra og om det giver problemer
+
+
+Når et problem løses, skabes ofte et nyt
+
+STORT problem ift. struktur, overblik og metode
+Brug mere tid på kravspec, fremfor alt det andet
+Udover det fokuser mere på rapport fremfor prototype
+
+
+------------------------------------------------------------------------------------------------------
+Præsentation:
+- Antag ikke at censor har læst rapporten. Aka hvor kommer vi fra, og hvor går vi til?
+-> Overblik
+
+LAD være med at præsentere den gamle preamp, nu da vi har lavet en ny. Så heller brug mere tid på den nye preamp
+
