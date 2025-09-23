@@ -1,0 +1,57 @@
+RH158.12.75
+
+MOTOR SPECS
+Temp range:
+	-20 to 60 Degree C
+
+Weight:
+	190g
+
+Maximum radial shaft load:
+	50N
+
+Maximum axial shaft load
+	10N
+
+Nominal Voltage:
+	12V +/- 10% tolerance
+
+Ratio to 1:
+	76.84 +/- 10% tolerance
+
+Norminal Torque:
+	50 Ncm +/- 10 tolerance
+
+Speed:
+	No load: 91 rpm +/- 10% tolerrance
+	At norminal torque: 55 +/- 10% tolerance
+
+Current:
+	No load: <140 mA +/- 10% tolerance
+	At nominal torque: 680 mA +/- 10% tolerance
+
+
+Connections ifølge jeppes deduction
+	Green: GND for Hall
+	Brown: Vcc for Hall (mellem 3.5V og 24V)
+	Blue: Output
+	
+	Red: Vcc for motor (12)
+	Black: GND for motor
+	For motoren kan de byttes om, for at motoren køre den anden vej (retning kan ses på selve motoren)
+
+
+
+
+Der skal laves en pull up modstand, den skal have en størrelse, hvilken? godt spørgsmål? baseret på en strøm vi skal bruge
+
+Da jeppe legede med det
+	12 V på Rød
+	7.5 V på Brune
+	10K modstand
+
+	Effekt
+	Puls signal på 335.79 Hz og amplitude på 7.5	
+
+
+
