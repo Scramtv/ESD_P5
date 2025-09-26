@@ -1,0 +1,96 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.1.2 Chrome/138.0.7204.243 Electron/37.4.0 Safari/537.36" version="28.1.2">
+  <diagram name="Page-1" id="AFCoPDnjI2vHR3p6hm-f">
+    <mxGraphModel dx="632" dy="379" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-46" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="270" y="100" width="310" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-25" value="Ocsilliscope" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Tahoma;fontSize=12;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="gmFGOTqdbXLo96c_Syqv-46">
+          <mxGeometry x="10" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-26" value="Data out" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Tahoma;fontSize=8;fontColor=default;" vertex="1" parent="gmFGOTqdbXLo96c_Syqv-46">
+          <mxGeometry x="110" y="80" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-27" value="Port 1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Tahoma;fontSize=8;fontColor=default;" vertex="1" parent="gmFGOTqdbXLo96c_Syqv-46">
+          <mxGeometry x="30" y="40" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-28" value="Am&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;meter&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Tahoma;fontSize=12;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="gmFGOTqdbXLo96c_Syqv-46">
+          <mxGeometry x="90" y="80" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-29" value="Port 2" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Tahoma;fontSize=8;fontColor=default;" vertex="1" parent="gmFGOTqdbXLo96c_Syqv-46">
+          <mxGeometry x="80" y="40" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-30" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Tahoma;fontSize=12;fontColor=default;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="gmFGOTqdbXLo96c_Syqv-46" source="gmFGOTqdbXLo96c_Syqv-28" target="gmFGOTqdbXLo96c_Syqv-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="70" y="190" as="sourcePoint" />
+            <mxPoint x="120" y="140" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="130" y="70" />
+              <mxPoint x="95" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-31" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Tahoma;fontSize=12;fontColor=default;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="gmFGOTqdbXLo96c_Syqv-46" source="gmFGOTqdbXLo96c_Syqv-36" target="gmFGOTqdbXLo96c_Syqv-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="99.82" as="sourcePoint" />
+            <mxPoint x="170" y="99.82" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="190" y="90" />
+              <mxPoint x="190" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-33" value="Motor and torque device" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Tahoma;fontSize=12;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="gmFGOTqdbXLo96c_Syqv-46">
+          <mxGeometry y="140" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-34" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Tahoma;fontSize=12;fontColor=default;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="gmFGOTqdbXLo96c_Syqv-46" source="gmFGOTqdbXLo96c_Syqv-38" target="gmFGOTqdbXLo96c_Syqv-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="110" as="sourcePoint" />
+            <mxPoint x="180" y="110" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-35" value="Voltage&lt;div&gt;generator&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Tahoma;fontSize=12;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="gmFGOTqdbXLo96c_Syqv-46">
+          <mxGeometry x="210" y="80" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-36" value="Vcc" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Tahoma;fontSize=8;fontColor=default;" vertex="1" parent="gmFGOTqdbXLo96c_Syqv-46">
+          <mxGeometry x="210" y="80" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-38" value="Vcc" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Tahoma;fontSize=8;fontColor=default;" vertex="1" parent="gmFGOTqdbXLo96c_Syqv-46">
+          <mxGeometry x="120" y="140" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-40" value="GND" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Tahoma;fontSize=8;fontColor=default;" vertex="1" parent="gmFGOTqdbXLo96c_Syqv-46">
+          <mxGeometry x="150" y="150" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-41" value="GND" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Tahoma;fontSize=8;fontColor=default;" vertex="1" parent="gmFGOTqdbXLo96c_Syqv-46">
+          <mxGeometry x="210" y="100" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-42" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Tahoma;fontSize=12;fontColor=default;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="gmFGOTqdbXLo96c_Syqv-46" source="gmFGOTqdbXLo96c_Syqv-41" target="gmFGOTqdbXLo96c_Syqv-40">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="230" y="170" as="sourcePoint" />
+            <mxPoint x="190" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="190" y="110" />
+              <mxPoint x="190" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-44" value="Data out" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Tahoma;fontSize=8;fontColor=default;" vertex="1" parent="gmFGOTqdbXLo96c_Syqv-46">
+          <mxGeometry x="42" y="140" width="35" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gmFGOTqdbXLo96c_Syqv-45" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Tahoma;fontSize=12;fontColor=default;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="gmFGOTqdbXLo96c_Syqv-46" source="gmFGOTqdbXLo96c_Syqv-44" target="gmFGOTqdbXLo96c_Syqv-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="30" y="130" as="sourcePoint" />
+            <mxPoint x="80" y="80" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="60" y="100" />
+              <mxPoint x="45" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
