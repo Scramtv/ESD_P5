@@ -1,0 +1,24 @@
+Sker ikke noget før 5.5 V
+
+6V
+Scope 26
+377 R/M
+
+7V
+Scope 27
+574 R/M
+
+8V
+Scope 28
+783 R/M
+
+9V
+Scope 29
+1035 R/M
+
+10V
+Scope 31
+1229 R/M
+
+11V Lugter brandt så vi stopped
+
