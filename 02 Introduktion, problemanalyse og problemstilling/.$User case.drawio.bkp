@@ -1,0 +1,37 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.9 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.9">
+  <diagram name="Page-1" id="xaa7IMA2QeJfSdMatxdD">
+    <mxGraphModel dx="6950" dy="4290" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="PBFZtd4Mu3zHlJroNkUt-12" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.half_circle;rotation=-180;fillColor=default;strokeWidth=4;dashed=1;dashPattern=12 12;strokeColor=light-dark(#ff0000, #ededed);gradientColor=#FFF4F4;gradientDirection=north;" vertex="1" parent="1">
+          <mxGeometry x="-1380" y="-764" width="4090" height="1410" as="geometry" />
+        </mxCell>
+        <mxCell id="PBFZtd4Mu3zHlJroNkUt-4" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn-icons-png.freepik.com/512/89/89039.png;" vertex="1" parent="1">
+          <mxGeometry x="150" y="160" width="512" height="512" as="geometry" />
+        </mxCell>
+        <mxCell id="PBFZtd4Mu3zHlJroNkUt-5" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn-icons-png.flaticon.com/512/31/31764.png;rotation=-15;" vertex="1" parent="1">
+          <mxGeometry x="800" y="340" width="326" height="326" as="geometry" />
+        </mxCell>
+        <mxCell id="PBFZtd4Mu3zHlJroNkUt-7" value="" style="endArrow=none;html=1;rounded=0;entryX=0.184;entryY=0.675;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=14;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="634" y="644" as="sourcePoint" />
+            <mxPoint x="1124" y="643" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PBFZtd4Mu3zHlJroNkUt-11" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://static.thenounproject.com/png/375028-200.png;" vertex="1" parent="1">
+          <mxGeometry x="2660" y="-70" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="PBFZtd4Mu3zHlJroNkUt-13" value="" style="endArrow=baseDash;html=1;rounded=0;strokeWidth=6;startArrow=baseDash;startFill=0;endFill=0;endSize=25;startSize=25;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2710" y="680" as="sourcePoint" />
+            <mxPoint x="710" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PBFZtd4Mu3zHlJroNkUt-14" value="8 km" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=56;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="700" width="230" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
