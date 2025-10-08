@@ -2,11 +2,12 @@
 ///////////////// Speed test little motor //////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 
+
+
 //motor control directions
-uint8_t motorForward_1 = 2;
-uint8_t motorForward_2 = 3;
-uint8_t motorBackward_1 = 4;
-uint8_t motorBackward_2 = 5;
+uint8_t motorForward = 3;
+uint8_t motorBackward = 5;
+
 
 //buttons
 uint8_t button_1 = 6;
@@ -23,20 +24,16 @@ void setup() {
   Serial.begin(115200);
   Serial.begin("Speed Test begin!");
 
-  for (int i = 3; i < 6; i++) {
-    pinMode(i, OUTPUT);
-    digitalWrite(i, 0);
-  }
+  pinMode(motorForward, OUTPUT);
+  pinMode(motorBackward, OUTPUT);
   pinMode(button_1, INPUT_PULLUP);
   pinMode(button_2, INPUT_PULLUP);
 }
 
 void loop() {
-  analogWrite(3, 100);  // move motor towards button slowly
-  digitalWrite(2, HIGH);
+  analogWrite(motorForward, 70);  // move motor towards button slowly
   if (button_1 == LOW) {  // if the button is pressed, then start the test
-    digitalWrite(2, LOW); //lock in the position
-    digitalWrite(3, LOW);
+    digitalWrite(motorForward, LOW); //stop motor and lock in the position
     startTest();
   }
 }
@@ -44,14 +41,12 @@ void loop() {
 void startTest() {
   delay(5000);//get ready to go fast
   oldTime = micros(); //record the time
-  analogWrite(5, 255);  // move the motor at full speed
-  digitalWrite(4, HIGH);
+  analogWrite(motorBackward, 255);  // move the motor at full speed
   timeCheck = micros();
   while(button_2 == HIGH){ //waiting for button to go high
   }
   time = micros();
-  digitalWrite(4, LOW); //shutdown motor
-  digitalWrite(5, LOW);
+  digitalWrite(motorBackward, LOW); //shutdown motor
 
   Serial.print("Old Time:"); //print results
   Serial.println(oldTime);
