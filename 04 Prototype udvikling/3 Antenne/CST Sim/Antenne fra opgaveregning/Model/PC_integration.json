@@ -1,0 +1,41 @@
+{
+   "execution": {
+      "classname": "SMAPowerByEmagHPCFrame",
+      "libname": "SMAPowerByEmagUI"
+   },
+   "inputVariables": [
+      {
+         "name": "Wp",
+         "type": "float",
+         "value": 49.37
+      },
+      {
+         "name": "Lp",
+         "type": "float",
+         "value": 40.41
+      },
+      {
+         "name": "h",
+         "type": "float",
+         "value": 3.0
+      },
+      {
+         "name": "Wf",
+         "type": "float",
+         "value": 15.0
+      },
+      {
+         "name": "y0",
+         "type": "float",
+         "value": 14.11
+      }
+   ],
+   "outputVariables": [
+      {
+         "len": 1,
+         "name": "3D\\Export Farfields to 3DEXPERIENCE Content",
+         "type": "float",
+         "value": 0.0
+      }
+   ]
+}
