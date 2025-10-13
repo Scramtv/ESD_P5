@@ -1,46 +1,39 @@
-1V
-Ingen ting sker
-
-2V
-Scope 18
-450
-
 3V
-scope 7
-945 RPM
+scope 55
+844 RPM
 
 4V
-Scope 8
-1308 RPM
+Scope 57
+1214 RPM
 
 5V
-Scope 9
-1707 RPM
+Scope 58
+1596 RPM
 
 6V
-Scope 10
-2160
+Scope 59
+2010
 
 7V
-Scope 11
-2570
+Scope 60
+2370
 
 8V
-scope 12
-2930
+scope 61
+2640
 
 9V
-Scope 14
-3350
+Scope 62
+3100
 
 10V
-Scope 15
-3780
+Scope 63
+3670
 
 11V
-Scope 16
-4220
+Scope 64
+4010
 
 12V
-Scope 17
-4550
+Scope 64
+4410
