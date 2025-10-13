@@ -1,0 +1,20 @@
+Antenne formler passer ikke
+	- Sårn er det faktisk bare lidt
+	- Overvej om man vil have 1D array eller 2D array
+
+Hvad hedder downconversion faktisk
+ - Skifter man båndbredden når man gør det?
+	- Som udgangspunkt forbliver båndbredden det same, man kan godt gøre ting for at gøre båndet mindre.
+
+Der kigges på DSP, men de er her ikke
+
+Vi er ved at lære om SDR'en
+- Måske kigge på 310'eren, 410'eren kan være svær med faser
+- Der anbefales gnuradio eller direkte kode til at interface med SDR
+
+Pedestalen bevæger sig
+
+Der går nok noget tid før der kommer læse materiale
+
+Ift. rapport og versioner af produkter
+- Sidste ska sjovt nok være med, men ellers så documenter relevante ting undervejs

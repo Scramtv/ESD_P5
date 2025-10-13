@@ -1,0 +1,30 @@
+{
+    "parameters": [
+        {
+            "expr": "49.37",
+            "name": "Wp",
+            "value": "49.37"
+        },
+        {
+            "expr": "40.41",
+            "name": "Lp",
+            "value": "40.41"
+        },
+        {
+            "expr": "3",
+            "name": "h",
+            "value": "3"
+        },
+        {
+            "expr": "15",
+            "name": "Wf",
+            "value": "15"
+        },
+        {
+            "expr": "14.11",
+            "name": "y0",
+            "value": "14.11"
+        }
+    ],
+    "version": 1
+}

@@ -105,5 +105,15 @@ disp(Kt_Big);
 
 %% Step 5 Friction constant
 disp("Friction constant")
-Tau_Data = ([450, 945, 1308, 1707, 2160, 2570, 2930, 3350, 3780, 4220, 4550]/9.549);
+%Let the motor run at a constant velocity
+Torque_Data = ([450, 945, 1308, 1707, 2160, 2570, 2930, 3350, 3780, 4220, 4550]/9.549);
 Current = [mean((-1*BigB_2V.V_Ammeter)/(100*10^-3)), mean((-1*BigB_3V.V_Ammeter)/(100*10^-3)), mean((-1*BigB_4V.V_Ammeter)/(100*10^-3)), mean((-1*BigB_5V.V_Ammeter)/(100*10^-3)), mean((-1*BigB_6V.V_Ammeter)/(100*10^-3)), mean((-1*BigB_7V.V_Ammeter)/(100*10^-3)), mean((-1*BigB_8V.V_Ammeter)/(100*10^-3)), mean((-1*BigB_9V.V_Ammeter)/(100*10^-3)), mean((-1*BigB_10V.V_Ammeter)/(100*10^-3)), mean((-1*BigB_11V.V_Ammeter)/(100*10^-3)), mean((-1*BigB_12V.V_Ammeter)/(100*10^-3))];
+
+
+mdl = fitlm(Current, Torque_Data);
+
+figure;
+plot(mdl)
+grid on;
+title("Linear regression")
+
