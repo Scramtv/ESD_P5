@@ -1,0 +1,11 @@
+Flytbare antenneparametre
+
+Højere Wp flytter kurven til venstre 
+Højere Lp flytter kurven til venstre (og dybere kurve)
+Højere Wf giver blødere dyk
+Højere Y0 giver blødere dyk og en lille smule til venstre
+
+Wf=2.5 
+y0=10
+Lp=27.3
+HP=28.2
