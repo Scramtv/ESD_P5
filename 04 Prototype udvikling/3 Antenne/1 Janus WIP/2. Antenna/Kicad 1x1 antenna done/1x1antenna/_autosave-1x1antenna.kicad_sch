@@ -1,0 +1,26 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "08f8b12a-72f0-4e85-a2b1-85840818180e")
+	(paper "A4")
+	(lib_symbols)
+	(rectangle
+		(start 63.5 43.18)
+		(end 233.68 110.49)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid a2587361-cbe3-4488-b166-e8b5ba03c980)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
