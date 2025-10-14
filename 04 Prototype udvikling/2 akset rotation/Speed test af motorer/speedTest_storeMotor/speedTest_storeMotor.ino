@@ -33,15 +33,16 @@ void setup() {
 void loop() {
   rotateToZero();
   fullSpeed();
-  delay(10000);  // just a delay to indicate that the code is done
+  delay(1000000);  // just a delay to indicate that the code is done
 }
 
 void rotateToZero() {
-
-  analogWrite(ena, 50);  // rotate the motor slowly till we find a 0
+  rot=0;
+  analogWrite(ena, 120);  // rotate the motor slowly till we find a 0
   while (rot == 0) {     //waiting for the interrupt
   }
   analogWrite(ena, 0); //stop motor
+  Serial.println("start test");
   rot = 0; // set rotations to 0
 }
 
