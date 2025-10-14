@@ -234,7 +234,7 @@ legend;
 hold off;
 
 
-omega_Small = 15.75*2*pi;
+omega_Small = 51.94;
 Ke_Small = ((mean(SmallKe.V_In)-R_Small*mean((-1*SmallKe.V_Ammeter)/(100*10^-3)))/omega_Small);
 disp(Ke_Small)
 
