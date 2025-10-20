@@ -1,0 +1,38 @@
+How to interface:
+Use soapy blade rf source block
+
+Device arguments
+	driver=bladerf
+
+Sample rate
+	61.44 MSPS
+
+Bandwidth (What does it do?)
+	0.0 Defult (Full bandwidth)
+
+Center frequency (What does the SDR tune the freq down to)
+	91.75 MHz (Kan lægge mellem 47 MHz to 6 GHz)
+
+
+Frequency Correction (freq_corr)
+	Purpose: Applies a correction in parts per million (PPM) to compensate for oscillator drift. (Fra chat kunne ikke lige finde andet om det)
+	Dont touch
+
+RF Gain (rf_gain)
+	0 dB (Direkete fra blocken) (Ikke helt klar på hvorfor)
+	
+
+Output type
+	Complex float32
+
+
+
+
+
+
+Generale noter:
+ADC res
+	12 bits
+
+Bandwidth filter
+	<0.2 to 56 MHz
