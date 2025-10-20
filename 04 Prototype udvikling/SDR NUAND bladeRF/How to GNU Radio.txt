@@ -1,0 +1,8 @@
+How to GNU Radio
+	Installere GNU gennem dette link
+		https://github.com/radioconda/radioconda-installer?tab=readme-ov-file
+	Installere BLADERF driver
+		https://github.com/radioconda/radioconda-installer?tab=readme-ov-file#bladerf
+		CLick options, all devices, and then Blade RF2.0
+
+	
