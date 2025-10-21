@@ -134,55 +134,76 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+[Document6]
+DocumentPath=H-bridge 1.1.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=QVLAEUUG
+
 [GeneratedDocument1]
-DocumentPath=Project Outputs for TARP Motor Control\H-bridge.EXTREP
+DocumentPath=Project Outputs for TARP Motor Control\Design Rule Check - H-bridge 1.html
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for TARP Motor Control\H-bridge.REP
+DocumentPath=Project Outputs for TARP Motor Control\H-bridge.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Copper_Signal_Bot.gbr
+DocumentPath=Project Outputs for TARP Motor Control\H-bridge.REP
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Copper_Signal_Top.gbr
+DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Copper_Signal_Bot.gbr
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Legend_Bot.gbr
+DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Copper_Signal_Top.gbr
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Legend_Top.gbr
+DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Legend_Bot.gbr
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for TARP Motor Control\H-bridge_NPTH_Drill.gbr
+DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Legend_Top.gbr
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Paste_Bot.gbr
+DocumentPath=Project Outputs for TARP Motor Control\H-bridge_NPTH_Drill.gbr
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Paste_Top.gbr
+DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Paste_Bot.gbr
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Profile.gbr
+DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Paste_Top.gbr
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for TARP Motor Control\H-bridge_PTH_Drill.gbr
+DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Profile.gbr
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Soldermask_Bot.gbr
+DocumentPath=Project Outputs for TARP Motor Control\H-bridge_PTH_Drill.gbr
 DItemRevisionGUID=
 
 [GeneratedDocument13]
+DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Soldermask_Bot.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument14]
 DocumentPath=Project Outputs for TARP Motor Control\H-bridge_Soldermask_Top.gbr
 DItemRevisionGUID=
 
