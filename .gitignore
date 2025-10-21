@@ -3,3 +3,7 @@
 *.tmp
 *.bkp
 .$*
+*.net
+*.op.raw
+*.raw
+*.log
