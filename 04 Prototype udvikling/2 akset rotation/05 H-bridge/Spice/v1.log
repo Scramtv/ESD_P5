@@ -1,0 +1,16 @@
+LTspice 24.1.5 for Windows
+Circuit: C:\Users\Emil\Documents\GitHub\ESD_P5\04 Prototype udvikling\2 akset rotation\05 H-bridge\Spice\v1.net
+Start Time: Tue Oct 21 10:30:31 2025
+solver = Normal
+Maximum thread count: 4
+tnom = 27
+temp = 27
+method = modified trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.246 seconds.
+
+Files loaded:
+C:\Users\Emil\Documents\GitHub\ESD_P5\04 Prototype udvikling\2 akset rotation\05 H-bridge\Spice\v1.net
+C:\Users\Emil\AppData\Local\LTspice\lib\cmp\standard.dio
+C:\Users\Emil\AppData\Local\LTspice\lib\cmp\standard.mos
+
