@@ -1,0 +1,5 @@
+Noter til PCB
+
+- schematic til PCB 1.0 er ikke opdateret, lortet blev ikke gemt
+--- specifict parallelle koblinger på L298N til den store motor. 
+--- burde være 1-4 koblet sammen og 2-3 koblet sammen, ikke 1 og 3, 1 og 4
