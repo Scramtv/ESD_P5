@@ -5,9 +5,9 @@
 
 
 //motor control directions
-uint8_t motorForward = 17;
-uint8_t motorBackward = 18;
-uint8_t ena = 16;
+uint8_t motorForward = 15;
+uint8_t motorBackward = 14;
+uint8_t ena = 13;
 
 
 //buttons

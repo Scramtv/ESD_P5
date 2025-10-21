@@ -4,7 +4,7 @@
 ///////////////////////////////////////////////////////////////
 
 //encoder pin
-static int pinZ = 21;  //Pin Z
+static int pinZ = 40;  //Pin Z
 //motor control pins
 static int ENA_PIN = 16;  //enable pin controls the motor speed with PWM
 static int in1 = 17;  // logic input 1
