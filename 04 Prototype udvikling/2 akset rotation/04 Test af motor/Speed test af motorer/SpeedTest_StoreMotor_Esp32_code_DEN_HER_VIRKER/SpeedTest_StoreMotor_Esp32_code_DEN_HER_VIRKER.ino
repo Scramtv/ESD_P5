@@ -6,9 +6,9 @@
 //encoder pin
 static int pinZ = 40;  //Pin Z
 //motor control pins
-static int ENA_PIN = 16;  //enable pin controls the motor speed with PWM
-static int in1 = 17;  // logic input 1
-static int in2 = 18;  //logic input 2
+static int ENA_PIN = 13;  //enable pin controls the motor speed with PWM
+static int in1 = 14;  // logic input 1
+static int in2 = 15;  //logic input 2
 
 // amount of rotations
 volatile int rot = 0;
@@ -30,7 +30,7 @@ void setup() {
   pinMode(pinZ, INPUT_PULLUP); //interrupt pin
   attachInterrupt(digitalPinToInterrupt(pinZ), PinZ_R, RISING);
 
-  Serial.println("Big Motor Test begin");
+  Serial.println("Big Motor Test begin here");
 }
 
 
