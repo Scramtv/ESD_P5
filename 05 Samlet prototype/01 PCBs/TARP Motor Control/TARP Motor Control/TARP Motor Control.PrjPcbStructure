@@ -1,1 +1,2 @@
-Record=TopLevelDocument|FileName=Schematic 1.0.SchDoc|SheetNumber=1
+Record=TopLevelDocument|FileName=H-bridge.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=H-bridge.SchDoc|FileName=Schematic 1.0.SchDoc|SheetNumber=2
