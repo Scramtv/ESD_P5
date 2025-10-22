@@ -83,7 +83,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 672.0]
+    coordinate: [488, 680.0]
     rotation: 0
     state: enabled
 - name: blocks_file_sink_0
@@ -150,23 +150,24 @@ blocks:
     _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
       \ GRC will instantiate the first class it finds\nto get ports and parameters\
       \ of your block. The arguments to __init__  will\nbe the parameters. All of\
-      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
-      from gnuradio import gr\n\n\nclass blk(gr.sync_block):  # other base classes\
-      \ are basic_block, decim_block, interp_block\n    \"\"\"Embedded Python Block\
-      \ that takes samples passes them, when a input flag does high then it will tka\
-      \ 50 new\"\"\"\n\n    def __init__(self, Numb_Sample = 1.0):  # only default\
-      \ arguments here\n        gr.sync_block.__init__(\n            self,\n     \
-      \       name = 'Samples',   # will show up in GRC\n            in_sig=[np.complex64,\
-      \ np.complex64, np.float32],\n            out_sig=[np.complex64, np.complex64,\
-      \ np.float32]\n        )\n        # if an attribute with the same name as a\
-      \ parameter is found,\n        # a callback is registered (properties work,\
-      \ too).\n        self.Numb_Sample = Numb_Sample\n\n    def work(self, input_items,\
-      \ output_items):\n        in_data_port1 = input_items[0]\n        in_data_port2\
-      \ = input_items[1]\n        in_flag_move_done = input_items[2]\n\n        counter\
-      \ = 0\n        \n        if in_flag_move_done> 0.5:\n            while (counter\
-      \ < self.Numb_Sample):\n                counter += 1\n                output_items[0]=in_data_port1\n\
-      \                output_items[1]=in_data_port2\n            output_items[2]=1.0\n\
-      \            counter=0\n\n        return\n"
+      \ them are required to have default values!\n\"\"\"\nfrom operator import index\n\
+      \nimport numpy as np\nfrom gnuradio import gr\n\n\nclass blk(gr.sync_block):\
+      \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
+      \"Embedded Python Block that takes samples passes them, when a input flag does\
+      \ high then it will tka 50 new\"\"\"\n\n    def __init__(self, Numb_Sample =\
+      \ 1.0):  # only default arguments here\n        gr.sync_block.__init__(\n  \
+      \          self,\n            name = 'Samples',   # will show up in GRC\n  \
+      \          in_sig=[np.complex64, np.complex64, np.float32], #RX1, RX2, Flag_move\n\
+      \            out_sig=[np.complex64, np.complex64, np.float32] #RX1, RX2, Flag_meas_done\n\
+      \        )\n        # if an attribute with the same name as a parameter is found,\n\
+      \        # a callback is registered (properties work, too).\n\n        self.Numb_Sample\
+      \ = Numb_Sample\n\n    def work(self, input_items, output_items):\n\n      \
+      \  output_amount = 0\n        for i in range(len(input_items[0])):\n       \
+      \     if input_items[2][i] > 0.5:\n                output_items[0][i] = input_items[0][i]\n\
+      \                output_items[1][i] = input_items[1][i]\n                output_items[2][i]\
+      \ = 0.0\n                output_amount+=1\n            else:\n\n           \
+      \     output_items[0][i] = 0\n                output_items[1][i] = 0\n\n   \
+      \         output_items[2][i] = 1.0\n\n\n        return output_amount"
     affinity: ''
     alias: ''
     comment: ''
