@@ -1,0 +1,20 @@
+clc
+clear all
+close all
+
+High = 2483.5e6;
+Low = 2400e6;
+MaxBP = 56e6;
+
+fprintf('Frequency range rrom %.1f MHz to %.1f MHz\n', Low/1e6, High/1e6);
+
+BandRange = High-Low;
+fprintf('BandRange: %.1f MHz\n', BandRange/1e6);
+
+numChannels = ceil(BandRange / MaxBP);
+fprintf('Number of channels needed: %d\n', numChannels);
+
+channelBandwidth = BandRange / numChannels;
+fprintf('Channel bandwidth: %.1f MHz\n', channelBandwidth/1e6);
+
+Channel1CF = Low + channelBandwidth;

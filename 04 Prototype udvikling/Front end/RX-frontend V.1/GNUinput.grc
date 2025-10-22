@@ -61,7 +61,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 61.44e6/2
+    value: 41.75e6
   states:
     bus_sink: false
     bus_source: false
@@ -75,7 +75,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    const: '1'
+    const: '0'
     maxoutbuf: '0'
     minoutbuf: '0'
     type: float
@@ -83,7 +83,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [352, 672.0]
+    coordinate: [288, 656.0]
     rotation: 0
     state: enabled
 - name: blocks_file_sink_0
@@ -93,7 +93,8 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: C:\Users\solva\Desktop\Spuf\Data_test.txt
+    file: C:\Users\solva\Desktop\GitHub\ESD5\ESD_P5\04 Prototype udvikling\Front end\RX-frontend
+      V.1\Data_test.txt
     type: complex
     unbuffered: 'True'
     vlen: '1'
@@ -111,7 +112,8 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: C:\Users\solva\Desktop\Spuf\Data_test1.txt
+    file: C:\Users\solva\Desktop\GitHub\ESD5\ESD_P5\04 Prototype udvikling\Front end\RX-frontend
+      V.1\Data_test1.txt
     type: complex
     unbuffered: 'True'
     vlen: '1'

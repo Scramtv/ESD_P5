@@ -19,9 +19,9 @@ MB0: Clock Source and time source
 
 Number of channels
 	2
-
+ 
 Sample rate
-	61.44 MSPS
+	61.44 MSPS/2
 
 Ch0 Frequency
 	91.75e6 (Regn efter)

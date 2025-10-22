@@ -87,8 +87,8 @@ class Frontend_V2(gr.top_block):
         self.connect((self.epy_block_0, 0), (self.blocks_file_sink_0, 0))
         self.connect((self.epy_block_0, 1), (self.blocks_file_sink_1, 0))
         self.connect((self.epy_block_0, 2), (self.blocks_file_sink_2, 0))
-        self.connect((self.osmosdr_source_0, 0), (self.epy_block_0, 0))
         self.connect((self.osmosdr_source_0, 1), (self.epy_block_0, 1))
+        self.connect((self.osmosdr_source_0, 0), (self.epy_block_0, 0))
 
 
     def get_samp_rate(self):
