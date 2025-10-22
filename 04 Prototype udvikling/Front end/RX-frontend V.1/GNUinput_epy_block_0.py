@@ -4,7 +4,7 @@ from gnuradio import gr
 class blk(gr.sync_block):
     def __init__(self):
         gr.sync_block.__init__(
-            self,<
+            self,
             name="50Samples",
             in_sig=[np.complex64, np.float32],
             out_sig=[np.complex64, np.float32]
