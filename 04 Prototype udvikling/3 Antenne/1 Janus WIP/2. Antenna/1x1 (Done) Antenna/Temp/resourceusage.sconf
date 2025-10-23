@@ -6,7 +6,7 @@ matrixcalc-matrix-coefficients/Runtime:double:6.04487
 matrixcalc-mcalc-prepare/MaxResidentSizeMiB:int:163
 matrixcalc-mcalc-prepare/Runtime:double:0.0432351
 matrixcalc-mode-facets-ifx/MaxResidentSizeMiB:int:0
-matrixcalc-mode-facets-ifx/Runtime:double:1.13268
+matrixcalc-mode-facets-ifx/Runtime:double:1.22381
 matrixcalc-mode-facets-rendering/MaxResidentSizeMiB:int:19
 matrixcalc-mode-facets-rendering/Runtime:double:1.07516
 matrixcalc-mode-fpba-bg/MaxResidentSizeMiB:int:0
@@ -33,12 +33,12 @@ matrixcalc-xcfd-probes/MaxResidentSizeMiB:int:120
 matrixcalc-xcfd-probes/Runtime:double:0.00037694
 matrixcalc/MaxResidentSizeMiB:int:172
 paracontrol/MaxResidentSizeMiB:int:8
-solver_hf_td/InitialFreePhysicalInMB:int:10493
+solver_hf_td/InitialFreePhysicalInMB:int:5544
 solver_hf_td/MaxResidentSizeInMB:int:87
 solver_hf_td/MaxResidentSizeMiB:int:65
-solver_hf_td/MinFreePhysicalInMB:int:10356
-solver_pp/InitialFreePhysicalInMB:int:10459
-solver_pp/MaxResidentSizeInMB:int:31
+solver_hf_td/MinFreePhysicalInMB:int:5195
+solver_pp/InitialFreePhysicalInMB:int:3620
+solver_pp/MaxResidentSizeInMB:int:27
 solver_pp/MaxResidentSizeMiB:int:13
-solver_pp/MinFreePhysicalInMB:int:10443
+solver_pp/MinFreePhysicalInMB:int:3601
 ---
