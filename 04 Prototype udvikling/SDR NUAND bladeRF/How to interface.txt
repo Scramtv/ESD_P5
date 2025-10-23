@@ -1,0 +1,72 @@
+How to interface:
+Use the osmocom source block
+
+
+Output type
+	Complex float32
+
+Device arguments
+	bladerf=0,nchan=2
+
+Sync
+	Unknown PPS
+
+Number MBoards (Number of mother boards)
+	1
+
+MB0: Clock Source and time source
+	Default
+
+Number of channels
+	2
+
+Sample rate
+	61.44 MSPS
+
+Ch0 Frequency
+	91.75e6 (Regn efter)
+
+Ch0 RF Gain
+	0
+
+Ch0 IF Gain
+	0
+
+Ch0 BB Gain
+	0
+
+Ch0 Bandwidth
+	0 (Regn hvad den skal være)
+
+Ch1 Frequency
+	91.75e6 (Regn efter)
+
+Ch1 RF Gain
+	0
+
+Ch1 IF Gain
+	0
+
+Ch1 BB Gain
+	0
+
+Ch1 Bandwidth
+	0 (Regn hvad den skal være)
+
+
+
+
+
+
+
+
+
+
+
+
+Generale noter:
+ADC res
+	12 bits
+
+Bandwidth filter
+	<0.2 to 56 MHz

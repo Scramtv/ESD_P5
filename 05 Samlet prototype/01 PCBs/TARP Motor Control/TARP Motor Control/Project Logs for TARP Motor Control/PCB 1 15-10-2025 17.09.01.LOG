@@ -1,0 +1,8 @@
+Added Component: Designator=M1(M8 HOLE)
+Added Component: Designator=M2(M8 HOLE)
+Added Component: Designator=M3(M8 HOLE)
+Added Component: Designator=M4(M8 HOLE)
+Added Member To Class: ClassName=Schematic 1.0 Member=Component M1 Screw Hole
+Added Member To Class: ClassName=Schematic 1.0 Member=Component M2 Screw Hole
+Added Member To Class: ClassName=Schematic 1.0 Member=Component M3 Screw Hole
+Added Member To Class: ClassName=Schematic 1.0 Member=Component M4 Screw Hole
