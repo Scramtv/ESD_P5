@@ -1,0 +1,9 @@
+Added Component: Designator=J2(Header 1x5)
+Added Pin To Net: NetName=NetCR6_2 Pin=J2-2
+Added Pin To Net: NetName=NetCR5_2 Pin=J2-3
+Added Pin To Net: NetName=+5 Pin=J2-4
+Added Pin To Net: NetName=GND Pin=J2-5
+Added Pin To Net: NetName=NetJ2_1 Pin=J2-1
+Added Pin To Net: NetName=NetJ2_1 Pin=U3-J3_19
+Added Net: Name=NetJ2_1
+Added Member To Class: ClassName=Schematic 1.0 Member=Component J2 Header 1x5
