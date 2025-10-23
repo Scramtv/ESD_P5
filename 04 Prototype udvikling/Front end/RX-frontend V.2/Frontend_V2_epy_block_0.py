@@ -14,7 +14,7 @@ from gnuradio import gr
 class blk(gr.sync_block):  # other base classes are basic_block, decim_block, interp_block
     """Embedded Python Block that takes samples passes them, when a input flag does high then it will tka 50 new"""
 
-    def __init__(self, Numb_Sample = 1.0):  # only default arguments here
+    def __init__(self):  # only default arguments here
         gr.sync_block.__init__(
             self,
             name = 'Samples',   # will show up in GRC
@@ -24,17 +24,16 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
         # if an attribute with the same name as a parameter is found,
         # a callback is registered (properties work, too).
 
-        self.Numb_Sample = Numb_Sample
 
     def work(self, input_items, output_items):
 
-        output_amount = 0
+        out_items = 0
         for i in range(len(input_items[0])):
             if input_items[2][i] > 0.5:
                 output_items[0][i] = input_items[0][i]
                 output_items[1][i] = input_items[1][i]
                 output_items[2][i] = 0.0
-                output_amount+=1
+                out_items += 1
             else:
 
                 output_items[0][i] = 0
@@ -43,4 +42,4 @@ class blk(gr.sync_block):  # other base classes are basic_block, decim_block, in
             output_items[2][i] = 1.0
 
 
-        return output_amount
+        return out_items

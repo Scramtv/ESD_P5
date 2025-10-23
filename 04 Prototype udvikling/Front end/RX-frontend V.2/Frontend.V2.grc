@@ -37,7 +37,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 2413.916e6
+    value: 2420.875e6
   states:
     bus_sink: false
     bus_source: false
@@ -49,7 +49,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 27.83e6
+    value: 41.75e6
   states:
     bus_sink: false
     bus_source: false
@@ -61,7 +61,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 61.44e6/2
+    value: 61.44e6
   states:
     bus_sink: false
     bus_source: false
@@ -146,7 +146,6 @@ blocks:
 - name: epy_block_0
   id: epy_block
   parameters:
-    Numb_Sample: '1'
     _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
       \ GRC will instantiate the first class it finds\nto get ports and parameters\
       \ of your block. The arguments to __init__  will\nbe the parameters. All of\
@@ -154,30 +153,30 @@ blocks:
       \nimport numpy as np\nfrom gnuradio import gr\n\n\nclass blk(gr.sync_block):\
       \  # other base classes are basic_block, decim_block, interp_block\n    \"\"\
       \"Embedded Python Block that takes samples passes them, when a input flag does\
-      \ high then it will tka 50 new\"\"\"\n\n    def __init__(self, Numb_Sample =\
-      \ 1.0):  # only default arguments here\n        gr.sync_block.__init__(\n  \
-      \          self,\n            name = 'Samples',   # will show up in GRC\n  \
-      \          in_sig=[np.complex64, np.complex64, np.float32], #RX1, RX2, Flag_move\n\
-      \            out_sig=[np.complex64, np.complex64, np.float32] #RX1, RX2, Flag_meas_done\n\
-      \        )\n        # if an attribute with the same name as a parameter is found,\n\
-      \        # a callback is registered (properties work, too).\n\n        self.Numb_Sample\
-      \ = Numb_Sample\n\n    def work(self, input_items, output_items):\n\n      \
-      \  output_amount = 0\n        for i in range(len(input_items[0])):\n       \
-      \     if input_items[2][i] > 0.5:\n                output_items[0][i] = input_items[0][i]\n\
-      \                output_items[1][i] = input_items[1][i]\n                output_items[2][i]\
-      \ = 0.0\n                output_amount+=1\n            else:\n\n           \
-      \     output_items[0][i] = 0\n                output_items[1][i] = 0\n\n   \
-      \         output_items[2][i] = 1.0\n\n\n        return output_amount"
+      \ high then it will tka 50 new\"\"\"\n\n    def __init__(self):  # only default\
+      \ arguments here\n        gr.sync_block.__init__(\n            self,\n     \
+      \       name = 'Samples',   # will show up in GRC\n            in_sig=[np.complex64,\
+      \ np.complex64, np.float32], #RX1, RX2, Flag_move\n            out_sig=[np.complex64,\
+      \ np.complex64, np.float32] #RX1, RX2, Flag_meas_done\n        )\n        #\
+      \ if an attribute with the same name as a parameter is found,\n        # a callback\
+      \ is registered (properties work, too).\n\n\n    def work(self, input_items,\
+      \ output_items):\n\n        out_items = 0\n        for i in range(len(input_items[0])):\n\
+      \            if input_items[2][i] > 0.5:\n                output_items[0][i]\
+      \ = input_items[0][i]\n                output_items[1][i] = input_items[1][i]\n\
+      \                output_items[2][i] = 0.0\n                out_items += 1\n\
+      \            else:\n\n                output_items[0][i] = 0\n             \
+      \   output_items[1][i] = 0\n\n            output_items[2][i] = 1.0\n\n\n   \
+      \     return out_items"
     affinity: ''
     alias: ''
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
   states:
-    _io_cache: ('Samples', 'blk', [('Numb_Sample', '1.0')], [('0', 'complex', 1),
-      ('1', 'complex', 1), ('2', 'float', 1)], [('0', 'complex', 1), ('1', 'complex',
-      1), ('2', 'float', 1)], 'Embedded Python Block that takes samples passes them,
-      when a input flag does high then it will tka 50 new', ['Numb_Sample'])
+    _io_cache: ('Samples', 'blk', [], [('0', 'complex', 1), ('1', 'complex', 1), ('2',
+      'float', 1)], [('0', 'complex', 1), ('1', 'complex', 1), ('2', 'float', 1)],
+      'Embedded Python Block that takes samples passes them, when a input flag does
+      high then it will tka 50 new', [])
     bus_sink: false
     bus_source: false
     bus_structure: null
