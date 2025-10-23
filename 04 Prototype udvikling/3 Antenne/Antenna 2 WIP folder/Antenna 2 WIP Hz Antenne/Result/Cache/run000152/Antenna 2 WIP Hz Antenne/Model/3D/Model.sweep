@@ -1,0 +1,45 @@
+{
+    "parameter sweep": {
+        "options": {
+            "restore parameter values after run": "false",
+            "simulation type": "Transient",
+            "skip existing combinations": "true",
+            "start active solver": "true"
+        },
+        "sequences": {
+            "Sequence 1": [
+                {
+                    "from": "28.5",
+                    "samples": "5",
+                    "to": "29",
+                    "type": "linear",
+                    "varname": "Lp"
+                },
+                {
+                    "from": "35",
+                    "samples": "5",
+                    "to": "35.5",
+                    "type": "linear",
+                    "varname": "Wp"
+                },
+                {
+                    "enabled": "false",
+                    "index": 1
+                }
+            ],
+            "Sequence 2": [
+                {
+                    "from": "6.2",
+                    "samples": "4",
+                    "to": "5",
+                    "type": "linear",
+                    "varname": "Wf"
+                },
+                {
+                    "index": 2
+                }
+            ]
+        },
+        "version": 1
+    }
+}

@@ -498,7 +498,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "../../../gerberfiles 4antenna/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
