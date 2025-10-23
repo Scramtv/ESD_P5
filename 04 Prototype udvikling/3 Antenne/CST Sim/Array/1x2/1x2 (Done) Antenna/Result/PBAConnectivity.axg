@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CSTAuxiliaryGeometry version="20170928">
+  <Objects>
+    <Object name="Components\patch:Substrate" id="1"/>
+    <Object name="Components\patch:Patch" id="2"/>
+    <Object name="Components\patch:Patch_1" id="3"/>
+    <Object name="Components\patch:ground" id="4"/>
+  </Objects>
+  <Materials/>
+  <Groups>
+    <Group name="Isolators" ID="1">
+      <Item name="Components\patch:Substrate" id="1"/>
+    </Group>
+    <Group name="Unconsidered" ID="1">
+      <Item name="Components\patch:Patch" id="2"/>
+      <Item name="Components\patch:Patch_1" id="3"/>
+      <Item name="Components\patch:ground" id="4"/>
+    </Group>
+  </Groups>
+</CSTAuxiliaryGeometry>

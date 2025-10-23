@@ -1,0 +1,18 @@
+ParaControl_AMD64-1xN @ Heu:  ===============================================================================================
+                              10666.00 ms |          | SV-crop-all | Outside MCalcResultIdentification | 28.91 MB | 0.0000 MB
+                              10684.00 ms |  --> 3rd | SV-crop-all |                        All meshes | 37.43 MB | 8.5197 MB
+                              10709.00 ms | --> peak | SV-crop-all |                        All meshes | 37.43 MB | 0.0082 MB
+                              10712.00 ms |  --> 2nd | SV-crop-all | Outside MCalcResultIdentification | 37.43 MB | 0.0000 MB
+                              ===============================================================================================
+ParaControl_AMD64-1xN @ Heu:  ===============================================================================================
+                              14318.00 ms |          | SV-crop-all | Outside MCalcResultIdentification | 28.82 MB | 0.0000 MB
+                              14340.00 ms |  --> 3rd | SV-crop-all |                        All meshes | 37.32 MB | 8.5033 MB
+                              14344.00 ms | --> peak | SV-crop-all |                        All meshes | 37.33 MB | 0.0082 MB
+                              14347.00 ms |  --> 2nd | SV-crop-all | Outside MCalcResultIdentification | 37.33 MB | 0.0000 MB
+                              ===============================================================================================
+ParaControl_AMD64-1xN @ Heu:  ===============================================================================================
+                               9974.00 ms |          | SV-crop-all | Outside MCalcResultIdentification | 29.01 MB | 0.0000 MB
+                               9993.00 ms |  --> 3rd | SV-crop-all |                        All meshes | 36.84 MB | 7.8316 MB
+                              10032.00 ms | --> peak | SV-crop-all |                        All meshes | 36.85 MB | 0.0082 MB
+                              10035.00 ms |  --> 2nd | SV-crop-all | Outside MCalcResultIdentification | 36.85 MB | 0.0000 MB
+                              ===============================================================================================
