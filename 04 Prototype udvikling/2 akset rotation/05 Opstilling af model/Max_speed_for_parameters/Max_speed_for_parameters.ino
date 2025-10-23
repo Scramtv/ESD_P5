@@ -63,6 +63,7 @@ void loop() {
   // Wait for a client to connect
   WiFiClient client = server.available();
 
+  
   if (client) {
     // If client is connected, send data
     // VELOCITY TEST AZIMUT MOTOR
