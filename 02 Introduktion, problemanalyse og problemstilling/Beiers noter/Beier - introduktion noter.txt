@@ -1,0 +1,62 @@
+https://www.ap.org/news-highlights/spotlights/2025/drones-pose-increasing-risk-to-airliners-near-major-us-airports/
+
+- drones have become a big issue in the US
+- cause of 2/3 of near midair collissions are caused by drones
+- airports need more safety
+- a drone flew into the Super Scooper, a plane used to fight wildfires in USA. The FAA (federal aviation
+adminstration) had restricted flying near the wildfire, though the drone hobbyist chose to do it anyway
+resulting in a hole in the plane's left wing.
+
+https://www.dr.dk/nyheder/indland/minister-vil-give-havne-og-lufthavne-lov-til-nedskyde-droner
+
+- Transport ministeren i Danmark giver lufthavne og havne lov til at skyde droner ned som flyver
+inden for ulovligt område
+- drone aktivitet betyder at nogle fly ikke må lande eller lette på grund af faren for en kollision
+- man er i tvivl om hvor vidt det er hobby droner eller terror angreb eller spionage, derfor er det nødvendigt
+at skyde dem ned
+
+https://www.dr.dk/nyheder/seneste/politiet-undersoeger-droneflyvninger-ved-havnen-i-koege
+- 20 ukendte droner er blevet meldt til at flyve over Køge havn uden at vide hvorfor eller hvem der styrede dem
+
+https://www.trm.dk/nyheder/2025/nye-regler-giver-mulighed-for-at-fjerne-droner
+- transportministeren har lavet en lov som tillader neutralisering af droner som flyver på ulovlig vis
+
+
+https://www.airsight.com/en/news/drones-are-disrupting-airspace-and-flights-near-airports
+- drones in the airspace
+
+https://fortune.com/2019/01/22/gatwick-drone-closure-cost/
+-london airport shutdown costing 63 million pounds
+
+http://hoeringsportalen.dk/Hearing/Details/70295
+-Transport minister nye lov 
+
+
+
+The rapid proliferation of unmanned aerial vehicles (UAVs), commonly referred to as drones, has introduced both 
+opportunities and challenges for modern societies. While drones are increasingly employed in fields such as logistics, 
+photography, infrastructure inspection, and emergency response, their accessibility and affordability have also raised 
+serious concerns regarding safety and security. A growing issue is the unauthorized use of drones in restricted or 
+sensitive airspace, particularly around airports. Even small drones can pose a significant risk to civil aviation by 
+disrupting air traffic, causing flight delays, and in worst-case scenarios, leading to mid-air collisions.
+
+Globally, incidents of drones entering restricted airspace near airports have been steadily increasing over the past decade.
+These events highlight vulnerabilities in traditional air traffic management systems, which were not originally designed to
+account for small, low-flying aerial vehicles. The challenge lies in both tracking drones—detecting and following their 
+position in real time—and pointing systems—ensuring accurate identification and response to potential threats. 
+The combination of high air traffic density and the unpredictability of drone incursions makes airports one of the most 
+critical environments for addressing this issue.
+
+In Denmark, the problem of drone-related airspace violations has become a matter of growing concern. As a country with busy 
+international hubs such as Copenhagen Airport (Kastrup), drone incursions can have a disproportionately large impact on 
+national and regional air traffic. Denmark has already experienced several incidents in which unauthorized drones have forced 
+the temporary suspension of flights, resulting in economic losses, passenger disruption, and increased security measures. 
+Moreover, Denmark’s strong emphasis on digitalization and technology adoption has made drone ownership more widespread, 
+further elevating the risk of misuse—whether intentional or accidental.
+
+Addressing the issue of drones in airport environments in Denmark requires an integrated approach that combines effective 
+tracking technologies, regulatory frameworks, and operational procedures. This project focuses on exploring the technical 
+and strategic aspects of tracking and pointing at drones in restricted airspace, with an emphasis on the Danish context. 
+By analyzing both the challenges and potential solutions, the project aims to contribute to a safer and more resilient 
+airspace system in Denmark.
+ 
