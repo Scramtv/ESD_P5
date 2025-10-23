@@ -1,0 +1,21 @@
+----------------------------------
+Funktions navne:
+CamelCase
+ModulNavn
+
+e.g.
+
+MidiOutCtrl()
+
+----------------------------------
+CONSTANTER_SER_UD 
+caps
+
+e.g.
+
+CONSTANT_THAT_DOES_STUFF
+
+--------------------------------------
+variabler:
+
+some_var = 0
