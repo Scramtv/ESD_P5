@@ -38,14 +38,14 @@
       34
     ],
     "np": {
-      "np-excl-tst": 60515,
-      "np-incl-tst": 60515,
-      "np-x-B": 60515,
-      "np-x-E": 60515,
-      "np-y-B": 60515,
-      "np-y-E": 60515,
-      "np-z-B": 60515,
-      "np-z-E": 60515
+      "np-excl-tst": 92016,
+      "np-incl-tst": 92016,
+      "np-x-B": 92016,
+      "np-x-E": 92016,
+      "np-y-B": 92016,
+      "np-y-E": 92016,
+      "np-z-B": 92016,
+      "np-z-E": 92016
     },
     "problem-type": 0
   },
