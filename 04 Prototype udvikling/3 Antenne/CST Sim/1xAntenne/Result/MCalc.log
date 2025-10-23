@@ -1,88 +1,50 @@
 =================================================================================
  - hardware info
-   + cpu name                    : 12th Gen Intel(R) Core(TM) i5-1240P
+   + cpu name                    : AMD Ryzen 7 7730U with Radeon Graphics
    + sockets                     : 1
-   + cores per socket            : 4
+   + cores per socket            : 8
    + hyperthreading              : on
    + ht-units                    : 2
-   + efficiency cores            : 8, not used
-   + max cpuid level             : 32
-   + max cpuid ext. level        : 8
+   + max cpuid level             : 13
+   + max cpuid ext. level        : 35
    + numa nodes                  : 1
+   + sub numa nodes              : 8
    + Numa Memory Info
      numa node     installed     available    (MByte)
-       0                 0          2954
+       0                 0          4289
    + internal cpu info           : CPUID: selected engine is 'Leaf 0xB detection'
-performance cores:
-apic ids           : 0, 1, 8, 9, 16, 17, 24, 25
-apic ids (fallback): 0, 1, 8, 9, 16, 17, 24, 25
-from cpu registers: 0, 1, 8, 9, 16, 17, 24, 25
-fallback: 0, 1, 8, 9, 16, 17, 24, 25
-combined: 0, 1, 8, 9, 16, 17, 24, 25
-core 0 type: Intel Core
-core 1 type: Intel Core
-core 2 type: Intel Core
-core 3 type: Intel Core
-core 4 type: Intel Core
-core 5 type: Intel Core
-core 6 type: Intel Core
-core 7 type: Intel Core
-max id per cpu: 64
+apic ids           : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+apic ids (fallback): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+from cpu registers: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+fallback: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+combined: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+max id per cpu: 16
 SMT mask: 1
-Core mask: 3e
-Package mask: ffffffc0
-set results:
-  - packages: 1
-  - cores: 4
-  - smts: 2
-generate core map, new implementation
-0, 1, 2, 3, 4, 5, 6, 7
-packages: 1
-cores   : 4
-ht units: 2
-efficiency cores:
-apic ids           : 32, 34, 36, 38, 40, 42, 44, 46
-apic ids (fallback): 32, 34, 36, 38, 40, 42, 44, 46
-from cpu registers: 32, 34, 36, 38, 40, 42, 44, 46
-fallback: 32, 34, 36, 38, 40, 42, 44, 46
-combined: 32, 34, 36, 38, 40, 42, 44, 46
-core 0 type: Intel Atom
-core 1 type: Intel Atom
-core 2 type: Intel Atom
-core 3 type: Intel Atom
-core 4 type: Intel Atom
-core 5 type: Intel Atom
-core 6 type: Intel Atom
-core 7 type: Intel Atom
-max id per cpu: 64
-SMT mask: 1
-Core mask: 3e
-Package mask: ffffffc0
+Core mask: e
+Package mask: fffffff0
 set results:
   - packages: 1
   - cores: 8
-  - smts: 1
+  - smts: 2
 generate core map, new implementation
-0, 1, 2, 3, 4, 5, 6, 7
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
 packages: 1
 cores   : 8
-ht units: 1
-CPU sockets: 1 != 2
+ht units: 2
  - pinning rule in use   : PINNING_RULE_MCALC_SKIP_ALL
  - desired group         : 0
  - num cores available   : 16
- - efficiency cores      : 8, not used
  - active core list from affinity: 
    + num accessible procs          : 16
    + num logical procs             : 16
    + current affinity (env)        : 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
    + sockets ids in                : 0
-   + core list                  (1): 0,2,4,6,8,9,10,11,12,13,14,15
- - active cores          : 0,2,4,6,8,9,10,11,12,13,14,15
+   + core list                  (1): 0,2,4,6,8,10,12,14
+ - active cores          : 0,2,4,6,8,10,12,14
  - hyperthreading        : on
- - allowed core ids      : 0,2,4,6
- - allowed core ids (aff): 1010 1010 0000 0000 
- - used mask (string)    : 1010 1010 0000 0000 
+ - allowed core ids      : 0,2,4,6,8,10,12,14
+ - allowed core ids (aff): 10101010 10101010 
+ - used mask (string)    : 10101010 10101010 
 =================================================================================
 
 =========================================================================
@@ -98,11 +60,11 @@ Concurrency: 0
 Start ID: 0
 Node ID: 0
 HEX Mesh information:
-Hex mesh: global: [hxr o(0 | 0 | 0) s(65 | 49 | 19) np (no TSTs): 60515] 
+Hex mesh: global: [hxr o(0 | 0 | 0) s(67 | 49 | 19) np (no TSTs): 62377] 
 =========================================================================
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-Thu Thu Oct  9 15:43:54 2025
+Tue Tue Oct 14 15:13:33 2025
 started: processing CAD model
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -115,7 +77,7 @@ PBA version: default, 2.20240218
 Model compatibility: 2025.20250411
 Sub-Workflow: Facets-QQ-GEX
 Workflow updated: -
-Thu Thu Oct  9 15:43:54 2025
+Tue Tue Oct 14 15:13:33 2025
 ========================================================================
 
 ========================================================================
@@ -127,10 +89,10 @@ Finished CAD processing (for field results)
 ===========================================
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-Thu Thu Oct  9 15:43:55 2025
+Tue Tue Oct 14 15:13:34 2025
 Resource usage for processing CAD model:
-	Runtime                 00:00:00.00826 s
-	Peak Memory Usage:               19 MB
+	Runtime                 00:00:01.00029 s
+	Peak Memory Usage:               18 MB
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 ------------------------------------------------------------------------------------------------------------------------------
@@ -142,99 +104,57 @@ Frontend-Node:  ================================================================
                 =======================================================================
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-Thu Thu Oct  9 15:44:49 2025
+Tue Tue Oct 14 15:14:19 2025
 started: parallelization control
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-=============================================================================================================
-Access to CPU cores has been restricted for this process, reduce number of parallel matrixcalcs from 4 to 12.
-=============================================================================================================
-
 =================================================================================
  - hardware info
-   + cpu name                    : 12th Gen Intel(R) Core(TM) i5-1240P
+   + cpu name                    : AMD Ryzen 7 7730U with Radeon Graphics
    + sockets                     : 1
-   + cores per socket            : 4
+   + cores per socket            : 8
    + hyperthreading              : on
    + ht-units                    : 2
-   + efficiency cores            : 8, not used
-   + max cpuid level             : 32
-   + max cpuid ext. level        : 8
+   + max cpuid level             : 13
+   + max cpuid ext. level        : 35
    + numa nodes                  : 1
+   + sub numa nodes              : 8
    + Numa Memory Info
      numa node     installed     available    (MByte)
-       0                 0          2830
+       0                 0          4276
    + internal cpu info           : CPUID: selected engine is 'Leaf 0xB detection'
-performance cores:
-apic ids           : 0, 1, 8, 9, 16, 17, 24, 25
-apic ids (fallback): 0, 1, 8, 9, 16, 17, 24, 25
-from cpu registers: 0, 1, 8, 9, 16, 17, 24, 25
-fallback: 0, 1, 8, 9, 16, 17, 24, 25
-combined: 0, 1, 8, 9, 16, 17, 24, 25
-core 0 type: Intel Core
-core 1 type: Intel Core
-core 2 type: Intel Core
-core 3 type: Intel Core
-core 4 type: Intel Core
-core 5 type: Intel Core
-core 6 type: Intel Core
-core 7 type: Intel Core
-max id per cpu: 64
+apic ids           : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+apic ids (fallback): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+from cpu registers: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+fallback: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+combined: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+max id per cpu: 16
 SMT mask: 1
-Core mask: 3e
-Package mask: ffffffc0
-set results:
-  - packages: 1
-  - cores: 4
-  - smts: 2
-generate core map, new implementation
-0, 1, 2, 3, 4, 5, 6, 7
-packages: 1
-cores   : 4
-ht units: 2
-efficiency cores:
-apic ids           : 32, 34, 36, 38, 40, 42, 44, 46
-apic ids (fallback): 32, 34, 36, 38, 40, 42, 44, 46
-from cpu registers: 32, 34, 36, 38, 40, 42, 44, 46
-fallback: 32, 34, 36, 38, 40, 42, 44, 46
-combined: 32, 34, 36, 38, 40, 42, 44, 46
-core 0 type: Intel Atom
-core 1 type: Intel Atom
-core 2 type: Intel Atom
-core 3 type: Intel Atom
-core 4 type: Intel Atom
-core 5 type: Intel Atom
-core 6 type: Intel Atom
-core 7 type: Intel Atom
-max id per cpu: 64
-SMT mask: 1
-Core mask: 3e
-Package mask: ffffffc0
+Core mask: e
+Package mask: fffffff0
 set results:
   - packages: 1
   - cores: 8
-  - smts: 1
+  - smts: 2
 generate core map, new implementation
-0, 1, 2, 3, 4, 5, 6, 7
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
 packages: 1
 cores   : 8
-ht units: 1
-CPU sockets: 1 != 2
+ht units: 2
  - pinning rule in use   : PINNING_RULE_MCALC_SKIP_ALL
  - desired group         : 0
  - num cores available   : 16
- - efficiency cores      : 8, not used
  - active core list from affinity: 
    + num accessible procs          : 16
    + num logical procs             : 16
    + current affinity (env)        : 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
    + sockets ids in                : 0
-   + core list                  (1): 0,2,4,6,8,9,10,11,12,13,14,15
- - active cores          : 0,2,4,6,8,9,10,11,12,13,14,15
+   + core list                  (1): 0,2,4,6,8,10,12,14
+ - active cores          : 0,2,4,6,8,10,12,14
  - hyperthreading        : on
- - allowed core ids      : 0,2,4,6
- - allowed core ids (aff): 1010 1010 0000 0000 
- - used mask (string)    : 1010 1010 0000 0000 
+ - allowed core ids      : 0,2,4,6,8,10,12,14
+ - allowed core ids (aff): 10101010 10101010 
+ - used mask (string)    : 10101010 10101010 
 =================================================================================
 
 =========================================================================
@@ -250,11 +170,11 @@ Concurrency: 0
 Start ID: 0
 Node ID: 0
 HEX Mesh information:
-Hex mesh: global: [hxr o(0 | 0 | 0) s(65 | 49 | 19) np (no TSTs): 60515] 
+Hex mesh: global: [hxr o(0 | 0 | 0) s(67 | 49 | 19) np (no TSTs): 62377] 
 =========================================================================
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-Thu Thu Oct  9 15:44:49 2025
+Tue Tue Oct 14 15:14:19 2025
 started: processing CAD model
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -267,7 +187,7 @@ PBA version: default, 2.20240218
 Model compatibility: 2025.20250411
 Sub-Workflow: Facets-QQ
 Workflow updated: -
-Thu Thu Oct  9 15:44:50 2025
+Tue Tue Oct 14 15:14:19 2025
 ========================================================================
 
 ----------------------------------------------
@@ -277,25 +197,25 @@ Used point accuracy enhancement value: 74.00%.
 =============================================================================
 Mesh statistics:
 -----------------------------------------------------------------------------
-Minimum edge length (x): 1 @ mesh line 31 (x)
-Maximum edge length (x): 8.62 @ mesh line 0 (x)
-Minimum face area (x): 2.61 @ mesh lines 17 | 8 (y | z)
-Maximum face area (x): 81.6 @ mesh lines 47 | 17 (y | z)
-Minimum edge length (y): 1.63 @ mesh line 17 (y)
-Maximum edge length (y): 8.61 @ mesh line 47 (y)
-Minimum face area (y): 1.6 @ mesh lines 8 | 31 (z | x)
-Maximum face area (y): 81.6 @ mesh lines 17 | 0 (z | x)
-Minimum edge length (z): 1.6 @ mesh line 8 (z)
-Maximum edge length (z): 9.47 @ mesh line 17 (z)
-Minimum face area (z): 1.63 @ mesh lines 31 | 17 (x | y)
-Maximum face area (z): 74.2 @ mesh lines 0 | 47 (x | y)
-Maximum mesh face aspect ratio (x): 5.8 : 1.0  @ mesh lines 17 | 17 (y | z)
-Maximum mesh face aspect ratio (y): 9.47 : 1.0  @ mesh lines 17 | 31 (z | x)
-Maximum mesh face aspect ratio (z): 8.61 : 1.0  @ mesh lines 31 | 47 (x | y)
+Minimum edge length (x): 1 @ mesh line 32 (x)
+Maximum edge length (x): 8.74 @ mesh line 0 (x)
+Minimum face area (x): 2.63 @ mesh lines 18 | 8 (y | z)
+Maximum face area (x): 82.5 @ mesh lines 47 | 17 (y | z)
+Minimum edge length (y): 1.63 @ mesh line 18 (y)
+Maximum edge length (y): 8.74 @ mesh line 47 (y)
+Minimum face area (y): 1.61 @ mesh lines 8 | 32 (z | x)
+Maximum face area (y): 82.5 @ mesh lines 17 | 0 (z | x)
+Minimum edge length (z): 1.61 @ mesh line 8 (z)
+Maximum edge length (z): 9.45 @ mesh line 17 (z)
+Minimum face area (z): 1.63 @ mesh lines 32 | 18 (x | y)
+Maximum face area (z): 76.3 @ mesh lines 0 | 47 (x | y)
+Maximum mesh face aspect ratio (x): 5.78 : 1.0  @ mesh lines 18 | 17 (y | z)
+Maximum mesh face aspect ratio (y): 9.45 : 1.0  @ mesh lines 17 | 32 (z | x)
+Maximum mesh face aspect ratio (z): 8.74 : 1.0  @ mesh lines 32 | 47 (x | y)
 =============================================================================
 
 =============================================================================
-Available resources to store TST cells: 2147423132 (3548579.91% of mesh size)
+Available resources to store TST cells: 2147421270 (3442649.17% of mesh size)
 =============================================================================
 
 ========================================================================
@@ -327,10 +247,6 @@ Group | Shape-ID | ShapeName | Material | User-priority | 2D/3D-Geometry | Mater
 3 | 3 | patch:ground | Copper (annealed) | n/a | yes | pec.rho.surface-impedance. | solid. | n/a | FIT_TD
 3 | 4 | patch:patch | Copper (annealed) | n/a | yes | pec.rho.surface-impedance. | solid. | n/a | FIT_TD
 =========================================
->2025-10-09 15:44:50.00857< matrixcalc_AMD64 @ Heu:  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                                                     current system memory usage reached 85% (14 GB)
-                                                     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 ************************************************************************************************
 General settings
 	PBA version: default, 2.20240218, potentials: not required
@@ -348,8 +264,8 @@ Geometry processor: default
 	Flanges hollow: true
 	One shape per flange: false
 	Multi threading: true
-		max # of threads used: 8
-		requested max # of threads: 8
+		max # of threads used: 16
+		requested max # of threads: 16
 		representation: indexed
 		method: multi thread
 		retry: no
@@ -385,23 +301,11 @@ Finished CAD processing
 =======================
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-Thu Thu Oct  9 15:44:50 2025
+Tue Tue Oct 14 15:14:20 2025
 Resource usage for processing CAD model:
-	Runtime                 00:00:00.00950 s
+	Runtime                 00:00:00.00971 s
 	Peak Memory Usage:               18 MB
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-=============================================================================================================
-Access to CPU cores has been restricted for this process, reduce number of parallel matrixcalcs from 4 to 12.
-=============================================================================================================
-
-=============================================================================================================
-Access to CPU cores has been restricted for this process, reduce number of parallel matrixcalcs from 4 to 12.
-=============================================================================================================
-
-=============================================================================================================
-Access to CPU cores has been restricted for this process, reduce number of parallel matrixcalcs from 4 to 12.
-=============================================================================================================
 
 ------------------------------------------------------------
 Parallelization Info
@@ -419,9 +323,9 @@ Load balancing: Version 20090403
 Number of mesh fill domains: 8
 Memory downscale: 1
 Shared memory representation: read/write
-CPU load: 16.67%
+CPU load: 25.00%
 Emptiness: 0.00%
-Hex mesh complexity: 0.05530
+Hex mesh complexity: 0.05702
 Geometric complexity: 0.00172
 lower size limit of domain (1D): 60
 ------------------------------------------------------------
@@ -434,34 +338,34 @@ Matrix calculation job submit section 0
 Currently running jobs: 0
 Waiting jobs: 2
 Concurrency for section: 2/2
-Memory physically installed: 16.892 GB
-Memory currently available: 2.94844 GB
-Memory already used: 13.9436 GB
+Memory physically installed: 16.4746 GB
+Memory currently available: 4.46435 GB
+Memory already used: 12.0102 GB
 Memory reserved: 0 GB - Scale: 0.6
 Matrix calculation @ 1xN-Node 0000
-	Mesh coverage: 2764800.00 %
-	Estimated peak memory usage per node: 82 MB , tightness: 2.78 %
+	Mesh coverage: 2851200.00 %
+	Estimated peak memory usage per node: 82 MB , tightness: 1.84 %
 	GPU acceleration: off
 	Processor group: 0
 Matrix calculation @ 1xN-Node 0001
-	Mesh coverage: 2880000.00 %
-	Estimated peak memory usage per node: 82 MB , tightness: 2.78 %
+	Mesh coverage: 2970000.00 %
+	Estimated peak memory usage per node: 82 MB , tightness: 1.84 %
 	GPU acceleration: off
-	Processor group: 0
-Node distribution on 1 processor group: 2
+	Processor group: 1
+Node distribution on 8 numa nodes: 1 - 1 - 0 - 0 - 0 - 0 - 0 - 0
 -------------------------------------------------------------------
 
 -----------------------------------
-Mesh: # of points excl. TSTs: 60515
-      # of points incl. TSTs: 60515
+Mesh: # of points excl. TSTs: 62377
+      # of points incl. TSTs: 62377
 -----------------------------------
 
 ===========================================
 Data rearrangement statistics:
-Disk IO directories:	00:00:00.0003
-Disk IO node domain files:	00:00:00.0452
+Disk IO directories:	00:00:00.0011
+Disk IO node domain files:	00:00:00.0889
 Disk IO FI domain files:	00:00:00.0000
-Disk IO meta information:	00:00:00.0123
+Disk IO meta information:	00:00:00.0120
 Sequential merge (TST):	00:00:00.0000
 ===========================================
 
@@ -480,87 +384,49 @@ Sequential merge (TST):	00:00:00.0000
          =============================
 
 1xN000:  ==================================================
-         [Mesh] world: o(0000,0000,0000) e(0065,0049,0019)
-         [Mesh] l-1xN: o(0000,0000,0000) e(0065,0025,0019)
-         [Mesh] e-1xN: o(0000,0000,0000) e(0065,0027,0019)
+         [Mesh] world: o(0000,0000,0000) e(0067,0049,0019)
+         [Mesh] l-1xN: o(0000,0000,0000) e(0067,0025,0019)
+         [Mesh] e-1xN: o(0000,0000,0000) e(0067,0027,0019)
          [Mesh] g-MPI: not available
          [Mesh] bound offset: (0 | 0 | 0)
          ==================================================
 
 1xN000:  =================================================================================
           - hardware info
-            + cpu name                    : 12th Gen Intel(R) Core(TM) i5-1240P
+            + cpu name                    : AMD Ryzen 7 7730U with Radeon Graphics
             + sockets                     : 1
-            + cores per socket            : 4
+            + cores per socket            : 8
             + hyperthreading              : on
             + ht-units                    : 2
-            + efficiency cores            : 8, not used
-            + max cpuid level             : 32
-            + max cpuid ext. level        : 8
+            + max cpuid level             : 13
+            + max cpuid ext. level        : 35
             + numa nodes                  : 1
+            + sub numa nodes              : 8
             + Numa Memory Info
               numa node     installed     available    (MByte)
-                0                 0          2809
+                0                 0          4264
             + internal cpu info           : CPUID: selected engine is 'Leaf 0xB detection'
-         performance cores:
-         apic ids           : 0, 1, 8, 9, 16, 17, 24, 25
-         apic ids (fallback): 0, 1, 8, 9, 16, 17, 24, 25
-         from cpu registers: 0, 1, 8, 9, 16, 17, 24, 25
-         fallback: 0, 1, 8, 9, 16, 17, 24, 25
-         combined: 0, 1, 8, 9, 16, 17, 24, 25
-         core 0 type: Intel Core
-         core 1 type: Intel Core
-         core 2 type: Intel Core
-         core 3 type: Intel Core
-         core 4 type: Intel Core
-         core 5 type: Intel Core
-         core 6 type: Intel Core
-         core 7 type: Intel Core
-         max id per cpu: 64
+         apic ids           : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+         apic ids (fallback): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+         from cpu registers: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+         fallback: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+         combined: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+         max id per cpu: 16
          SMT mask: 1
-         Core mask: 3e
-         Package mask: ffffffc0
-         set results:
-           - packages: 1
-           - cores: 4
-           - smts: 2
-         generate core map, new implementation
-         0, 1, 2, 3, 4, 5, 6, 7
-         packages: 1
-         cores   : 4
-         ht units: 2
-         efficiency cores:
-         apic ids           : 32, 34, 36, 38, 40, 42, 44, 46
-         apic ids (fallback): 32, 34, 36, 38, 40, 42, 44, 46
-         from cpu registers: 32, 34, 36, 38, 40, 42, 44, 46
-         fallback: 32, 34, 36, 38, 40, 42, 44, 46
-         combined: 32, 34, 36, 38, 40, 42, 44, 46
-         core 0 type: Intel Atom
-         core 1 type: Intel Atom
-         core 2 type: Intel Atom
-         core 3 type: Intel Atom
-         core 4 type: Intel Atom
-         core 5 type: Intel Atom
-         core 6 type: Intel Atom
-         core 7 type: Intel Atom
-         max id per cpu: 64
-         SMT mask: 1
-         Core mask: 3e
-         Package mask: ffffffc0
+         Core mask: e
+         Package mask: fffffff0
          set results:
            - packages: 1
            - cores: 8
-           - smts: 1
+           - smts: 2
          generate core map, new implementation
-         0, 1, 2, 3, 4, 5, 6, 7
+         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
          packages: 1
          cores   : 8
-         ht units: 1
-         CPU sockets: 1 != 2
+         ht units: 2
           - pinning rule in use   : PINNING_RULE_MCALC_SKIP_ALL
           - desired group         : 0
           - num cores available   : 16
-          - efficiency cores      : 8, not used
           - active core list from affinity:
             + num accessible procs          : 16
             + num logical procs             : 16
@@ -586,20 +452,20 @@ Sequential merge (TST):	00:00:00.0000
          Start ID: 0
          Node ID: 0
          HEX Mesh information:
-         Hex mesh: node: [hxr o(0 | 0 | 0) s(65 | 25 | 19) np (no TSTs): 30875]
-         Hex mesh: extended: [hxr o(0 | 0 | 0) s(65 | 27 | 19) np (no TSTs): 33345]
+         Hex mesh: node: [hxr o(0 | 0 | 0) s(67 | 25 | 19) np (no TSTs): 31825]
+         Hex mesh: extended: [hxr o(0 | 0 | 0) s(67 | 27 | 19) np (no TSTs): 34371]
          ===================================================================================================
 
 1xN000:  -----------------------------------------------------
          Memory status on node "1xN000" for matrix calculation
          	Estimated memory consumption: 0.0820172 GB
-         	Physical memory installed: 16.892 GB
-         	Available physical memory: 2.94343 GB
-         	Available relative memory: 17.425 %
+         	Physical memory installed: 16.4746 GB
+         	Available physical memory: 4.4623 GB
+         	Available relative memory: 27.086 %
          -----------------------------------------------------
 
 1xN000:  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-         Thu Thu Oct  9 15:44:51 2025
+         Tue Tue Oct 14 15:14:21 2025
          started: calculating matrix coefficients per node
          >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -612,7 +478,7 @@ Sequential merge (TST):	00:00:00.0000
          Model compatibility: 2025.20250411
          Sub-Workflow: FARM-1xN-TST2-Node
          Workflow updated: -
-         Thu Thu Oct  9 15:44:52 2025
+         Tue Tue Oct 14 15:14:22 2025
          ============================================================
 
 1xN000:  ----------------------------------------------
@@ -659,7 +525,7 @@ Sequential merge (TST):	00:00:00.0000
          ===============
 
 1xN000:  ===============================================================================================================================================
-         TST cell analysis in range (0 | 0 | 0) -> (65 | 27 | 19) [total range (0 | 0 | 0) -> (65 | 49 | 19)]  [mpi range (0 | 0 | 0) -> (65 | 49 | 19)]
+         TST cell analysis in range (0 | 0 | 0) -> (67 | 27 | 19) [total range (0 | 0 | 0) -> (67 | 49 | 19)]  [mpi range (0 | 0 | 0) -> (67 | 49 | 19)]
          ===============================================================================================================================================
 
 1xN000:  -------------------
@@ -711,11 +577,11 @@ Sequential merge (TST):	00:00:00.0000
          =================================
 
 1xN000:  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-         Thu Thu Oct  9 15:44:57 2025
+         Tue Tue Oct 14 15:14:32 2025
          Resource usage for calculating matrix coefficients per node:
-         	Runtime                          00:00:05.00446 s
+         	Runtime                          00:00:10.00319 s
          	Peak Memory Estimation:                   82 MB
-         	Peak Memory Usage:                        71 MB
+         	Peak Memory Usage:                        74 MB
          <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
@@ -735,87 +601,49 @@ Sequential merge (TST):	00:00:00.0000
          ==============================
 
 1xN001:  ==================================================
-         [Mesh] world: o(0000,0000,0000) e(0065,0049,0019)
-         [Mesh] l-1xN: o(0000,0023,0000) e(0065,0049,0019)
-         [Mesh] e-1xN: o(0000,0021,0000) e(0065,0049,0019)
+         [Mesh] world: o(0000,0000,0000) e(0067,0049,0019)
+         [Mesh] l-1xN: o(0000,0023,0000) e(0067,0049,0019)
+         [Mesh] e-1xN: o(0000,0021,0000) e(0067,0049,0019)
          [Mesh] g-MPI: not available
          [Mesh] bound offset: (0 | 0 | -2)
          ==================================================
 
 1xN001:  =================================================================================
           - hardware info
-            + cpu name                    : 12th Gen Intel(R) Core(TM) i5-1240P
+            + cpu name                    : AMD Ryzen 7 7730U with Radeon Graphics
             + sockets                     : 1
-            + cores per socket            : 4
+            + cores per socket            : 8
             + hyperthreading              : on
             + ht-units                    : 2
-            + efficiency cores            : 8, not used
-            + max cpuid level             : 32
-            + max cpuid ext. level        : 8
+            + max cpuid level             : 13
+            + max cpuid ext. level        : 35
             + numa nodes                  : 1
+            + sub numa nodes              : 8
             + Numa Memory Info
               numa node     installed     available    (MByte)
-                0                 0          2809
+                0                 0          4264
             + internal cpu info           : CPUID: selected engine is 'Leaf 0xB detection'
-         performance cores:
-         apic ids           : 0, 1, 8, 9, 16, 17, 24, 25
-         apic ids (fallback): 0, 1, 8, 9, 16, 17, 24, 25
-         from cpu registers: 0, 1, 8, 9, 16, 17, 24, 25
-         fallback: 0, 1, 8, 9, 16, 17, 24, 25
-         combined: 0, 1, 8, 9, 16, 17, 24, 25
-         core 0 type: Intel Core
-         core 1 type: Intel Core
-         core 2 type: Intel Core
-         core 3 type: Intel Core
-         core 4 type: Intel Core
-         core 5 type: Intel Core
-         core 6 type: Intel Core
-         core 7 type: Intel Core
-         max id per cpu: 64
+         apic ids           : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+         apic ids (fallback): 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+         from cpu registers: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+         fallback: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+         combined: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+         max id per cpu: 16
          SMT mask: 1
-         Core mask: 3e
-         Package mask: ffffffc0
-         set results:
-           - packages: 1
-           - cores: 4
-           - smts: 2
-         generate core map, new implementation
-         0, 1, 2, 3, 4, 5, 6, 7
-         packages: 1
-         cores   : 4
-         ht units: 2
-         efficiency cores:
-         apic ids           : 32, 34, 36, 38, 40, 42, 44, 46
-         apic ids (fallback): 32, 34, 36, 38, 40, 42, 44, 46
-         from cpu registers: 32, 34, 36, 38, 40, 42, 44, 46
-         fallback: 32, 34, 36, 38, 40, 42, 44, 46
-         combined: 32, 34, 36, 38, 40, 42, 44, 46
-         core 0 type: Intel Atom
-         core 1 type: Intel Atom
-         core 2 type: Intel Atom
-         core 3 type: Intel Atom
-         core 4 type: Intel Atom
-         core 5 type: Intel Atom
-         core 6 type: Intel Atom
-         core 7 type: Intel Atom
-         max id per cpu: 64
-         SMT mask: 1
-         Core mask: 3e
-         Package mask: ffffffc0
+         Core mask: e
+         Package mask: fffffff0
          set results:
            - packages: 1
            - cores: 8
-           - smts: 1
+           - smts: 2
          generate core map, new implementation
-         0, 1, 2, 3, 4, 5, 6, 7
+         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
          packages: 1
          cores   : 8
-         ht units: 1
-         CPU sockets: 1 != 2
+         ht units: 2
           - pinning rule in use   : PINNING_RULE_MCALC_SKIP_ALL
-          - desired group         : 0
+          - desired group         : 1
           - num cores available   : 16
-          - efficiency cores      : 8, not used
           - active core list from affinity:
             + num accessible procs          : 16
             + num logical procs             : 16
@@ -824,8 +652,10 @@ Sequential merge (TST):	00:00:00.0000
             + core list                  (1): 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
           - active cores          : 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
           - hyperthreading        : on
-          - skip pinning: + allowed number of sockets = available number of sockets
-                          + hyperthreading allowed by solver
+          - allowed core ids      :
+          - allowed core ids (aff): 00000000 00000000
+          - pinning failed: no core defined in affinity mask
+          - used mask (string)    : 00000000 00000000
          =================================================================================
 
 1xN001:  ===================================================================================================
@@ -834,27 +664,27 @@ Sequential merge (TST):	00:00:00.0000
          Operation: [fpba, meshfill, bg, port-path, tst, tst-nextgen, coeff, surface-imp, connectivity-tree]
          Architecture: Windows, ID: AMD64
          System Windows-64bit
-         Using processor group 0/1
+         Using processor group 1/1
          Matrix calculation information:
          # of Nodes: 2
          Concurrency: 2
          Start ID: 1
          Node ID: 1
          HEX Mesh information:
-         Hex mesh: node: [hxr o(0 | 23 | 0) s(65 | 26 | 19) np (no TSTs): 32110]
-         Hex mesh: extended: [hxr o(0 | 21 | 0) s(65 | 28 | 19) np (no TSTs): 34580]
+         Hex mesh: node: [hxr o(0 | 23 | 0) s(67 | 26 | 19) np (no TSTs): 33098]
+         Hex mesh: extended: [hxr o(0 | 21 | 0) s(67 | 28 | 19) np (no TSTs): 35644]
          ===================================================================================================
 
 1xN001:  -----------------------------------------------------
          Memory status on node "1xN001" for matrix calculation
          	Estimated memory consumption: 0.0820147 GB
-         	Physical memory installed: 16.892 GB
-         	Available physical memory: 2.94343 GB
-         	Available relative memory: 17.425 %
+         	Physical memory installed: 16.4746 GB
+         	Available physical memory: 4.4623 GB
+         	Available relative memory: 27.086 %
          -----------------------------------------------------
 
 1xN001:  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-         Thu Thu Oct  9 15:44:51 2025
+         Tue Tue Oct 14 15:14:21 2025
          started: calculating matrix coefficients per node
          >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -867,7 +697,7 @@ Sequential merge (TST):	00:00:00.0000
          Model compatibility: 2025.20250411
          Sub-Workflow: FARM-1xN-TST2-Node
          Workflow updated: -
-         Thu Thu Oct  9 15:44:52 2025
+         Tue Tue Oct 14 15:14:22 2025
          ============================================================
 
 1xN001:  ----------------------------------------------
@@ -914,7 +744,7 @@ Sequential merge (TST):	00:00:00.0000
          ===============
 
 1xN001:  ================================================================================================================================================
-         TST cell analysis in range (0 | 21 | 0) -> (65 | 49 | 19) [total range (0 | 0 | 0) -> (65 | 49 | 19)]  [mpi range (0 | 0 | 0) -> (65 | 49 | 19)]
+         TST cell analysis in range (0 | 21 | 0) -> (67 | 49 | 19) [total range (0 | 0 | 0) -> (67 | 49 | 19)]  [mpi range (0 | 0 | 0) -> (67 | 49 | 19)]
          ================================================================================================================================================
 
 1xN001:  -------------------
@@ -962,25 +792,25 @@ Sequential merge (TST):	00:00:00.0000
          =================================
 
 1xN001:  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-         Thu Thu Oct  9 15:44:56 2025
+         Tue Tue Oct 14 15:14:30 2025
          Resource usage for calculating matrix coefficients per node:
-         	Runtime                          00:00:04.00567 s
+         	Runtime                          00:00:08.00614 s
          	Peak Memory Estimation:                   82 MB
-         	Peak Memory Usage:                        57 MB
+         	Peak Memory Usage:                        60 MB
          <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-Thu Thu Oct  9 15:45:03 2025
+Tue Tue Oct 14 15:14:37 2025
 Resource usage for parallelization control:
-	Runtime                      00:00:13.00577 s
+	Runtime                      00:00:18.00156 s
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 ------------------------------------------------------------------------------------------------------------------------------
 PBAMeshFeedback - InfoMap: 0[ms] - SBCell navigation: Using legacy edges - CornerCorrectionLinesAndWires: 0[ms] - Write: 0[ms]
-ConnectivityAXG - Load: 2[ms] - Setup: 0[ms] - Convert: 0[ms] ( Groups: 3 - Shapes: 4 - Threads: 12 ) - Write: 0[ms]
-ConnectivityAXG - Load: 2[ms] - Setup: 0[ms] - Convert: 0[ms] ( Groups: 3 - Shapes: 4 - Threads: 12 ) - Write: 0[ms]
+ConnectivityAXG - Load: 5[ms] - Setup: 0[ms] - Convert: 1[ms] ( Groups: 3 - Shapes: 4 - Threads: 8 ) - Write: 1[ms]
+ConnectivityAXG - Load: 5[ms] - Setup: 0[ms] - Convert: 1[ms] ( Groups: 3 - Shapes: 4 - Threads: 8 ) - Write: 1[ms]
 ------------------------------------------------------------------------------------------------------------------------------
 
 --------------------------------
