@@ -63,6 +63,7 @@ void loop() {
   // Wait for a client to connect
   WiFiClient client = server.available();
 
+  
   if (client) {
     // If client is connected, send data
     client.println("Hello PC! ESP32 AP connected.");
