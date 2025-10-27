@@ -1,0 +1,338 @@
+2025-10-14 13:58:02   Build version: 2025.4 Release from 2025-04-11 (change 1409410)
+
+2025-10-14 13:58:02   Starting adaptive port meshing.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:58:02   Mode calculation for port 1:
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:58:02   According to the selected features the <Time Domain Solver (HEX)> will be
+                      started.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:58:02   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:58:02   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:58:11   Using Generalized port mode solver.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:58:11   Using electric shielding for port 1.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:58:14   Port mode solver: Detected dispersive material(s) at port 1. 
+                      Using a constant approximation of dispersive material(s) at 2.44175 GHz and neglecting loss terms.  More...
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:58:16     ------------------------------- F-Calc 2.44 --------------------------------
+                        Port   Mode   Type        Z-Wave        Z-Wave-Sigma  Z-Line        F-Cutoff
+                        1      1      QTEM        198           0             50.4          ---
+                        ----------------------------------------------------------------------------
+
+2025-10-14 13:58:22   Pass 1 successfully completed. 
+2025-10-14 13:58:22   According to the selected features the <Time Domain Solver (HEX)> will be
+                      started.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:58:22   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:58:22   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:58:37     ------------------------------- F-Calc 2.44 --------------------------------
+                        Port   Mode   Type        Z-Wave        Z-Wave-Sigma  Z-Line        F-Cutoff
+                        1      1      QTEM        200           0             52.3          ---
+                        ----------------------------------------------------------------------------
+
+2025-10-14 13:58:42   Pass 2 successfully completed. Delta (Line Imp.): 3.63%
+2025-10-14 13:58:42   According to the selected features the <Time Domain Solver (HEX)> will be
+                      started.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:58:43   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:58:43   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:58:58     ------------------------------- F-Calc 2.44 --------------------------------
+                        Port   Mode   Type        Z-Wave        Z-Wave-Sigma  Z-Line        F-Cutoff
+                        1      1      QTEM        237           5.82e-008     51.8          ---
+                        ----------------------------------------------------------------------------
+
+2025-10-14 13:59:03   Pass 3 successfully completed. Delta (Line Imp.): 0.90%
+2025-10-14 13:59:03   According to the selected features the <Time Domain Solver (HEX)> will be
+                      started.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:59:03   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:59:03   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:59:19     ------------------------------- F-Calc 2.44 --------------------------------
+                        Port   Mode   Type        Z-Wave        Z-Wave-Sigma  Z-Line        F-Cutoff
+                        1      1      QTEM        240           8.40e-009     51.7          ---
+                        ----------------------------------------------------------------------------
+
+2025-10-14 13:59:24   Pass 4 successfully completed. Delta (Line Imp.): 0.09%
+2025-10-14 13:59:24   Mode calculation for port 2:
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:59:24   According to the selected features the <Time Domain Solver (HEX)> will be
+                      started.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:59:24   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:59:24   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:59:33   Using Generalized port mode solver.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:59:33   Using electric shielding for port 2.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:59:36   Port mode solver: Detected dispersive material(s) at port 2. 
+                      Using a constant approximation of dispersive material(s) at 2.44175 GHz and neglecting loss terms.  More...
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:59:39     ------------------------------- F-Calc 2.44 --------------------------------
+                        Port   Mode   Type        Z-Wave        Z-Wave-Sigma  Z-Line        F-Cutoff
+                        2      1      QTEM        198           0             50.4          ---
+                        ----------------------------------------------------------------------------
+
+2025-10-14 13:59:44   Pass 1 successfully completed. 
+2025-10-14 13:59:44   According to the selected features the <Time Domain Solver (HEX)> will be
+                      started.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:59:44   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:59:44   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 13:59:59     ------------------------------- F-Calc 2.44 --------------------------------
+                        Port   Mode   Type        Z-Wave        Z-Wave-Sigma  Z-Line        F-Cutoff
+                        2      1      QTEM        200           0             52.3          ---
+                        ----------------------------------------------------------------------------
+
+2025-10-14 14:00:04   Pass 2 successfully completed. Delta (Line Imp.): 3.63%
+2025-10-14 14:00:04   According to the selected features the <Time Domain Solver (HEX)> will be
+                      started.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:00:04   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:00:04   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:00:19     ------------------------------- F-Calc 2.44 --------------------------------
+                        Port   Mode   Type        Z-Wave        Z-Wave-Sigma  Z-Line        F-Cutoff
+                        2      1      QTEM        237           9.84e-005     51.8          ---
+                        ----------------------------------------------------------------------------
+
+2025-10-14 14:00:24   Pass 3 successfully completed. Delta (Line Imp.): 0.90%
+2025-10-14 14:00:24   According to the selected features the <Time Domain Solver (HEX)> will be
+                      started.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:00:24   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:00:24   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:00:40     ------------------------------- F-Calc 2.44 --------------------------------
+                        Port   Mode   Type        Z-Wave        Z-Wave-Sigma  Z-Line        F-Cutoff
+                        2      1      QTEM        240           5.88e-006     51.7          ---
+                        ----------------------------------------------------------------------------
+
+2025-10-14 14:00:45   Pass 4 successfully completed. Delta (Line Imp.): 0.09%
+2025-10-14 14:00:45   Adaptive port meshing finished. 
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:00:46   The following farfield monitor(s) have been adjusted to model box [-32.5775,
+                      94.009, -47.3556, 42.8116, -5.32858, 11.7696]:
+                        farfield (f=2.4417).
+                      For further information please check the page "Special Solver Parameters -
+                      Solver" in the Online Help.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:00:46   According to the selected features the <Time Domain Solver (HEX)> will be
+                      started.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:00:46   
+                      Solver started at: 2025-10-14 14:00:46 +0200
+
+                        Module:  Time Domain: S-Parameter (Win 64)
+                        Version: 2025.4 Release from 2025-04-11 (change 1409410)
+
+2025-10-14 14:00:46   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:00:46   
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:00:46   ======================================================================
+                       Solver cycle: 1
+                      ======================================================================
+
+                      Stimulation at port 1 (mode 1) 
+
+
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:00:47   Units settings: 
+
+                        Dimensions: mm
+                        Frequency:  GHz
+                        Time:       ns
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:00:47   The dispersive material update [Automatic] will be performed using the "Standard" update schema
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:01:03   Mesh statistics:
+
+                         Hexahedral mesh type: Perfect Boundary Approximation (PBA)
+                            Version: default
+
+                         Parallelization type: domain decomposition
+                            Number of parallel working threads: 2
+                            Number of calculation domains used: 2
+
+                         Used point accuracy enhancement value: 75.00%.
+                         Acceleration mode: CPU
+                         Used point accuracy enhancement value: 73.00%.
+                         PBA fill limit: 99.00% (inverse)
+
+2025-10-14 14:00:53      *** Warning ***  current system memory usage reached 85% (14 GB)
+
+
+2025-10-14 14:01:12   Using Generalized port mode solver.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:01:13   Using electric shielding for port 1, 2.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:01:15   Port mode solver: Detected dispersive material(s) at port 1, 2. 
+                      Using a constant approximation of dispersive material(s) at 2.44175 GHz and neglecting loss terms.  More...
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:01:16   Boundary conditions: 
+
+                        YZsymmetry: none
+                        XZsymmetry: none
+                        XYsymmetry: none
+
+                        Xmin: expanded open, 4 Layer, depth 31.6019 mm
+                        Xmax: expanded open, 4 Layer, depth 31.6019 mm
+
+                        Ymin: expanded open, 4 Layer, depth 32.6055 mm
+                        Ymax: expanded open, 4 Layer, depth 31.5904 mm
+
+                        Zmin: expanded open, 4 Layer, depth 31.8325 mm
+                        Zmax: expanded open, 4 Layer, depth 31.745 mm
+
+                        PML-Type: Convolution PML
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:01:16   Frequency settings: 
+
+                        Fmin:         2.3
+                        Fmax:         2.5835
+                        Nfsteps(lin): 1001
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:01:17   Field update statistics:
+
+                        Number of components in total: 	422195
+                        Number of TST and special elements:	13828
+                        Number of lossy metal components:	10907
+                        Number of disp. elements:		9854
+
+                      Subcycling state:      			Automatically deactivated
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:01:18   Waveguide boundaries:
+
+2025-10-14 14:01:18   Port: 1
+
+2025-10-14 14:01:18   *** Error ***
+
+2025-10-14 14:01:18   Port mode solver setup failed for port 1.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:01:19   
+                      --------------------------------------------------------------------------------
+2025-10-14 14:01:19   *** Warning ***
+
+2025-10-14 14:01:19   Solver run aborted.
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:01:19   Frequency domain results normalized to default signal.
+
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:01:19   
+                        ----------------------------------------------------------------------------
+                                            Peak memory used (kB)         Free physical memory (kB) 
+                                                                          At begin     Minimum      
+                        ----------------------------------------------------------------------------
+                        CAD preparation     16140                         2990468      2990468      
+                        Matrices calc.      172526                        2989257      2827148      
+                        Solver run total    78520                         3016440      2903836      
+                        ----------------------------------------------------------------------------
+
+                      --------------------------------------------------------------------------------
+                      Solver Statistics:
+
+                        Hardware:
+                           Computer name:                 	Heu 
+
+                           Number of CPU threads:               4
+                           Hardware info:                  	Hardware Accelerator Device not activated
+
+                        Number of mesh cells:             	66240
+                        Excitation duration:              	2.50761816e+001 ns 
+                        Calculation time for excitation:  	0 	s
+                        Number of calculated pulse widths:	0 
+                        Steady state accuracy limit:      	-40	dB 
+                        Simulated number of time steps:   	0 
+                        Maximum number of time steps:     	715142 
+                        Time step width:
+                           without subcycles:             	7.012919448e-004 ns
+                           used:                          	7.012919448e-004 ns
+
+                        CAD preparation time:             	1      	s
+                        Matrix calculation time:          	-1 	s
+                        Solver setup time:                	15 	s
+                        Solver loop time:                 	0 	s
+                        Solver post-processing time:      	0 	s
+                                                          	------------
+                        Total solver time:                	15 	s
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:01:20   
+                        Adaptive port meshing time:          	165    	s  ( = 0 h, 2 m, 45 s )
+                        Total solver time (all cycles):      	15     	s
+                        Solver initialization and clean-up:  	18     	s
+                                                             	------------
+                        Total simulation time:               	198    	s  ( = 0 h, 3 m, 18 s )
+
+                      ------------------------------------------------------------------------------
+2025-10-14 14:01:20   Solver finished at: 2025-10-14 14:01:20 +0200
+
+
+
+                      ------------------------------------------------------------------------------

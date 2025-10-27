@@ -1,0 +1,12 @@
+Solver_HF_TD_AMD64 @ Heu:  =======================================================================================================
+                           2035.00 ms |  --> 2nd | SV-crop-all | Outside MCalcResultIdentification (Solver) | 58.78 MB | 0.0000 MB
+                           2056.00 ms | --> peak | SV-crop-all | Outside MCalcResultIdentification (Solver) | 59.05 MB | 0.2662 MB
+                           =======================================================================================================
+Solver_HF_TD_AMD64 @ Heu:  =======================================================================================================
+                           1882.00 ms |  --> 2nd | SV-crop-all | Outside MCalcResultIdentification (Solver) | 58.15 MB | 0.0000 MB
+                           1903.00 ms | --> peak | SV-crop-all | Outside MCalcResultIdentification (Solver) | 59.00 MB | 0.8561 MB
+                           =======================================================================================================
+Solver_HF_TD_AMD64 @ Heu:  ========================================================================================================
+                           1947.00 ms | --> peak | SV-crop-all | Outside MCalcResultIdentification (Solver) | 59.00 MB |  0.0000 MB
+                           1966.00 ms |  --> 2nd | SV-crop-all | Outside MCalcResultIdentification (Solver) | 58.91 MB | -0.0860 MB
+                           ========================================================================================================

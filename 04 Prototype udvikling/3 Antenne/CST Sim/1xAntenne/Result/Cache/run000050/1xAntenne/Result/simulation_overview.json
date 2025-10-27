@@ -1,0 +1,1825 @@
+{
+    "date": "2025-10-09, 1:48:21 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 1,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 15,
+                    "solver": 33
+                },
+                "run_time": 96
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 2:51:19 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 2,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 83,
+                    "solver": 51
+                },
+                "run_time": 193
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 2:56:49 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 3,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 16,
+                    "solver": 33
+                },
+                "run_time": 108
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 3:00:13 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 4,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 20,
+                    "solver": 35
+                },
+                "run_time": 114
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 3:04:10 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 5,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 19,
+                    "solver": 35
+                },
+                "run_time": 105
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 3:08:45 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 6,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 18,
+                    "solver": 34
+                },
+                "run_time": 107
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 3:15:27 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 7,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 19,
+                    "solver": 34
+                },
+                "run_time": 112
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 3:22:31 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "parameter sweep",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 8,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 15,
+                    "solver": 34
+                },
+                "run_time": 104
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 3:24:26 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "parameter sweep",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 9,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 15,
+                    "solver": 34
+                },
+                "run_time": 101
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 3:26:21 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "parameter sweep",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 10,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 15,
+                    "solver": 35
+                },
+                "run_time": 101
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 3:28:18 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "parameter sweep",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 11,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 15,
+                    "solver": 35
+                },
+                "run_time": 102
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 3:30:17 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "parameter sweep",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 12,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 15,
+                    "solver": 35
+                },
+                "run_time": 105
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 3:32:11 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "parameter sweep",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 13,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 15,
+                    "solver": 36
+                },
+                "run_time": 99
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 3:33:32 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "parameter sweep",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": -1,
+            "return_code": 7,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "port mode",
+            "time_info": {
+                "details": {
+                    "discretizer": 0,
+                    "solver": 0
+                },
+                "run_time": 15
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 3:38:19 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 11,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 15,
+                    "solver": 34
+                },
+                "run_time": 103
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-09, 3:46:04 PM, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 15,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 16,
+                    "solver": 33
+                },
+                "run_time": 120
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-15, 16:21:52, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 27,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 12,
+                    "solver": 28
+                },
+                "run_time": 89
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-15, 16:24:02, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 28,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 12,
+                    "solver": 24
+                },
+                "run_time": 85
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-15, 16:26:33, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 29,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 15,
+                    "solver": 18
+                },
+                "run_time": 89
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-15, 16:30:38, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 30,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 15,
+                    "solver": 18
+                },
+                "run_time": 96
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-15, 16:33:07, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 31,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 14,
+                    "solver": 17
+                },
+                "run_time": 95
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 10:29:03, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 32,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 14,
+                    "solver": 28
+                },
+                "run_time": 98
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 10:36:14, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 33,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 12,
+                    "solver": 27
+                },
+                "run_time": 85
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 10:43:00, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 34,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 11,
+                    "solver": 26
+                },
+                "run_time": 91
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 10:45:36, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 35,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 13,
+                    "solver": 27
+                },
+                "run_time": 85
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 10:48:55, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 36,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 11,
+                    "solver": 25
+                },
+                "run_time": 87
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 10:54:10, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 33,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 13,
+                    "solver": 29
+                },
+                "run_time": 88
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 10:57:16, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 37,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 12,
+                    "solver": 26
+                },
+                "run_time": 81
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 11:02:17, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 38,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 14,
+                    "solver": 28
+                },
+                "run_time": 88
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 11:04:41, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 39,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 13,
+                    "solver": 41
+                },
+                "run_time": 101
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 11:08:22, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 40,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 11,
+                    "solver": 26
+                },
+                "run_time": 84
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 11:12:51, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 41,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 12,
+                    "solver": 26
+                },
+                "run_time": 91
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 11:15:05, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 42,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 12,
+                    "solver": 29
+                },
+                "run_time": 85
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 11:17:31, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 43,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 12,
+                    "solver": 29
+                },
+                "run_time": 92
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 11:22:13, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 44,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 12,
+                    "solver": 26
+                },
+                "run_time": 86
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 11:24:40, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 45,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 12,
+                    "solver": 30
+                },
+                "run_time": 91
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 11:28:18, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 46,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 11,
+                    "solver": 23
+                },
+                "run_time": 79
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}{
+    "date": "2025-10-16, 11:31:34, Romance Daylight Time",
+    "solver_runs_and_tasks": {
+        "module_name": "standard simulation project",
+        "solver_run": {
+            "license_and_hardware_request": {
+                "in_use": true,
+                "license_type": "CST legacy token",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_physical_cores": -1,
+                "num_threads": 1024
+            },
+            "opt_par_run_id": 33,
+            "return_code": 1,
+            "solver_hwacc_usage": {
+                "info": "gathered from solver run",
+                "mpi": {
+                    "consistency_check": true,
+                    "num_different_mpi_nodes": 0,
+                    "num_local_mpi_nodes": 0,
+                    "num_mpi_nodes": 0
+                },
+                "num_cpu_sockets": 1,
+                "num_dc_nodes": 0,
+                "num_gpus": 0,
+                "num_threads_or_physical_cores": 4
+            },
+            "solver_used": "HF Time Domain (Hex)",
+            "task_name": "solver run",
+            "time_info": {
+                "details": {
+                    "discretizer": 12,
+                    "solver": 26
+                },
+                "run_time": 86
+            }
+        }
+    },
+    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
+    "version": 1
+}
