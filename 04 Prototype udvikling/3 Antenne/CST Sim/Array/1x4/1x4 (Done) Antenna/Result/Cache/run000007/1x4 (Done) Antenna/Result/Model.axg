@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CSTAuxiliaryGeometry version="20170928" creator="modeler">
+  <Objects>
+    <Object name="Ports\port1" id="7">
+      <LineSet points="-9.42599964 -40.9500008 8.21100044 9.42599964 -40.9500008 8.21100044 9.42599964 -40.9500008 -1.60000002 -9.42599964 -40.9500008 -1.60000002 -9.42599964 -40.9500008 8.21100044" stripped="1" material="$PortMaterial$" text="1" short="1"/>
+    </Object>
+    <Object name="Ports\port2" id="8">
+      <LineSet points="72.4406662 -40.9500008 8.21100044 91.2926636 -40.9500008 8.21100044 91.2926636 -40.9500008 -1.60000002 72.4406662 -40.9500008 -1.60000002 72.4406662 -40.9500008 8.21100044" stripped="1" material="$PortMaterial$" text="2" short="2"/>
+    </Object>
+    <Object name="Ports\port3" id="9">
+      <LineSet points="154.307327 -40.9500008 8.21100044 173.159332 -40.9500008 8.21100044 173.159332 -40.9500008 -1.60000002 154.307327 -40.9500008 -1.60000002 154.307327 -40.9500008 8.21100044" stripped="1" material="$PortMaterial$" text="3" short="3"/>
+    </Object>
+    <Object name="Ports\port4" id="10">
+      <LineSet points="236.173996 -40.9500008 8.21100044 255.026001 -40.9500008 8.21100044 255.026001 -40.9500008 -1.60000002 236.173996 -40.9500008 -1.60000002 236.173996 -40.9500008 8.21100044" stripped="1" material="$PortMaterial$" text="4" short="4"/>
+    </Object>
+  </Objects>
+  <Materials/>
+  <Groups/>
+</CSTAuxiliaryGeometry>

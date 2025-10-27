@@ -7,12 +7,12 @@
       {
          "name": "Wp",
          "type": "float",
-         "value": 35.0
+         "value": 35.5
       },
       {
          "name": "Lp",
          "type": "float",
-         "value": 29.1
+         "value": 28.6
       },
       {
          "name": "Wf",
@@ -22,12 +22,12 @@
       {
          "name": "y0",
          "type": "float",
-         "value": 9.8
+         "value": 9.9
       },
       {
          "name": "h",
          "type": "float",
-         "value": 1.61
+         "value": 1.6
       },
       {
          "name": "tp",

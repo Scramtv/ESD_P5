@@ -1,9 +1,9 @@
 {
     "parameters": [
         {
-            "expr": "34.8",
+            "expr": "35.5",
             "name": "Wp",
-            "value": "34.8"
+            "value": "35.5"
         },
         {
             "expr": "28.6",
@@ -11,19 +11,19 @@
             "value": "28.6"
         },
         {
-            "expr": "2.5",
+            "expr": "2",
             "name": "Wf",
-            "value": "2.5"
+            "value": "2"
         },
         {
-            "expr": "9.8",
+            "expr": "8.7",
             "name": "y0",
-            "value": "9.8"
+            "value": "8.7"
         },
         {
-            "expr": "1.61",
+            "expr": "1.6",
             "name": "h",
-            "value": "1.61"
+            "value": "1.6"
         },
         {
             "expr": "0.035",

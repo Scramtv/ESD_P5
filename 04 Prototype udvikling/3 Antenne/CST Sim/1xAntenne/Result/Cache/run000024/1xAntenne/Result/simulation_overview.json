@@ -767,7 +767,7 @@
     "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
     "version": 1
 }{
-    "date": "2025-10-14, 14:50:06, Rom, sommertid",
+    "date": "2025-10-09, 16:20:10, Romance Daylight Time",
     "solver_runs_and_tasks": {
         "module_name": "standard simulation project",
         "solver_run": {
@@ -799,23 +799,23 @@
                 "num_cpu_sockets": 1,
                 "num_dc_nodes": 0,
                 "num_gpus": 0,
-                "num_threads_or_physical_cores": 8
+                "num_threads_or_physical_cores": 4
             },
             "solver_used": "HF Time Domain (Hex)",
             "task_name": "solver run",
             "time_info": {
                 "details": {
-                    "discretizer": 21,
-                    "solver": 7
+                    "discretizer": 19,
+                    "solver": 32
                 },
-                "run_time": 76
+                "run_time": 108
             }
         }
     },
     "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
     "version": 1
 }{
-    "date": "2025-10-14, 14:52:59, Rom, sommertid",
+    "date": "2025-10-09, 16:23:59, Romance Daylight Time",
     "solver_runs_and_tasks": {
         "module_name": "standard simulation project",
         "solver_run": {
@@ -847,71 +847,23 @@
                 "num_cpu_sockets": 1,
                 "num_dc_nodes": 0,
                 "num_gpus": 0,
-                "num_threads_or_physical_cores": 8
+                "num_threads_or_physical_cores": 4
             },
             "solver_used": "HF Time Domain (Hex)",
             "task_name": "solver run",
             "time_info": {
                 "details": {
-                    "discretizer": 20,
-                    "solver": 8
+                    "discretizer": 18,
+                    "solver": 33
                 },
-                "run_time": 83
+                "run_time": 102
             }
         }
     },
     "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
     "version": 1
 }{
-    "date": "2025-10-14, 14:56:24, Rom, sommertid",
-    "solver_runs_and_tasks": {
-        "module_name": "standard simulation project",
-        "solver_run": {
-            "license_and_hardware_request": {
-                "in_use": true,
-                "license_type": "CST legacy token",
-                "mpi": {
-                    "consistency_check": true,
-                    "num_different_mpi_nodes": 0,
-                    "num_local_mpi_nodes": 0,
-                    "num_mpi_nodes": 0
-                },
-                "num_cpu_sockets": 1,
-                "num_dc_nodes": 0,
-                "num_gpus": 0,
-                "num_physical_cores": -1,
-                "num_threads": 1024
-            },
-            "opt_par_run_id": -1,
-            "return_code": 7,
-            "solver_hwacc_usage": {
-                "info": "gathered from solver run",
-                "mpi": {
-                    "consistency_check": true,
-                    "num_different_mpi_nodes": 0,
-                    "num_local_mpi_nodes": 0,
-                    "num_mpi_nodes": 0
-                },
-                "num_cpu_sockets": 0,
-                "num_dc_nodes": 0,
-                "num_gpus": 0,
-                "num_threads_or_physical_cores": 0
-            },
-            "solver_used": "HF Time Domain (Hex)",
-            "task_name": "port mode",
-            "time_info": {
-                "details": {
-                    "discretizer": 0,
-                    "solver": 0
-                },
-                "run_time": 0
-            }
-        }
-    },
-    "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
-    "version": 1
-}{
-    "date": "2025-10-14, 14:58:06, Rom, sommertid",
+    "date": "2025-10-09, 16:27:18, Romance Daylight Time",
     "solver_runs_and_tasks": {
         "module_name": "standard simulation project",
         "solver_run": {
@@ -943,23 +895,23 @@
                 "num_cpu_sockets": 1,
                 "num_dc_nodes": 0,
                 "num_gpus": 0,
-                "num_threads_or_physical_cores": 8
+                "num_threads_or_physical_cores": 4
             },
             "solver_used": "HF Time Domain (Hex)",
             "task_name": "solver run",
             "time_info": {
                 "details": {
-                    "discretizer": 20,
-                    "solver": 8
+                    "discretizer": 18,
+                    "solver": 33
                 },
-                "run_time": 68
+                "run_time": 102
             }
         }
     },
     "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
     "version": 1
 }{
-    "date": "2025-10-14, 15:01:52, Rom, sommertid",
+    "date": "2025-10-09, 16:31:08, Romance Daylight Time",
     "solver_runs_and_tasks": {
         "module_name": "standard simulation project",
         "solver_run": {
@@ -991,23 +943,23 @@
                 "num_cpu_sockets": 1,
                 "num_dc_nodes": 0,
                 "num_gpus": 0,
-                "num_threads_or_physical_cores": 8
+                "num_threads_or_physical_cores": 4
             },
             "solver_used": "HF Time Domain (Hex)",
             "task_name": "solver run",
             "time_info": {
                 "details": {
-                    "discretizer": 21,
-                    "solver": 10
+                    "discretizer": 19,
+                    "solver": 35
                 },
-                "run_time": 77
+                "run_time": 105
             }
         }
     },
     "studio-version": "2025.4 Release from 2025-04-11 (change 1409410)",
     "version": 1
 }{
-    "date": "2025-10-14, 15:05:05, Rom, sommertid",
+    "date": "2025-10-09, 16:34:11, Romance Daylight Time",
     "solver_runs_and_tasks": {
         "module_name": "standard simulation project",
         "solver_run": {
@@ -1039,16 +991,16 @@
                 "num_cpu_sockets": 1,
                 "num_dc_nodes": 0,
                 "num_gpus": 0,
-                "num_threads_or_physical_cores": 8
+                "num_threads_or_physical_cores": 4
             },
             "solver_used": "HF Time Domain (Hex)",
             "task_name": "solver run",
             "time_info": {
                 "details": {
-                    "discretizer": 19,
-                    "solver": 8
+                    "discretizer": 15,
+                    "solver": 32
                 },
-                "run_time": 75
+                "run_time": 102
             }
         }
     },

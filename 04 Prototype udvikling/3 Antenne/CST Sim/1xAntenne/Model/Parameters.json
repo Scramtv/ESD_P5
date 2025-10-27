@@ -1,29 +1,29 @@
 {
     "parameters": [
         {
-            "expr": "34.8",
+            "expr": "39",
             "name": "Wp",
-            "value": "34.8"
+            "value": "39"
         },
         {
-            "expr": "28.6",
+            "expr": "29.3",
             "name": "Lp",
-            "value": "28.6"
+            "value": "29.3"
         },
         {
-            "expr": "2",
+            "expr": "3",
             "name": "Wf",
-            "value": "2"
+            "value": "3"
         },
         {
-            "expr": "9.8",
+            "expr": "7.1",
             "name": "y0",
-            "value": "9.8"
+            "value": "7.1"
         },
         {
-            "expr": "1.61",
+            "expr": "1.6",
             "name": "h",
-            "value": "1.61"
+            "value": "1.6"
         },
         {
             "expr": "0.035",
@@ -34,6 +34,16 @@
             "expr": "6.86",
             "name": "k",
             "value": "6.86"
+        },
+        {
+            "expr": "56.5",
+            "name": "Wm",
+            "value": "56.5"
+        },
+        {
+            "expr": "52.3",
+            "name": "Lm",
+            "value": "52.3"
         }
     ],
     "version": 1

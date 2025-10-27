@@ -37,7 +37,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 2413.916e6
+    value: 2420.875e6
   states:
     bus_sink: false
     bus_source: false
@@ -49,7 +49,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 27.83e6
+    value: 41.75e6
   states:
     bus_sink: false
     bus_source: false
@@ -61,7 +61,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 41.75e6
+    value: 61.44e6
   states:
     bus_sink: false
     bus_source: false
@@ -75,7 +75,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    const: '0'
+    const: '1'
     maxoutbuf: '0'
     minoutbuf: '0'
     type: float

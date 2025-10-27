@@ -1,4 +1,3 @@
-~$*
 ~*
 *.tmp
 *.bkp
@@ -7,3 +6,4 @@
 *.op.raw
 *.raw
 *.log
+**/temp/

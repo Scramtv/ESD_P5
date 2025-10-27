@@ -1,0 +1,35 @@
+Project ideer
+- anti drone jamming protection from drones crashing into commercial airplanes
+-- Drone defence in the air
+-- drone defence on the ground
+- TAO project - atmospheric balloon
+-- monitor environment
+-- in general contorl the balloon and communicate with it
+- shoot down drones entering the country
+
+
+
+https://www.mindfoundry.ai/blog/the-drone-blockade-airports-and-c-uas
+
+Beam forming
+https://www.youtube.com/watch?v=VOGjHxlisyo&ab_channel=MATLAB
+
+
+Sections
+Drones
+-- hvordan kommunikerer droner
+--- hvilken frekvens
+--- kommunikation af remote styrke
+--- hvor ofte?
+-- Types of drones
+--- stealth drones??
+--- speed of drones
+
+Detection methods
+
+defensive measures?
+-- how do we stop it?
+
+
+general issue of drones at the airport
+-- Aviation laws?  

@@ -63,20 +63,39 @@ void loop() {
   // Wait for a client to connect
   WiFiClient client = server.available();
 
+  
   if (client) {
     // If client is connected, send data
-    client.println("Hello PC! ESP32 AP connected.");
-    digitalWrite(ena_pin_azi, 1);
-    digitalWrite(in1_azi, 1);
+    // VELOCITY TEST AZIMUT MOTOR
+ client.println("Hello PC! ESP32 AP connected.");
+    // digitalWrite(ena_pin_azi, 1);
+    // digitalWrite(in1_azi, 1);
+    // lastrun = millis();
+    // while (true) {
+    //   if (millis() - lastrun > interval) {
+    //     lastrun += interval;
+    //     client.print(millis());
+    //     client.print(";");
+    //     client.print(pos_azi);
+    //     client.print(";");
+    //     client.print(rot_azi);
+    //     client.println(";");
+    //   }
+    // }
+
+
+    // VELOCITY TEST TILT MOTOR
+    digitalWrite(ena_pin_tilt, 1);
+    digitalWrite(in1_tilt, 1);
     lastrun = millis();
     while (true) {
       if (millis() - lastrun > interval) {
         lastrun += interval;
         client.print(millis());
         client.print(";");
-        client.print(pos_azi);
+        client.print(pos_tilt);
         client.print(";");
-        client.print(rot_azi);
+        client.print(rot_tilt);
         client.println(";");
       }
     }
