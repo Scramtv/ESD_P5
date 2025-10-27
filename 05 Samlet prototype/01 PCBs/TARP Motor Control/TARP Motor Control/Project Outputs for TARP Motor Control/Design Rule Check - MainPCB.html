@@ -1,0 +1,579 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD25\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">27/10/2025</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">22.32.47</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc" class="file"><acronym title="C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc">C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">77</td></tr>
+</table>
+</td>
+</table><a name="IDXM0ZNATXY12WNZMVQF4TVSG0M1YWK2H5WROMPJ30F5PQZR3IDN"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDP5OIMMNOMZH1D0SVW2X3NVGR2JIJSX0IDRWIFCHFJ11E200ZRSAG">Clearance Constraint (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPCEKQ2JNXEDYDIUZKQPM4UOUIKDPPZXHH44X43EHWXJ4O5FT3D2H">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWLFJTSXLGHVUB4YEZMN3USYOHE31RDURCTZUMTGJOAABRIJK5YDI">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDBO4MY0CEZJBFGSYY4L12XYTPGDWY0KNMR0S0MPVU0PIALHMMQ4O">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFI3WA4YPITO4IDDTSOC00HQ1KMTHND0GFJQFZKDGRDRZOBRX3SDH">Width Constraint (Min=0.5mm) (Max=5mm) (Preferred=0.5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDU00WADSYCOIRBWCWHEHXSI1KEKXFA3AVLIKXOKK14A4CHJ3MJIGB">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5UUWXEC0BSDKNNJUNLKDPNS4DG1VADWZIUN2MBLFSZVIDUH1ZNPL">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWHMJCRA2RRLAOARLWYKWMCRRFKW54G041VF5GRB2GIR14AAS5S2P">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFGEJ31DJ4HIUB5IL5IY0YBGMBF14B04B4CTY0UHMAPRJQ1JDB2GI">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID0CF0DQRACGVLBIWCP3PQNNDRMDVQ3XPFBAFZTTETXEKQSOEW30E">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVL2DHNYHBOQXM3V5WJN0IXUWZNBZ0KY3GWMVF0DI4PG3OHXIP3VL">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">27</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDO4PNCROUETL0JXAX1SU2U5HQTNXI2P52K3NT0SJL0UZGAIKHYYFO">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">43</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGV4FH4ZUXIZJJ1CCYXRVVE0AANVHOFRLJDBJZRJDTJVYRFM52EAM">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDU2GX0DU3NEHSDCFFGEGC252RJBHB3HVSBURSZIBOTVXRBHFXPSEE">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">77</td>
+</tr>
+</table><br><a name="IDP5OIMMNOMZH1D0SVW2X3NVGR2JIJSX0IDRWIFCHFJ11E200ZRSAG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5317.731mil|Location2.X=5328.981mil|Location1.Y=3296.875mil|Location2.Y=3308.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5317.731mil|Location2.X=5328.981mil|Location1.Y=3296.875mil|Location2.Y=3308.125mil|Absolute=True">Clearance Constraint: (0.21mm &lt; 0.254mm) Between Pad Q4-1(136.144mm,84.709mm) on Multi-Layer And Track (133.858mm,82.346mm)(133.858mm,84.709mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5211.019mil|Location2.X=5222.269mil|Location1.Y=3329.375mil|Location2.Y=3340.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5211.019mil|Location2.X=5222.269mil|Location1.Y=3329.375mil|Location2.Y=3340.625mil|Absolute=True">Clearance Constraint: (0.21mm &lt; 0.254mm) Between Pad Q4-3(131.572mm,84.709mm) on Multi-Layer And Track (133.858mm,82.346mm)(133.858mm,84.709mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDWHMJCRA2RRLAOARLWYKWMCRRFKW54G041VF5GRB2GIR14AAS5S2P"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3254.414mil|Location2.X=3385.586mil|Location1.Y=614.414mil|Location2.Y=745.586mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3254.414mil|Location2.X=3385.586mil|Location1.Y=614.414mil|Location2.Y=745.586mil|Absolute=True">Hole Size Constraint: (3.3mm &gt; 2.54mm) Pad M1-1(84.328mm,17.272mm) on Multi-Layer Actual Hole Size = 3.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4999.414mil|Location2.X=5130.586mil|Location1.Y=5204.414mil|Location2.Y=5335.586mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4999.414mil|Location2.X=5130.586mil|Location1.Y=5204.414mil|Location2.Y=5335.586mil|Absolute=True">Hole Size Constraint: (3.3mm &gt; 2.54mm) Pad M2-1(128.651mm,133.858mm) on Multi-Layer Actual Hole Size = 3.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5249.414mil|Location2.X=5380.586mil|Location1.Y=1239.414mil|Location2.Y=1370.586mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5249.414mil|Location2.X=5380.586mil|Location1.Y=1239.414mil|Location2.Y=1370.586mil|Absolute=True">Hole Size Constraint: (3.3mm &gt; 2.54mm) Pad M3-1(135.001mm,33.147mm) on Multi-Layer Actual Hole Size = 3.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2839.414mil|Location2.X=2970.586mil|Location1.Y=4824.414mil|Location2.Y=4955.586mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2839.414mil|Location2.X=2970.586mil|Location1.Y=4824.414mil|Location2.Y=4955.586mil|Absolute=True">Hole Size Constraint: (3.3mm &gt; 2.54mm) Pad M4-1(73.787mm,124.206mm) on Multi-Layer Actual Hole Size = 3.3mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDVL2DHNYHBOQXM3V5WJN0IXUWZNBZ0KY3GWMVF0DI4PG3OHXIP3VL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4384.138mil|Location2.X=4391.804mil|Location1.Y=4858.147mil|Location2.Y=4865.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4384.138mil|Location2.X=4391.804mil|Location1.Y=4858.147mil|Location2.Y=4865.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad C6-1(111.554mm,125.095mm) on Multi-Layer And Text "C8" (109.169mm,121.971mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3262.118mil|Location2.X=3269.785mil|Location1.Y=5646.147mil|Location2.Y=5653.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3262.118mil|Location2.X=3269.785mil|Location1.Y=5646.147mil|Location2.Y=5653.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad CR1-2(83.566mm,144.272mm) on Multi-Layer And Text "CR4" (79.146mm,141.986mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3767.115mil|Location2.X=3774.782mil|Location1.Y=5156.147mil|Location2.Y=5163.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3767.115mil|Location2.X=3774.782mil|Location1.Y=5156.147mil|Location2.Y=5163.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad CR7-2(96.139mm,131.826mm) on Multi-Layer And Text "CR6" (91.719mm,129.54mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3757.115mil|Location2.X=3764.782mil|Location1.Y=5646.147mil|Location2.Y=5653.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3757.115mil|Location2.X=3764.782mil|Location1.Y=5646.147mil|Location2.Y=5653.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad CR8-2(95.885mm,144.399mm) on Multi-Layer And Text "CR5" (91.465mm,141.986mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5224.138mil|Location2.X=5231.804mil|Location1.Y=1191.147mil|Location2.Y=1198.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5224.138mil|Location2.X=5231.804mil|Location1.Y=1191.147mil|Location2.Y=1198.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad M3-1(135.001mm,33.147mm) on Multi-Layer And Text "C4" (130.505mm,28.829mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5170.121mil|Location2.X=5177.788mil|Location1.Y=3296.147mil|Location2.Y=3303.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5170.121mil|Location2.X=5177.788mil|Location1.Y=3296.147mil|Location2.Y=3303.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad Q4-3(131.572mm,84.709mm) on Multi-Layer And Text "U10" (127.864mm,82.296mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4979.375mil|Location2.X=4990.625mil|Location1.Y=2300.832mil|Location2.Y=2312.082mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4979.375mil|Location2.X=4990.625mil|Location1.Y=2300.832mil|Location2.Y=2312.082mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R1-1(126.619mm,59.69mm) on Multi-Layer And Track (125.494mm,58.415mm)(127.744mm,58.415mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4939.167mil|Location2.X=4946.833mil|Location1.Y=1984.147mil|Location2.Y=1991.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4939.167mil|Location2.X=4946.833mil|Location1.Y=1984.147mil|Location2.Y=1991.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad R1-2(126.619mm,50.69mm) on Multi-Layer And Text "R4" (125.552mm,48.971mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4979.375mil|Location2.X=4990.625mil|Location1.Y=2033.587mil|Location2.Y=2044.837mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4979.375mil|Location2.X=4990.625mil|Location1.Y=2033.587mil|Location2.Y=2044.837mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R1-2(126.619mm,50.69mm) on Multi-Layer And Track (125.494mm,51.965mm)(127.744mm,51.965mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4659.375mil|Location2.X=4670.625mil|Location1.Y=2300.832mil|Location2.Y=2312.082mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4659.375mil|Location2.X=4670.625mil|Location1.Y=2300.832mil|Location2.Y=2312.082mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R2-1(118.491mm,59.69mm) on Multi-Layer And Track (117.366mm,58.415mm)(119.616mm,58.415mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4634.167mil|Location2.X=4641.833mil|Location1.Y=1967.545mil|Location2.Y=1975.211mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4634.167mil|Location2.X=4641.833mil|Location1.Y=1967.545mil|Location2.Y=1975.211mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad R2-2(118.491mm,50.69mm) on Multi-Layer And Text "R5" (117.805mm,48.844mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4659.375mil|Location2.X=4670.625mil|Location1.Y=2033.587mil|Location2.Y=2044.837mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4659.375mil|Location2.X=4670.625mil|Location1.Y=2033.587mil|Location2.Y=2044.837mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R2-2(118.491mm,50.69mm) on Multi-Layer And Track (117.366mm,51.965mm)(119.616mm,51.965mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4799.167mil|Location2.X=4806.833mil|Location1.Y=1976.741mil|Location2.Y=1984.407mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4799.167mil|Location2.X=4806.833mil|Location1.Y=1976.741mil|Location2.Y=1984.407mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad R3-1(122.936mm,50.546mm) on Multi-Layer And Text "R6" (121.996mm,48.971mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4834.375mil|Location2.X=4845.625mil|Location1.Y=2027.918mil|Location2.Y=2039.168mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4834.375mil|Location2.X=4845.625mil|Location1.Y=2027.918mil|Location2.Y=2039.168mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R3-1(122.936mm,50.546mm) on Multi-Layer And Track (121.811mm,51.821mm)(124.061mm,51.821mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4834.375mil|Location2.X=4845.625mil|Location1.Y=2295.163mil|Location2.Y=2306.413mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4834.375mil|Location2.X=4845.625mil|Location1.Y=2295.163mil|Location2.Y=2306.413mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R3-2(122.936mm,59.546mm) on Multi-Layer And Track (121.811mm,58.271mm)(124.061mm,58.271mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4974.375mil|Location2.X=4985.625mil|Location1.Y=1537.918mil|Location2.Y=1549.168mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4974.375mil|Location2.X=4985.625mil|Location1.Y=1537.918mil|Location2.Y=1549.168mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R4-1(126.492mm,38.1mm) on Multi-Layer And Track (125.367mm,39.375mm)(127.617mm,39.375mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4974.375mil|Location2.X=4985.625mil|Location1.Y=1805.163mil|Location2.Y=1816.413mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4974.375mil|Location2.X=4985.625mil|Location1.Y=1805.163mil|Location2.Y=1816.413mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R4-2(126.492mm,47.1mm) on Multi-Layer And Track (125.367mm,45.825mm)(127.617mm,45.825mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4669.375mil|Location2.X=4680.625mil|Location1.Y=1800.832mil|Location2.Y=1812.082mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4669.375mil|Location2.X=4680.625mil|Location1.Y=1800.832mil|Location2.Y=1812.082mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R5-1(118.745mm,46.99mm) on Multi-Layer And Track (117.62mm,45.715mm)(119.87mm,45.715mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4669.375mil|Location2.X=4680.625mil|Location1.Y=1533.587mil|Location2.Y=1544.837mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4669.375mil|Location2.X=4680.625mil|Location1.Y=1533.587mil|Location2.Y=1544.837mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R5-2(118.745mm,37.99mm) on Multi-Layer And Track (117.62mm,39.265mm)(119.87mm,39.265mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4834.375mil|Location2.X=4845.625mil|Location1.Y=1537.918mil|Location2.Y=1549.168mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4834.375mil|Location2.X=4845.625mil|Location1.Y=1537.918mil|Location2.Y=1549.168mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R6-1(122.936mm,38.1mm) on Multi-Layer And Track (121.811mm,39.375mm)(124.061mm,39.375mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4834.375mil|Location2.X=4845.625mil|Location1.Y=1805.163mil|Location2.Y=1816.413mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4834.375mil|Location2.X=4845.625mil|Location1.Y=1805.163mil|Location2.Y=1816.413mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R6-2(122.936mm,47.1mm) on Multi-Layer And Track (121.811mm,45.825mm)(124.061mm,45.825mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4652.642mil|Location2.X=4663.892mil|Location1.Y=2486.529mil|Location2.Y=2497.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4652.642mil|Location2.X=4663.892mil|Location1.Y=2486.529mil|Location2.Y=2497.779mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.212mm &lt; 0.254mm) Between Pad R7-1(118.364mm,64.406mm) on Multi-Layer And Text "R2" (117.551mm,61.544mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.212mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4654.375mil|Location2.X=4665.625mil|Location1.Y=2573.587mil|Location2.Y=2584.837mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4654.375mil|Location2.X=4665.625mil|Location1.Y=2573.587mil|Location2.Y=2584.837mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R7-1(118.364mm,64.406mm) on Multi-Layer And Track (117.239mm,65.681mm)(119.489mm,65.681mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4654.375mil|Location2.X=4665.625mil|Location1.Y=2840.832mil|Location2.Y=2852.082mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4654.375mil|Location2.X=4665.625mil|Location1.Y=2840.832mil|Location2.Y=2852.082mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R7-2(118.364mm,73.406mm) on Multi-Layer And Track (117.239mm,72.131mm)(119.489mm,72.131mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5459.375mil|Location2.X=5470.625mil|Location1.Y=2563.587mil|Location2.Y=2574.837mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5459.375mil|Location2.X=5470.625mil|Location1.Y=2563.587mil|Location2.Y=2574.837mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R8-1(138.811mm,64.152mm) on Multi-Layer And Track (137.686mm,65.427mm)(139.936mm,65.427mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5459.375mil|Location2.X=5470.625mil|Location1.Y=2830.832mil|Location2.Y=2842.082mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5459.375mil|Location2.X=5470.625mil|Location1.Y=2830.832mil|Location2.Y=2842.082mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.211mm &lt; 0.254mm) Between Pad R8-2(138.811mm,73.152mm) on Multi-Layer And Track (137.686mm,71.877mm)(139.936mm,71.877mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.211mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3341.172mil|Location2.X=3348.838mil|Location1.Y=3396.176mil|Location2.Y=3403.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3341.172mil|Location2.X=3348.838mil|Location1.Y=3396.176mil|Location2.Y=3403.843mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U3-J3_22(85.217mm,86.868mm) on Multi-Layer And Text "J12" (83.44mm,86.36mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDO4PNCROUETL0JXAX1SU2U5HQTNXI2P52K3NT0SJL0UZGAIKHYYFO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3800.075mil|Location2.X=3807.742mil|Location1.Y=768.571mil|Location2.Y=776.238mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3800.075mil|Location2.X=3807.742mil|Location1.Y=768.571mil|Location2.Y=776.238mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (100.1mm,21.59mm) on Top Overlay And Text "C10" (96.063mm,18.212mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4289.046mil|Location2.X=4296.712mil|Location1.Y=844.029mil|Location2.Y=851.696mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4289.046mil|Location2.X=4296.712mil|Location1.Y=844.029mil|Location2.Y=851.696mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (112.371mm,23.749mm) on Top Overlay And Text "C2" (109.017mm,20.244mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4304.163mil|Location2.X=4311.83mil|Location1.Y=4858.147mil|Location2.Y=4865.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4304.163mil|Location2.X=4311.83mil|Location1.Y=4858.147mil|Location2.Y=4865.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (113.054mm,125.095mm) on Top Overlay And Text "C8" (109.169mm,121.971mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4566.152mil|Location2.X=4573.819mil|Location1.Y=3091.176mil|Location2.Y=3098.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4566.152mil|Location2.X=4573.819mil|Location1.Y=3091.176mil|Location2.Y=3098.843mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (116.054mm,78.74mm) on Top Overlay And Text "J11" (113.285mm,78.613mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5140.163mil|Location2.X=5147.83mil|Location1.Y=3418.167mil|Location2.Y=3425.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5140.163mil|Location2.X=5147.83mil|Location1.Y=3418.167mil|Location2.Y=3425.833mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (131.318mm,96.256mm) on Top Overlay And Text "Q4" (130.404mm,86.919mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5137.286mil|Location2.X=5148.536mil|Location1.Y=864.95mil|Location2.Y=877.966mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5137.286mil|Location2.X=5148.536mil|Location1.Y=864.95mil|Location2.Y=877.966mil|Absolute=True">Silk To Silk Clearance Constraint: (0.024mm &lt; 0.254mm) Between Arc (134.366mm,23.939mm) on Top Overlay And Text "C3" (127.965mm,20.828mm) on Top Overlay Silk Text to Silk Clearance [0.024mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5298.185mil|Location2.X=5305.852mil|Location1.Y=4662.245mil|Location2.Y=4669.912mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5298.185mil|Location2.X=5305.852mil|Location1.Y=4662.245mil|Location2.Y=4669.912mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (136.295mm,122.174mm) on Top Overlay And Text "C11" (132.791mm,116.764mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4385.763mil|Location2.X=4393.43mil|Location1.Y=830.783mil|Location2.Y=838.449mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4385.763mil|Location2.X=4393.43mil|Location1.Y=830.783mil|Location2.Y=838.449mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "C2" (109.017mm,20.244mm) on Top Overlay And Track (110.346mm,21.299mm)(111.396mm,21.299mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4797.167mil|Location2.X=4804.833mil|Location1.Y=4228.529mil|Location2.Y=4236.195mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4797.167mil|Location2.X=4804.833mil|Location1.Y=4228.529mil|Location2.Y=4236.195mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "C5" (121.945mm,106.655mm) on Top Overlay And Track (119.021mm,107.502mm)(124.021mm,107.502mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4878.883mil|Location2.X=4886.55mil|Location1.Y=4255.147mil|Location2.Y=4262.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4878.883mil|Location2.X=4886.55mil|Location1.Y=4255.147mil|Location2.Y=4262.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "C5" (121.945mm,106.655mm) on Top Overlay And Track (124.021mm,107.502mm)(124.021mm,108.832mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3784.167mil|Location2.X=3791.833mil|Location1.Y=1078.647mil|Location2.Y=1086.314mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3784.167mil|Location2.X=3791.833mil|Location1.Y=1078.647mil|Location2.Y=1086.314mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "C9" (96.215mm,26.467mm) on Top Overlay And Track (88.947mm,27.495mm)(104.347mm,27.495mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3195.167mil|Location2.X=3202.833mil|Location1.Y=5142.15mil|Location2.Y=5149.817mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3195.167mil|Location2.X=3202.833mil|Location1.Y=5142.15mil|Location2.Y=5149.817mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR2" (81.255mm,129.438mm) on Top Overlay And Track (81.204mm,129.731mm)(81.204mm,134.684mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3195.167mil|Location2.X=3202.833mil|Location1.Y=5103.667mil|Location2.Y=5111.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3195.167mil|Location2.X=3202.833mil|Location1.Y=5103.667mil|Location2.Y=5111.333mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR2" (81.255mm,129.438mm) on Top Overlay And Track (81.204mm,129.731mm)(91.77mm,129.731mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3182.147mil|Location2.X=3189.814mil|Location1.Y=5396.147mil|Location2.Y=5403.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3182.147mil|Location2.X=3189.814mil|Location1.Y=5396.147mil|Location2.Y=5403.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR3" (79.4mm,135.636mm) on Top Overlay And Track (80.95mm,136.081mm)(80.95mm,141.034mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3182.147mil|Location2.X=3189.814mil|Location1.Y=5353.667mil|Location2.Y=5361.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3182.147mil|Location2.X=3189.814mil|Location1.Y=5353.667mil|Location2.Y=5361.333mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR3" (79.4mm,135.636mm) on Top Overlay And Track (80.95mm,136.081mm)(91.516mm,136.081mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3172.147mil|Location2.X=3179.814mil|Location1.Y=5646.147mil|Location2.Y=5653.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3172.147mil|Location2.X=3179.814mil|Location1.Y=5646.147mil|Location2.Y=5653.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR4" (79.146mm,141.986mm) on Top Overlay And Track (80.823mm,142.177mm)(80.823mm,147.13mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3172.147mil|Location2.X=3179.814mil|Location1.Y=5593.667mil|Location2.Y=5601.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3172.147mil|Location2.X=3179.814mil|Location1.Y=5593.667mil|Location2.Y=5601.333mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR4" (79.146mm,141.986mm) on Top Overlay And Track (80.823mm,142.177mm)(91.389mm,142.177mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3597.167mil|Location2.X=3604.833mil|Location1.Y=5596.163mil|Location2.Y=5603.83mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3597.167mil|Location2.X=3604.833mil|Location1.Y=5596.163mil|Location2.Y=5603.83mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR5" (91.465mm,141.986mm) on Top Overlay And Track (80.823mm,142.177mm)(91.389mm,142.177mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3597.167mil|Location2.X=3604.833mil|Location1.Y=5636.15mil|Location2.Y=5643.817mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3597.167mil|Location2.X=3604.833mil|Location1.Y=5636.15mil|Location2.Y=5643.817mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR5" (91.465mm,141.986mm) on Top Overlay And Track (91.389mm,142.177mm)(91.389mm,147.13mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3657.147mil|Location2.X=3664.814mil|Location1.Y=5598.667mil|Location2.Y=5606.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3657.147mil|Location2.X=3664.814mil|Location1.Y=5598.667mil|Location2.Y=5606.333mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR5" (91.465mm,141.986mm) on Top Overlay And Track (93.142mm,142.304mm)(103.708mm,142.304mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3657.147mil|Location2.X=3664.814mil|Location1.Y=5646.147mil|Location2.Y=5653.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3657.147mil|Location2.X=3664.814mil|Location1.Y=5646.147mil|Location2.Y=5653.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR5" (91.465mm,141.986mm) on Top Overlay And Track (93.142mm,142.304mm)(93.142mm,147.256mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3607.167mil|Location2.X=3614.833mil|Location1.Y=5106.163mil|Location2.Y=5113.83mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3607.167mil|Location2.X=3614.833mil|Location1.Y=5106.163mil|Location2.Y=5113.83mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR6" (91.719mm,129.54mm) on Top Overlay And Track (81.204mm,129.731mm)(91.77mm,129.731mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3617.164mil|Location2.X=3624.83mil|Location1.Y=5156.147mil|Location2.Y=5163.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3617.164mil|Location2.X=3624.83mil|Location1.Y=5156.147mil|Location2.Y=5163.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR6" (91.719mm,129.54mm) on Top Overlay And Track (91.77mm,129.731mm)(91.77mm,134.684mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3667.147mil|Location2.X=3674.814mil|Location1.Y=5103.667mil|Location2.Y=5111.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3667.147mil|Location2.X=3674.814mil|Location1.Y=5103.667mil|Location2.Y=5111.333mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR6" (91.719mm,129.54mm) on Top Overlay And Track (93.396mm,129.731mm)(103.962mm,129.731mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3667.147mil|Location2.X=3674.814mil|Location1.Y=5156.147mil|Location2.Y=5163.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3667.147mil|Location2.X=3674.814mil|Location1.Y=5156.147mil|Location2.Y=5163.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR6" (91.719mm,129.54mm) on Top Overlay And Track (93.396mm,129.731mm)(93.396mm,134.684mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3675.167mil|Location2.X=3682.833mil|Location1.Y=5353.667mil|Location2.Y=5361.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3675.167mil|Location2.X=3682.833mil|Location1.Y=5353.667mil|Location2.Y=5361.333mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR7" (93.447mm,135.636mm) on Top Overlay And Track (93.269mm,136.081mm)(103.835mm,136.081mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3675.167mil|Location2.X=3682.833mil|Location1.Y=5386.15mil|Location2.Y=5393.817mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3675.167mil|Location2.X=3682.833mil|Location1.Y=5386.15mil|Location2.Y=5393.817mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "CR7" (93.447mm,135.636mm) on Top Overlay And Track (93.269mm,136.081mm)(93.269mm,141.034mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4608.363mil|Location2.X=4619.613mil|Location1.Y=2994.381mil|Location2.Y=3005.631mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4608.363mil|Location2.X=4619.613mil|Location1.Y=2994.381mil|Location2.Y=3005.631mil|Absolute=True">Silk To Silk Clearance Constraint: (0.204mm &lt; 0.254mm) Between Text "J10" (113.158mm,75.946mm) on Top Overlay And Text "R7" (117.424mm,75.26mm) on Top Overlay Silk Text to Silk Clearance [0.204mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4451.191mil|Location2.X=4458.858mil|Location1.Y=2996.173mil|Location2.Y=3003.84mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4451.191mil|Location2.X=4458.858mil|Location1.Y=2996.173mil|Location2.Y=3003.84mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "J10" (113.158mm,75.946mm) on Top Overlay And Track (113.01mm,55.138mm)(113.01mm,77.958mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4447.742mil|Location2.X=4458.992mil|Location1.Y=3099.381mil|Location2.Y=3110.631mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4447.742mil|Location2.X=4458.992mil|Location1.Y=3099.381mil|Location2.Y=3110.631mil|Absolute=True">Silk To Silk Clearance Constraint: (0.084mm &lt; 0.254mm) Between Text "J11" (113.285mm,78.613mm) on Top Overlay And Track (113.01mm,77.998mm)(113.01mm,88.118mm) on Top Overlay Silk Text to Silk Clearance [0.084mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3301.184mil|Location2.X=3308.851mil|Location1.Y=3456.157mil|Location2.Y=3463.824mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3301.184mil|Location2.X=3308.851mil|Location1.Y=3456.157mil|Location2.Y=3463.824mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "J12" (83.44mm,86.36mm) on Top Overlay And Track (83.947mm,32.128mm)(83.947mm,94.868mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4451.183mil|Location2.X=4458.85mil|Location1.Y=2096.173mil|Location2.Y=2103.84mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4451.183mil|Location2.X=4458.85mil|Location1.Y=2096.173mil|Location2.Y=2103.84mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "J8" (113.157mm,53.086mm) on Top Overlay And Track (113.01mm,32.278mm)(113.01mm,55.098mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5021.346mil|Location2.X=5032.596mil|Location1.Y=5500.365mil|Location2.Y=5511.615mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5021.346mil|Location2.X=5032.596mil|Location1.Y=5500.365mil|Location2.Y=5511.615mil|Absolute=True">Silk To Silk Clearance Constraint: (0.153mm &lt; 0.254mm) Between Text "M2" (125.4mm,138.125mm) on Top Overlay And Track (126.822mm,140.005mm)(132.004mm,140.005mm) on Top Overlay Silk Text to Silk Clearance [0.153mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5183.167mil|Location2.X=5190.833mil|Location1.Y=1529.147mil|Location2.Y=1536.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5183.167mil|Location2.X=5190.833mil|Location1.Y=1529.147mil|Location2.Y=1536.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "M3" (131.75mm,37.414mm) on Top Overlay And Track (131.716mm,38.41mm)(131.716mm,58.11mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5183.167mil|Location2.X=5190.833mil|Location1.Y=1508.371mil|Location2.Y=1516.038mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5183.167mil|Location2.X=5190.833mil|Location1.Y=1508.371mil|Location2.Y=1516.038mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "M3" (131.75mm,37.414mm) on Top Overlay And Track (131.716mm,38.41mm)(137.016mm,38.41mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2894.391mil|Location2.X=2905.641mil|Location1.Y=1300.62mil|Location2.Y=1311.87mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2894.391mil|Location2.X=2905.641mil|Location1.Y=1300.62mil|Location2.Y=1311.87mil|Absolute=True">Silk To Silk Clearance Constraint: (0.064mm &lt; 0.254mm) Between Text "P3" (73.66mm,31.496mm) on Top Overlay And Track (68.909mm,33.274mm)(76.109mm,33.274mm) on Top Overlay Silk Text to Silk Clearance [0.064mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2988.253mil|Location2.X=3000.612mil|Location1.Y=1300.422mil|Location2.Y=1311.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2988.253mil|Location2.X=3000.612mil|Location1.Y=1300.422mil|Location2.Y=1311.672mil|Absolute=True">Silk To Silk Clearance Constraint: (0.112mm &lt; 0.254mm) Between Text "P3" (73.66mm,31.496mm) on Top Overlay And Track (76.109mm,33.274mm)(76.109mm,43.434mm) on Top Overlay Silk Text to Silk Clearance [0.112mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4635.23mil|Location2.X=4642.896mil|Location1.Y=3019.147mil|Location2.Y=3026.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4635.23mil|Location2.X=4642.896mil|Location1.Y=3019.147mil|Location2.Y=3026.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "R7" (117.424mm,75.26mm) on Top Overlay And Track (117.832mm,76.289mm)(117.832mm,81.191mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4659.154mil|Location2.X=4666.82mil|Location1.Y=2999.667mil|Location2.Y=3007.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4659.154mil|Location2.X=4666.82mil|Location1.Y=2999.667mil|Location2.Y=3007.333mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "R7" (117.424mm,75.26mm) on Top Overlay And Track (117.832mm,76.289mm)(128.602mm,76.289mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5424.167mil|Location2.X=5431.833mil|Location1.Y=3004.667mil|Location2.Y=3012.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5424.167mil|Location2.X=5431.833mil|Location1.Y=3004.667mil|Location2.Y=3012.333mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "R8" (137.871mm,75.006mm) on Top Overlay And Track (129.589mm,76.416mm)(140.359mm,76.416mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5522.104mil|Location2.X=5529.77mil|Location1.Y=3009.147mil|Location2.Y=3016.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5522.104mil|Location2.X=5529.77mil|Location1.Y=3009.147mil|Location2.Y=3016.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "R8" (137.871mm,75.006mm) on Top Overlay And Track (140.359mm,76.416mm)(140.359mm,81.318mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5131.607mil|Location2.X=5142.857mil|Location1.Y=3284.359mil|Location2.Y=3295.609mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5131.607mil|Location2.X=5142.857mil|Location1.Y=3284.359mil|Location2.Y=3295.609mil|Absolute=True">Silk To Silk Clearance Constraint: (0.088mm &lt; 0.254mm) Between Text "U10" (127.864mm,82.296mm) on Top Overlay And Track (130.365mm,83.312mm)(130.365mm,85.946mm) on Top Overlay Silk Text to Silk Clearance [0.088mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5180.118mil|Location2.X=5187.785mil|Location1.Y=3276.167mil|Location2.Y=3283.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5180.118mil|Location2.X=5187.785mil|Location1.Y=3276.167mil|Location2.Y=3283.833mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "U10" (127.864mm,82.296mm) on Top Overlay And Track (130.365mm,83.312mm)(137.351mm,83.312mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDU2GX0DU3NEHSDCFFGEGC252RJBHB3HVSBURSZIBOTVXRBHFXPSEE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5169mil|Location2.X=5171mil|Location1.Y=3639mil|Location2.Y=3641mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Emil\Documents\GitHub\ESD_P5\05 Samlet prototype\01 PCBs\TARP Motor Control\TARP Motor Control\MainPCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5169mil|Location2.X=5171mil|Location1.Y=3639mil|Location2.Y=3641mil|Absolute=True">Height Constraint: Small Component C5-Cap (131.318mm,92.456mm) on Top Layer Actual Height = 38.005mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
