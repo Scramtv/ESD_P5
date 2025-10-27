@@ -59,45 +59,74 @@ void setup() {
 unsigned long lastrun = 0;
 unsigned long interval = 10;
 
+
+
 void loop() {
-  // Wait for a client to connect
   WiFiClient client = server.available();
 
-  
+  // Wait for a client to connect
   if (client) {
     // If client is connected, send data
-    // VELOCITY TEST AZIMUT MOTOR
- client.println("Hello PC! ESP32 AP connected.");
-    // digitalWrite(ena_pin_azi, 1);
-    // digitalWrite(in1_azi, 1);
-    // lastrun = millis();
-    // while (true) {
-    //   if (millis() - lastrun > interval) {
-    //     lastrun += interval;
-    //     client.print(millis());
-    //     client.print(";");
-    //     client.print(pos_azi);
-    //     client.print(";");
-    //     client.print(rot_azi);
-    //     client.println(";");
-    //   }
-    // }
+    client.println("Hello PC! ESP32 AP connected.");
+    Serial.println("Connected to PC");
+    minVoltageTest(client);
+  }
+}
 
 
-    // VELOCITY TEST TILT MOTOR
-    digitalWrite(ena_pin_tilt, 1);
-    digitalWrite(in1_tilt, 1);
-    lastrun = millis();
-    while (true) {
-      if (millis() - lastrun > interval) {
-        lastrun += interval;
-        client.print(millis());
-        client.print(";");
-        client.print(pos_tilt);
-        client.print(";");
-        client.print(rot_tilt);
-        client.println(";");
-      }
+void tiltVelocityTest(WiFiClient client) {
+  // VELOCITY TEST TILT MOTOR
+  digitalWrite(ena_pin_tilt, 1);
+  digitalWrite(in1_tilt, 1);
+  lastrun = millis();
+  while (true) {
+    if (millis() - lastrun > interval) {
+      lastrun += interval;
+      client.print(millis());
+      client.print(";");
+      client.print(pos_tilt);
+      client.print(";");
+      client.print(rot_tilt);
+      client.println(";");
+    }
+  }
+}
+
+void azimutVelocityTest(WiFiClient client) {
+  digitalWrite(ena_pin_azi, 1);
+  digitalWrite(in1_azi, 1);
+  lastrun = millis();
+  while (true) {
+    if (millis() - lastrun > interval) {
+      lastrun += interval;
+      client.print(millis());
+      client.print(";");
+      client.print(pos_azi);
+      client.print(";");
+      client.print(rot_azi);
+      client.println(";");
+    }
+  }
+}
+
+void minVoltageTest(WiFiClient client) {
+  while (true) {
+    // 1. Read all characters until a newline is found
+    String data = client.readStringUntil('\n');
+    data.trim();  // Remove any extra spaces, \r, or \n characters
+
+    // 2. Convert the string of characters into an integer number
+    int pwmValue = data.toInt();
+
+    if (pwmValue > 0 && pwmValue < 255) {
+      client.print("Received: ");
+      client.println(pwmValue);
+      analogWrite(ena_pin_tilt, pwmValue);
+      digitalWrite(in1_tilt, 1);
+
+      float temp = (float)pwmValue * 12 / 255;
+      client.print("Voltage set to: ");
+      client.println(temp);
     }
   }
 }
