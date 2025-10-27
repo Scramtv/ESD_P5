@@ -76,23 +76,7 @@ void loop() {
   }
 }
 
-
-void tiltVelocityTest(WiFiClient client) {
-  // VELOCITY TEST TILT MOTOR
-  digitalWrite(ena_pin_tilt, 1);
-  digitalWrite(in1_tilt, 1);
-  lastrun = millis();
-  while (true) {
-    if (millis() - lastrun > interval) {
-      lastrun += interval;
-      client.print(millis());
-      client.print(";");
-      client.print(pos_tilt);
-      client.print(";");
-      client.print(rot_tilt);
-      client.println(";");
-    }
-=======
+void azimutTest(WiFiClient client){
     // VELOCITY TEST AZIMUT MOTOR
  client.println("Hello PC! ESP32 AP connected.");
     digitalWrite(46, 1);
@@ -110,27 +94,24 @@ void tiltVelocityTest(WiFiClient client) {
          client.println(";");
        }
      }
+}
 
+void tiltVelocityTest(WiFiClient client) {
+  // VELOCITY TEST TILT MOTOR
+  digitalWrite(ena_pin_tilt, 1);
+  digitalWrite(in1_tilt, 1);
+  lastrun = millis();
+  while (true) {
+    if (millis() - lastrun > interval) {
+      lastrun += interval;
+      client.print(millis());
+      client.print(";");
+      client.print(pos_tilt);
+      client.print(";");
+      client.print(rot_tilt);
+      client.println(";");
+    }
 
-    // VELOCITY TEST TILT MOTOR
-
-
-
-    //digitalWrite(ena_pin_tilt, 1);
-    //digitalWrite(in1_tilt, 1);
-    //lastrun = millis();
-    //while (true) {
-    //  if (millis() - lastrun > interval) {
-    //    lastrun += interval;
-    //    client.print(millis());
-    //    client.print(";");
-    //    client.print(pos_tilt);
-    //    client.print(";");
-    //    client.print(rot_tilt);
-    //    client.println(";");
-    //  }
-    //}
->>>>>>> Stashed changes
   }
 }
 
