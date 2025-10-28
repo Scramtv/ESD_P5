@@ -16,4 +16,5 @@
 **/temp/
 
 #Altium History files:
-.~*.PrjPcb.Zip
+*.~*.PrjPcb.Zip
+*.~*.PcbDoc.Zip
