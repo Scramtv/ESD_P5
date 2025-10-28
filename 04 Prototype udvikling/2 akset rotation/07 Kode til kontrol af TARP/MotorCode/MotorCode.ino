@@ -46,8 +46,9 @@ volatile int pos_tilt_motor = 0;
 
 
 //Vars for PI controller
-float angleDSP //reference input
+float angleDSP  //reference input
   error = 0,
+  direction = 0,  //
   controllerGain = 0.01,
   controllerZero = 0,
   deltaVolt = 0,
@@ -88,23 +89,40 @@ void loop() {
 
       //get the angle from DSP;
       // angleDSP = inputDSP(); // for future code when DSP is working
+      initDirection();
       regulator();
     }
   }
 }
 
+void sweep() {  //basic sweep
+  //rotate towards a zero point
+  while (rot_azi = 0) {
+    analogWrite(ena_pin_azi, 70);
+  }
+  rot_azi = 0;
+}
+
+
+void initDirection() {
+  if (angleDSP > 180) {
+    direction = 1;  //counter clock wise
+  } else {
+    direction = 0;  //clock wise
+  }
+}
 
 void regulator() {
 
-  while(error > 5 || error < (-5)){
-  float currentPosition = convertPulsesToAngle();
+  while (error > 5 || error < (-5)) {  //if the error is within +-5, we are good.
+    float currentPosition = convertPulsesToAngle();
 
-  error = angleDSP - currentPosition;  //find out how far we are from the target
-  angleDSP = error; //our angle error is saved here so it changes as we get closer to the target
-  deltaVolt = error * controllerGain - controllerZero * oldDeltaVolt;
-  oldDeltaVolt = deltaVolt;
-  azimutVelocity(deltaVolt);
-}
+    error = angleDSP - currentPosition;  //find out how far we are from the target
+    angleDSP = error;                    //our angle error is saved here so it changes as we get closer to the target
+    deltaVolt = error * controllerGain - controllerZero * oldDeltaVolt;
+    oldDeltaVolt = deltaVolt;
+    azimutVelocity(deltaVolt);
+  }
 }
 
 void azimutVelocity(float velocity) {
@@ -113,13 +131,13 @@ void azimutVelocity(float velocity) {
   //velocity can only range between 0 and 255
   if (velocity < 0) {
     velocity = velocity * (-1);  //if the motor overshoots and needs to go the other direction
-    direction = 1;               // change direction
+    direction = !direction;      // change direction
   }
   if (velocity > 255) {  //capping so this is the max speed
     velocity = 255;
   }
 
-  digitalWrite(in1_azi, direction);  //control direction
+  digitalWrite(in1_azi, direction);    //control direction
   analogWrite(ena_pin_azi, velocity);  //control speed
 }
 
