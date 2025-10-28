@@ -299,3 +299,16 @@ R_squared = 1 - (SSR / SST);
 
 % Display the R-squared value
 text(110,0.016,{strcat('f(\omega)=',sprintf('%0.3e', p(1)),' * \omega','+',sprintf('%0.3e', p(2))), strcat('R^2=', string(R_squared))})
+
+
+
+%% Gear
+
+clear all;
+
+V_In = [6, 7, 8, 9, 10, 11];
+rpm_gear = [41.1, 48.93, 56.63, 65.29, 71.89];
+rpm_raw = [486, 657, 982, 1220, 1584];
+
+konst = rpm_raw./rpm_gear;
+disp(konst)
