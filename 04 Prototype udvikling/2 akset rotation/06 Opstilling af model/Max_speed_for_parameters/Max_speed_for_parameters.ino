@@ -76,30 +76,18 @@ void loop() {
   }
 }
 
-void azimutTest(WiFiClient client){
-    // VELOCITY TEST AZIMUT MOTOR
- client.println("Hello PC! ESP32 AP connected.");
-    digitalWrite(46, 1);
-    digitalWrite(ena_pin_azi, 1);
-    digitalWrite(in1_azi, 1);
-    lastrun = millis();
-    while (true) {
-       if (millis() - lastrun > interval) {
-         lastrun += interval;
-         client.print(millis());
-         client.print(";");
-         client.print(pos_azi);
-         client.print(";");
-         client.print(rot_azi);
-         client.println(";");
-       }
-     }
-}
-
 void tiltVelocityTest(WiFiClient client) {
   // VELOCITY TEST TILT MOTOR
   digitalWrite(ena_pin_tilt, 1);
-  digitalWrite(in1_tilt, 1);
+  
+  while(!client.available()){};
+  String inputString = client.readStringUntil('\n');
+  inputString.trim();
+  int pwm_value = inputString.toInt();
+
+  analogWrite(in1_tilt, pwm_value);
+
+  digitalWrite(46, 1);
   lastrun = millis();
   while (true) {
     if (millis() - lastrun > interval) {
@@ -117,7 +105,14 @@ void tiltVelocityTest(WiFiClient client) {
 
 void azimutVelocityTest(WiFiClient client) {
   digitalWrite(ena_pin_azi, 1);
-  digitalWrite(in1_azi, 1);
+
+  while(!client.available()){};
+  String inputString = client.readStringUntil('\n');
+  inputString.trim();
+  int pwm_value = inputString.toInt();
+
+  analogWrite(in1_azi, pwm_value);
+  digitalWrite(46, 1);
   lastrun = millis();
   while (true) {
     if (millis() - lastrun > interval) {
