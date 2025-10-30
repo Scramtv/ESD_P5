@@ -4,8 +4,8 @@
 [PCB_IMPORT: False]
 [PCB_IMPORT_NEW: False]
 [DISABLE_FAST_LOAD: False]
-[BBOX:-58.229245800000001 58.229245800000001 -56.129245799999993 56.129245799999993 -31.624245799999997 40.078245799999998]
-[BBOX_STRUCTURE:-28.25 28.25 -26.149999999999999 26.149999999999999 -1.645 10.099]
+[BBOX:-58.229245800000001 183.2292458 -56.129245799999993 56.129245799999993 -31.624245799999997 40.189445800000001]
+[BBOX_STRUCTURE:-28.25 153.25 -26.149999999999999 26.149999999999999 -1.645 10.2102]
 [UNITS]
      .SetUnit "Length", "mm"
      .SetUnit "Temperature", "degC"
@@ -653,8 +653,8 @@ Solver.FrequencyRange "2", "3"
      .Orientation "zmin"
      .PortOnBound "False"
      .ClipPickedPortToBound "False"
-     .Xrange "0", "11.699"
-     .Yrange "0", "22.128"
+     .Xrange "0", "11.8202"
+     .Yrange "0", "22.3504"
      .Zrange "0", "0"
      .XrangeAdd "0.0", "0.0"
      .YrangeAdd "0.0", "0.0"
@@ -662,6 +662,31 @@ Solver.FrequencyRange "2", "3"
      .SingleEnded "False"
      .Shield "PEC"
      .WaveguideMonitor "False"
-     .ReferenceWCS "5.8495", "11.064", "0", "0", "0", "-1", "1", "0", "0"
-(TRANSFORM) "0", "0", "1", "1", "0", "0", "0", "1", "0"| "-11.064", "-26.15", "-1.6"(ENDTRANSFORM)
+     .ReferenceWCS "5.9101", "11.1752", "0", "0", "0", "-1", "1", "0", "0"
+(TRANSFORM) "0", "0", "1", "1", "0", "0", "0", "1", "0"| "-11.1752", "-26.15", "-1.61"(ENDTRANSFORM)
+[ENDWAVEGUIDE]
+[WAVEGUIDE: 2]
+     .Label ""
+     .Folder ""
+     .NumberOfModes "1"
+     .AdjustPolarization "False"
+     .PolarizationAngle "0"
+     .ReferencePlaneDistance "0"
+     .TextSize "50"
+     .TextMaxLimit "1"
+     .Coordinates "Free"
+     .Orientation "zmin"
+     .PortOnBound "False"
+     .ClipPickedPortToBound "False"
+     .Xrange "0", "11.8202"
+     .Yrange "0", "22.350400000000008"
+     .Zrange "0", "0"
+     .XrangeAdd "0.0", "0.0"
+     .YrangeAdd "0.0", "0.0"
+     .ZrangeAdd "0.0", "0.0"
+     .SingleEnded "False"
+     .Shield "PEC"
+     .WaveguideMonitor "False"
+     .ReferenceWCS "5.9101", "11.1752", "0", "0", "0", "-1", "1", "0", "0"
+(TRANSFORM) "0", "0", "1", "1", "0", "0", "0", "1", "0"| "55.5373", "-26.15", "-1.61"(ENDTRANSFORM)
 [ENDWAVEGUIDE]

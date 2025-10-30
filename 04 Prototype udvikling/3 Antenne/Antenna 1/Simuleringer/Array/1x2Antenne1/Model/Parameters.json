@@ -31,11 +31,6 @@
             "value": "0.035"
         },
         {
-            "expr": "6.86",
-            "name": "k",
-            "value": "6.86"
-        },
-        {
             "expr": "56.5",
             "name": "Wm",
             "value": "56.5"
@@ -44,6 +39,26 @@
             "expr": "52.3",
             "name": "Lm",
             "value": "52.3"
+        },
+        {
+            "expr": "126.85",
+            "name": "Wavelength",
+            "value": "126.85"
+        },
+        {
+            "expr": "Wavelength*WaveAmount/4",
+            "name": "d",
+            "value": "31.7125"
+        },
+        {
+            "expr": "1",
+            "name": "WaveAmount",
+            "value": "1"
+        },
+        {
+            "expr": "4",
+            "name": "Elements",
+            "value": "4"
         }
     ],
     "version": 1
