@@ -28,7 +28,7 @@ Scope 70
 
 
 MED GEAR
-6V 41.10 s/p
+6V 41.10 rpm
 
 
 7V 48.93 rpm
