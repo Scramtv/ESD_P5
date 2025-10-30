@@ -1,0 +1,45 @@
+{
+    "parameters": [
+        {
+            "expr": "46",
+            "name": "Wp",
+            "value": "46"
+        },
+        {
+            "expr": "28.9",
+            "name": "Lp",
+            "value": "28.9"
+        },
+        {
+            "expr": "2.2",
+            "name": "Wf",
+            "value": "2.2"
+        },
+        {
+            "expr": "4",
+            "name": "y0",
+            "value": "4"
+        },
+        {
+            "expr": "1.61",
+            "name": "h",
+            "value": "1.61"
+        },
+        {
+            "expr": "0.035",
+            "name": "tp",
+            "value": "0.035"
+        },
+        {
+            "expr": "60",
+            "name": "Wm",
+            "value": "60"
+        },
+        {
+            "expr": "60",
+            "name": "Lm",
+            "value": "60"
+        }
+    ],
+    "version": 1
+}
