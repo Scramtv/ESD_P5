@@ -14,7 +14,7 @@ grid on
 ylabel("S-11 [dB]")
 xlabel("Frequency [GHz]");
 legend show;
-title("Measurement Antenna 0")
+title("Measurement of Antenna 1")
 hold off
 
 figure
@@ -22,7 +22,7 @@ hold on
 plot(Antenne1_Sim.Freq, Antenne1_Sim.S11, DisplayName="S-11")
 grid on
 ylabel("S-11 [dB]")
-xlabel("Freqncy [GHz]")
+xlabel("Frequency [GHz]")
 legend show;
-title("Measurement Antenna 1")
+title("Simulation of Antenna 1")
 hold off;
