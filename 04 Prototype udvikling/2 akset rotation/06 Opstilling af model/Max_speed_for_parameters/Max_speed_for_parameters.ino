@@ -5,8 +5,7 @@ static int pinZ_azi = 37;  //Pin Z
 
 //Motor_Azimut pins:
 static int ena_pin_azi = 13;  //enable pin controls the motor speed with PWM
-static int in1_azi = 15;      // logic input 1
-static int in2_azi = 14;      //logic input 2
+static int in1_azi = 14;      // logic input 1
 
 //encoder_tilt pins
 static int pinA_tilt = 26;  //Pin A
@@ -135,12 +134,20 @@ void minVoltageTest(WiFiClient client) {
 
     // 2. Convert the string of characters into an integer number
     int pwmValue = data.toInt();
+    bool direction;
+    if(pwmValue < 0){
+      pwmValue = pwmValue*(-1);
+      direction = 0; //switch direction
+    }
+    else{
+      direction = 1;
+    }
 
     if (pwmValue > 0 && pwmValue < 255) {
       client.print("Received: ");
       client.println(pwmValue);
-      analogWrite(ena_pin_tilt, pwmValue);
-      digitalWrite(in1_tilt, 1);
+      analogWrite(ena_pin_azi, pwmValue);
+      digitalWrite(in1_azi, direction);
 
       float temp = (float)pwmValue * 12 / 255;
       client.print("Voltage set to: ");
