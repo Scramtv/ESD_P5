@@ -117,10 +117,8 @@ void pinSetup() {
   //Motor:
   pinMode(ena_pin_azi, OUTPUT);
   pinMode(in1_azi, OUTPUT);
-  pinMode(in2_azi, OUTPUT);
   digitalWrite(ena_pin_azi, 0);
   digitalWrite(in1_azi, 0);
-  digitalWrite(in2_azi, 0);
 
   //Encoder:
   pinMode(pinA_azi, INPUT_PULLUP);
@@ -131,7 +129,6 @@ void pinSetup() {
   //Motor:
   pinMode(ena_pin_tilt, OUTPUT);
   pinMode(in1_tilt, OUTPUT);
-  pinMode(in2_tilt, OUTPUT);
   digitalWrite(ena_pin_tilt, 0);
   digitalWrite(in1_tilt, 0);
   digitalWrite(in2_tilt, 0);
