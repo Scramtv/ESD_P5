@@ -50,7 +50,7 @@ float angleDSP,  //reference input
   errorMargin = 0.01,
   direction = 0,
   currentPosition = 0,
-  controllerGain = 1,
+  controllerGain = 80.35,
   controllerZero = 1,
   deltaVolt = 0,
   oldDeltaVolt = 0,
@@ -91,10 +91,10 @@ void loop() {
       // Wait for a client to connect
       client = server.available();
       if (client) {
+        client.setTimeout(1); // controls the timeout needed for ESP32 to read input from PuTTy
+        client.println("Give me an angle");
         state = receiveAngle;
       } else {
-        client.println("Give me an angle");
-        delay(100);  //give time to send the message
         state = connect;
       }
 
@@ -103,55 +103,64 @@ void loop() {
     case receiveAngle:
       // angleDSP = inputDSP(); // for future code when DSP is working, get data from DSP
       readFromPC();
-      if (angleDSP > 0) { //if we have received an angle
-        client.print("Angle received: ");
-        client.println(angleDSP);
-        //initDirection();
-        state = regulate;
-      } else if (error > errorMargin && error < -errorMargin) {  //checks to see if it has breached our error margin, after essentially completion
+      currentPosition = convertPulsesToAngle(pos_azi);
+      error = angleDSP - currentPosition;  // need to check if it has moved
+      // client.print("Checking for movement");
+      client.print(millis());
+      client.print("; ");
+      client.println(currentPosition);
+
+
+      if (error > errorMargin || error < -errorMargin) {  //checks to see if it has breached our error margin, after essentially completion
+        //client.println("Need to regulate again");
         state = regulate;
       } else {
-        currentPosition = convertPulsesToAngle();
-        error = angleDSP - currentPosition;  // need to check if it has moved
+        analogWrite(ena_pin_azi, 0);
         state = receiveAngle;
       }
       break;
 
     case regulate:
-      regulator();
+      deltaVolt = error * controllerGain;
 
-      if (error < errorMargin && error > -errorMargin) {  //need to check if it has overshot or not
-        client.print("Error");
-        client.print(error);
-        client.println("Finished");
-        analogWrite(ena_pin_azi, 0);  //stop the motor
-        state = receiveAngle;
-      } else {
-        state = move;
-      }
+      state = move;
       break;
 
     case move:
       azimutVelocity();
-      state = regulate;
+      state = receiveAngle;
       break;
   }
 }
 
 
 void readFromPC() {
-  // temp test code
+  // int temp = millis();
   String data = client.readStringUntil('\n');
-  data.trim();  // Remove any extra spaces, \r, or \n characters
-  // 2. Convert the string of characters into an integer number
-  angleDSP = data.toInt();
-  pos_azi = 0;  // reset waiting for new position
+  // int _temp = millis();
+  // Check if the received string is NOT empty (meaning there is a message)
+  if (!data.isEmpty()) {
+    // Only execute the slow part if a message was received
+
+    // Clean up the string (often includes removing the newline/carriage return)
+    data.trim();
+
+    // 2. Convert the string of characters into an integer number
+    angleDSP = data.toInt();
+
+    // You can optionally add other processing steps here,
+    // like checking if the conversion was successful or if the angle is within a valid range.
+  }
+  // int new_temp = millis();
+  // client.print("delay");
+  // client.println(_temp - temp);
+  // client.println(new_temp-temp);
 }
 
 
 
 void regulator() {
-  currentPosition = convertPulsesToAngle();
+  currentPosition = convertPulsesToAngle(pos_azi);
   error = angleDSP - currentPosition;
   client.print("Error: ");
   client.println(error);
@@ -172,33 +181,36 @@ void azimutVelocity() {
   } else {
     velocity = aziOffset + deltaVolt;
   }
-  client.print("Velocity: ");
-  client.println(velocity);
+  // client.print("Velocity: ");  //trouble shoooting
+  // client.println(velocity);
+
   //velocity can only range between 0 and 255
   if (velocity < 0) {
     velocity = velocity * (-1);  //if the motor overshoots and needs to go the other direction
     direction = !clockwise;      // change direction
-    client.println("Direction change");
+    // client.println("Direction change");
   } else {
     direction = clockwise;
   }
+
   if (velocity > 255) {  //capping so this is the max speed
     velocity = 255;
   }
-  client.print("Velocity corrected: ");
-  client.println(velocity);
-  client.print("Direction: ");
-  client.println(direction);
+  // client.print("Velocity corrected: ");  //trouble shooting
+  // client.println(velocity);
+  // client.print("Direction: ");
+  // client.println(direction);
+
   digitalWrite(in1_azi, direction);    //control direction
   analogWrite(ena_pin_azi, velocity);  //control speed
 }
 
 
 
-float convertPulsesToAngle() {
-  float position = ((float)pos_azi / 5000) * 360;  // current position converted to degrees
-  client.print("Pos_azi");
-  client.println(pos_azi);
+float convertPulsesToAngle(float pos) {
+  float position = (pos / 5000) * 360;  // current position converted to degrees
+  //client.print("Pos_azi");
+  //client.println(pos_azi);
   return position;
 }
 
