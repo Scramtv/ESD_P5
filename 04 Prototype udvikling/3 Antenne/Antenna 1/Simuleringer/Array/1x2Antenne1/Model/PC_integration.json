@@ -35,11 +35,6 @@
          "value": 0.035
       },
       {
-         "name": "k",
-         "type": "float",
-         "value": 6.86
-      },
-      {
          "name": "Wm",
          "type": "float",
          "value": 56.5
@@ -48,6 +43,21 @@
          "name": "Lm",
          "type": "float",
          "value": 52.3
+      },
+      {
+         "name": "Wavelength",
+         "type": "float",
+         "value": 126.85
+      },
+      {
+         "name": "WaveAmount",
+         "type": "float",
+         "value": 1.0
+      },
+      {
+         "name": "Elements",
+         "type": "float",
+         "value": 4.0
       }
    ],
    "outputVariables": []
