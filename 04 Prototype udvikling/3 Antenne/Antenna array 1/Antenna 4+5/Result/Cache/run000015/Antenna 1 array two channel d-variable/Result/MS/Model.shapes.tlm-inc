@@ -1,0 +1,12 @@
+!Shape patch:patch
+  Copper (annealed)
+!Shape patch:Substrate
+  FR-4 (lossy)
+!Shape patch:ground
+  Copper (annealed)
+!Shape patch_1:patch
+  Copper (annealed)
+!Shape patch_1:Substrate
+  FR-4 (lossy)
+!Shape patch_1:ground
+  Copper (annealed)
