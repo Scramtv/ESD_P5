@@ -1,6 +1,0 @@
-ParaControl_AMD64-1xN @ Heu:  ===============================================================================================
-                              10127.00 ms |          | SV-crop-all | Outside MCalcResultIdentification | 40.07 MB | 0.0000 MB
-                              10129.00 ms |  --> 3rd | SV-crop-all |                        All meshes | 40.17 MB | 0.1024 MB
-                              10169.00 ms | --> peak | SV-crop-all |                        All meshes | 40.18 MB | 0.0082 MB
-                              10169.00 ms |  --> 2nd | SV-crop-all | Outside MCalcResultIdentification | 40.18 MB | 0.0000 MB
-                              ===============================================================================================
