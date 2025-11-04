@@ -6,7 +6,7 @@ Output type
 	Complex float32
 
 Device arguments
-	27
+	bladerf=0,nchan=2
 
 Sync
 	Unknown PPS
