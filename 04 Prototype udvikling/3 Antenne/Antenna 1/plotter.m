@@ -26,3 +26,15 @@ xlabel("Frequency [GHz]")
 legend show;
 title("Simulation of Antenna 1")
 hold off;
+
+figure
+hold on
+plot(Antenne1_Sim.Freq, Antenne1_Sim.S11, DisplayName="Simulated")
+plot(Antenne1.Freq/(10^9), s_para, DisplayName="Measured")
+grid on
+ylabel("S-11 [dB]")
+xlabel("Frequency [GHz]")
+xlim([2.3 2.5])
+legend show;
+title("S-11 Antenna 1")
+hold off;
