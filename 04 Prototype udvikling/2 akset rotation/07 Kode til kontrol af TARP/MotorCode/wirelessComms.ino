@@ -1,7 +1,7 @@
 
 
 // AP credentials
-const char* ssid = "AP";
+const char* ssid = "TARP";
 const char* password = "12345678H";  // min 8 characters
 
 
