@@ -1,0 +1,4 @@
+Hbridge fejl + fix noter
+- for langsom da modstanden til NPN BJT begrænser strømmen som oplader kondensatoren inden i BJT.
+- det resulterer i at BJT åbner langsomerer
+- derfor har vi valgt 250 ohm, fordi det giver en maks strøm ud af ESP32 på omkring 20 mA
