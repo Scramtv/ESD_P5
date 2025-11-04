@@ -47,15 +47,15 @@ volatile int pos_tilt_motor = 0;
 //Vars for PI or P controller
 float angleDSP,  //reference input
   error = 0,
-  errorMargin = 0.01,
+  errorMargin = 1,
   direction = 0,
   currentPosition = 0,
   controllerGain = 80.35,
   controllerZero = 1,
   deltaVolt = 0,
   oldDeltaVolt = 0,
-  aziOffset = 150,   // 70 - minimum voltage required for the azimut motor to run
-  tiltOffset = 150;  // 95 - minimum voltage required for the tilt motor to run
+  aziOffset = 170,   // 70 - minimum voltage required for the azimut motor to run
+  tiltOffset = 170;  // 95 - minimum voltage required for the tilt motor to run
 
 bool clockwise = 0;
 
@@ -90,9 +90,9 @@ void loop() {
     case connect:
       // Wait for a client to connect
       client = server.available();
-      if (client) {
-        client.setTimeout(1); // controls the timeout needed for ESP32 to read input from PuTTy
+      if (client) { 
         client.println("Give me an angle");
+        client.setTimeout(1);  // controls the timeout needed for ESP32 to read input from PuTTy
         state = receiveAngle;
       } else {
         state = connect;
@@ -109,6 +109,8 @@ void loop() {
       client.print(millis());
       client.print("; ");
       client.println(currentPosition);
+      client.println("Error: ");
+      client.println(error);
 
 
       if (error > errorMargin || error < -errorMargin) {  //checks to see if it has breached our error margin, after essentially completion
@@ -159,21 +161,6 @@ void readFromPC() {
 
 
 
-void regulator() {
-  currentPosition = convertPulsesToAngle(pos_azi);
-  error = angleDSP - currentPosition;
-  client.print("Error: ");
-  client.println(error);
-  client.print("Current position: ");
-  client.println(currentPosition);
-
-  //p controller
-  deltaVolt = error * controllerGain;
-  //pi controller
-  //deltaVolt = error * controllerGain - controllerZero * oldDeltaVolt;
-  //oldDeltaVolt = deltaVolt;
-}
-
 void azimutVelocity() {
   float velocity = aziOffset + deltaVolt;
   if (deltaVolt < 0) {  // ensures the offset is inverted if the delta volt is negative
@@ -200,6 +187,9 @@ void azimutVelocity() {
   // client.println(velocity);
   // client.print("Direction: ");
   // client.println(direction);
+  analogWrite(ena_pin_azi, 0);         // prevents short circuit
+  delayMicroseconds(2);                // needed to take care of time delay
+
 
   digitalWrite(in1_azi, direction);    //control direction
   analogWrite(ena_pin_azi, velocity);  //control speed
@@ -233,6 +223,7 @@ void sweep() {  //basic sweep
 
 void initDirection() {
   if (angleDSP > 180) {
+    angleDSP = 180 - angleDSP;
     direction = !clockwise;  //counter clock wise
     client.println("Counter wise");
   } else {
