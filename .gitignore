@@ -1,9 +1,20 @@
-~$*
+#Git ignore
+
+#Misc temp files:
 ~*
 *.tmp
 *.bkp
 .$*
+
+#Data from LTspice
 *.net
 *.op.raw
 *.raw
 *.log
+
+#Temp files from CST sim
+**/temp/
+
+#Altium History files:
+*.~*.PrjPcb.Zip
+*.~*.PcbDoc.Zip

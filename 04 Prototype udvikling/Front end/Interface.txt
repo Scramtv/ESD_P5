@@ -6,7 +6,7 @@ Output type
 	Complex float32
 
 Device arguments
-	27
+	bladerf=0,nchan=2
 
 Sync
 	Unknown PPS
@@ -19,9 +19,9 @@ MB0: Clock Source and time source
 
 Number of channels
 	2
-
+ 
 Sample rate
-	61.44 MSPS
+	61.44 MSPS/2
 
 Ch0 Frequency
 	91.75e6 (Regn efter)
