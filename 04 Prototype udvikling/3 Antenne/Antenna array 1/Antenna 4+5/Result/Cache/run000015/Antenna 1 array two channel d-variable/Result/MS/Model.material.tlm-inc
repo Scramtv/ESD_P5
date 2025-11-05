@@ -1,0 +1,22 @@
+
+metal
+  #going to use: (use) Copper (annealed)
+  material_name Copper (annealed)
+  !sigma 58000000.000000
+  !mur 1.000000
+
+medium
+  material_name FR-4 (lossy)
+  epsr 4.567417
+  mur 1.000000
+  sigma 0.000000
+  sigma_magnetic 0.000000
+  !pole
+    frequency 1G
+    delta_epsr 0.179463
+    delta_mur 0
+  !pole
+    frequency 10G
+    delta_epsr 0.179463
+    delta_mur 0
+  !epsr_hf 4.20849

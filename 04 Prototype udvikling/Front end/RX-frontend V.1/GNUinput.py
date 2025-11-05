@@ -39,9 +39,9 @@ class GNUinput(gr.top_block):
         ##################################################
         # Variables
         ##################################################
-        self.samp_rate = samp_rate = 61.44e6/2
-        self.pass_band = pass_band = 27.83e6
-        self.cent_freq = cent_freq = 24213.916e6
+        self.samp_rate = samp_rate = 61.44e6
+        self.pass_band = pass_band = 41.75e6
+        self.cent_freq = cent_freq = 2420.875e6
 
         ##################################################
         # Blocks
@@ -72,15 +72,14 @@ class GNUinput(gr.top_block):
         self.osmosdr_source_0.set_bb_gain(0, 1)
         self.osmosdr_source_0.set_antenna('', 1)
         self.osmosdr_source_0.set_bandwidth(pass_band, 1)
+        self.osmosdr_source_0.set_block_alias("osmocom_src")
         self.epy_block_0_0 = epy_block_0_0.blk()
         self.epy_block_0 = epy_block_0.blk()
-        self.blocks_file_sink_0_1 = blocks.file_sink(gr.sizeof_gr_complex*1, 'C:\\Users\\solva\\Desktop\\Spuf\\Data_test1.txt', False)
+        self.blocks_null_sink_0_0 = blocks.null_sink(gr.sizeof_float*1)
+        self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_float*1)
+        self.blocks_file_sink_0_1 = blocks.file_sink(gr.sizeof_gr_complex*1, 'C:\\Users\\solva\\Desktop\\GitHub\\ESD5\\ESD_P5\\04 Prototype udvikling\\Front end\\RX-frontend V.1\\Data_test1.txt', False)
         self.blocks_file_sink_0_1.set_unbuffered(True)
-        self.blocks_file_sink_0_0_0 = blocks.file_sink(gr.sizeof_float*1, 'C:\\Users\\solva\\Desktop\\Spuf\\Data_flag1.txt', False)
-        self.blocks_file_sink_0_0_0.set_unbuffered(True)
-        self.blocks_file_sink_0_0 = blocks.file_sink(gr.sizeof_float*1, 'C:\\Users\\solva\\Desktop\\Spuf\\Data_flag.txt', False)
-        self.blocks_file_sink_0_0.set_unbuffered(True)
-        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_gr_complex*1, 'C:\\Users\\solva\\Desktop\\Spuf\\Data_test.txt', False)
+        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_gr_complex*1, 'C:\\Users\\solva\\Desktop\\GitHub\\ESD5\\ESD_P5\\04 Prototype udvikling\\Front end\\RX-frontend V.1\\Data_test.txt', False)
         self.blocks_file_sink_0.set_unbuffered(True)
         self.analog_const_source_x_0 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 1)
 
@@ -91,9 +90,9 @@ class GNUinput(gr.top_block):
         self.connect((self.analog_const_source_x_0, 0), (self.epy_block_0, 1))
         self.connect((self.analog_const_source_x_0, 0), (self.epy_block_0_0, 1))
         self.connect((self.epy_block_0, 0), (self.blocks_file_sink_0, 0))
-        self.connect((self.epy_block_0, 1), (self.blocks_file_sink_0_0, 0))
-        self.connect((self.epy_block_0_0, 1), (self.blocks_file_sink_0_0_0, 0))
+        self.connect((self.epy_block_0, 1), (self.blocks_null_sink_0_0, 0))
         self.connect((self.epy_block_0_0, 0), (self.blocks_file_sink_0_1, 0))
+        self.connect((self.epy_block_0_0, 1), (self.blocks_null_sink_0, 0))
         self.connect((self.osmosdr_source_0, 0), (self.epy_block_0, 0))
         self.connect((self.osmosdr_source_0, 1), (self.epy_block_0_0, 0))
 
