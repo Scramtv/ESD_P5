@@ -35,7 +35,7 @@ void IRAM_ATTR PinB_F_azi() {
 }
 
 void IRAM_ATTR PinZ_R_azi() {
-  if (READ_PIN(pinA_azi) == 1) {  //Pin A is high, Pin Z is Rising
+  if (READ_PIN(pinZ_azi) == 1) {  //Pin A is high, Pin Z is Rising
     rot_azi++;
   } else {
     rot_azi--;
