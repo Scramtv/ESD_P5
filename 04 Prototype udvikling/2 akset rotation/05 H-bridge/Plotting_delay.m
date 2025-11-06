@@ -4,45 +4,39 @@ close all
 
 load("data.mat")
 
-figure
-plot(Q3_U9_delay.Time/10^(-6),Q3_U9_delay.V1, DisplayName="V1")
-hold on
-plot(Q3_U9_delay.Time/10^(-6),Q3_U9_delay.V2, DisplayName="V2")
-grid on
-xlabel("Time [µs]")
-xlim([-1 6])
-legend show
-hold off
+
 
 figure
-plot(Q4_U10_delay_fix.Time/10^(-6),Q4_U10_delay_fix.V1, DisplayName="V1")
+plot(Q4_U10_10k_res.Time/10^(-6),Q4_U10_10k_res.V1, DisplayName="PMOS + 10K")
 hold on
-plot(Q4_U10_delay_fix.Time/10^(-6),Q4_U10_delay_fix.V2, DisplayName="V2")
+plot(Q4_U10_10k_res.Time/10^(-6),Q4_U10_10k_res.V2, DisplayName="NMOS + 10K")
+hold on
+plot(Q4_U10_1k_res.Time/10^(-6),Q4_U10_1k_res.V1, DisplayName="PMOS + 1K")
+hold on
+plot(Q4_U10_1k_res.Time/10^(-6),Q4_U10_1k_res.V2, DisplayName="NMOS + 1K")
 grid on
 xlabel("Time [µs]")
- xlim([-1 6])
+xlim([-10 10])
 legend show
 hold off
 
 
-
 figure
-plot(Q4_U10_fixed1.Time/10^(-6),Q4_U10_fixed1.V1, DisplayName="V1")
+plot(BJT_Issue_BC546.Time/10^(-6),BJT_Issue_BC546.V1, DisplayName="Issue Base")
 hold on
-plot(Q4_U10_fixed1.Time/10^(-6),Q4_U10_fixed1.V2, DisplayName="V2")
+plot(BJT_Issue_BC546.Time/10^(-6),BJT_Issue_BC546.V2, DisplayName="Issue Collector")
+hold on
+plot(BJT_10K_res.Time/10^(-6),BJT_10K_res.V1, DisplayName="10k Base")
+hold on
+plot(BJT_10K_res.Time/10^(-6),BJT_10K_res.V2, DisplayName="10K Collector")
+hold on
+plot(BJT_10pF_cap.Time/10^(-6),BJT_10pF_cap.V1, DisplayName="10pF Base")
+hold on
+plot(BJT_10pF_cap.Time/10^(-6),BJT_10pF_cap.V2, DisplayName="10pF Collector")
 grid on
 xlabel("Time [µs]")
- xlim([-1 6])
+xlim([-2 3])
 legend show
 hold off
 
-% does not matter
-
-% figure
-% plot(ShortCircuit.Time,ShortCircuit.V1, DisplayName="V1")
-% hold on
-% plot(ShortCircuit.Time,ShortCircuit.V2, DisplayName="V2")
-% grid on
-% legend show
-% hold off
 
