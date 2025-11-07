@@ -16,20 +16,20 @@ void setup() {
 
 void loop() {
   analogWrite(ena, 0);
-  delay(1);
+  //delay(1);
   digitalWrite(dir, 0);
   analogWrite(ena, 255);
-  delay(3000);
+  delay(1000);
   
   analogWrite(ena, 0);
-  delay(1);
+  //delay(1);
   digitalWrite(dir, 1);
   analogWrite(ena, 255);
-  delay(3000);
+  delay(1000);
 
-  analogWrite(ena, 0);
-  delay(1);
-  digitalWrite(dir, 0);
-  analogWrite(ena, 0);
-  delay(3000);
+//   analogWrite(ena, 0);
+//   delay(1);
+//   digitalWrite(dir, 0);
+//   analogWrite(ena, 0);
+//   delay(1000);
 }
