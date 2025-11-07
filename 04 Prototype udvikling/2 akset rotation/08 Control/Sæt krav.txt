@@ -1,0 +1,3 @@
+Hvordan stiller vi krav til et system der ikke har nogle krav?
+	- Kom så tæt på aktuatorens grænse
+Kun "lige" med plads til disturbances

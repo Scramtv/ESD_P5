@@ -1,0 +1,55 @@
+2025-11-05 13:04:53   Some of the upcoming parameter combinations were already performed previously and will be skipped.
+                      Potential changes in the result settings like Template Based Post Processing are not taken into account. The feature can be deactivated via "Parameter Sweep -> Options..."
+2025-11-05 13:04:53   ==========================================================================
+                      Sequence: Sequence 1
+                      ==========================================================================
+
+2025-11-05 13:04:53   --------------------------------------------------------------------------
+                      Parameter Values: 
+
+                         Wp = 43
+2025-11-05 13:04:55   
+                      Structure update: Successful [0 hours, 0 min., 1 sec.]
+2025-11-05 13:06:54              Solver: Successful [0 hours, 1 min., 59 sec.]
+2025-11-05 13:06:54   --------------------------------------------------------------------------
+                      Parameter Values: 
+
+                         Wp = 43.1
+2025-11-05 13:06:56   
+                      Structure update: Successful [0 hours, 0 min., 1 sec.]
+2025-11-05 13:08:56              Solver: Successful [0 hours, 2 min., 0 sec.]
+2025-11-05 13:08:56   --------------------------------------------------------------------------
+                      Parameter Values: 
+
+                         Wp = 43.2
+2025-11-05 13:08:58   
+                      Structure update: Successful [0 hours, 0 min., 1 sec.]
+2025-11-05 13:10:39              Solver: Successful [0 hours, 1 min., 41 sec.]
+2025-11-05 13:10:39   --------------------------------------------------------------------------
+                      Parameter Values: 
+
+                         Wp = 43.3
+2025-11-05 13:10:41   
+                      Structure update: Successful [0 hours, 0 min., 2 sec.]
+2025-11-05 13:12:46              Solver: Successful [0 hours, 2 min., 5 sec.]
+2025-11-05 13:12:46   --------------------------------------------------------------------------
+                      Parameter Values: 
+
+                         Wp = 43.4
+2025-11-05 13:12:48   
+                      Structure update: Successful [0 hours, 0 min., 2 sec.]
+2025-11-05 13:14:47              Solver: Successful [0 hours, 1 min., 59 sec.]
+2025-11-05 13:14:47   --------------------------------------------------------------------------
+                      Parameter Values: 
+
+                         Wp = 43.5
+2025-11-05 13:14:49   
+                      Structure update: Successful [0 hours, 0 min., 1 sec.]
+2025-11-05 13:14:57             Solver: Aborted
+2025-11-05 13:14:57        Solver time: 0 hours, 0 min., 8 sec.
+2025-11-05 13:14:57   --------------------------------------------------------------------------
+2025-11-05 13:14:57   
+                      ==========================================================================
+                      Total structure update time: 0 hours, 0 min., 8 sec.
+                            Total evaluation time: 0 hours, 9 min., 52 sec.
+                      ==========================================================================
