@@ -1,0 +1,70 @@
+{
+    "parameters": [
+        {
+            "expr": "40.8",
+            "name": "Wp",
+            "value": "40.8"
+        },
+        {
+            "expr": "28.9",
+            "name": "Lp",
+            "value": "28.9"
+        },
+        {
+            "expr": "5",
+            "name": "y0",
+            "value": "5"
+        },
+        {
+            "expr": "30*2",
+            "name": "Ws",
+            "value": "60"
+        },
+        {
+            "expr": "53.9",
+            "name": "Ls",
+            "value": "53.9"
+        },
+        {
+            "expr": "2",
+            "name": "Wavelength",
+            "value": "2"
+        },
+        {
+            "expr": "2",
+            "name": "WavelengthsNumber",
+            "value": "2"
+        },
+        {
+            "expr": "2",
+            "name": "Wf",
+            "value": "2"
+        },
+        {
+            "expr": "0.035",
+            "name": "tc",
+            "value": "0.035"
+        },
+        {
+            "expr": "1.61",
+            "name": "h",
+            "value": "1.61"
+        },
+        {
+            "expr": "10",
+            "name": "feedline",
+            "value": "10"
+        },
+        {
+            "expr": "60",
+            "name": "unionLine",
+            "value": "60"
+        },
+        {
+            "expr": "2.6",
+            "name": "connectorLine",
+            "value": "2.6"
+        }
+    ],
+    "version": 1
+}
