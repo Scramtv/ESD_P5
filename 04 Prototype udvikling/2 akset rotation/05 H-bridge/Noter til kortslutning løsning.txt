@@ -1,0 +1,12 @@
+Hbridge fejl + fix noter
+- problem med BJT afladning.
+-- 10pF
+-- 1nF
+-- 10k ohm
+-- 1k ohm
+
+- kan formindskes ved hjælp at ændring af modstand i serie med base på BJT. 
+-- testet ved 1k og 10k ohm
+
+
+
