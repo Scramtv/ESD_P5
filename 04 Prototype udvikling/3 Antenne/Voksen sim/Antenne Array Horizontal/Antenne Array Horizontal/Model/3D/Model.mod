@@ -1489,3 +1489,13 @@ With FarfieldPlot
      .StoreSettings
 End With
 
+'@ pick edge
+
+'[VERSION]2025.5|34.0.1|20250530[/VERSION]
+Pick.PickEdgeFromId "component1:substrate", "39", "27"
+
+'@ pick edge
+
+'[VERSION]2025.5|34.0.1|20250530[/VERSION]
+Pick.PickEdgeFromId "component1_2:substrate", "13", "5"
+

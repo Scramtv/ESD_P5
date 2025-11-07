@@ -47,7 +47,7 @@ volatile int pos_tilt_motor = 0;
 //Vars for PI or P controller
 float angleDSP,  //reference input
   error = 0,
-  errorMargin = 1,
+  errorMargin = 0,
   direction = 0,
   currentPosition = 0,
   controllerGain = 80.35,
@@ -71,11 +71,12 @@ WiFiServer server(1234);  // TCP server on port 1234
 WiFiClient client;
 
 void setup() {
+    pinSetup();
   Serial.begin(115200);
   delay(1000);  //wait for serialport
   Serial.println("Booted");
 
-  pinSetup();
+
   attachInt();
 
   init_wireless();
@@ -109,8 +110,8 @@ void loop() {
       client.print(millis());
       client.print("; ");
       client.println(currentPosition);
-      client.println("Error: ");
-      client.println(error);
+      // client.println("Error: ");
+      // client.println(error);
 
 
       if (error > errorMargin || error < -errorMargin) {  //checks to see if it has breached our error margin, after essentially completion
@@ -149,7 +150,7 @@ void readFromPC() {
 
     // 2. Convert the string of characters into an integer number
     angleDSP = data.toInt();
-
+ client.println("Start now");
     // You can optionally add other processing steps here,
     // like checking if the conversion was successful or if the angle is within a valid range.
   }
@@ -188,7 +189,7 @@ void azimutVelocity() {
   // client.print("Direction: ");
   // client.println(direction);
   analogWrite(ena_pin_azi, 0);         // prevents short circuit
-  delayMicroseconds(2);                // needed to take care of time delay
+  delayMicroseconds(3);                // needed to take care of time delay. Recorded 2.3 us delay from switching
 
 
   digitalWrite(in1_azi, direction);    //control direction
