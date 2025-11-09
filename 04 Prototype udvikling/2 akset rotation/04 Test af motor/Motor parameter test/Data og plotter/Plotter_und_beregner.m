@@ -83,7 +83,7 @@ hold off;
 
 
 omega_Big = 15.75*2*pi;
-Ke_Big = (((mean(BigKe.V_In)-R_Big*mean(-1*BigKe.V_Ammeter))/(100*10^-3))/omega_Big);
+Ke_Big = (mean(BigKe.V_In)-R_Big*(mean(-1*BigKe.V_Ammeter))/(100*10^-3))/omega_Big;
 disp(Ke_Big)
 
 %% Step 4 (Kt)
@@ -152,6 +152,8 @@ text(150,0.04,{strcat('f(\omega)=',sprintf('%0.3e', p(1)),' * \omega','+',sprint
 %%%Small motor
 %%
 clear all;
+close all;
+clc;
 load("Small_Motor_Data.mat");
 
 disp("Small ass motor")
@@ -210,7 +212,7 @@ xline(Xtau, 'm--', {strcat(string(round(Xtau*10^3,2)), ' mS')}, 'LabelVerticalAl
 current_at_Xtau = (SmallL.V_Ammeter(find(SmallL.Time == Xtau)) * -1) / (100 * 10^-3);
 hold off;
 
-L_Small = (Xtau-0.4458925) * R_Small;
+L_Small = (Xtau-0.458925) * R_Small;
 disp(L_Small)
 
 
