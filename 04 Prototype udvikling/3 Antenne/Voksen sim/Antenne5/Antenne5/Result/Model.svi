@@ -5,7 +5,7 @@
     "pip": []
   },
   "header": {
-    "crop-info-version": 20240117,
+    "crop-info-version": 20240828,
     "history": {
       "acceleration-flavour": [
         1,
@@ -38,14 +38,14 @@
       34
     ],
     "np": {
-      "np-excl-tst": 184000,
-      "np-incl-tst": 184000,
-      "np-x-B": 184000,
-      "np-x-E": 184000,
-      "np-y-B": 184000,
-      "np-y-E": 184000,
-      "np-z-B": 184000,
-      "np-z-E": 184000
+      "np-excl-tst": 189750,
+      "np-incl-tst": 189750,
+      "np-x-B": 189750,
+      "np-x-E": 189750,
+      "np-y-B": 189750,
+      "np-y-E": 189750,
+      "np-z-B": 189750,
+      "np-z-E": 189750
     },
     "problem-type": 0
   },
@@ -64,5 +64,7 @@
   "pip": {
     "pec-is-ptc": false
   },
-  "sub-volumes": null
+  "sub-volumes": {
+    "active-carts": 0
+  }
 }

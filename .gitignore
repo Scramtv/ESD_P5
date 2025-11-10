@@ -6,6 +6,9 @@
 *.bkp
 .$*
 
+#Matlab autosaves
+*.asv
+
 #Data from LTspice
 *.net
 *.op.raw
