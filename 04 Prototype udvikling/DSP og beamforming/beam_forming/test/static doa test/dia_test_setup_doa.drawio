@@ -1,0 +1,49 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4">
+  <diagram name="Page-1" id="QBPVqwj_pVNtfct8nqtb">
+    <mxGraphModel dx="524" dy="377" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="UpPpGyGJfTPgxmkvVqlX-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="UpPpGyGJfTPgxmkvVqlX-2" target="UpPpGyGJfTPgxmkvVqlX-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UpPpGyGJfTPgxmkvVqlX-2" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="480" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="UpPpGyGJfTPgxmkvVqlX-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="UpPpGyGJfTPgxmkvVqlX-3" target="UpPpGyGJfTPgxmkvVqlX-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UpPpGyGJfTPgxmkvVqlX-3" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="480" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="UpPpGyGJfTPgxmkvVqlX-5" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="480" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="UpPpGyGJfTPgxmkvVqlX-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="UpPpGyGJfTPgxmkvVqlX-10" target="UpPpGyGJfTPgxmkvVqlX-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UpPpGyGJfTPgxmkvVqlX-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="UpPpGyGJfTPgxmkvVqlX-10" target="UpPpGyGJfTPgxmkvVqlX-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UpPpGyGJfTPgxmkvVqlX-10" value="BladeRF 2.0 micro xA9&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start; text-wrap: nowrap;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%22%20style%3D%22verticalLabelPosition%3Dbottom%3Bshadow%3D0%3Bdashed%3D0%3Balign%3Dcenter%3Bhtml%3D1%3BverticalAlign%3Dtop%3Bshape%3Dmxgraph.electrical.radio.aerial_-_antenna_1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22380%22%20y%3D%22150%22%20width%3D%2240%22%20height%3D%2250%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="550" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="UpPpGyGJfTPgxmkvVqlX-26" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;RX1&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="326" y="537" width="35" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="UpPpGyGJfTPgxmkvVqlX-29" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;RX2&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="405" y="537" width="35" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="UpPpGyGJfTPgxmkvVqlX-30" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;TX1&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="292" y="561" width="35" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="UpPpGyGJfTPgxmkvVqlX-32" value="Raspberry Pi 5" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="640" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="UpPpGyGJfTPgxmkvVqlX-36" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;USB 3.0&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="401" y="613" width="35" height="10" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
