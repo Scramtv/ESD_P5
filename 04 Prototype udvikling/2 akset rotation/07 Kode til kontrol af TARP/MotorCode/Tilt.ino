@@ -33,8 +33,7 @@ void tiltHome() {
 void tiltVelocity() {
   bool direction = 0;
   float velocity = tiltOffset + deltaVoltTilt;
-  client.print("Tilt velocity");
-  client.println(velocity);
+
   if (deltaVoltTilt < 0) {  // ensures the offset is inverted if the delta volt is negative
     velocity = -tiltOffset + deltaVoltTilt;
   } else {
