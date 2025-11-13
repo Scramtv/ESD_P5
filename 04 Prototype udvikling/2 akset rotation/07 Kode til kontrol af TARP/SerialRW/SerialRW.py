@@ -54,19 +54,9 @@ def serial_write(serial_inst: Serial, data: bytes | str) -> None:
     """
     __check_serial_open(serial_inst)
 
+    
     if isinstance(data, str):  # If data is string, encode it propperly
         serial_inst.write(data.encode('utf-8'))
         return
     serial_inst.write(data)
 
-
-#Usage example:
-if __name__ == "__main__":
-    esp = Serial(
-                port='/dev/ttyUSB0',
-                baudrate=115200,
-                timeout=1)
-
-
-    while True:
-        print(serial_read(esp))
