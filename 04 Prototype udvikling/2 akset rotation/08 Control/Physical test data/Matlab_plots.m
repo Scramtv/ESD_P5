@@ -18,3 +18,17 @@ xlim([0 4.5])
 legend show
 
 
+figure
+plot(x80gain.Time/(10^3)-16.766,x80gain.Position, DisplayName="80.35 Gain")
+hold on
+plot(x3_73Gain.Time/(10^3)-16.509,x3_73Gain.Position, DisplayName="3.73 Gain")
+hold off
+grid on
+yline(180, DisplayName="Target Angle")
+ylabel("Position [degrees]")
+xlabel("Time [s]")
+title("P regulator with 80.35 vs 3.73 Gain ")
+xlim([0 4.5])
+legend show
+
+
