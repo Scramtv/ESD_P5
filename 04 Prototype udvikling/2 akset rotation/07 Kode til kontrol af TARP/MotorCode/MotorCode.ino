@@ -70,23 +70,57 @@ operation state = connect;
 WiFiServer server(1234);  // TCP server on port 1234
 WiFiClient client;
 
+TaskHandle_t core1;
+TaskHandle_t core2;
+
 void setup() {
-    pinSetup();
-  Serial.begin(115200);
-  delay(1000);  //wait for serialport
-  Serial.println("Booted");
+  pinSetup();
+  init_serial();
 
 
   attachInt();
 
   init_wireless();
+
+  xTaskCreatePinnedToCore(
+                  Core1Loop,   /* Task function. */
+                  "Core1",     /* name of task. */
+                  10000,       /* Stack size of task */
+                  NULL,        /* parameter of the task */
+                  1,           /* priority of the task */
+                  &core1,      /* Task handle to keep track of created task */
+                  0);          /* pin task to core 0 */ 
+
+  xTaskCreatePinnedToCore(
+                  Core2Loop,   /* Task function. */
+                  "Core2",     /* name of task. */
+                  10000,       /* Stack size of task */
+                  NULL,        /* parameter of the task */
+                  1,           /* priority of the task */
+                  &core2,      /* Task handle to keep track of created task */
+                  0);          /* pin task to core 0 */ 
 }
 
 unsigned long lastrun = 0;
 unsigned long interval = 10;
 
-void loop() {
 
+
+void Core1Loop(void * pvParameters) {
+  while(true){
+    //Insert code for core 1 here
+  }
+}
+
+void Core2Loop(void * pvParameters) {
+  while(true){
+    //Insert code for core 2 here
+  }
+}
+
+
+void loop(){
+  //IS NEVER RUNNING
   switch (state) {
     case connect:
       // Wait for a client to connect
@@ -135,7 +169,6 @@ void loop() {
       break;
   }
 }
-
 
 void readFromPC() {
   // int temp = millis();
