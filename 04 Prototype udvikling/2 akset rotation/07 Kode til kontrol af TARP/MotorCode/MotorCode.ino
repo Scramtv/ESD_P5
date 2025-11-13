@@ -83,7 +83,7 @@ TaskHandle_t core2;
 
 void setup() {
   pinSetup();
-<<<<<<< Updated upstream
+
   init_serial();
 
 
@@ -107,7 +107,9 @@ void setup() {
                   NULL,        /* parameter of the task */
                   1,           /* priority of the task */
                   &core2,      /* Task handle to keep track of created task */
-                  0);          /* pin task to core 0 */ 
+                  1);          /* pin task to core 0 */ 
+
+  disableCore0WDT();
 }
 
 unsigned long lastrun = 0;
@@ -117,19 +119,7 @@ unsigned long interval = 10;
 
 void Core1Loop(void * pvParameters) {
   while(true){
-    //Insert code for core 1 here
-  }
-}
-
-void Core2Loop(void * pvParameters) {
-  while(true){
-    //Insert code for core 2 here
-  }
-}
-
-
-void loop(){
-  //IS NEVER RUNNING
+    //vTaskDelay(1);
   switch (state) {
     case connect:
       // Wait for a client to connect
@@ -152,10 +142,12 @@ void loop(){
       int gearing = 1; // which gearing is running on the sensor
       currentPositionTilt = convertPulsesToAngle(pos_tilt, gearing);
       errorTilt = angleTilt - currentPositionTilt;
+      client.print("Tilt pos: ");
       client.println(pos_tilt);
+      client.print("Tilt pos in degrees: ");
        client.println(currentPositionTilt);
-       client.print("Error: ");
-       client.println(errorTilt);
+      client.print("Tilt error: ");
+     client.println(errorTilt);
 
 
       //----------------AZIMUT CONTROL-------------------
@@ -165,9 +157,11 @@ void loop(){
       //-------DATA OUT--------
       // client.print(millis());
       // client.print("; ");
-      client.print("Azi position: ");
+      client.print("Azi pos: ");
+      client.println(pos_azi);
+      client.print("Azi pos in degrees: ");
        client.println(currentPositionAzi);
-      client.println("Error: ");
+      client.print("Azi error: ");
      client.println(errorAzi);
 
 
@@ -194,34 +188,25 @@ void loop(){
       state = receiveAngle;
       break;
   }
-}
-
-<<<<<<< Updated upstream
-void readFromPC() {
-  // int temp = millis();
-  String data = client.readStringUntil('\n');
-  // int _temp = millis();
-  // Check if the received string is NOT empty (meaning there is a message)
-  if (!data.isEmpty()) {
-    // Only execute the slow part if a message was received
-
-    // Clean up the string (often includes removing the newline/carriage return)
-    data.trim();
-
-    // 2. Convert the string of characters into an integer number
-    angleDSP = data.toInt();
- client.println("Start now");
-    // You can optionally add other processing steps here,
-    // like checking if the conversion was successful or if the angle is within a valid range.
+  //vTaskDelay(5 / portTICK_PERIOD_MS);
   }
-  // int new_temp = millis();
-  // client.print("delay");
-  // client.println(_temp - temp);
-  // client.println(new_temp-temp);
+  
 }
-=======
 
->>>>>>> Stashed changes
+void Core2Loop(void * pvParameters) {
+  while(true){
+    vTaskDelay(1);
+    //Insert code for core 2 here
+    vTaskDelay(5 / portTICK_PERIOD_MS);
+  }
+}
+
+
+void loop(){
+}
+
+
+
 
 
 float convertPulsesToAngle(float pos, int gearing) {
