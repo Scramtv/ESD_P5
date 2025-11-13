@@ -76,7 +76,7 @@ void IRAM_ATTR PinB_F_tilt() {
 }
 
 void IRAM_ATTR PinZ_R_tilt() {
-  if (READ_PIN(pinA_tilt) == 1) {  //Pin A is high, Pin Z is Rising
+  if (READ_PIN(pinZ_tilt) == 1) {  //Pin A is high, Pin Z is Rising
     rot_tilt++;
   } else {
     rot_tilt--;
@@ -91,6 +91,24 @@ void IRAM_ATTR PinA_R_tilt_motor() {
     pos_tilt_motor--;
   }
 }
+
+//tilt buttons
+void IRAM_ATTR btnYellowInterrupt() {
+  if (READ_PIN(btn_yellow) == 0) {  
+    btn_yellow_interrupt = true;
+  }else{
+    btn_yellow_interrupt = false;
+  }
+}
+
+void IRAM_ATTR btnBlueInterrupt() {
+  if (READ_PIN(btn_blue) == 0) {  
+    btn_blue_interrupt = true;
+  }else{
+    btn_blue_interrupt = false;
+  }
+}
+
 
 void attachInt() {
   //Interrups:
@@ -110,6 +128,11 @@ void attachInt() {
 
   //tilt motor
   attachInterrupt(digitalPinToInterrupt(pinA_tilt_motor), PinA_R_tilt_motor, RISING);
+
+  
+  //buttons
+  attachInterrupt(digitalPinToInterrupt(btn_blue), btnBlueInterrupt, FALLING);
+  attachInterrupt(digitalPinToInterrupt(btn_yellow), btnYellowInterrupt, FALLING);
 }
 
 void pinSetup() {
@@ -129,6 +152,7 @@ void pinSetup() {
   //Motor:
   pinMode(ena_pin_tilt, OUTPUT);
   pinMode(in1_tilt, OUTPUT);
+  pinMode(in2_tilt, OUTPUT);
   digitalWrite(ena_pin_tilt, 0);
   digitalWrite(in1_tilt, 0);
   digitalWrite(in2_tilt, 0);
@@ -142,6 +166,6 @@ void pinSetup() {
   pinMode(pinA_tilt_motor, INPUT_PULLUP);
 
   //buttons:
-  pinMode(btn_cw_limit, INPUT_PULLUP);
-  pinMode(btn_ccw_limit, INPUT_PULLUP);
+  pinMode(btn_yellow, INPUT_PULLUP);
+  pinMode(btn_blue, INPUT_PULLUP);
 }
