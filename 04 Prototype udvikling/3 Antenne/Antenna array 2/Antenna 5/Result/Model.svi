@@ -8,21 +8,15 @@
     "crop-info-version": 20240828,
     "history": {
       "acceleration-flavour": [
-        1,
-        1,
         1
       ],
       "general-state": [
-        1,
-        5,
-        8
+        1
       ],
       "module": [
-        3,
-        2,
         3
       ],
-      "readable": "states: 0: {S: def M: So A: cpu } 1: {S: crp-pc M: PC A: cpu } 2: {S: ld-so M: So A: cpu } "
+      "readable": "states: 0: {S: def M: So A: cpu } "
     },
     "naming": "v2024",
     "num-monitors": 0,
