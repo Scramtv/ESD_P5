@@ -71,10 +71,8 @@ WiFiServer server(1234);  // TCP server on port 1234
 WiFiClient client;
 
 void setup() {
-    pinSetup();
-  Serial.begin(115200);
-  delay(1000);  //wait for serialport
-  Serial.println("Booted");
+  pinSetup();
+  init_serial();
 
 
   attachInt();
@@ -86,7 +84,6 @@ unsigned long lastrun = 0;
 unsigned long interval = 10;
 
 void loop() {
-
   switch (state) {
     case connect:
       // Wait for a client to connect

@@ -21,3 +21,6 @@
 #Altium History files:
 *.~*.PrjPcb.Zip
 *.~*.PcbDoc.Zip
+
+#Temp files python
+__pycache__/
