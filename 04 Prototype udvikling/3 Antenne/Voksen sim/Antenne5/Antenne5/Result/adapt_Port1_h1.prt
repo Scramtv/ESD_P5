@@ -18,11 +18,11 @@ frequency = 2.400000e+009
 fcutoff   = 0.000000e+000
 alpha     = 0.000000e+000
 beta      = 9.007064e+001
-accuracy  = 6.279366e-012
+accuracy  = 6.189205e-012
 
 type          = QTEM
 wave imp.     = 2.518140e+002
-wave imp.sig. = 4.136451e-008
+wave imp.sig. = 4.079324e-008
 line imp.     = 6.177584e+001
 
 ref. port     = 0
