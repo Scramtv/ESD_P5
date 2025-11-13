@@ -21,7 +21,7 @@ CL_azi=(d_azi*sys_azi)/(1+d_azi*sys_azi);
 CL_tilt=(d_tilt*sys_tilt)/(1+d_tilt*sys_tilt);
 
 figure;
-step(CL_azi, CL_tilt);
+step(CL_azi, CL_tilt, RespConfig('StepAmplitude', 180));
 title('Closed loop step response');
 legend('Azimuth', 'Tilt');
 
