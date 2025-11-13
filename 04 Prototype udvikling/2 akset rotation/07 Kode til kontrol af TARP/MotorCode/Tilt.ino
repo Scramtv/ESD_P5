@@ -6,11 +6,17 @@ void tiltHome() {
   digitalWrite(in1_tilt, !forward);
   digitalWrite(in2_tilt, forward);
   analogWrite(ena_pin_tilt, 150);
-
+  int i=0;
   while (btn_blue_interrupt == false) {
     //we chilling here till we are home
-    Serial.println("HOMING!!!!!!!");
-    client.println(pos_tilt);
+    //Serial.println("HOMING!!!!!!!");
+    //client.println(pos_tilt);
+    //client.println(i);
+    //vTaskDelay(1);
+    i++;
+    if(i>1000){
+      i = 0;
+    }
   }
   //turn off
   analogWrite(ena_pin_tilt, 0);
@@ -20,7 +26,7 @@ void tiltHome() {
   // client.println(pos_tilt);
   // delay(100); //delay to ensure motor has stopped completely
   pos_tilt = 0;  //setting starting position to 0
-  angleTilt = 10; //need offset for it to work
+  //angleTilt = 10; //need offset for it to work
 }
 
 
