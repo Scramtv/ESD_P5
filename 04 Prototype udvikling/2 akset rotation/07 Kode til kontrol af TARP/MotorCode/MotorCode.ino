@@ -22,8 +22,8 @@ static int in1_tilt = 18;      // logic input 1
 static int in2_tilt = 17;      //logic input 2
 
 //btn
-static int btn_cw_limit = 41;
-static int btn_ccw_limit = 42;
+static int btn_yellow = 42;
+static int btn_blue = 41;
 
 //-------------------------------------------------------------------------------//
 #include "soc/gpio_struct.h"
@@ -43,21 +43,29 @@ volatile int rot_tilt = 0;
 //Vars for encoder tilt motor
 volatile int pos_tilt_motor = 0;
 
+//Vars for button interrupt
+volatile bool btn_yellow_interrupt = false;
+volatile bool btn_blue_interrupt = false;
+
+
 
 //Vars for PI or P controller
-float angleDSP,  //reference input
-  error = 0,
-  errorMargin = 0,
-  direction = 0,
-  currentPosition = 0,
-  controllerGain = 80.35,
-  controllerZero = 1,
-  deltaVolt = 0,
-  oldDeltaVolt = 0,
-  aziOffset = 170,   // 70 - minimum voltage required for the azimut motor to run
-  tiltOffset = 170;  // 95 - minimum voltage required for the tilt motor to run
+float angleAzi = 0,  //input from PI or PC
+  angleTilt = 0,
+      errorAzi = 0,
+      errorTilt = 0,
+      errorMargin = 0,
+      currentPositionAzi = 0,
+      currentPositionTilt = 0,
+      controllerGainAzi = 24.83,  //from simulated model
+  controllerGainTilt = 4.32, // from simulated model
+      deltaVoltAzi = 0,
+      deltaVoltTilt = 0,
+      aziOffset = 70,  // 70 - minimum voltage required for the azimut motor to run
+  tiltOffset = 75;     // 75 - minimum voltage required for the tilt motor to run
 
-bool clockwise = 0;
+bool clockwise = 0; 
+bool forward = 1; //needs to be 1 always!!!!!!
 
 // State machine
 enum operation { connect,
@@ -75,6 +83,7 @@ TaskHandle_t core2;
 
 void setup() {
   pinSetup();
+<<<<<<< Updated upstream
   init_serial();
 
 
@@ -125,7 +134,8 @@ void loop(){
     case connect:
       // Wait for a client to connect
       client = server.available();
-      if (client) { 
+      if (client) {
+        tiltHome();  //autohome
         client.println("Give me an angle");
         client.setTimeout(1);  // controls the timeout needed for ESP32 to read input from PuTTy
         state = receiveAngle;
@@ -136,40 +146,57 @@ void loop(){
       break;
 
     case receiveAngle:
-      // angleDSP = inputDSP(); // for future code when DSP is working, get data from DSP
+    {
       readFromPC();
-      currentPosition = convertPulsesToAngle(pos_azi);
-      error = angleDSP - currentPosition;  // need to check if it has moved
-      // client.print("Checking for movement");
-      client.print(millis());
-      client.print("; ");
-      client.println(currentPosition);
-      // client.println("Error: ");
-      // client.println(error);
+      //-----------------TILT CONTROL--------------------
+      int gearing = 1; // which gearing is running on the sensor
+      currentPositionTilt = convertPulsesToAngle(pos_tilt, gearing);
+      errorTilt = angleTilt - currentPositionTilt;
+      client.println(pos_tilt);
+       client.println(currentPositionTilt);
+       client.print("Error: ");
+       client.println(errorTilt);
 
 
-      if (error > errorMargin || error < -errorMargin) {  //checks to see if it has breached our error margin, after essentially completion
-        //client.println("Need to regulate again");
+      //----------------AZIMUT CONTROL-------------------
+      gearing = 5; //switch gearing
+      currentPositionAzi = convertPulsesToAngle(pos_azi, gearing);
+      errorAzi = angleAzi - currentPositionAzi;  // need to check if it has moved
+      //-------DATA OUT--------
+      // client.print(millis());
+      // client.print("; ");
+      client.print("Azi position: ");
+       client.println(currentPositionAzi);
+      client.println("Error: ");
+     client.println(errorAzi);
+
+
+      if ((errorAzi > errorMargin || errorAzi < -errorMargin) || (errorTilt > errorMargin || errorTilt < -errorMargin)) {  //checks to see if tilt or azimut has breached our error margin, after essentially completion
         state = regulate;
       } else {
         analogWrite(ena_pin_azi, 0);
+        analogWrite(ena_pin_tilt, 0);
         state = receiveAngle;
       }
+    }
       break;
-
+    
     case regulate:
-      deltaVolt = error * controllerGain;
-
+      deltaVoltTilt = errorTilt * controllerGainTilt;
+      deltaVoltAzi = errorAzi * controllerGainAzi;
       state = move;
       break;
 
     case move:
+      tiltVelocity();
       azimutVelocity();
+
       state = receiveAngle;
       break;
   }
 }
 
+<<<<<<< Updated upstream
 void readFromPC() {
   // int temp = millis();
   String data = client.readStringUntil('\n');
@@ -192,59 +219,17 @@ void readFromPC() {
   // client.println(_temp - temp);
   // client.println(new_temp-temp);
 }
+=======
+
+>>>>>>> Stashed changes
 
 
-
-void azimutVelocity() {
-  float velocity = aziOffset + deltaVolt;
-  if (deltaVolt < 0) {  // ensures the offset is inverted if the delta volt is negative
-    velocity = -aziOffset + deltaVolt;
-  } else {
-    velocity = aziOffset + deltaVolt;
-  }
-  // client.print("Velocity: ");  //trouble shoooting
-  // client.println(velocity);
-
-  //velocity can only range between 0 and 255
-  if (velocity < 0) {
-    velocity = velocity * (-1);  //if the motor overshoots and needs to go the other direction
-    direction = !clockwise;      // change direction
-    // client.println("Direction change");
-  } else {
-    direction = clockwise;
-  }
-
-  if (velocity > 255) {  //capping so this is the max speed
-    velocity = 255;
-  }
-  // client.print("Velocity corrected: ");  //trouble shooting
-  // client.println(velocity);
-  // client.print("Direction: ");
-  // client.println(direction);
-  analogWrite(ena_pin_azi, 0);         // prevents short circuit
-  delayMicroseconds(3);                // needed to take care of time delay. Recorded 2.3 us delay from switching
-
-
-  digitalWrite(in1_azi, direction);    //control direction
-  analogWrite(ena_pin_azi, velocity);  //control speed
-}
-
-
-
-float convertPulsesToAngle(float pos) {
-  float position = (pos / 5000) * 360;  // current position converted to degrees
-  //client.print("Pos_azi");
-  //client.println(pos_azi);
+float convertPulsesToAngle(float pos, int gearing) {
+  float position = (pos / (gearing * 1000)) * 360;  // current position converted to degrees
   return position;
 }
 
 
-
-
-
-
-void inputDSP() {  //interface received from DSP
-}
 
 void sweep() {  //basic sweep
   //rotate towards a zero point
@@ -252,16 +237,4 @@ void sweep() {  //basic sweep
     analogWrite(ena_pin_azi, 70);
   }
   rot_azi = 0;
-}
-
-
-void initDirection() {
-  if (angleDSP > 180) {
-    angleDSP = 180 - angleDSP;
-    direction = !clockwise;  //counter clock wise
-    client.println("Counter wise");
-  } else {
-    direction = clockwise;  //clock wise
-    client.println("Clockwise");
-  }
 }
