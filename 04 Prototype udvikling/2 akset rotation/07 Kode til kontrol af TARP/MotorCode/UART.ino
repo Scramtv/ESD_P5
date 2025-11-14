@@ -1,4 +1,4 @@
-
+//H123 Slettes til fordel for serial comms
 void readFromPC() {
   // Variables to hold the parsed data
   int motorID = -1;  // Default to -1 (error/no motor selected)
