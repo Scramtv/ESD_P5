@@ -1,22 +1,12 @@
-
-
-
 void tiltHome() {
   client.println("Homing");
   digitalWrite(in1_tilt, !forward);
   digitalWrite(in2_tilt, forward);
   analogWrite(ena_pin_tilt, 150);
-  int i=0;
+  
+  //H123 Hvad bruges dette loop til nu? udover blot at vente?
+  //Venter til vi rammer
   while (btn_blue_interrupt == false) {
-    //we chilling here till we are home
-    //Serial.println("HOMING!!!!!!!");
-    //client.println(pos_tilt);
-    //client.println(i);
-    //vTaskDelay(1);
-    i++;
-    if(i>1000){
-      i = 0;
-    }
   }
   //turn off
   analogWrite(ena_pin_tilt, 0);
@@ -33,6 +23,7 @@ void tiltHome() {
 void tiltVelocity() {
   bool direction = 0;
   float velocity = tiltOffset + deltaVoltTilt;
+  //H123 Igen hvorfor er deltaVoltTilt ikke en input parametre?
 
   if (deltaVoltTilt < 0) {  // ensures the offset is inverted if the delta volt is negative
     velocity = -tiltOffset + deltaVoltTilt;
@@ -53,6 +44,8 @@ void tiltVelocity() {
   if (velocity > 255) {  //capping so this is the max speed
     velocity = 255;
   }
+  //H123 Igen lav de tre ovenstående ind til en ifstatement
+  //H123 Nu ser jeg at ovenstående er tæt på en 1-1 copy paste fra Azimut, hvorfor ikke lave en funktion der tager offset + delta volt som input og returnere en velocity + direction?
 
 
   digitalWrite(in1_tilt, direction);  //control direction

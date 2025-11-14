@@ -1,4 +1,5 @@
 void azimutVelocity() {
+  //H123 Hvorfor er deltaVoltAzi ikke et input til funktionen her i stedet for en global var?
   float velocity = aziOffset + deltaVoltAzi;
   bool direction = 0;
 
@@ -17,10 +18,11 @@ void azimutVelocity() {
     direction = clockwise;
   }
 
+
   if (velocity > 255) {  //capping so this is the max speed
     velocity = 255;
   }
-
+  //H123 De tre ovenstående if statments kan skrives sammen til en
 
   // client.print("Velocity corrected: ");  //trouble shooting
   // client.println(velocity);
@@ -34,7 +36,8 @@ void azimutVelocity() {
   analogWrite(ena_pin_azi, velocity);  //control speed
 }
 
-
+//H123 Optimer nedenstående, og giv den et andet navn. Init plejer at betyde initialization og ikke initial direction
+//Skal sikre hvilken vej den skal dreje for at nå hen til et mål
 void aziInitDirection() {
   bool direction = 0;
   if (angleAzi > 180) {
