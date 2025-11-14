@@ -40,6 +40,7 @@ void get_serial_cmd() {
 
 
 void send_serial_pos(float azi_pos, float tilt_pos) {
+  //Input should be in degrees
   Serial.print(azi_pos);
   Serial.print(";");
   Serial.print(tilt_pos);
