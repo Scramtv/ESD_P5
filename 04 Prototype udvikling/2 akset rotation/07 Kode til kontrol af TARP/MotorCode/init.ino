@@ -92,6 +92,9 @@ void IRAM_ATTR PinA_R_tilt_motor() {
   }
 }
 
+//H123 Disse interrups kan laves som:
+// btn_yellow_interrupt = !READ_PIN(btn_yellow)
+//Sparer et par clock cycles (Gælder begge)
 //tilt buttons
 void IRAM_ATTR btnYellowInterrupt() {
   if (READ_PIN(btn_yellow) == 0) {  

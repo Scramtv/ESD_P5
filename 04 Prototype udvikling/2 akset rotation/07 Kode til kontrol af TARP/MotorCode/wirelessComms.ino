@@ -1,9 +1,7 @@
-
-
 // AP credentials
+//H123 Alt wifi skal udkommenteres når pien sidder på
 const char* ssid = "TARP";
 const char* password = "12345678H";  // min 8 characters
-
 
 
 void init_wireless() {
