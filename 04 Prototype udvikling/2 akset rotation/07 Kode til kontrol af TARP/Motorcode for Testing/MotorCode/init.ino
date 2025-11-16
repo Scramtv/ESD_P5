@@ -83,23 +83,33 @@ void IRAM_ATTR PinZ_R_tilt() {
   }
 }
 
+//tilt motor:
+void IRAM_ATTR PinA_R_tilt_motor() {
+  if (in1_tilt == 1) {  //Doesnt have direction, so we base it off direction of motor
+    pos_tilt_motor++;
+  } else {
+    pos_tilt_motor--;
+  }
+}
 
-
+//H123 Disse interrups kan laves som:
+// btn_yellow_interrupt = !READ_PIN(btn_yellow)
+//Sparer et par clock cycles (Gælder begge)
 //tilt buttons
 void IRAM_ATTR btnYellowInterrupt() {
-  yellow_interrupt = !READ_PIN(btn_yellow);
+  if (READ_PIN(btn_yellow) == 0) {  
+    btn_yellow_interrupt = true;
+  }else{
+    btn_yellow_interrupt = false;
+  }
 }
 
 void IRAM_ATTR btnBlueInterrupt() {
-  blue_interrupt = !READ_PIN(btn_blue);
-}
-
-
-// Samplerate timer interrupt
-void IRAM_ATTR timer_callback(void* arg) {
-BaseType_t higherWoken = pdFALSE;
-    vTaskNotifyGiveFromISR(core1, &higherWoken);
-    if(higherWoken) portYIELD_FROM_ISR();
+  if (READ_PIN(btn_blue) == 0) {  
+    btn_blue_interrupt = true;
+  }else{
+    btn_blue_interrupt = false;
+  }
 }
 
 
@@ -119,37 +129,22 @@ void attachInt() {
   attachInterrupt(digitalPinToInterrupt(pinB_tilt), PinB_F_tilt, FALLING);
   attachInterrupt(digitalPinToInterrupt(pinZ_tilt), PinZ_R_tilt, RISING);
 
+  //tilt motor
+  attachInterrupt(digitalPinToInterrupt(pinA_tilt_motor), PinA_R_tilt_motor, RISING);
 
-
+  
   //buttons
   attachInterrupt(digitalPinToInterrupt(btn_blue), btnBlueInterrupt, FALLING);
   attachInterrupt(digitalPinToInterrupt(btn_yellow), btnYellowInterrupt, FALLING);
-}
-
-void init_sample_rate_timer() {
-
-    // Declare a timer handle
-  esp_timer_handle_t periodic_timer;
-
-  // Define the timer creation arguments
-  const esp_timer_create_args_t timer_args = {
-    .callback = &timer_callback,
-    .name = "my_periodic_timer"
-  };
-  // Create the timer
-  ESP_ERROR_CHECK(esp_timer_create(&timer_args, &periodic_timer));
-
-  // 3. Start the Timer Periodically
-  ESP_ERROR_CHECK(esp_timer_start_periodic(periodic_timer, sampleRate));
 }
 
 void pinSetup() {
   //Init azi pins
   //Motor:
   pinMode(ena_pin_azi, OUTPUT);
-  pinMode(dir_azi, OUTPUT);
+  pinMode(in1_azi, OUTPUT);
   digitalWrite(ena_pin_azi, 0);
-  digitalWrite(dir_azi, 0);
+  digitalWrite(in1_azi, 0);
 
   //Encoder:
   pinMode(pinA_azi, INPUT_PULLUP);
@@ -159,11 +154,11 @@ void pinSetup() {
   //Init tilt:
   //Motor:
   pinMode(ena_pin_tilt, OUTPUT);
-  pinMode(dir1_tilt, OUTPUT);
-  pinMode(dir2_tilt, OUTPUT);
+  pinMode(in1_tilt, OUTPUT);
+  pinMode(in2_tilt, OUTPUT);
   digitalWrite(ena_pin_tilt, 0);
-  digitalWrite(dir1_tilt, 0);
-  digitalWrite(dir2_tilt, 0);
+  digitalWrite(in1_tilt, 0);
+  digitalWrite(in2_tilt, 0);
 
   //Encoder:
   pinMode(pinA_tilt, INPUT_PULLUP);

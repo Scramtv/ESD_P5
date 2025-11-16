@@ -1,9 +1,4 @@
-//---------------------------------------------------------------------------------------
-//-----------------BRUGES TIL AT TESTE --------------------------------------------------
-//---------------------------------------------------------------------------------------
-//---------------------------------------------------------------------------------------
-
-
+//H123 Slettes til fordel for serial comms
 void readFromPC() {
   // Variables to hold the parsed data
   int motorID = -1;  // Default to -1 (error/no motor selected)
@@ -37,10 +32,10 @@ void readFromPC() {
       client.println("Angle Received!");  // Acknowledge receipt
 
       // --- Execute the Motor Control Logic ---
-      if (motorID == 0) {
+      if (motorID == 1) {
 
         if (xSemaphoreTake(angleMutex, portMAX_DELAY)) {  //ensures safe passing
-          targetAzi = angle;
+          angleAzi = angle;
           xSemaphoreGive(angleMutex);
         }
 
@@ -48,9 +43,9 @@ void readFromPC() {
         client.println(angle);
 
 
-      } else if (motorID == 1) {
+      } else if (motorID == 0) {
         if (xSemaphoreTake(angleMutex, portMAX_DELAY)) {  //ensures safe passing
-          targetTilt = angle;
+          angleTilt = angle;
           xSemaphoreGive(angleMutex);
         }
         client.print("Controlling Tilt. Angle: ");
@@ -72,27 +67,20 @@ void readFromPC() {
 }
 
 void printData() {
-  // client.print("Tilt pos: ");
-  // client.println(pos_tilt);
-  // client.print("Tilt pos in degrees: ");
-  // client.println(currentPositionTilt);
-  // client.print("Tilt error: ");
-  // client.println(errorTilt);
+  client.print("Tilt pos: ");
+  client.println(pos_tilt);
+  client.print("Tilt pos in degrees: ");
+  client.println(currentPositionTilt);
+  client.print("Tilt error: ");
+  client.println(errorTilt);
 
-  // //-------DATA OUT--------
-  // // client.print(millis());
-  // // client.print("; ");
-  // client.print("Azi pos: ");
-  // client.println(pos_azi);
-  // client.print("Azi pos in degrees: ");
-  // client.println(currentPositionAzi);
-  // client.print("Azi error: ");
-  // client.println(errorAzi);
-
-    for (int i = 10; i < 30; i++) {
-      client.println(samples[i]);
-      delay(1);
-    }
-    sampleFlag = 0;
-    client.println("Done printing");
-  }
+  //-------DATA OUT--------
+  // client.print(millis());
+  // client.print("; ");
+  client.print("Azi pos: ");
+  client.println(pos_azi);
+  client.print("Azi pos in degrees: ");
+  client.println(currentPositionAzi);
+  client.print("Azi error: ");
+  client.println(errorAzi);
+}
