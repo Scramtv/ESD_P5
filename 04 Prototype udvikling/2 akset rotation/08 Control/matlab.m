@@ -25,3 +25,11 @@ step(CL_azi, CL_tilt, RespConfig('StepAmplitude', 180));
 title('Closed loop step response');
 legend('Azimuth', 'Tilt');
 
+%% time until accurate within specs
+info = stepinfo(CL_azi, 'SettlingTimeThreshold', (0.91/2)/180);  % relativ tolerance
+info.SettlingTime
+
+
+info = stepinfo(CL_tilt, 'SettlingTimeThreshold', (0.91/2)/180);  % relativ tolerance
+info.SettlingTime
+
