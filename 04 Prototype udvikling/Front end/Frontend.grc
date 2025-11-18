@@ -37,19 +37,19 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '10'
+    value: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [552, 12.0]
+    coordinate: [544, 12.0]
     rotation: 0
     state: enabled
 - name: band_pass
   id: variable
   parameters:
     comment: ''
-    value: 56e6
+    value: 10e6
   states:
     bus_sink: false
     bus_source: false
@@ -81,29 +81,86 @@ blocks:
     coordinate: [200, 12]
     rotation: 0
     state: enabled
-- name: soapy_bladerf_source_0
-  id: soapy_bladerf_source
+- name: analog_sig_source_x_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '0.5'
+    comment: ''
+    freq: '1000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    showports: 'False'
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [424, 492.0]
+    rotation: 0
+    state: enabled
+- name: network_tcp_sink_0
+  id: network_tcp_sink
+  parameters:
+    addr: 127.0.0.1
+    affinity: ''
+    alias: ''
+    comment: ''
+    mode: '2'
+    port: '5000'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1048, 284.0]
+    rotation: 0
+    state: enabled
+- name: network_tcp_sink_1
+  id: network_tcp_sink
+  parameters:
+    addr: 127.0.0.1
+    affinity: ''
+    alias: ''
+    comment: ''
+    mode: '2'
+    port: '5001'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1048, 388.0]
+    rotation: 0
+    state: enabled
+- name: soapy_bladerf_sink_0
+  id: soapy_bladerf_sink
   parameters:
     affinity: ''
     alias: ''
     bandwidth: band_pass
     center_freq: cent_freq
     comment: ''
-    dev_args: bladrf=0,channel=0
+    dev_args: bladrf=0
     freq_correction: '0'
-    gain: RF_gain
-    maxoutbuf: '0'
-    minoutbuf: '0'
+    gain: '1'
     samp_rate: samp_rate
     type: fc32
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [264, 252.0]
+    coordinate: [728, 532.0]
     rotation: 0
     state: enabled
-- name: soapy_bladerf_source_0_0
+- name: soapy_bladerf_source_0
   id: soapy_bladerf_source
   parameters:
     affinity: ''
@@ -122,57 +179,36 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [264, 340.0]
+    coordinate: [376, 316.0]
     rotation: 0
     state: enabled
-- name: zeromq_pub_sink_0
-  id: zeromq_pub_sink
+- name: soapy_bladerf_source_0_0
+  id: soapy_bladerf_source
   parameters:
-    address: tcp://*:5555
     affinity: ''
     alias: ''
-    bind: 'True'
+    bandwidth: band_pass
+    center_freq: cent_freq
     comment: ''
-    drop_on_hwm: 'True'
-    hwm: '-1'
-    key: ''
-    pass_tags: 'False'
-    timeout: '100'
-    type: complex
-    vlen: '1'
+    dev_args: bladrf=0,channel=0
+    freq_correction: '0'
+    gain: RF_gain
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fc32
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [664, 220.0]
-    rotation: 0
-    state: enabled
-- name: zeromq_pub_sink_0_0
-  id: zeromq_pub_sink
-  parameters:
-    address: tcp://*:5556
-    affinity: ''
-    alias: ''
-    bind: 'True'
-    comment: ''
-    drop_on_hwm: 'True'
-    hwm: '-1'
-    key: ''
-    pass_tags: 'False'
-    timeout: '100'
-    type: complex
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [664, 332.0]
+    coordinate: [376, 168.0]
     rotation: 0
     state: enabled
 
 connections:
-- [soapy_bladerf_source_0, '0', zeromq_pub_sink_0, '0']
-- [soapy_bladerf_source_0_0, '0', zeromq_pub_sink_0_0, '0']
+- [analog_sig_source_x_0, '0', soapy_bladerf_sink_0, '0']
+- [soapy_bladerf_source_0, '0', network_tcp_sink_1, '0']
+- [soapy_bladerf_source_0_0, '0', network_tcp_sink_0, '0']
 
 metadata:
   file_format: 1

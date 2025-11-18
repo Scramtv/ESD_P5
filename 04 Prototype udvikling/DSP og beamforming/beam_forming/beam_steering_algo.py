@@ -49,6 +49,8 @@ steering_vec = np.exp(-1j * 2 * np.pi * dist * np.sin(aoa_rad) * ant_no / wavele
 
 # Simulate received signals at each antenna
 rx = np.outer(steering_vec, tx)  # antennas, samples
+print('RX:')
+print(rx)
 
 # Beam forming algo
 doa_thetas = np.arange(-90, 90.1, 0.1) # Angular resolution of beamsteering
@@ -57,8 +59,6 @@ das_results = []
 for theta in doa_thetas:
     theta_rad = np.deg2rad(theta)
     steer = np.exp(-1j * 2 * np.pi * dist * np.sin(theta_rad) * ant_no / wavelength)
-    print(steer)
-    print('___________')
     y = np.abs(np.sum(steer.conjugate().T @ rx, axis=0)) # Element wise sum
     das_results.append(np.mean(y))
 
