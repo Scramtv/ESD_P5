@@ -39,9 +39,9 @@ void readFromPC() {
       // --- Execute the Motor Control Logic ---
       if (motorID == 0) {
 
-        if (xSemaphoreTake(angleMutex, portMAX_DELAY)) {  //ensures safe passing
+        if (xSemaphoreTake(targetAngleMutex, portMAX_DELAY)) {  //ensures safe passing
           targetAzi = angle;
-          xSemaphoreGive(angleMutex);
+          xSemaphoreGive(targetAngleMutex);
         }
 
         client.print("Controlling Azimut. Angle: ");
@@ -49,9 +49,9 @@ void readFromPC() {
 
 
       } else if (motorID == 1) {
-        if (xSemaphoreTake(angleMutex, portMAX_DELAY)) {  //ensures safe passing
+        if (xSemaphoreTake(targetAngleMutex, portMAX_DELAY)) {  //ensures safe passing
           targetTilt = angle;
-          xSemaphoreGive(angleMutex);
+          xSemaphoreGive(targetAngleMutex);
         }
         client.print("Controlling Tilt. Angle: ");
         client.println(angle);
@@ -89,10 +89,18 @@ void printData() {
   // client.print("Azi error: ");
   // client.println(errorAzi);
 
-    for (int i = 10; i < 30; i++) {
+  //printing samplerate times
+  if (sampleFlag == 1) {
+
+    for (int i = 0; i < 100000; i++) {
+      // client.print(newTime[i]);
+      // client.print(";");
+
       client.println(samples[i]);
       delay(1);
+      // delayMicroseconds(1000);
     }
     sampleFlag = 0;
-    client.println("Done printing");
+    //client.println("Done printing");
   }
+}

@@ -1,13 +1,4 @@
-/*
-Ting der skal nåes:
-Serial comms
 
-Nice:
-Kommentarer
-Loop2 (fast opdatering):
-- Opdater mål grader fra PC
-- Send nuværende pos
-*/
 
 
 //encoder_Azimut pins
@@ -60,6 +51,8 @@ volatile bool blue_interrupt = false;
 //variables for intercore communication
 volatile float targetAzi = 0;  //input angle from PI or PC
 volatile float targetTilt = 0;
+volatile float currentAzi = 0;
+volatile float currentTilt = 0;
 
 
 //Vars for P controller
@@ -67,7 +60,7 @@ static float controllerGainAzi = 24.83;  //from simulated model
 static float controllerGainTilt = 4.32;  // from simulated model
 static int aziOffset = 130;              // 130 - minimum voltage required for the azimut motor to run
 static int tiltOffset = 75;              // 75 - minimum voltage required for the tilt motor to run
-static int sampleRate = 50;              // sample rate in micros seconds
+static int sampleRate = 100;              // sample rate in micros seconds
 //------------------MAX 50 micros seconds right now!!!!!!!
 
 
@@ -77,8 +70,8 @@ WiFiClient client;
 //setting up 2 cores to run in parallel (FreeRTOS)
 TaskHandle_t core1;
 TaskHandle_t core2;
-SemaphoreHandle_t angleMutex;    //for safe passing of variables between the two cores
-SemaphoreHandle_t triggerMutex;  //for safe passing of variables between the two cores
+SemaphoreHandle_t targetAngleMutex;   //for safe passing of variables between the two cores
+SemaphoreHandle_t currentAngleMutex;  //for safe passing of variables between the two cores
 
 
 
@@ -94,34 +87,34 @@ void setup() {
 
   init_wireless();
 
-  angleMutex = xSemaphoreCreateMutex();    // Create the lock
-  triggerMutex = xSemaphoreCreateMutex();  // Create the lock
+  targetAngleMutex = xSemaphoreCreateMutex();   // Create the lock for target angle
+  currentAngleMutex = xSemaphoreCreateMutex();  // Create the lock for current angle
 
 
 
   xTaskCreatePinnedToCore(
-    Core1Loop, /* Task function. */
-    "Control Loop",   /* name of task. */
-    10000,     /* Stack size of task */
-    NULL,      /* parameter of the task */
-    3,         /* priority of the task */
-    &core1,    /* Task handle to keep track of created task */
-    1);        /* pin task to core 0 */
+    Core1Loop,      /* Task function. */
+    "Control Loop", /* name of task. */
+    10000,          /* Stack size of task */
+    NULL,           /* parameter of the task */
+    3,              /* priority of the task */
+    &core1,         /* Task handle to keep track of created task */
+    1);             /* pin task to core 0 */
 
   xTaskCreatePinnedToCore(
-    Core2Loop, /* Task function. */
-    "Communication Loop",   /* name of task. */
-    10000,     /* Stack size of task */
-    NULL,      /* parameter of the task */
-    1,         /* priority of the task */
-    &core2,    /* Task handle to keep track of created task */
-    0);        /* pin task to core 0 */
+    Core2Loop,            /* Task function. */
+    "Communication Loop", /* name of task. */
+    10000,                /* Stack size of task */
+    NULL,                 /* parameter of the task */
+    1,                    /* priority of the task */
+    &core2,               /* Task handle to keep track of created task */
+    0);                   /* pin task to core 0 */
 
   disableCore1WDT();  //Disables watchdog on core1 as maintance is handled by core 0
 
-init_sample_rate_timer();
+  tiltHome();  // We need to home before the timer starts, form there everything is automatic
 
-  // tiltHome();  // Tilt autohome
+  init_sample_rate_timer();  //start sample rate timer
 }
 
 
@@ -129,23 +122,18 @@ init_sample_rate_timer();
 
 void Core1Loop(void* pvParameters) {
 
-  //controlCode();
   while (true) {
- 
-   
-   for(;;)
-    {
-        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);  // Sleep until timer pulses
-        controlCode();  // Runs on Core 1
-    }
+    ulTaskNotifyTake(pdTRUE, portMAX_DELAY);  // Sleep until timer pulses
+    controlCode();                            // Runs on Core 1
   }
 }
 
 
 void Core2Loop(void* pvParameters) {
   while (true) {
-   //----------- Connection to PC ----------------
-     client = server.available();
+    vTaskDelay(5 / portTICK_PERIOD_MS);  // essential to ensure watchdog timer is not triggered
+                                         //----------- Connection to PC ----------------
+    client = server.available();
     if (client) {  //connect to PC, once connected
       client.println("Give me an angle");
       client.setTimeout(1);  // controls the timeout needed for ESP32 to read input from PuTTy
@@ -153,14 +141,16 @@ void Core2Loop(void* pvParameters) {
       while (true) {
         readFromPC();
         printData();
-
-
         vTaskDelay(5 / portTICK_PERIOD_MS);  // essential to ensure watchdog timer is not triggered
       }
     }
     // -------- Connection to PI ------------------
+    // while (true) {
+    //   get_serial_cmd();
+    //   send_serial_pos();
 
-    vTaskDelay(5 / portTICK_PERIOD_MS);  // essential to ensure watchdog timer is not triggered
+    //   vTaskDelay(5 / portTICK_PERIOD_MS);  // essential to ensure watchdog timer is not triggered
+    // }
   }
 }
 

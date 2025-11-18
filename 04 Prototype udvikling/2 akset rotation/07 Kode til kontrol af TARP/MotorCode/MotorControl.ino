@@ -1,10 +1,10 @@
 
 void tiltHome() {
-  digitalWrite(dir1_tilt, 0); // homing
+  digitalWrite(dir1_tilt, 0);  // homing
   digitalWrite(dir2_tilt, 1);
   analogWrite(ena_pin_tilt, 150);
-  
-  while (digitalRead(btn_blue) == true) { 
+
+  while (digitalRead(btn_blue) == true) {
     //wait til the blue wired button is hit, ensuring we home
   }
   //turn off
@@ -20,6 +20,8 @@ void tiltHome() {
 //angles given from PC or PI
 int angleAzi = 0;
 int angleTilt = 0;
+float tiltInDegrees = 0;
+float aziInDegrees = 0;
 int gearing;  //gearing used in the encoders
 
 void controlCode() {
@@ -27,26 +29,32 @@ void controlCode() {
   findSampleRate();
 
   //Converting volitile variables to non-volitile
-  if (xSemaphoreTake(angleMutex, portMAX_DELAY)) {
+  if (xSemaphoreTake(targetAngleMutex, portMAX_DELAY)) {
     angleAzi = targetAzi;
     angleTilt = targetTilt;
-    xSemaphoreGive(angleMutex);
+    xSemaphoreGive(targetAngleMutex);
   }
 
   //-----------------TILT CONTROL--------------------
   gearing = 1;  // which gearing is running on the sensor
-  float positionInDegrees = convertPulsesToAngle(pos_tilt, gearing);
-  float error = angleTilt - positionInDegrees;
+  tiltInDegrees = convertPulsesToAngle(pos_tilt, gearing);
+  float error = angleTilt - tiltInDegrees;
   float deltaVolt = error * controllerGainTilt;
   setVelocity(deltaVolt, ena_pin_tilt, tiltOffset);
 
-
   //----------------AZIMUT CONTROL-------------------
   gearing = 5;  //gearing on sensor for azimuth
-  positionInDegrees = convertPulsesToAngle(pos_azi, gearing);
-  error = angleAzi - positionInDegrees;  //calculate error
+  aziInDegrees = convertPulsesToAngle(pos_azi, gearing);
+  error = angleAzi - aziInDegrees;  //calculate error
   deltaVolt = error * controllerGainAzi;
   setVelocity(deltaVolt, ena_pin_azi, aziOffset);
+
+// -------- update position to PC or PI --------------
+  if (xSemaphoreTake(currentAngleMutex, portMAX_DELAY)) { //update current position
+    currentTilt = tiltInDegrees;
+    currentAzi = aziInDegrees;
+    xSemaphoreGive(currentAngleMutex);
+  }
 }
 
 
@@ -72,13 +80,15 @@ void setVelocity(float deltaVolt, int motor, float offset) {
   //----------------AZIMUT MOTOR CONTROL-------------------
   if (motor == ena_pin_azi) {
     analogWrite(ena_pin_azi, 0);         // prevents short circuit
-    delayMicroseconds(3);                // needed to take care of time delay. Recorded 2.3 us delay from switching
+    delayMicroseconds(5);                // needed to take care of time delay. Recorded 2.3 us delay from switching
     digitalWrite(dir_azi, !direction);   //control direction
     analogWrite(ena_pin_azi, velocity);  //control speed
   }
 
   //-----------------TILT MOTOR CONTROL--------------------
   else if (motor == ena_pin_tilt) {
+    digitalWrite(dir1_tilt, 0);  //stop motor
+    digitalWrite(dir2_tilt, 0);
     digitalWrite(dir1_tilt, direction);  //control direction
     digitalWrite(dir2_tilt, !direction);
     analogWrite(ena_pin_tilt, velocity);  //control speed
@@ -86,18 +96,20 @@ void setVelocity(float deltaVolt, int motor, float offset) {
 }
 
 
-//For sample rate shit
+//For sample rate
 int count = 0;
 bool sampleFlag = 0;
-long samples[1000];
+uint8_t samples[100000];
+//byte newTime[30000];
 
 void findSampleRate() {
-  if (count < 100) {
-    samples[count] = micros();
+  if (count < 100000 && angleAzi != 0) {
+    //newTime[count] = micros();
+    samples[count] = aziInDegrees;
     count++;
-  } else if (count > 99 && count < 102) {
-    Serial.println("Done counting samples---------------------------------");
+  } else if (count > 99999 && count < 100002) {
+    //Serial.println("Done counting samples---------------------------------");
     sampleFlag = 1;
-    count = 103;  //stops further sampling from happening
+    count = 100003;  //stops further sampling from happening
   }
 }
