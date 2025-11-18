@@ -55,6 +55,23 @@ grid on
 yline(180, DisplayName="Target Angle")
 ylabel("Position [degrees]")
 xlabel("Time [s]")
-title("P regulator with 24.83 vs 3.73 Gain ")
+title("P regulator Tilt vs Azimut")
+% xlim([0 4.5])
+legend show
+
+
+x_azi = (0:numel(x24_83TiltGain)-1)*100;
+x_tilt = (0:numel(x4_32AziGain)-1)*100;
+figure
+plot(x_azi,x4_32AziGain.Position, DisplayName="Azimut")
+hold on
+plot(x_tilt,x24_83TiltGain.Position, DisplayName="Tilt")
+hold off
+grid on
+yline(180, DisplayName="Target Angle")
+yline(160, DisplayName="Target Angle")
+ylabel("Position [degrees]")
+xlabel("Time [s]")
+title("P regulator Tilt vs Azimut - optimized code - datapoints = samplerate")
 % xlim([0 4.5])
 legend show
