@@ -1,0 +1,56 @@
+{
+  "frequencies": [4378000000,4381000000,4384000000,4387000000,4390000000, 4393000000],
+  "gain_range": {
+    "start": 23,
+    "stop": 59,
+    "step": 5
+  },
+  "commands": [
+    ":INIT:CONT ON",
+    
+    ":INST:SEL \"IQ Analyzer\"",
+    ":FORM:DEXP:DSEP POIN",
+    ":FORM:DEXP:CSEP COMM",
+    ":FORM:DEXP:XDIS STAR",
+    ":FORM:DEXP:FORM CSV",
+    ":FORM:DEXP:HEAD ON",
+    ":FORM:DEXP:TRAC ALL",
+    ":MMEM:STOR1:TRAC 1,\"C:/Data/MM/IQAnalyzerALL/trace_data.csv\"",
+    
+    ":INST:SEL \"VSA\"",
+    
+    ":DISP:WIND1:SEL",   
+    ":FORM:DEXP:MODE TRACe",
+    ":FORM:DEXP:HEAD OFF",
+    ":FORM:DEXP:DSEP POIN",
+    ":MMEM:STOR1:TRAC 1,\"C:/Data/MM/VSAall/ConstalationTrace/trace_data.csv\"",
+    
+    ":DISP:WIND2:SEL",   
+    ":FORM:DEXP:MODE TRACe",
+    ":FORM:DEXP:HEAD OFF",
+    ":FORM:DEXP:DSEP POIN",
+    ":MMEM:STOR2:TRAC 1,\"C:/Data/MM/VSAall/ResultSummary/trace_data.dat\"",
+    
+    ":DISP:WIND3:SEL",   
+    ":FORM:DEXP:MODE TRACe",
+    ":FORM:DEXP:HEAD OFF",
+    ":FORM:DEXP:DSEP POIN",
+    ":MMEM:STOR3:TRAC 1,\"C:/Data/MM/VSAall/Mag/trace_data.dat\"",
+
+    ":DISP:WIND4:SEL",    
+    ":FORM:DEXP:MODE TRACe",
+    ":FORM:DEXP:HEAD OFF",
+    ":FORM:DEXP:DSEP POIN",
+    ":MMEM:STOR4:TRAC 1,\"C:/Data/MM/VSAall/Symbol/trace_data.dat\"",
+
+    ":INST:SEL \"Spectrum\"",
+    ":FORM:DEXP:DSEP POIN",
+    ":FORM:DEXP:CSEP COMM",
+    ":FORM:DEXP:XDIS STAR",
+    ":FORM:DEXP:FORM CSV",
+    ":FORM:DEXP:HEAD ON",
+    ":FORM:DEXP:TRAC ALL",
+    ":MMEM:STOR1:TRAC 1,\"C:/Data/MM/Spectrum/trace_data.csv\"",
+    ":INIT:CONT ON"
+  ]
+}
