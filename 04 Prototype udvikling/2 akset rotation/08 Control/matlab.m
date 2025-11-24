@@ -12,6 +12,23 @@ bode(sys_azi, sys_tilt)
 title('Open loop bodeplot');
 legend('Azimuth', 'Tilt');
 
+%% zoomed bodeplot
+
+h=bodeplot(sys_azi, sys_tilt);
+
+%Zoom
+axesHandles = findall(h,'type','axes');
+
+magAx = axesHandles(1);
+phaseAx = axesHandles(2); 
+
+ylim(magAx, [-40, 10]);
+xlim(magAx, [1 15]);
+xlim(phaseAx, [1 15]);
+ylim(phaseAx, [-180,-90]);
+title("Open loop zoomed")
+legend('Azimuth', 'Tilt');
+
 
 %% P-controller
 d_azi=24.83;
