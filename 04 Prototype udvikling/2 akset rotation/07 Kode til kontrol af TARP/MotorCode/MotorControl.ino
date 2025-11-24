@@ -18,15 +18,11 @@ void tiltHome() {
 
 
 //angles given from PC or PI
-int angleAzi = 0;
-int angleTilt = 0;
-float tiltInDegrees = 0;
-float aziInDegrees = 0;
+
+
 int gearing;  //gearing used in the encoders
 
 void controlCode() {
-
-  findSampleRate();
 
   //Converting volitile variables to non-volitile
   if (xSemaphoreTake(targetAngleMutex, portMAX_DELAY)) {
@@ -96,20 +92,4 @@ void setVelocity(float deltaVolt, int motor, float offset) {
 }
 
 
-//For sample rate
-int count = 0;
-bool sampleFlag = 0;
-uint8_t samples[100000];
-//byte newTime[30000];
 
-void findSampleRate() {
-  if (count < 100000 && angleAzi != 0) {
-    //newTime[count] = micros();
-    samples[count] = aziInDegrees;
-    count++;
-  } else if (count > 99999 && count < 100002) {
-    //Serial.println("Done counting samples---------------------------------");
-    sampleFlag = 1;
-    count = 100003;  //stops further sampling from happening
-  }
-}

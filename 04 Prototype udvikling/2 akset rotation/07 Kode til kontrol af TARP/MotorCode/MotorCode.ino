@@ -1,5 +1,8 @@
 
-
+float tiltInDegrees = 0;
+float aziInDegrees = 0;
+int angleAzi = 0;
+int angleTilt = 0;
 
 //encoder_Azimut pins
 static int pinA_azi = 38;  //Pin A
@@ -124,6 +127,7 @@ void Core1Loop(void* pvParameters) {
 
   while (true) {
     ulTaskNotifyTake(pdTRUE, portMAX_DELAY);  // Sleep until timer pulses
+    findSampleRate();
     controlCode();                            // Runs on Core 1
   }
 }
@@ -154,7 +158,23 @@ void Core2Loop(void* pvParameters) {
   }
 }
 
+//For sample rate
+int count = 0;
+bool sampleFlag = 0;
+uint8_t samples[100000];
+//byte newTime[30000];
 
+void findSampleRate() {
+  if (count < 100000 && angleAzi != 0) {
+    //newTime[count] = micros();
+    samples[count] = aziInDegrees;
+    count++;
+  } else if (count > 99999 && count < 100002) {
+    //Serial.println("Done counting samples---------------------------------");
+    sampleFlag = 1;
+    count = 100003;  //stops further sampling from happening
+  }
+}
 
 
 float convertPulsesToAngle(float pos, int gearing) {
