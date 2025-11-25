@@ -116,6 +116,8 @@ void pinSetup() {
   //Init azi pins
   //Motor:
   pinMode(ena_pin_azi, OUTPUT);
+  analogWriteFrequency(ena_pin_azi, 20000); //set frequency to 20kHz
+  analogWriteResolution(ena_pin_azi, 9);
   pinMode(in1_azi, OUTPUT);
   digitalWrite(ena_pin_azi, 0);
   digitalWrite(in1_azi, 0);
@@ -128,6 +130,7 @@ void pinSetup() {
   //Init tilt:
   //Motor:
   pinMode(ena_pin_tilt, OUTPUT);
+  analogWriteFrequency(ena_pin_tilt, 20000); //set frequency to 20kHz
   pinMode(in1_tilt, OUTPUT);
   pinMode(in2_tilt, OUTPUT);
   digitalWrite(ena_pin_tilt, 0);

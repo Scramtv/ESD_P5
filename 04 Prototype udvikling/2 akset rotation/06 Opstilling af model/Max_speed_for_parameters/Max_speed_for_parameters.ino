@@ -143,15 +143,16 @@ void minVoltageTest(WiFiClient client) {
       direction = 1;
     }
 
-    if (pwmValue > 0 && pwmValue < 255) {
+    if (pwmValue > 0 && pwmValue < 511) {
       client.print("Received: ");
       client.println(pwmValue);
-      analogWrite(ena_pin_azi, pwmValue);
-      digitalWrite(in1_azi, direction);
+      analogWrite(ena_pin_tilt, pwmValue);
+      digitalWrite(in1_tilt, direction);
+      digitalWrite(in2_tilt, !direction);
 
-      float temp = (float)pwmValue * 12 / 255;
+      float temp = (float)pwmValue * 12 / 511;
       client.print("Voltage set to: ");
-      client.println(temp);
+      client.println(temp); 
     }
   }
 }
