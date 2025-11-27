@@ -2,8 +2,8 @@ clc;
 clear all;
 close all;
 
-current = '125_tilt_current.txt';
-motor = '125_tilt_motor.txt';
+current = '200_tilt_current.txt';
+motor = '200_tilt_motor.txt';
 
 table_motor = readtable(motor);
 table_current = readtable(current);
@@ -65,9 +65,9 @@ yyaxis right;
 vel_motor_smoothed = sgolayfilt(vel_motor, 3, 51);
 
 acc = gradient(vel_motor_smoothed, time_motor);
-plot(time_motor, acc,'DisplayName', 'Motor acceleration d/dt(pulse/ms)')
+plot(time_motor, acc*10^3,'DisplayName', 'Motor acceleration d/dt(pulse/ms)')
 ylabel('acceleration')
-legend("motor speed", "current", "motor acc", 'Location', 'best')
+legend("motor speed [ep/s]", "current [A]", "motor acc [mep/s^2]", 'Location', 'best')
 xlabel('time in ms');
 xlim([0 10e3])
 hold off

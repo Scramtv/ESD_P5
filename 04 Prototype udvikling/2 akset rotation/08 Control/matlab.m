@@ -11,6 +11,7 @@ figure;
 bode(sys_azi, sys_tilt)
 title('Open loop bodeplot');
 legend('Azimuth', 'Tilt');
+grid("on");
 
 %% zoomed bodeplot
 
@@ -28,6 +29,7 @@ xlim(phaseAx, [1 15]);
 ylim(phaseAx, [-180,-90]);
 title("Open loop zoomed")
 legend('Azimuth', 'Tilt');
+grid("on");
 
 
 %% P-controller
@@ -38,9 +40,31 @@ CL_azi=(d_azi*sys_azi)/(1+d_azi*sys_azi);
 CL_tilt=(d_tilt*sys_tilt)/(1+d_tilt*sys_tilt);
 
 figure;
-step(CL_azi, CL_tilt, RespConfig('StepAmplitude', 90));
-title('Closed loop step response');
-legend('Azimuth', 'Tilt');
+step(CL_azi, RespConfig('StepAmplitude', 90));
+hold on
+t_limits = get(gca, 'XLim'); 
+plot(t_limits, [90 90], 'Color', [0.5 0.5 0.5])
+
+title('Closed loop azimuth step response');
+legend('Azimuth', 'Target');
+grid("on")
+
+hold off
+
+figure;
+step(CL_tilt, RespConfig('StepAmplitude', 45));
+hold on
+t_limits = get(gca, 'XLim'); 
+plot(t_limits, [45 45], 'Color', [0.5 0.5 0.5])
+
+title('Closed loop tilt step response');
+legend('Tilt', 'Target');
+grid("on")
+
+hold off
+
+
+
 
 %% time until accurate within specs - Kindly sponsered by ChatGPT
 
