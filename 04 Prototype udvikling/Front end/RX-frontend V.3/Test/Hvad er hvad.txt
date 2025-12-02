@@ -1,0 +1,2 @@
+det data uden _1 efter er uden throttle
+Hvor det data med _1 efter er med throttle
