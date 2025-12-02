@@ -146,9 +146,9 @@ void minVoltageTest(WiFiClient client) {
     if (pwmValue > 0 && pwmValue < 511) {
       client.print("Received: ");
       client.println(pwmValue);
-      analogWrite(ena_pin_tilt, pwmValue);
-      digitalWrite(in1_tilt, direction);
-      digitalWrite(in2_tilt, !direction);
+      analogWrite(ena_pin_azi, pwmValue);
+      digitalWrite(in1_azi, direction);
+//    digitalWrite(in2_tilt, !direction);
 
       float temp = (float)pwmValue * 12 / 511;
       client.print("Voltage set to: ");

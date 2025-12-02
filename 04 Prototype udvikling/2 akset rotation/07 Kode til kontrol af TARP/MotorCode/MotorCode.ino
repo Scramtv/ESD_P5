@@ -1,8 +1,7 @@
-
 float tiltInDegrees = 0;
 float aziInDegrees = 0;
-int angleAzi = 0;
-int angleTilt = 0;
+float angleAzi = 0;
+float angleTilt = 0;
 
 //encoder_Azimut pins
 static int pinA_azi = 38;  //Pin A
@@ -57,15 +56,13 @@ volatile float targetTilt = 0;
 volatile float currentAzi = 0;
 volatile float currentTilt = 0;
 
-
 //Vars for P controller
 static float controllerGainAzi = 24.83;  //from simulated model
 static float controllerGainTilt = 4.32;  // from simulated model
-static int aziOffset = 130;              // 130 - minimum voltage required for the azimut motor to run
-static int tiltOffset = 75;              // 75 - minimum voltage required for the tilt motor to run
-static int sampleRate = 100;              // sample rate in micros seconds
-//------------------MAX 50 micros seconds right now!!!!!!!
-
+static int aziOffset = 110;              // 110 - minimum voltage required for the azimut motor to run
+static int tiltOffset = 300;              // 300 - minimum voltage required for the tilt motor to run
+static int sampleRate = 200;              // sample rate in micros seconds
+//------------------MAX 150 micros seconds right now!!!!!!!
 
 WiFiServer server(1234);  // TCP server on port 1234
 WiFiClient client;
@@ -75,10 +72,6 @@ TaskHandle_t core1;
 TaskHandle_t core2;
 SemaphoreHandle_t targetAngleMutex;   //for safe passing of variables between the two cores
 SemaphoreHandle_t currentAngleMutex;  //for safe passing of variables between the two cores
-
-
-
-
 
 void setup() {
 
@@ -127,7 +120,7 @@ void Core1Loop(void* pvParameters) {
 
   while (true) {
     ulTaskNotifyTake(pdTRUE, portMAX_DELAY);  // Sleep until timer pulses
-    findSampleRate();
+    saveSamples();
     controlCode();                            // Runs on Core 1
   }
 }
@@ -139,6 +132,7 @@ void Core2Loop(void* pvParameters) {
                                          //----------- Connection to PC ----------------
     client = server.available();
     if (client) {  //connect to PC, once connected
+      Serial.println("Connected to PC");
       client.println("Give me an angle");
       client.setTimeout(1);  // controls the timeout needed for ESP32 to read input from PuTTy
 
@@ -158,24 +152,24 @@ void Core2Loop(void* pvParameters) {
   }
 }
 
-//For sample rate
+//Used for saving samples
 int count = 0;
 bool sampleFlag = 0;
-uint8_t samples[100000];
-//byte newTime[30000];
+float samples[50000];
 
-void findSampleRate() {
-  if (count < 100000 && angleAzi != 0) {
-    //newTime[count] = micros();
+void saveSamples() {
+  if (count < 50000 && angleAzi != 0) {
     samples[count] = aziInDegrees;
     count++;
-  } else if (count > 99999 && count < 100002) {
-    //Serial.println("Done counting samples---------------------------------");
+  } else if (count == 50000) {
     sampleFlag = 1;
-    count = 100003;  //stops further sampling from happening
+    count++;  //stops further sampling from happening
+    while(true){ //turn off
+      analogWrite(ena_pin_tilt, 0); 
+      analogWrite(ena_pin_azi, 0);
+    }
   }
 }
-
 
 float convertPulsesToAngle(float pos, int gearing) {
   float position = (pos / (gearing * 1000)) * 360;  // current position converted to degrees

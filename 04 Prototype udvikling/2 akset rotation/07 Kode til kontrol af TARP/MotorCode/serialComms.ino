@@ -1,4 +1,3 @@
-
 void init_serial() {
   Serial.begin(115200);
   Serial.setTimeout(50);  //50 ms timeout
@@ -18,9 +17,7 @@ void get_serial_cmd() {
     if (read_bytes != 2) {
       while (Serial.available() > 0) Serial.read();  // clear input buffer
       return;
-    }
-
-    byte b1 = recv_bytes[0];
+    }    byte b1 = recv_bytes[0];
     byte b2 = recv_bytes[1];
 
     uint16_t degrees = (uint16_t)(b1 << 8) | b2;
@@ -46,7 +43,6 @@ void get_serial_cmd() {
   }
 }
 
-
 void send_serial_pos() {
   //Input should be in degrees
   float tempAzi;
@@ -56,7 +52,6 @@ void send_serial_pos() {
     tempAzi = currentAzi;
     xSemaphoreGive(currentAngleMutex);
   }
-
   Serial.print(tempAzi);
   Serial.print(";");
   Serial.print(tempTilt);
