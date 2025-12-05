@@ -1,0 +1,6 @@
+(define) simulation_parameters
+  duration 355.454875n
+  termination_energy -40
+  normalize_to_gaussian
+  td_oversampling_rate 1
+  frequency_range 2.200000G 2.600000G

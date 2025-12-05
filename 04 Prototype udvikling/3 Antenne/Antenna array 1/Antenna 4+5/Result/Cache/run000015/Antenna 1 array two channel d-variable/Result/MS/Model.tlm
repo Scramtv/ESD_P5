@@ -1,1525 +1,0 @@
-# Release Version 2025.04 - Apr 11 2025
-
-!tlm_file_version 4
-
-data_id 
-
-!model_units
-  time 1e-09
-  frequency 1e+09
-  dimension 0.001
-
-(include) Model.parameter.tlm-inc
-parameters
-  (use) variable_list
-
-work_space     0   145     0    38     0    16
-
-!mesh
-  # may be going to use this instead of 'cell_size' below
-  # need double precision as will want to find dx by differencing x
-  !snap_to_probes      yes
-  !unlump_more         yes
-  !max_lump_size       1.441310e-02
-  !warps_on_metal      no # and thin film
-  !warps_on_dielectric yes
-  x  -6.1228381041666655e-02 #                i    0
-    !snap_plane yes
-    !lump_plane yes
-  x  -5.1768917222467126e-02 # dx   9.4595m;  i    1
-    !lump_plane yes
-  x  -4.5007814388049266e-02 # dx   6.7611m;  i    2
-  x  -4.0273615694933776e-02 # dx   4.7342m;  i    3
-    !lump_plane yes
-  x  -3.7069275799630319e-02 # dx   3.2043m;  i    4
-  x  -3.4712850533086884e-02 # dx   2.3564m;  i    5
-  x  -3.2356425266543462e-02 # dx   2.3564m;  i    6
-  x  -2.9999999999999999e-02 # dx   2.3564m;  i    7
-    !snap_plane yes
-  x  -2.7960000000000006e-02 # dx   2.0400m;  i    8
-  x  -2.5920000000000009e-02 # dx   2.0400m;  i    9
-    !lump_plane yes
-  x  -2.3880000000000012e-02 # dx   2.0400m;  i   10
-  x  -2.1840000000000023e-02 # dx   2.0400m;  i   11
-  x  -1.9800000000000002e-02 # dx   2.0400m;  i   12
-    !snap_plane yes
-  x  -1.7529813273979750e-02 # dx   2.2702m;  i   13
-  x  -1.5259626547959496e-02 # dx   2.2702m;  i   14
-  x  -1.2989439821939248e-02 # dx   2.2702m;  i   15
-    !lump_plane yes
-  x  -1.0206694369415152e-02 # dx   2.7827m;  i   16
-  x  -7.7905678485918842e-03 # dx   2.4161m;  i   17
-  x  -5.5203811225716295e-03 # dx   2.2702m;  i   18
-  x  -3.4530080283735102e-03 # dx   2.0674m;  i   19
-  x  -2.0000000000000000e-03 # dx   1.4530m;  i   20
-    !snap_plane yes
-  x  -1.0000000000000000e-03 # dx   1.0000m;  i   21
-    !snap_plane yes
-  x   0.0000000000000000e+00 # dx   1.0000m;  i   22
-  x   1.0000000000000000e-03 # dx   1.0000m;  i   23
-    !snap_plane yes
-    !lump_plane yes
-  x   2.0000000000000000e-03 # dx   1.0000m;  i   24
-    !snap_plane yes
-  x   3.4587570232359009e-03 # dx   1.4588m;  i   25
-  x   5.5419215301295210e-03 # dx   2.0832m;  i   26
-  x   7.8281583646475760e-03 # dx   2.2862m;  i   27
-  x   1.0279622773864888e-02 # dx   2.4515m;  i   28
-  x   1.3065866518297439e-02 # dx   2.7862m;  i   29
-  x   1.5352103352815472e-02 # dx   2.2862m;  i   30
-    !lump_plane yes
-  x   1.7400114985056881e-02 # dx   2.0480m;  i   31
-  x   1.8824799999999999e-02 # dx   1.4247m;  i   32
-    !snap_plane yes
-  x   1.9800000000000002e-02 # dx 975.2000u;  i   33
-    !snap_plane yes
-  x   2.1132988075898133e-02 # dx   1.3330m;  i   34
-  x   2.2931084107798028e-02 # dx   1.7981m;  i   35
-  x   2.4954056071865339e-02 # dx   2.0230m;  i   36
-  x   2.6977028035932649e-02 # dx   2.0230m;  i   37
-  x   2.8999999999999998e-02 # dx   2.0230m;  i   38
-    !snap_plane yes
-    !lump_plane yes
-  x   3.1000000000000000e-02 # dx   2.0000m;  i   39
-    !snap_plane yes
-  x   3.3022971964067324e-02 # dx   2.0230m;  i   40
-  x   3.5045943928134635e-02 # dx   2.0230m;  i   41
-  x   3.7068915892201987e-02 # dx   2.0230m;  i   42
-  x   3.8867011924101913e-02 # dx   1.7981m;  i   43
-  x   4.0200000000000020e-02 # dx   1.3330m;  i   44
-    !snap_plane yes
-  x   4.1175200000000002e-02 # dx 975.2000u;  i   45
-    !snap_plane yes
-  x   4.2599885014943106e-02 # dx   1.4247m;  i   46
-    !lump_plane yes
-  x   4.4647896647184548e-02 # dx   2.0480m;  i   47
-  x   4.6934133481702577e-02 # dx   2.2862m;  i   48
-  x   4.9720377226135169e-02 # dx   2.7862m;  i   49
-  x   5.2171841635352496e-02 # dx   2.4515m;  i   50
-  x   5.4458078469870538e-02 # dx   2.2862m;  i   51
-  x   5.6541242976764161e-02 # dx   2.0832m;  i   52
-    !lump_plane yes
-  x   5.7999999999999996e-02 # dx   1.4588m;  i   53
-    !snap_plane yes
-  x   5.9000000000000018e-02 # dx   1.0000m;  i   54
-    !snap_plane yes
-  x   5.9999999999999998e-02 # dx 1000.0000u;  i   55
-  x   6.0999999999999999e-02 # dx   1.0000m;  i   56
-    !snap_plane yes
-  x   6.2000000000000000e-02 # dx   1.0000m;  i   57
-    !snap_plane yes
-  x   6.3453008028373462e-02 # dx   1.4530m;  i   58
-  x   6.5520381122571580e-02 # dx   2.0674m;  i   59
-  x   6.7790567848591832e-02 # dx   2.2702m;  i   60
-  x   7.0206694369415096e-02 # dx   2.4161m;  i   61
-    !lump_plane yes
-  x   7.2989439821939187e-02 # dx   2.7827m;  i   62
-  x   7.5259626547959396e-02 # dx   2.2702m;  i   63
-  x   7.7529813273979661e-02 # dx   2.2702m;  i   64
-  x   7.9799999999999982e-02 # dx   2.2702m;  i   65
-    !snap_plane yes
-  x   8.1840000000000024e-02 # dx   2.0400m;  i   66
-  x   8.3880000000000038e-02 # dx   2.0400m;  i   67
-    !lump_plane yes
-  x   8.5920000000000052e-02 # dx   2.0400m;  i   68
-  x   8.7960000000000024e-02 # dx   2.0400m;  i   69
-  x   8.9999999999999969e-02 # dx   2.0400m;  i   70
-    !snap_plane yes
-  x   9.1999999999999998e-02 # dx   2.0000m;  i   71
-  x   9.4000000000000000e-02 # dx   2.0000m;  i   72
-  x   9.6000000000000002e-02 # dx   2.0000m;  i   73
-  x   9.8000000000000004e-02 # dx   2.0000m;  i   74
-    !lump_plane yes
-  x   1.0000000000000001e-01 # dx   2.0000m;  i   75
-    !snap_plane yes
-  x   1.0203999999999999e-01 # dx   2.0400m;  i   76
-  x   1.0408000000000003e-01 # dx   2.0400m;  i   77
-  x   1.0612000000000003e-01 # dx   2.0400m;  i   78
-  x   1.0816000000000005e-01 # dx   2.0400m;  i   79
-  x   1.1019999999999999e-01 # dx   2.0400m;  i   80
-    !snap_plane yes
-  x   1.1247018672602027e-01 # dx   2.2702m;  i   81
-    !lump_plane yes
-  x   1.1474037345204055e-01 # dx   2.2702m;  i   82
-  x   1.1701056017806073e-01 # dx   2.2702m;  i   83
-  x   1.1979330563058485e-01 # dx   2.7827m;  i   84
-  x   1.2220943215140811e-01 # dx   2.4161m;  i   85
-  x   1.2447961887742838e-01 # dx   2.2702m;  i   86
-  x   1.2654699197162650e-01 # dx   2.0674m;  i   87
-    !lump_plane yes
-  x   1.2800000000000000e-01 # dx   1.4530m;  i   88
-    !snap_plane yes
-  x   1.2900000000000000e-01 # dx   1.0000m;  i   89
-    !snap_plane yes
-  x   1.3000000000000000e-01 # dx   1.0000m;  i   90
-  x   1.3100000000000001e-01 # dx   1.0000m;  i   91
-    !snap_plane yes
-  x   1.3199999999999998e-01 # dx 1000.0000u;  i   92
-    !snap_plane yes
-  x   1.3345875702323590e-01 # dx   1.4588m;  i   93
-  x   1.3554192153012959e-01 # dx   2.0832m;  i   94
-  x   1.3782815836464765e-01 # dx   2.2862m;  i   95
-  x   1.4027962277386491e-01 # dx   2.4515m;  i   96
-    !lump_plane yes
-  x   1.4306586651829742e-01 # dx   2.7862m;  i   97
-  x   1.4535210335281548e-01 # dx   2.2862m;  i   98
-  x   1.4740011498505692e-01 # dx   2.0480m;  i   99
-  x   1.4882480000000001e-01 # dx   1.4247m;  i  100
-    !snap_plane yes
-  x   1.4980000000000004e-01 # dx 975.2000u;  i  101
-    !snap_plane yes
-  x   1.5113298807589809e-01 # dx   1.3330m;  i  102
-  x   1.5293108410779807e-01 # dx   1.7981m;  i  103
-    !lump_plane yes
-  x   1.5495405607186530e-01 # dx   2.0230m;  i  104
-  x   1.5697702803593272e-01 # dx   2.0230m;  i  105
-  x   1.5900000000000000e-01 # dx   2.0230m;  i  106
-    !snap_plane yes
-  x   1.6100000000000000e-01 # dx   2.0000m;  i  107
-    !snap_plane yes
-  x   1.6302297196406729e-01 # dx   2.0230m;  i  108
-  x   1.6504594392813460e-01 # dx   2.0230m;  i  109
-  x   1.6706891589220199e-01 # dx   2.0230m;  i  110
-    !lump_plane yes
-  x   1.6886701192410183e-01 # dx   1.7981m;  i  111
-  x   1.7019999999999999e-01 # dx   1.3330m;  i  112
-    !snap_plane yes
-  x   1.7117520000000006e-01 # dx 975.2000u;  i  113
-    !snap_plane yes
-  x   1.7259988501494317e-01 # dx   1.4247m;  i  114
-  x   1.7464789664718458e-01 # dx   2.0480m;  i  115
-  x   1.7693413348170264e-01 # dx   2.2862m;  i  116
-  x   1.7972037722613521e-01 # dx   2.7862m;  i  117
-    !lump_plane yes
-  x   1.8217184163535255e-01 # dx   2.4515m;  i  118
-  x   1.8445807846987050e-01 # dx   2.2862m;  i  119
-  x   1.8654124297676417e-01 # dx   2.0832m;  i  120
-  x   1.8800000000000000e-01 # dx   1.4588m;  i  121
-    !snap_plane yes
-  x   1.8900000000000000e-01 # dx   1.0000m;  i  122
-    !snap_plane yes
-  x   1.9000000000000000e-01 # dx   1.0000m;  i  123
-  x   1.9100000000000000e-01 # dx   1.0000m;  i  124
-    !snap_plane yes
-  x   1.9200000000000000e-01 # dx   1.0000m;  i  125
-    !snap_plane yes
-  x   1.9345300802837345e-01 # dx   1.4530m;  i  126
-    !lump_plane yes
-  x   1.9552038112257158e-01 # dx   2.0674m;  i  127
-  x   1.9779056784859197e-01 # dx   2.2702m;  i  128
-  x   2.0020669436941524e-01 # dx   2.4161m;  i  129
-  x   2.0298943982193934e-01 # dx   2.7827m;  i  130
-  x   2.0525962654795959e-01 # dx   2.2702m;  i  131
-  x   2.0752981327397974e-01 # dx   2.2702m;  i  132
-    !lump_plane yes
-  x   2.0979999999999999e-01 # dx   2.2702m;  i  133
-    !snap_plane yes
-  x   2.1184000000000003e-01 # dx   2.0400m;  i  134
-  x   2.1388000000000001e-01 # dx   2.0400m;  i  135
-  x   2.1592000000000006e-01 # dx   2.0400m;  i  136
-  x   2.1795999999999999e-01 # dx   2.0400m;  i  137
-  x   2.2000000000000003e-01 # dx   2.0400m;  i  138
-    !snap_plane yes
-    !lump_plane yes
-  x   2.2235642526654345e-01 # dx   2.3564m;  i  139
-  x   2.2471285053308687e-01 # dx   2.3564m;  i  140
-  x   2.2706927579963032e-01 # dx   2.3564m;  i  141
-  x   2.3027361569493374e-01 # dx   3.2043m;  i  142
-    !lump_plane yes
-  x   2.3500781438804913e-01 # dx   4.7342m;  i  143
-  x   2.4176891722246724e-01 # dx   6.7611m;  i  144
-    !lump_plane yes
-  x   2.5122838104166667e-01 # dx   9.4595m;  i  145
-    !snap_plane yes
-    !lump_plane yes
-
-  y  -5.8151457964743559e-02 #                j    0
-    !snap_plane yes
-    !lump_plane yes
-  y  -4.7577742771163875e-02 # dy  10.5737m;  j    1
-    !lump_plane yes
-  y  -4.0198020986246003e-02 # dy   7.3797m;  j    2
-  y  -3.5120417087961445e-02 # dy   5.0776m;  j    3
-    !lump_plane yes
-  y  -3.1673617396710610e-02 # dy   3.4468m;  j    4
-  y  -2.9298347159893764e-02 # dy   2.3753m;  j    5
-  y  -2.6923076923076904e-02 # dy   2.3753m;  j    6
-    !snap_plane yes
-  y  -2.5636538461538443e-02 # dy   1.2865m;  j    7
-  y  -2.4350000000000014e-02 # dy   1.2865m;  j    8
-    !snap_plane yes
-  y  -2.2350000000000002e-02 # dy   2.0000m;  j    9
-    !snap_plane yes
-    !lump_plane yes
-  y  -2.0350000000000004e-02 # dy   2.0000m;  j   10
-  y  -1.8349999999999995e-02 # dy   2.0000m;  j   11
-  y  -1.6349999999999993e-02 # dy   2.0000m;  j   12
-  y  -1.4349999999999993e-02 # dy   2.0000m;  j   13
-    !snap_plane yes
-  y  -1.2683333333333335e-02 # dy   1.6667m;  j   14
-  y  -1.1016666666666666e-02 # dy   1.6667m;  j   15
-  y  -9.3500000000000041e-03 # dy   1.6667m;  j   16
-    !snap_plane yes
-    !lump_plane yes
-  y  -7.0472242886146994e-03 # dy   2.3028m;  j   17
-  y  -4.7444485772294015e-03 # dy   2.3028m;  j   18
-  y  -2.4416728658440993e-03 # dy   2.3028m;  j   19
-  y   5.3274400421102447e-04 # dy   2.9744m;  j   20
-  y   4.4672559957889303e-03 # dy   3.9345m;  j   21
-    !lump_plane yes
-  y   7.4416728658440751e-03 # dy   2.9744m;  j   22
-  y   9.7444485772293886e-03 # dy   2.3028m;  j   23
-  y   1.2047224288614697e-02 # dy   2.3028m;  j   24
-  y   1.4350000000000002e-02 # dy   2.3028m;  j   25
-    !snap_plane yes
-  y   1.6445512820512816e-02 # dy   2.0955m;  j   26
-  y   1.8541025641025635e-02 # dy   2.0955m;  j   27
-    !lump_plane yes
-  y   2.0636538461538442e-02 # dy   2.0955m;  j   28
-  y   2.2732051282051264e-02 # dy   2.0955m;  j   29
-  y   2.4827564102564075e-02 # dy   2.0955m;  j   30
-  y   2.6923076923076904e-02 # dy   2.0955m;  j   31
-    !snap_plane yes
-  y   2.9279387946152889e-02 # dy   2.3563m;  j   32
-  y   3.1635698969228875e-02 # dy   2.3563m;  j   33
-    !lump_plane yes
-  y   3.3992009992304881e-02 # dy   2.3563m;  j   34
-  y   3.7199096984640245e-02 # dy   3.2071m;  j   35
-  y   4.1933271572772345e-02 # dy   4.7342m;  j   36
-    !lump_plane yes
-  y   4.8694178295654332e-02 # dy   6.7609m;  j   37
-    !lump_plane yes
-  y   5.8151457964743559e-02 # dy   9.4573m;  j   38
-    !snap_plane yes
-    !lump_plane yes
-
-  z  -3.2873381041666663e-02 #                k    0
-    !snap_plane yes
-    !lump_plane yes
-  z  -2.3252639993577993e-02 # dz   9.6207m;  k    1
-    !lump_plane yes
-  z  -1.6461611849114894e-02 # dz   6.7910m;  k    2
-  z  -1.1750812340965826e-02 # dz   4.7108m;  k    3
-    !lump_plane yes
-  z  -8.5928971471860814e-03 # dz   3.1579m;  k    4
-  z  -6.2276452334299719e-03 # dz   2.3653m;  k    5
-  z  -3.8623933196738729e-03 # dz   2.3653m;  k    6
-  z  -1.6099999999999999e-03 # dz   2.2524m;  k    7
-    !snap_plane yes
-  z   0.0000000000000000e+00 # dz   1.6100m;  k    8
-    !snap_plane yes
-  z   2.2627984246368321e-03 # dz   2.2628m;  k    9
-    !lump_plane yes
-  z   4.6391784299036065e-03 # dz   2.3764m;  k   10
-  z   7.0155584351703770e-03 # dz   2.3764m;  k   11
-  z   1.0210199999999999e-02 # dz   3.1946m;  k   12
-    !snap_plane yes
-  z   1.4798423198546346e-02 # dz   4.5882m;  k   13
-    !lump_plane yes
-  z   2.1243704852252385e-02 # dz   6.4453m;  k   14
-    !lump_plane yes
-  z   3.0072045921780664e-02 # dz   8.8283m;  k   15
-    !lump_plane yes
-  z   4.1438581041666658e-02 # dz  11.3665m;  k   16
-    !snap_plane yes
-    !lump_plane yes
-
-cell_size
-  block     0     0     0    38     0    16;    x   -61.228381041667m
-  block     0   145     0     0     0    16;    y   -58.151457964744m
-  block     0   145     0    38     0     0;    z   -32.873381041667m
-
-  block     0     1     0    38     0    16;    dx    9.459463819200m
-  block     1     2     0    38     0    16;    dx    6.761102834418m
-  block     2     3     0    38     0    16;    dx    4.734198693115m
-  block     3     4     0    38     0    16;    dx    3.204339895303m
-  block     4     5     0    38     0    16;    dx    2.356425266543m
-  block     5     6     0    38     0    16;    dx    2.356425266543m
-  block     6     7     0    38     0    16;    dx    2.356425266543m
-  block     7     8     0    38     0    16;    dx    2.040000000000m
-  block     8     9     0    38     0    16;    dx    2.040000000000m
-  block     9    10     0    38     0    16;    dx    2.040000000000m
-  block    10    11     0    38     0    16;    dx    2.040000000000m
-  block    11    12     0    38     0    16;    dx    2.040000000000m
-  block    12    13     0    38     0    16;    dx    2.270186726020m
-  block    13    14     0    38     0    16;    dx    2.270186726020m
-  block    14    15     0    38     0    16;    dx    2.270186726020m
-  block    15    16     0    38     0    16;    dx    2.782745452524m
-  block    16    17     0    38     0    16;    dx    2.416126520823m
-  block    17    18     0    38     0    16;    dx    2.270186726020m
-  block    18    19     0    38     0    16;    dx    2.067373094198m
-  block    19    20     0    38     0    16;    dx    1.453008028374m
-  block    20    21     0    38     0    16;    dx    1.000000000000m
-  block    21    22     0    38     0    16;    dx    1.000000000000m
-  block    22    23     0    38     0    16;    dx    1.000000000000m
-  block    23    24     0    38     0    16;    dx    1.000000000000m
-  block    24    25     0    38     0    16;    dx    1.458757023236m
-  block    25    26     0    38     0    16;    dx    2.083164506894m
-  block    26    27     0    38     0    16;    dx    2.286236834518m
-  block    27    28     0    38     0    16;    dx    2.451464409217m
-  block    28    29     0    38     0    16;    dx    2.786243744433m
-  block    29    30     0    38     0    16;    dx    2.286236834518m
-  block    30    31     0    38     0    16;    dx    2.048011632241m
-  block    31    32     0    38     0    16;    dx    1.424685014943m
-  block    32    33     0    38     0    16;    dx  975.200000000001u
-  block    33    34     0    38     0    16;    dx    1.332988075898m
-  block    34    35     0    38     0    16;    dx    1.798096031900m
-  block    35    36     0    38     0    16;    dx    2.022971964067m
-  block    36    37     0    38     0    16;    dx    2.022971964067m
-  block    37    38     0    38     0    16;    dx    2.022971964067m
-  block    38    39     0    38     0    16;    dx    2.000000000000m
-  block    39    40     0    38     0    16;    dx    2.022971964067m
-  block    40    41     0    38     0    16;    dx    2.022971964067m
-  block    41    42     0    38     0    16;    dx    2.022971964067m
-  block    42    43     0    38     0    16;    dx    1.798096031900m
-  block    43    44     0    38     0    16;    dx    1.332988075898m
-  block    44    45     0    38     0    16;    dx  975.199999999987u
-  block    45    46     0    38     0    16;    dx    1.424685014943m
-  block    46    47     0    38     0    16;    dx    2.048011632241m
-  block    47    48     0    38     0    16;    dx    2.286236834518m
-  block    48    49     0    38     0    16;    dx    2.786243744433m
-  block    49    50     0    38     0    16;    dx    2.451464409217m
-  block    50    51     0    38     0    16;    dx    2.286236834518m
-  block    51    52     0    38     0    16;    dx    2.083164506894m
-  block    52    53     0    38     0    16;    dx    1.458757023236m
-  block    53    54     0    38     0    16;    dx    1.000000000000m
-  block    54    55     0    38     0    16;    dx  999.999999999986u
-  block    55    56     0    38     0    16;    dx    1.000000000000m
-  block    56    57     0    38     0    16;    dx    1.000000000000m
-  block    57    58     0    38     0    16;    dx    1.453008028373m
-  block    58    59     0    38     0    16;    dx    2.067373094198m
-  block    59    60     0    38     0    16;    dx    2.270186726020m
-  block    60    61     0    38     0    16;    dx    2.416126520823m
-  block    61    62     0    38     0    16;    dx    2.782745452524m
-  block    62    63     0    38     0    16;    dx    2.270186726020m
-  block    63    64     0    38     0    16;    dx    2.270186726020m
-  block    64    65     0    38     0    16;    dx    2.270186726020m
-  block    65    66     0    38     0    16;    dx    2.040000000000m
-  block    66    67     0    38     0    16;    dx    2.040000000000m
-  block    67    68     0    38     0    16;    dx    2.040000000000m
-  block    68    69     0    38     0    16;    dx    2.040000000000m
-  block    69    70     0    38     0    16;    dx    2.040000000000m
-  block    70    71     0    38     0    16;    dx    2.000000000000m
-  block    71    72     0    38     0    16;    dx    2.000000000000m
-  block    72    73     0    38     0    16;    dx    2.000000000000m
-  block    73    74     0    38     0    16;    dx    2.000000000000m
-  block    74    75     0    38     0    16;    dx    2.000000000000m
-  block    75    76     0    38     0    16;    dx    2.040000000000m
-  block    76    77     0    38     0    16;    dx    2.040000000000m
-  block    77    78     0    38     0    16;    dx    2.040000000000m
-  block    78    79     0    38     0    16;    dx    2.040000000000m
-  block    79    80     0    38     0    16;    dx    2.040000000000m
-  block    80    81     0    38     0    16;    dx    2.270186726020m
-  block    81    82     0    38     0    16;    dx    2.270186726020m
-  block    82    83     0    38     0    16;    dx    2.270186726020m
-  block    83    84     0    38     0    16;    dx    2.782745452524m
-  block    84    85     0    38     0    16;    dx    2.416126520823m
-  block    85    86     0    38     0    16;    dx    2.270186726020m
-  block    86    87     0    38     0    16;    dx    2.067373094198m
-  block    87    88     0    38     0    16;    dx    1.453008028374m
-  block    88    89     0    38     0    16;    dx    1.000000000000m
-  block    89    90     0    38     0    16;    dx    1.000000000000m
-  block    90    91     0    38     0    16;    dx    1.000000000000m
-  block    91    92     0    38     0    16;    dx  999.999999999972u
-  block    92    93     0    38     0    16;    dx    1.458757023236m
-  block    93    94     0    38     0    16;    dx    2.083164506894m
-  block    94    95     0    38     0    16;    dx    2.286236834518m
-  block    95    96     0    38     0    16;    dx    2.451464409217m
-  block    96    97     0    38     0    16;    dx    2.786243744433m
-  block    97    98     0    38     0    16;    dx    2.286236834518m
-  block    98    99     0    38     0    16;    dx    2.048011632241m
-  block    99   100     0    38     0    16;    dx    1.424685014943m
-  block   100   101     0    38     0    16;    dx  975.200000000029u
-  block   101   102     0    38     0    16;    dx    1.332988075898m
-  block   102   103     0    38     0    16;    dx    1.798096031900m
-  block   103   104     0    38     0    16;    dx    2.022971964067m
-  block   104   105     0    38     0    16;    dx    2.022971964067m
-  block   105   106     0    38     0    16;    dx    2.022971964067m
-  block   106   107     0    38     0    16;    dx    2.000000000000m
-  block   107   108     0    38     0    16;    dx    2.022971964067m
-  block   108   109     0    38     0    16;    dx    2.022971964067m
-  block   109   110     0    38     0    16;    dx    2.022971964067m
-  block   110   111     0    38     0    16;    dx    1.798096031900m
-  block   111   112     0    38     0    16;    dx    1.332988075898m
-  block   112   113     0    38     0    16;    dx  975.200000000058u
-  block   113   114     0    38     0    16;    dx    1.424685014943m
-  block   114   115     0    38     0    16;    dx    2.048011632241m
-  block   115   116     0    38     0    16;    dx    2.286236834518m
-  block   116   117     0    38     0    16;    dx    2.786243744433m
-  block   117   118     0    38     0    16;    dx    2.451464409217m
-  block   118   119     0    38     0    16;    dx    2.286236834518m
-  block   119   120     0    38     0    16;    dx    2.083164506894m
-  block   120   121     0    38     0    16;    dx    1.458757023236m
-  block   121   122     0    38     0    16;    dx    1.000000000000m
-  block   122   123     0    38     0    16;    dx    1.000000000000m
-  block   123   124     0    38     0    16;    dx    1.000000000000m
-  block   124   125     0    38     0    16;    dx    1.000000000000m
-  block   125   126     0    38     0    16;    dx    1.453008028373m
-  block   126   127     0    38     0    16;    dx    2.067373094198m
-  block   127   128     0    38     0    16;    dx    2.270186726020m
-  block   128   129     0    38     0    16;    dx    2.416126520823m
-  block   129   130     0    38     0    16;    dx    2.782745452524m
-  block   130   131     0    38     0    16;    dx    2.270186726020m
-  block   131   132     0    38     0    16;    dx    2.270186726020m
-  block   132   133     0    38     0    16;    dx    2.270186726020m
-  block   133   134     0    38     0    16;    dx    2.040000000000m
-  block   134   135     0    38     0    16;    dx    2.040000000000m
-  block   135   136     0    38     0    16;    dx    2.040000000000m
-  block   136   137     0    38     0    16;    dx    2.040000000000m
-  block   137   138     0    38     0    16;    dx    2.040000000000m
-  block   138   139     0    38     0    16;    dx    2.356425266543m
-  block   139   140     0    38     0    16;    dx    2.356425266543m
-  block   140   141     0    38     0    16;    dx    2.356425266543m
-  block   141   142     0    38     0    16;    dx    3.204339895303m
-  block   142   143     0    38     0    16;    dx    4.734198693115m
-  block   143   144     0    38     0    16;    dx    6.761102834418m
-  block   144   145     0    38     0    16;    dx    9.459463819199m
-
-  block     0   145     0     1     0    16;    dy   10.573715193580m
-  block     0   145     1     2     0    16;    dy    7.379721784918m
-  block     0   145     2     3     0    16;    dy    5.077603898285m
-  block     0   145     3     4     0    16;    dy    3.446799691251m
-  block     0   145     4     5     0    16;    dy    2.375270236817m
-  block     0   145     5     6     0    16;    dy    2.375270236817m
-  block     0   145     6     7     0    16;    dy    1.286538461538m
-  block     0   145     7     8     0    16;    dy    1.286538461538m
-  block     0   145     8     9     0    16;    dy    2.000000000000m
-  block     0   145     9    10     0    16;    dy    2.000000000000m
-  block     0   145    10    11     0    16;    dy    2.000000000000m
-  block     0   145    11    12     0    16;    dy    2.000000000000m
-  block     0   145    12    13     0    16;    dy    2.000000000000m
-  block     0   145    13    14     0    16;    dy    1.666666666667m
-  block     0   145    14    15     0    16;    dy    1.666666666667m
-  block     0   145    15    16     0    16;    dy    1.666666666667m
-  block     0   145    16    17     0    16;    dy    2.302775711385m
-  block     0   145    17    18     0    16;    dy    2.302775711385m
-  block     0   145    18    19     0    16;    dy    2.302775711385m
-  block     0   145    19    20     0    16;    dy    2.974416870055m
-  block     0   145    20    21     0    16;    dy    3.934511991578m
-  block     0   145    21    22     0    16;    dy    2.974416870055m
-  block     0   145    22    23     0    16;    dy    2.302775711385m
-  block     0   145    23    24     0    16;    dy    2.302775711385m
-  block     0   145    24    25     0    16;    dy    2.302775711385m
-  block     0   145    25    26     0    16;    dy    2.095512820513m
-  block     0   145    26    27     0    16;    dy    2.095512820513m
-  block     0   145    27    28     0    16;    dy    2.095512820513m
-  block     0   145    28    29     0    16;    dy    2.095512820513m
-  block     0   145    29    30     0    16;    dy    2.095512820513m
-  block     0   145    30    31     0    16;    dy    2.095512820513m
-  block     0   145    31    32     0    16;    dy    2.356311023076m
-  block     0   145    32    33     0    16;    dy    2.356311023076m
-  block     0   145    33    34     0    16;    dy    2.356311023076m
-  block     0   145    34    35     0    16;    dy    3.207086992335m
-  block     0   145    35    36     0    16;    dy    4.734174588132m
-  block     0   145    36    37     0    16;    dy    6.760906722882m
-  block     0   145    37    38     0    16;    dy    9.457279669089m
-
-  block     0   145     0    38     0     1;    dz    9.620741048089m
-  block     0   145     0    38     1     2;    dz    6.791028144463m
-  block     0   145     0    38     2     3;    dz    4.710799508149m
-  block     0   145     0    38     3     4;    dz    3.157915193780m
-  block     0   145     0    38     4     5;    dz    2.365251913756m
-  block     0   145     0    38     5     6;    dz    2.365251913756m
-  block     0   145     0    38     6     7;    dz    2.252393319674m
-  block     0   145     0    38     7     8;    dz    1.610000000000m
-  block     0   145     0    38     8     9;    dz    2.262798424637m
-  block     0   145     0    38     9    10;    dz    2.376380005267m
-  block     0   145     0    38    10    11;    dz    2.376380005267m
-  block     0   145     0    38    11    12;    dz    3.194641564830m
-  block     0   145     0    38    12    13;    dz    4.588223198546m
-  block     0   145     0    38    13    14;    dz    6.445281653706m
-  block     0   145     0    38    14    15;    dz    8.828341069528m
-  block     0   145     0    38    15    16;    dz   11.366535119886m
-
-(include) Model.boundary.tlm-inc
-
-external_boundaries
-  xmin absorbing
-  xmax absorbing
-  ymin absorbing
-  ymax absorbing
-  zmin absorbing
-  zmax absorbing
-  (use) include_external_boundaries
-
-!symmetry_planes
-  yz none
-  xz none
-  xy none
-
-
-metal
-  #material properties (not from ACIS)
-  material_name Copper (annealed)
-  sigma 58000000
-  #body properties
-  !body_name patch:patch
-  !body_id 3
-  !body_order 10
-  #stl_body
-  #  name             patch:patch
-  #  nsurface         1
-  #  nvoid            0
-  #  nfacet           108
-  #  ntwo_sided       0
-  #  nvertex          56
-  #  ndangling_edge   0
-  #  njoined_edge     324
-  #  nmultifacet_edge 0
-  #  is_leaky_solid   no
-  #  dihedral_min     90.00
-  #  dihedral_max     270.00
-  !colour 255 255 0
-  #(from stabbed slices)
-  #solid blocks
-  #x-directed boundaries
-  #y-directed boundaries
-  #z-directed boundaries
-  block    38    39     6     9     8     8
-  block    21    38     8     9     8     8
-  block    39    56     8     9     8     8
-  block    21    23     9    25     8     8
-  block    54    56     9    25     8     8
-  block    12    20    13    25     8     8
-  block    24    33    13    25     8     8
-  block    44    53    13    25     8     8
-  block    57    65    13    25     8     8
-  block    20    21    16    25     8     8
-  block    23    24    16    25     8     8
-  block    53    54    16    25     8     8
-  block    56    57    16    25     8     8
-  #block_body
-  #  box    12    65     6    25     8     8
-  #  nfragment 1
-
-medium
-  #material properties (not from ACIS)
-  material_name FR-4 (lossy)
-  epsr  4.567417
-  pole
-    frequency 1e+09
-    delta_epsr 0.179463
-  pole
-    frequency 1e+10
-    delta_epsr 0.179463
-  !epsr_hf  4.20849
-  #body properties
-  !body_name patch:Substrate
-  !body_id 1
-  !body_order 7
-  #stl_body
-  #  name             patch:Substrate
-  #  nsurface         1
-  #  nvoid            0
-  #  nfacet           20
-  #  ntwo_sided       0
-  #  nvertex          12
-  #  ndangling_edge   0
-  #  njoined_edge     60
-  #  nmultifacet_edge 0
-  #  is_leaky_solid   no
-  #  dihedral_min     90.00
-  #  dihedral_max     180.00
-  !colour 240 209 194
-  #going to use: (use) FR-4 (lossy)
-  #solid blocks
-  block     7    70     6    31     7     8
-  #thin blocks not allowed for this material
-  ##x-directed boundaries
-  #thin blocks not allowed for this material
-  ##y-directed boundaries
-  #thin blocks not allowed for this material
-  ##z-directed boundaries
-
-metal
-  #material properties (not from ACIS)
-  material_name Copper (annealed)
-  sigma 58000000
-  #body properties
-  !body_name patch:ground
-  !body_id 2
-  !body_order 9
-  #stl_body
-  #  name             patch:ground
-  #  nsurface         1
-  #  nvoid            0
-  #  nfacet           20
-  #  ntwo_sided       0
-  #  nvertex          12
-  #  ndangling_edge   0
-  #  njoined_edge     60
-  #  nmultifacet_edge 0
-  #  is_leaky_solid   no
-  #  dihedral_min     90.00
-  #  dihedral_max     180.00
-  !colour 255 255 0
-  #(from stabbed slices)
-  #solid blocks
-  #x-directed boundaries
-  #y-directed boundaries
-  #z-directed boundaries
-  block     7    70     6    31     7     7
-  #block_body
-  #  box     7    70     6    31     7     7
-  #  nfragment 1
-
-metal
-  #material properties (not from ACIS)
-  material_name Copper (annealed)
-  sigma 58000000
-  #body properties
-  !body_name patch_1:patch
-  !body_id 6
-  !body_order 12
-  #stl_body
-  #  name             patch_1:patch
-  #  nsurface         1
-  #  nvoid            0
-  #  nfacet           108
-  #  ntwo_sided       0
-  #  nvertex          56
-  #  ndangling_edge   0
-  #  njoined_edge     324
-  #  nmultifacet_edge 0
-  #  is_leaky_solid   no
-  #  dihedral_min     90.00
-  #  dihedral_max     270.00
-  !colour 255 255 0
-  #(from stabbed slices)
-  #solid blocks
-  #x-directed boundaries
-  #y-directed boundaries
-  #z-directed boundaries
-  block   106   107     6     9     8     8
-  block    89   106     8     9     8     8
-  block   107   124     8     9     8     8
-  block    89    91     9    25     8     8
-  block   122   124     9    25     8     8
-  block    80    88    13    25     8     8
-  block    92   101    13    25     8     8
-  block   112   121    13    25     8     8
-  block   125   133    13    25     8     8
-  block    88    89    16    25     8     8
-  block    91    92    16    25     8     8
-  block   121   122    16    25     8     8
-  block   124   125    16    25     8     8
-  #block_body
-  #  box    80   133     6    25     8     8
-  #  nfragment 1
-
-medium
-  #material properties (not from ACIS)
-  material_name FR-4 (lossy)
-  epsr  4.567417
-  pole
-    frequency 1e+09
-    delta_epsr 0.179463
-  pole
-    frequency 1e+10
-    delta_epsr 0.179463
-  !epsr_hf  4.20849
-  #body properties
-  !body_name patch_1:Substrate
-  !body_id 4
-  !body_order 8
-  #stl_body
-  #  name             patch_1:Substrate
-  #  nsurface         1
-  #  nvoid            0
-  #  nfacet           20
-  #  ntwo_sided       0
-  #  nvertex          12
-  #  ndangling_edge   0
-  #  njoined_edge     60
-  #  nmultifacet_edge 0
-  #  is_leaky_solid   no
-  #  dihedral_min     90.00
-  #  dihedral_max     180.00
-  !colour 240 209 194
-  #going to use: (use) FR-4 (lossy)
-  #solid blocks
-  block    75   138     6    31     7     8
-  #thin blocks not allowed for this material
-  ##x-directed boundaries
-  #thin blocks not allowed for this material
-  ##y-directed boundaries
-  #thin blocks not allowed for this material
-  ##z-directed boundaries
-
-metal
-  #material properties (not from ACIS)
-  material_name Copper (annealed)
-  sigma 58000000
-  #body properties
-  !body_name patch_1:ground
-  !body_id 5
-  !body_order 11
-  #stl_body
-  #  name             patch_1:ground
-  #  nsurface         1
-  #  nvoid            0
-  #  nfacet           20
-  #  ntwo_sided       0
-  #  nvertex          12
-  #  ndangling_edge   0
-  #  njoined_edge     60
-  #  nmultifacet_edge 0
-  #  is_leaky_solid   no
-  #  dihedral_min     90.00
-  #  dihedral_max     180.00
-  !colour 255 255 0
-  #(from stabbed slices)
-  #solid blocks
-  #x-directed boundaries
-  #y-directed boundaries
-  #z-directed boundaries
-  block    75   138     6    31     7     7
-  #block_body
-  #  box    75   138     6    31     7     7
-  #  nfragment 1
-
-# port definitions
-(include) Model.port.tlm-inc
-
-# -------------------- port 1 --------------------
-
-initial_mode
-  !port 1
-  block    32    45     6     7     7    12
-  direction y
-  frequency -1.000000
-  (use) port_excitation 1
-# automatically generated initial_fluxs...
-# there are 0 metal cells and 65 non-metal cells in the port cross-section
-# comprising 2 isolated conductors
-  !break_comment
-  !output voltage
-initial#_flux
-  block    38    39     6     7     8    12
-    !direction z-
-  !initial_mode 1
-    !initial_flux 1
-  !Q 0.000000  0.000000  -1.000000n
-initial#_flux
-  block    38    39     6     7     7     8
-    !direction z+
-  !initial_mode 1
-    !initial_flux 2
-  !Q 0.000000  0.000000  1.000000n
-!port
-  block    32    45     6     7     7    12
-  direction y+
-  !termination impedance
-  !shield electric
-
-# ------------------ end port 1 ------------------
-
-# -------------------- port 2 --------------------
-
-initial_mode
-  !port 2
-  block   100   113     6     7     7    12
-  direction y
-  frequency -1.000000
-  (use) port_excitation 2
-# automatically generated initial_fluxs...
-# there are 0 metal cells and 65 non-metal cells in the port cross-section
-# comprising 2 isolated conductors
-  !break_comment
-  !output voltage
-initial#_flux
-  block   106   107     6     7     8    12
-    !direction z-
-  !initial_mode 2
-    !initial_flux 1
-  !Q 0.000000  0.000000  -1.000000n
-initial#_flux
-  block   106   107     6     7     7     8
-    !direction z+
-  !initial_mode 2
-    !initial_flux 2
-  !Q 0.000000  0.000000  1.000000n
-!port
-  block   100   113     6     7     7    12
-  direction y+
-  !termination impedance
-  !shield electric
-
-# ------------------ end port 2 ------------------
-
-(include) Model.output.tlm-inc
-
-output
-  (use) simulation_parameters
-  space_domain
-    frequency 2.364800G 2.441750G
-      block 0 145 0 38 0 16
-        field solid_loss
-      block 0 145 0 38 0 16
-        field surface_loss
-      block 3 142 1 36 3 14
-        field es
-        scatterer_location checked
-
-!field_monitor farfield (f=2.3648)
-  type farfield
-  frequency 2.3648e+09
-
-!field_monitor farfield (f=2.4417)
-  type farfield
-  frequency 2.44175e+09
-
-
-# job excitation definitions
-(include) Model.job.tlm-inc
-
-
-
-# stop criteria definitions
-(include) Model.stop.tlm-inc
-
-(include) Model.settings.tlm-inc
-!settings
-  (use) include_settings
-
-!no_more_target_relevant_data
-
-#lumped region - cell-size up to 0.0144131
-!lumped_cell_table
-{bytes 155801
-  table_as_binary 4327(9i /)
-                                                                                                                          .                          .   4                          4   =                 	         =   C                          C   Q                          Q   W                          W   `                 	         `   u                          u   ~                 	         ~   ä                          ä   é                          é   ê                                                                                                                                                                          .                         .   4                         4   =                	         =   C                         C   Q                         Q   W                         W   `                	         `   u                         u   ~                	         ~   ä                         ä   é                         é   ê                         ê   ë                                   	                            	                   C   F                         F   J                         J   Q                         é   ê      	                   ê   ë      	                            	                      	      	                   	         	                            	                            	                            	                      &      	                   &   )      	                   )   .      	                   .   4      	                   4   =      	          	         =   C      	                   C   F      	                   F   J      	                   J   Q      	                   Q   W      	                   W   `      	          	         `   u      	                   u   ~      	          	         ~   Ñ      	                   Ñ   Ü      	                   Ü   é      	                          	                            	                         	   	                      	      	                            	                            	                            	                         &   	                      &   )   	                      )   .   	                      .   4   	                      4   =   	             	         =   C   	                      C   F   	                      F   J   	                      J   Q   	                      Q   W   	                      W   `   	             	         `   u   	                      u   ~   	             	         ~   Ñ   	                      Ñ   Ü   	                      Ü   é   	                      é   ê   	                      ê   ë   	                                                                                  	                         	                                                                                                                   &                         &   )                         )   .                         .   4                         4   =                	         =   C                         C   F                         F   J                         J   Q                         Q   W                         W   `                	         `   u                         u   ~                	         ~   Ñ                         Ñ   Ü                         Ü   é                         é   ê                         ê   ë                                   !                            !                      	      !                   	         !                            !                            !                      &      !                   &   )                         )   .                         .   4      !                   4   =      !          	         =   C      !                   C   F      !                   F   J      !                   J   Q      !                   Q   W      !                   W   `      !          	         `   u      !                   u   ~      !          	         ~   Ñ      !                   Ñ   Ü      !                   Ü   é      !                   é   ê      !                   ê   ë      !                   &   .      !                          !   $                         !   $                         !   $                         !   $                         !   $                      .   !   $                   .   4   !   $                   4   =   !   $          	         =   C   !   $                   C   Q   !   $                   Q   W   !   $                   W   `   !   $          	         `   u   !   $                   u   ~   !   $          	         ~   ä   !   $                   ä   é   !   $                   é   ê   !   $                   ê   ë   !   $                         $   &                         $   &                         $   &                         $   &                      .   $   &                   .   4   $   &                   4   =   $   &          	         =   C   $   &                   C   Q   $   &                   Q   W   $   &                   W   `   $   &          	         `   u   $   &                   u   ~   $   &          	         ~   ä   $   &                   ä   é   $   &                   é   ê   $   &                                                                                                                                                                   .                         .   4                         4   =                	         =   C                         C   Q                         Q   W                         W   `                	         `   u                         u   ~                	         ~   ä                         ä   é                         é   ê                         ê   ë                                                                                                                                                                    .                        .   4                        4   =               	         =   C                        C   Q                        Q   W                        W   `               	         `   u                        u   ~               	         ~   ä                        ä   é                        é   ê                        ê   ë                                  	                           	                                                	                        	                                                                                    &                        &   )                        )   .                        .   0                        0   4                        C   F                        F   J                        J   Q                        Q   S                        S   W                        ~   Ñ                        Ñ   Ü                        Ü   ä                        ê   ë      	                           	                                                	                        	                                                                                                               &                        &   )                        )   *                        *   .                        .   0                        0   4                        4   9                        9   =                        =   C                        C   F                        F   G                        G   M                        M   Q                        Q   S                        S   W                        W   \                        \   `                        `   g                        g   j                        j   r                        r   x                        x   Ñ                        Ñ   Ü                        Ü   á                        á   ä                        ä   é                        é   ê      	                           	                     	      	                  	                                                                                                               &      	                  &   )      	                  )   *                        *   .                        .   0                        0   4                        4   9                        9   =                        =   C      	                  C   F      	                  F   G      	                  G   M      	                  M   Q                        Q   S                        S   W                        W   \                        \   `                        `   g      	                  g   j      	                  j   r      	                  r   x                        x   Ñ                        Ñ   Ü                        Ü   á      	                  á   ä      	                  ä   é      	                         	                           	                           	                        	   	                        &   	                     &   )   	                     =   ?   	                     ?   C   	                     C   F   	                     F   G   	                     G   J   	                     J   M   	                     `   b   	                     b   g   	                     g   j   	                     j   n   	                     n   r   	                     Ü   á   	                     á   ä   	                     ä   é   	                     é   ê   	                     ê   ë   	                     	                                                                                                               &                        )   *                        *   .                        .   0                        0   4                        4   9                        9   =                        =   ?                        ?   C                        J   M                        M   Q                        Q   S                        S   W                        W   \                        \   `                        `   b                        b   g                        n   r                        r   x                        x   Ñ                        Ñ   Ü                                                                                                             	                        	                                                                                                               &                        &   )                        )   *                        *   .                        .   0                        0   4                        4   9                        9   =                        =   ?                        ?   C                        C   F                        F   G                        G   M                        M   Q                        Q   S                        S   W                        W   \                        \   `                        `   b                        b   g                        g   j                        j   r                        r   x                        x   Ñ                        Ñ   Ü                        Ü   á                        á   ä                        ä   é                        é   ê                        ê   ë                                  !                                                                           	                        	                                                                                                               &                        &   )                        )   *                        *   .                        .   4                        4   =               	         =   ?                        ?   C                        C   F                        F   G                        G   J                        J   M                        M   Q                        Q   W                        W   `               	         `   b                        b   g                        g   j                        j   n                        n   r                        r   u                        u   ~               	         ~   Ñ                        Ñ   Ü                        Ü   á                        á   ä                        ä   é                        é   ê      !                  ê   ë      !                  	                                                                                                               &                        )   *                        *   .                        .   4                        4   =               	         =   ?                        ?   C                        J   M                        M   Q                        Q   W                        W   `               	         `   b                        b   g                        n   r                        r   u                        u   ~               	         ~   Ñ                        Ñ   Ü                                 !                           $                           !                     	      !                  	         $                           $                           $                     &      $                  &   )      !                  )   .      !                  .   4      $                  4   =      $         	         =   C      $                  C   F      $                  F   G      !                  G   M      !                  M   Q      !                  Q   W      $                  W   `      $         	         `   u      $                  u   ~      $         	         ~   Ñ      $                  Ñ   Ü      $                  Ü   á      !                  á   ä      !                  ä   é      $                         !   $                        !   $                     	   !   $                  &   .   !   $                  F   J   !   $                  J   Q   !   $                  Ü   ä   !   $                  é   ê   !   $                  ê   ë   !   $                         $   &                        $   &                        $   &                        $   &                        $   &                     .   $   &                  .   4   $   &                  4   =   $   &         	         =   C   $   &                  C   Q   $   &                  Q   W   $   &                  W   `   $   &         	         `   u   $   &                  u   ~   $   &         	         ~   ä   $   &                  ä   é   $   &                  é   ê   $   &                  ê   ë   $   &                                   	                            	            é   ê             	            ê   ë             	                            	                           	                                          	                        	                              &                        &   )                        )   .                        C   F                        F   J                        J   Q                        `   u                        ~   Ñ                        Ñ   Ü                        Ü   é                        ê   ë            	                                                                     	                        )   *                        *   .                        F   G                        G   M                        M   Q                        `   g                        g   j                        j   r                        r   u                        Ü   á                        á   ä                        ä   é                        ê   ë                                 	                                                	                        	                                                                                    &                        *   +                        +   .                        0   1                        1   4                        =   ?                        ?   C                        C   D                        D   F                        G   H                        H   J                        J   K                        K   M                        S   T                        T   W                        `   b                        b   g                        j   n                        n   o                        o   r                        x   ~                        ~   Ñ                        á   à                        à   ê                        ê   ë      	                                                                                                   &   )                        )   *                        .   0                        4   6                        6   9                        9   =                        F   G                        G   H                        H   J                        M   Q                        Q   S                        W   Y                        Y   \                        \   `                        g   j                        r   x                        x   z                        z   ~                        Ñ   Ü                        Ü   á                        à   é                        é   ê      	                           	                     	      	                  	         	                           	                           	                           	                           	                           	                     &      	                  &   )      	                  )   +      	                  +   .      	                  .   0      	                  0   1      	                  1   4      	                  4   6      	                  6   9      	                  9   =      	                  =   ?      	                  ?   C      	                  C   D      	                  D   F      	                  F   G      	                  J   K      	                  K   M      	                  M   Q      	                  Q   S      	                  S   T      	                  T   W      	                  W   Y      	                  Y   \      	                  \   `      	                  `   b      	                  b   g      	                  g   j      	                  j   n      	                  n   o      	                  o   x      	                  x   z      	                  z   ~      	                  ~   Ñ      	                  Ñ   Ü      	                  Ü   à      	                  à   é      	                        	                           	                           	                        	   	                     	      	                           	                           	                           	                           	                           	                     &   )   	                     )   *   	                     *   .   	                     .   0   	                     0   1   	                     1   4   	                     4   6   	                     6   9   	                     9   =   	                     C   D   	                     D   F   	                     F   G   	                     J   K   	                     K   M   	                     M   Q   	                     Q   S   	                     S   T   	                     T   W   	                     W   Y   	                     Y   \   	                     \   `   	                     g   j   	                     j   n   	                     r   x   	                     x   z   	                     z   ~   	                     ~   Ñ   	                     Ñ   Ü   	                     Ü   à   	                     à   é   	                                                                              	                        	                                                                                                                                                                                                "                        "   &                        &   )                        *   +                        +   .                        .   0                        0   1                        1   4                        4   6                        6   9                        9   =                        =   ?                        ?   @                        @   C                        C   D                        D   F                        F   H                        H   J                        J   K                        K   M                        M   Q                        Q   S                        S   T                        T   W                        W   Y                        Y   \                        \   `                        `   d                        d   g                        g   j                        j   n                        n   o                        o   x                        x   z                        z   ~                        ~   Ñ                        Ñ   Ü                        Ü   à                        à   é                        	                                                                                                                                                                                                "                        *   +                        +   .                        .   0                        0   1                        1   4                        4   6                        6   9                        9   =                        =   ?                        ?   @                        @   C                        M   Q                        Q   S                        S   T                        T   W                        W   Y                        Y   \                        \   `                        `   d                        d   g                        n   o                        o   x                        x   z                        z   ~                        ~   Ñ                        Ñ   Ü                                                      	                        "   &                        &   )                        )   *                        C   D                        D   F                        G   H                        H   J                        J   K                        K   M                        j   n                        Ü   à                        à   ä                        ä   é                        	                                                                                                                                                                                                "                        "   &                        &   )                        )   +                        +   .                        .   0                        0   1                        1   4                        4   6                        6   9                        9   =                        =   ?                        ?   @                        @   C                        J   K                        K   M                        M   Q                        Q   S                        S   T                        T   W                        W   Y                        Y   \                        \   `                        `   d                        d   g                        n   o                        o   x                        x   z                        z   ~                        ~   Ñ                        Ñ   Ü                        Ü   à                        à   ä                                                      	                                                                              *   +                        0   4                        4   9                        C   D                        D   F                        F   G                        G   H                        H   J                        S   W                        W   \                        b   d                        g   j                        j   n                        o   r                        u   x                        x   ~                        ä   é                        é   ê                                                      	                        	                                                                                                                                                                     "                        "   &                        &   )                        *   +                        +   .                        .   0                        0   4                        4   =               	         =   ?                        ?   @                        @   C                        C   D                        D   F                        F   G                        J   K                        K   M                        M   Q                        Q   S                        S   W                        W   `               	         `   d                        d   g                        g   j                        j   n                        n   o                        o   u                        u   ~               	         ~   Ñ                        Ñ   Ü                        Ü   à                        à   é                        	                                                                                                                                                                     "                        *   +                        +   .                        .   0                        0   4                        4   =               	         =   ?                        ?   @                        @   C                        M   Q                        Q   S                        S   W                        W   `               	         `   d                        d   g                        n   o                        o   u                        u   ~               	         ~   Ñ                        Ñ   Ü                                 !                                                	                        	                                                                                    &                        &   )                        )   *                        *   .                        .   0                        0   4                        4   =               	         =   ?                        ?   C                        C   D                        D   F                        F   G                        G   H      !                  H   J      !                  J   K                        K   M                        M   Q                        Q   S                        S   W                        W   `               	         `   b                        b   g                        g   j                        j   r                        r   u                        u   ~               	         ~   Ñ                        Ñ   Ü                        Ü   à                        à   é                        é   ê      !                                                	                        	                                                                                    &                        &   )                        )   *                        *   .                        .   0                        0   4                        4   =               	         =   ?                        ?   C                        C   D                        D   F                        F   G                        J   K                        K   M                        M   Q                        Q   S                        S   W                        W   `               	         `   b                        b   g                        g   j                        j   r                        r   u                        u   ~               	         ~   Ñ                        Ñ   Ü                        Ü   à                        à   é                                                      	                        	                                                                                    &                        &   )                        )   .                        .   0                        0   4                        4   =               	         =   ?                        ?   C                        C   D                        D   F                        F   G                        J   K                        K   M                        M   Q                        Q   S                        S   W                        W   `               	         `   u                        u   ~               	         ~   Ñ                        Ñ   Ü                        Ü   à                        à   é                                 !                     	      !                  	         !                           !                           !                     &      !                  &   )      !                  )   .      !                  .   0      !                  0   4      !                  4   =      !         	         =   ?      !                  ?   C      !                  C   D      !                  D   F      !                  F   G      !                  J   K      !                  K   M      !                  M   Q      !                  Q   S      !                  S   W      !                  W   `      !         	         `   u      !                  u   ~      !         	         ~   Ñ      !                  Ñ   Ü      !                  Ü   à      !                  à   é      !                         !   $      	                  !   "                        !   "                     	   !   "                  	      !   "                        !   "                        !   "                     .   !   "                  .   4   !   "                  4   =   !   "         	         =   C   !   "                  C   F   !   "                  F   G   !   "                  G   M   !   "                  M   Q   !   "                  Q   W   !   "                  W   `   !   "         	         `   u   !   "                  u   ~   !   "         	         ~   Ñ   !   "                  Ñ   Ü   !   "                  Ü   á   !   "                  á   ä   !   "                  ä   é   !   "                  ê   ë   !   $      	                  "   $                        "   $                     	   "   $                  	      "   $                        "   $                        "   $                     .   "   $                  .   4   "   $                  4   =   "   $         	         =   C   "   $                  C   F   "   $                  F   G   "   $                  G   M   "   $                  M   Q   "   $                  Q   W   "   $                  W   `   "   $         	         `   u   "   $                  u   ~   "   $         	         ~   Ñ   "   $                  Ñ   Ü   "   $                  Ü   á   "   $                  á   ä   "   $                  ä   é   "   $                         $   &      	                  $   &      	                  $   %                     	   $   %                  	      $   %                        $   %                        $   %                     .   $   %                  .   4   $   %                  4   =   $   %         	         =   C   $   %                  C   F   $   %                  F   J   $   %                  J   Q   $   %                  Q   W   $   %                  W   `   $   %         	         `   u   $   %                  u   ~   $   %         	         ~   Ñ   $   %                  Ñ   Ü   $   %                  Ü   é   $   %                  é   ê   $   &      	            ê   ë   $   &      	                  %   &      	                  %   &      	                  %   &      	               .   %   &      	            .   4   %   &      	            4   =   %   &      	   	         =   C   %   &      	            C   Q   %   &      	            Q   W   %   &      	            W   `   %   &      	   	         `   u   %   &      	            u   ~   %   &      	   	         ~   ä   %   &      	            ä   é   %   &      	                                           	                         	                                                                                       &                         &   )                         )   .             	            .   4                         4   =                	         =   C                         C   F                         F   J                         J   Q                         Q   W             	            W   `                	         `   u             	            u   ~                	         ~   Ñ                         Ñ   Ü                         Ü   é                                        	                                                                                                                           &                        &   )                        )   *                        *   .                        .   4                        4   =               	         =   ?                        ?   C                        C   F                        F   G                        G   M                        M   Q                        Q   S                        S   W                        W   `               	         `   g                        g   j                        j   r                        r   u                        u   ~               	         ~   Ñ                        Ñ   Ü                        Ü   á                        á   ä                        ä   é                        é   ê                                        	                           	                                          	                        	                                    
-                                                                                                      &                        &   )                        +   .                        .   0      
-                  0   4                        4   9                        9   =                        =   ?      
-                  ?   C                        D   F                        H   J                        K   M                        M   Q                        Q   S      
-                  S   W                        W   \                        \   `                        `   b      
-                  b   g                        g   j                        j   n      
-                  o   u                        u   ~               	         ~   Ñ                        Ñ   Ü      
-                  à   å                        é   ê                        ê   ë            	                      	      	                                       
-         
-      	                     
-                           
-      	                                                
-                     "      
-                  "   &      	                  '   )      	                  ,   .      	                  1   4                        9   =      
-                  @   C      
-                  M   Q      
-      	            T   W                        \   `      
-                  b   d      
-      	            d   g      
-      	            h   j      	                  p   r      	                  r   x                        x   ~                        ~   Ñ      
-                  é   ê                        ê   ë      	      	                     	                                             4   6      
-                  6   9                        W   Y      
-                  Y   \                        x   z      
-                  z   ~                        é   ê                                 	                           
-                  2   4      
-                  7   9      
-                  G   J      	                  U   W      
-                  Z   \      
-                  r   u      
-                  v   x      
-                  z   ~      
-                  å   é      	                         	                           	                           	                           	                     "   &   	   
-                  &   )   	   
-                  +   .   	   
-                  G   J   	                     g   j   	   
-                  o   r   	   
-                  å   é   	                     ê   ë   	                        
-   
-         	            
-      
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                        "   
-                     "   &   
-                     &   )   
-                     )   +   
-                     +   .   
-                     .   0   
-                     0   2   
-                     2   6   
-                     6   7   
-                     7   ?   
-                     ?   @   
-                     @   C   
-                     C   G   
-         	            J   M   
-         
-            M   S   
-                     S   U   
-                     U   Y   
-                     Y   Z   
-                     Z   d   
-                     d   j   
-                     j   n   
-                     n   o   
-                     o   u   
-                     u   v   
-                     v   ~   
-                     ~   Ñ   
-                     Ñ   Ü   
-                     Ü   å   
-         	                                                                  
-                                                                                                                &                        &   )                        )   *                        ,   0                        2   6                        7   ?                        A   C                        D   K                        M   S                        U   Y                        Z   d                        e   g                        g   j                        j   n                        p   r                        r   u                        v   ~                        ~   Å                        Ç   Ü                        á   é                        é   ê                           	                            "                        "   &                        *   +                        C   D                        K   M                        g   j                        n   o                        Ü   á                        	   
-                        
-                                                                                                                                                                                                                             "                        +   ,                        ,   0                        0   2                        2   6                        6   7                        7   ?                        ?   A                        A   C                        M   S                        S   U                        U   Y                        Y   Z                        Z   d                        d   e                        e   g                        o   p                        p   r                        r   u                        u   v                        v   ~                        ~   Å                        Å   Ç                        Ç   Ü                                                                                                                                     	   
-                        
-                                                                                                                                                                                                  "                        &   )                        )   *                        +   ,                        ,   0                        0   2                        2   4                        4   6                        7   =                        =   ?                        ?   A                        A   C                        D   K                        M   S                        S   U                        U   W                        W   Y                        Z   `                        `   d                        d   e                        e   g                        j   n                        o   p                        p   r                        r   u                        u   v                        v   x                        x   ~                        ~   Å                        Å   Ç                        Ç   Ü                        á   ä                        ä   é                        é   ê                        ê   ë                                                                              4   6                        6   7                        7   =                        W   Y                        Y   Z                        Z   `                        x   ~                                                      
-                        
-                                                                                                                                                                                                                                                        &                        &   )                        )   ,                        ,   0                        0   1                        1   4                        6   9                        9   =                        =   ?                        ?   A                        A   C                        C   M                        M   S                        S   T                        T   W                        Y   \                        \   `                        `   d                        d   e                        e   g                        g   j                        j   n                        n   p                        p   r                        r   x                        x   z                        z   ~                        ~   Å                        Å   Ç                        Ç   Ü                        Ü   ä                                  !                                                            	            4   9            	            W   \            	            x   ~                        ä   é                        é   ê                        ê   ë      !                                                                        
-                                                                                                                                           &                        &   )                        ,   0                        1   4                        4   9            
-            9   =                        =   ?                        A   C                        D   K                        M   S                        T   W                        W   \            
-            \   `                        `   d                        e   g                        g   j                        j   n                        p   r                        r   x                        x   ~                        ~   Å                        Ç   Ü                        á   é                           	                            "                        "   &                        )   +                        C   D                        K   M                        g   j                        n   o                        Ü   á                        	   
-                        
-                                                                                                                                                                                                                             "                        +   ,                        ,   0                        0   1                        1   4                        4   9                        9   =                        =   ?                        ?   A                        A   C                        M   S                        S   T                        T   W                        W   \                        \   `                        `   d                        d   e                        e   g                        o   p                        p   r                        r   x                        x   ~                        ~   Å                        Å   Ç                        Ç   Ü                                 !                  
-         !      	                     "                           !      	                     !                           !                           !                     "                        "   &      !                  &   )      !                  +   .                        .   0      "                  1   4      !                  4   9      !      
-            9   =      !                  =   ?      "                  @   C      !                  M   S      !      	            T   W      !                  W   \      !      
-            \   `      !                  `   d            	            d   j                        j   n            	            o   x                        x   ~      !                  ~   Ñ      !                  Ñ   Ü      "                  é   ê      !                                                "      !                  *   .                        G   J                        `   b      !      
-            b   g      !                  g   j      !                  j   r      !                  r   x      !                  å   é                        )   .      !                           !                  G   J      !                  å   é      !                        !   $                        !   "                     	   !   "                  	      !   "                        !   "                        !   "                     .   !   "                  0   4   !   "                  4   =   !   "         	         ?   C   !   "                  D   F   !   "                  H   J   !   "                  K   M   !   "                  M   Q   !   "                  Q   S   !   "                  S   W   !   "                  W   `   !   "         	         `   u   !   "                  u   ~   !   "         	         ~   Ñ   !   "                  à   å   !   "                  é   ê   !   $                        "   $                        "   $                        "   $                        "   $                        "   $                     &   "   $                  &   )   "   $                  )   .   "   $                  .   4   "   $                  4   =   "   $         	         =   ?   "   $                  ?   C   "   $                  C   F   "   $                  F   G   "   $                  G   M   "   $                  M   Q   "   $                  Q   W   "   $                  W   `   "   $         	         `   u   "   $                  u   ~   "   $         	         ~   Ñ   "   $                  Ñ   Ü   "   $                  Ü   á   "   $                  á   ä   "   $                  ä   é   "   $                        $   %                     	   $   %                  	      $   %                        $   %                        $   %                     .   $   %      	            .   4   $   %                  4   =   $   %         	         =   C   $   %                  C   F   $   %                  F   J   $   %      	            J   Q   $   %      	            Q   W   $   %                  W   `   $   %         	         `   u   $   %                  u   ~   $   %         	         ~   Ñ   $   %                  Ñ   Ü   $   %                  Ü   é   $   %      	                           	                           	                           	                           	               &            	            &   )            	            )   *            	            *   .            	            .   4            	            4   =            	   	         =   ?            	            ?   C            	            C   F            	            F   G            	            G   M            	            M   Q            	            Q   S            	            S   W            	            W   `            	   	         `   g            	            g   j            	            j   r            	            r   u            	            u   ~            	   	         ~   Ñ            	            Ñ   Ü            	            Ü   á            	            á   ä            	            ä   é            	                           	               	                        
-                                                                                                               &                        &   )                        +   .                        .   4                        4   =               	         @   C                        D   F                        G   H            	            H   J            	            K   Q                        W   `               	         `   g                        g   j                        j   n                        o   u                        u   ~               	         à   é                        é   ê            	                                                                                                "                        "   &                        '   )                        ,   0                        0   4                        4   9                        9   =                        M   Q            	            W   \                        \   `                        `   b            	            b   g                        h   j                        p   r                        r   x                        x   ~                                       	                                                                                                 $                        .   0                        1   4                        4   6            
-            6   9                        9   =            
-            T   W            
-            W   Y                        Y   \                        \   `                        s   u                        u   x                        x   z                        z   ~                        ~   Ñ                        é   ê            	                     	      	                                       2   4                        7   9                        U   W            
-            Z   \                        v   x                        z   ~                           Å            	            Å   Ñ      
-                  ç   é      	                  é   ê            	                     	                  ;   =            	            H   I      	      
-            ^   `                        å   ç      	                     "      
-                  "   $            	            ,   .      	                  p   r      	                  r   u                              	         	            $   &   	         	            '   )   	   
-                  h   n   	   
-                        
-         	            
-      
-                           
-                           
-                         "   
-                     &   )   
-                     ,   .   
-                     =   ?   
-         	            A   C   
-                     G   J   
-         	            M   O   
-         	            O   S   
-                     b   d   
-                     e   g   
-                     g   j   
-                     j   n   
-         	            p   r   
-                     Ç   Ü   
-                     å   é   
-                                                               	            E   L                        h   j                        s   u            	            à   é                        é   ê            	               	                        $   &                        )   *            	            D   E            	            L   M                        j   n            	            á   à            	                           	            "   $                        *   +                        C   D                        M   O                        g   h                        h   j                        n   o                        Ü   á                                       	                                       "   $                        C   D                        K   L                        M   O                        g   h                        h   j                        Ü   á                        é   ê            	            	                                                                                                                           	                           	               "                        *   4                        4   6                        7   ;                        ;   ?            	            ?   C                        O   W                        W   Y                        Z   ^                        ^   b                        b   g                        n   s                        s   u                        u   x                        x   ~                        ~               	               Å            	            Å   Ü            	            
-                                                                                     $                        $   &                        ,   0                        1   2                        2   6                        9   =                        A   C                        M   S                        T   U                        U   Y                        \   ^                        b   d                        e   h                        h   j                        p   s                        u   v                        v   x                        Ç   Ü                                       	            1   4                        T   W                        u   x                        é   ê            	                           	                     !      	            $   &            	            &   )                        9   =      !      	            F   J                        \   b            	            h   n            	            s   u                        u   x                        ä   é                                                   $   &                        &   )                        )   *                        D   F                        J   K                        h   j            	            j   n                        á   ä                                                            !      	            "   $                        *   +                        1   4                        4   9            
-            =   ?                        C   D            	            M   O            	            T   W                        W   \            
-            g   h                        h   j            	            n   o                        x   ~                        ~   Å      !                  Ü   á                                 !      	                                                      	                     !      	                &                        ,   .                        A   C            	            \   `      !      	            e   g                        g   j                        p   r                        r   u                        Ç   Ñ            	            é   ê      !      	                                                "                     "                        "   &      !      	            +   .                        @   C      "                  b   d      !      	            d   g      !      	            j   n      !      	            o   r                        Å   Ñ      !                     "      "                  *   .      !      	            n   r      !      	                                                !                        !   "      	            
-      !   "                        !   "                        !   "                        !   "                        !   "                  "   &   !   "                  &   )   !   "                  )   .   !   "                  4   9   !   "                  9   =   !   "                  M   Q   !   "                  W   \   !   "                  \   `   !   "                  `   b   !   "                  b   g   !   "                  g   j   !   "                  j   n   !   "                  n   u   !   "                  å   é   !   "      	                  "   $      	                  "   $      	                  "   $      	                  "   $      	                  "   $      	               &   "   $      	            &   )   "   $      	            )   .   "   $      	            .   4   "   $      	            4   =   "   $      	   	         =   ?   "   $      	            ?   C   "   $      	            C   F   "   $      	            F   G   "   $      	            G   M   "   $      	            M   Q   "   $      	            Q   W   "   $      	            W   `   "   $      	   	         `   u   "   $      	            u   ~   "   $      	   	         ~   Ñ   "   $      	            Ñ   Ü   "   $      	            Ü   á   "   $      	            á   ä   "   $      	            ä   é   "   $      	                                          	                        	   
-            	            
-               	                                                                                 	                                          &                        &   )                        )   +                        +   .                        .   4                        4   =               	         =   ?                        ?   @            	            @   C            	            C   D                        D   F                        F   G                        J   K                        K   S            	            S   W            	            W   `               	         `   g                        g   j                        j   n                        n   o                        o   u                        u   ~               	         ~   Ñ            	            Ñ   Ü                        Ü   à                        à   é            	                           	            
-               	                                                
-      	            =   ?      
-      	            @   C            	            G   J            	            Q   S      
-      	            S   W            	            j   n                        ~   Ñ            	            Ñ   Ü      
-      	            å   é            	                           	                     
-      	            A   C      
-      	            Ç   Ñ      
-      	            å   ç            	            ç   é      	      	                     	      	            å   ç      	      	               "      	                  s   u            	                  	                        "   	   
-      
-            å   é   	   
-      	               "   
-         
-            '   )   
-         	            +   .   
-         
-            d   g   
-         
-            h   j   
-         	            o   r   
-         
-            å   é   
-         	                "                        ,   .                        e   g                        p   r                                       	                           	            F   J            
-            ä   å            
-            å   é                           
-            	            #   $            	            $   &            	            &   '            	            '   )            	            C   D            	            E   F            
-            J   N            	            h   j                        à   ä            	            
-               
-            "   #                        B   C            	            N   O                                                                              $   &            	            '   )            	            F   J            	            h   n            	            ä   ã            	            ã   å            
-            å   é                           	            	                           	                                                      	            "   $            	            $   &            	            &   '            	            '   )            	            )   2            	            2   4            	            7   ;                        C   F            	            J   U            	            U   W            	            Z   ^                        ^   b            	            g   h            	            h   n            	            s   u            	            u   v            	            v   x            	            x   ~                        Ü   ä            	                                                      	            6   9                        9   ;            	            Y   \                        \   ^            	            x   z            	            z   ~            	                                                                                 	                           	                           	            $   &            	            '   )            	            2   6                        ;   ?            	            F   J            	            U   Y                        ^   b            	            h   n            	            s   u            	            v   x            	               Å            	            ä   ã            	                           	                           	                           	                           	                           	               $                        $   &            	            &   '            	            '   )            	            )   2            	            2   4            	            9   ?            	            ?   F            	            J   U            	            U   W            	            \   b            	            b   h                        h   n            	            n   s                        s   u            	            u   v            	            v   z            	            z   ~            	            ~               	               Å            	            Å   ä            	            ã   å            
-            å   é                                       	                           	            '   )            	            2   4            	            G   I            
-            U   W            	            v   z            	            z   ~            	               Å            	            ã   å            
-            å   é                                                   $   &            	            F   G            	            I   J            	            j   n            	            ä   ã            	               	            	            $   &            	            &   '            	            '   )            	            )   *            	            D   F            	            J   M            	            j   n            	            á   ä            	            
-               	                           	                "            	            ,   0            	            A   C            	            O   S            	            b   d            	            e   g            	            p   r            	            Ç   Ü            	                           	               "            	            "   &            	            '   )            	            +   .            	            .   0      !      	            =   ?      !      	            d   g            	            h   j            	            o   r            	            s   u            	            Ñ   Ü      !      	            å   é                                       	                           	               "      !                  *   .                        A   C            	            n   r                        Ç   Ñ            	            å   é                                       	            å   é                                 !      	                     !      
-                     !      
-            &   )      !      
-            1   4      !      	            @   C      !      
-            T   W      !      	            g   j      !      
-            r   x      !      	            x   ~      !      	            ~   Ñ      !      	            å   é      !                        !   "                     	   !   "                  	   
-   !   "      	            
-      !   "      	                  !   "                        !   "      	                  !   "      	                  !   "      	                  !   "      	               &   !   "      	            &   )   !   "                  )   .   !   "                  .   0   !   "      	            0   4   !   "      	            4   9   !   "      	            9   =   !   "      	            =   ?   !   "                  ?   @   !   "      	            @   C   !   "      	            C   D   !   "                  D   F   !   "                  F   H   !   "                  H   J   !   "                  J   K   !   "                  K   S   !   "      	            S   W   !   "      	            W   \   !   "      	            \   `   !   "      	            `   b   !   "                  b   g   !   "                  g   j   !   "      	            j   n   !   "      	            n   u   !   "                  u   ~   !   "         	         ~   Ñ   !   "                  Ñ   Ü   !   "                  Ü   à   !   "                  à   å   !   "                                 	            6   9            	            Y   \            	                           	            2   4            	            4   9            	            U   W            	            W   \            	               "            	            +   .            	            o   r            	               "      !      	                          	                            	               )   *          	               *   .          	               Q   S          	               S   W          	               `   g          	               g   j          	               j   r          	               r   u          	               é   ê          	               ê   ë          	                            	                           	                           	                           	                  	         	               	            	                           	                           	                           	                  &         	               &   )         	               )   +         	               +   .         	               .   4         	               4   =         	      	         =   C         	               C   F         	               F   G         	               G   M         	               M   Q         	               Q   S         	               S   T         	               T   W         	               W   `         	      	         `   g         	               g   j         	               j   n         	               n   o         	               o   u         	               u   ~         	      	         ~   Ñ         	               Ñ   Ü         	               Ü   á         	               á   ä         	               ä   é         	               ê   ë         	                         	   	                           	                           	               	            	                           	                           	               ?   C         	               G   H         	               H   J         	               K   M         	               M   Q         	               Q   S         	               S   T         	               T   W         	               ~   Ñ         	               à   ä         	               ä   é         	               é   ê         	               ê   ë      	   	                  	         	               	            	                        	   	   
-            =   ?      	   	   
-            ?   C         	               D   F         	               H   J         	               K   M         	               M   Q         	               Q   S      	   	   
-            T   W         	               `   b         	               ~   Ñ         	               Ñ   Ü      	   	   
-            à   ä         	                        	   	                           	               
-         	   	   
-                     	   	   
-            @   C      	   	   
-            M   Q      	   	   
-            b   d      	   	               d   g      	   	               é   ê      	   	                        	   	                        	   	   
-               Å      	   	   
-            Å   Ñ      	   	   
-            ç   é      	   	                        	   	               ;   =      	   	   
-            G   H      	   	   
-            I   J      	   	   
-            å   ç      	   	   
-            "   $      
-   	               r   u         	                     	      	                     	      	               	   
-   	   
-   	               
-      	   
-   	                     	   
-   	                     	   
-   	               $   &   	   
-   	               ;   ?   	   
-   	               ?   @   	   
-   	               @   C   	   
-   	               C   D   	   
-   	               G   J   	      	   
-            M   S   	   
-   	               S   U   	   
-   	               b   g   	   
-   	   
-               Å   	   
-   	               Å   Ñ   	   
-   	               Ñ   Ü   	   
-   	               Ü   à   	   
-   	               å   é   	      	               é   ê   	      	                  	   
-      	   
-            "   &   
-      	   
-            &   )   
-      	               ;   ?   
-      	               C   D   
-      	               D   G   
-      	   
-            M   O   
-      	               g   j   
-      	               j   n   
-      	                  Å   
-      	               Ü   à   
-      	               à   å   
-      	   
-            "   &         	                           	                           	                  	         	   
-                        	               $   &         	               &   )         	               )   *         	               =   ?         	               C   D         	               J   M         	   
-            h   j         	               j   l         	               l   n         	               s   u         	               á   à         	               â   ä         	   
-                        	                           	               	   
-         	   
-            $   &         	               )   *         	               M   N         	   
-            l   n         	               á   à         	               à   â         	   
-                        	               #   $         	               C   D         	               D   E         	                           	                  	         	   
-                        	                           	                           	               "   $         	               &   )         	               0   2         	               =   ?         	               C   D         	               D   F         	   
-            F   J         	   
-            J   M         	   
-            N   O         	               S   U         	               `   b         	               g   h         	               h   n         	               s   u         	               u   v         	               Å   Ç         	               Ü   á         	               â   ä         	   
-            ä   ã         	   
-            é   ê         	                           	                           	                           	                           	               *   0         	               0   2         	               2   4         	               ;   =         	               =   ?         	               O   S         	               S   U         	               U   W         	               ^   `         	               `   b         	               s   u         	               u   v         	               v   x         	               ~   Å         	               Å   Ç         	               Ç   Ü         	                           	               7   ;         	               Z   ^         	               x   ~         	                  	         	   
-            	   
-         	               
-            	                           	                           	                           	                  $         	               $   &         	               &   )         	               )   *         	               0   1         	               1   4         	               4   6         	               6   9         	               9   =         	               ?   C         	               C   D         	               D   F         	   
-            J   O         	   
-            S   T         	               T   W         	               W   Y         	               Y   \         	               \   `         	               b   h         	               h   n         	               n   s         	               u   x         	               x   z         	               z   ~         	               Ü   á         	               á   à         	               à   ä         	   
-                        	                           	               4   9         	               F   J         	   
-            W   \         	               x   ~         	               ä   ã         	   
-            é   ê         	                           	                           	               	   
-         	                           	                           	               $   &         	               &   )         	               )   *         	               1   4         	   
-            9   =      !   	   
-            C   D         	               F   G         	   
-            I   J         	   
-            T   W         	   
-            \   `      !   	   
-            `   b         	               h   n         	               u   x         	   
-            x   ~         	   
-            ~   Å         	               á   à         	               ä   ã         	   
-                     !   	                  	         	   
-                        	                           	                           	               $   &         	               &   )         	               )   *         	               E   F         	   
-            J   N         	   
-            h   j         	               j   n         	               á   à         	               à   ä         	   
-                        	               C   D         	               D   E         	               N   O         	                        !   	               	   
-         	               
-            	                           	                           	                           	                           	                           	                            	                   &         	               &   )         	               )   ,         	               ,   0         	               =   ?         	               ?   A         	               A   C         	               C   D         	               M   S         	               `   d         	               d   e         	               e   g         	               g   j         	               j   n         	               n   p         	               p   r         	               r   u         	               ~   Å         	               Å   Ç         	               Ç   Ü         	               Ü   à         	               é   ê      !   	                           	               
-         !   	   
-                        	   
-                     !   	   
-                        	   
-                     !   	   
-                &         	               &   )         	   
-            ,   0         	   
-            =   ?      !   	   
-            A   C         	               G   J         	   
-            M   S      !   	   
-            b   d         	               e   g         	               g   j         	   
-            j   n         	               p   r         	               r   u         	   
-            ~   Å         	   
-            Ç   Ü         	   
-                        	   
-                     !   	   
-               "         	   
-            "   &      !   	   
-            +   .         	   
-            .   0      !   	   
-            @   C         	   
-            d   g         	   
-            j   n      !   	   
-            o   r         	   
-            Å   Ñ         	   
-            Ñ   Ü      !   	   
-               "      !   	   
-            *   .         	   
-            b   g          	   
-            n   r         	   
-                     !   	               )   .          	   
-            0   4      !   	   
-            G   J      !   	   
-            S   W      !   	   
-            n   u          	   
-            u   ~      !   	   
-   	         ~   Ñ      !   	   
-            *   .       !   	               b   d       !   	               d   g       !   	               n   r       !   	               r   u       !   	               ä   å       !   	                      !   $   	                     !   "   	               	      !   "   	                     !   "   	                     !   "   	                  &   !   "   	               .   4   !   "   	               4   =   !   "   	      	         ?   C   !   "   	               K   M   !   "   	               M   Q   !   "   	               Q   W   !   "   	               W   `   !   "   	      	         g   n   !   "   	               å   é   !   "   	               ê   ë   !   $   	                     "   $   	                     "   $   	                     "   $   	                     "   $   	                     "   $   	                  &   "   $   	               &   )   "   $   	               )   *   "   $   	               *   .   "   $   	               .   4   "   $   	               4   =   "   $   	      	         =   ?   "   $   	               ?   C   "   $   	               C   D   "   $   	               D   F   "   $   	               F   H   "   $   	               H   J   "   $   	               J   K   "   $   	               K   M   "   $   	               M   Q   "   $   	               Q   W   "   $   	               W   `   "   $   	      	         `   b   "   $   	               b   g   "   $   	               g   j   "   $   	               j   n   "   $   	               n   u   "   $   	               u   ~   "   $   	      	         ~   Ñ   "   $   	               Ñ   Ü   "   $   	               Ü   à   "   $   	               à   ä   "   $   	               ä   é   "   $   	                      $   &   	                     $   &   	                  &   $   &   	               &   )   $   %   	               )   .   $   %   	               F   G   $   %   	               G   M   $   %   	               M   Q   $   %   	               Ü   á   $   %   	               á   ä   $   %   	               ä   é   $   &   	               é   ê   $   &   	               ê   ë   $   &   	                     %   &   	                     %   &   	                     %   &   	               &   .   %   &   	               .   4   %   &   	               4   =   %   &   	      	         =   C   %   &   	               C   F   %   &   	               F   J   %   &   	               J   Q   %   &   	               Q   W   %   &   	               W   `   %   &   	      	         `   u   %   &   	               u   ~   %   &   	      	         ~   Ñ   %   &   	               Ñ   Ü   %   &   	               Ü   ä   %   &   	                           
-               =   ?         
-               Q   S         
-               Ñ   Ü         
-                  	         
-               
-            
-                           
-               4   6         
-               9   =         
-               @   C         
-               D   F         
-               H   J         
-               K   Q         
-               U   W         
-               à   å         
-                           
-               ;   =         
-               G   H         
-               H   J         
-                  Å         
-               Å   Ñ         
-               å   ç      	   
-                        	   
-                  	      	   
-               	   
-      	   
-               
-         	   
-                        	   
-                        	   
-                        	   
-               9   ;      	   
-               ;   ?      	   
-               ?   @      	   
-               @   C      	   
-               C   D      	   
-               D   F      	   
-               F   G      	   
-               J   K      	   
-               K   S      	   
-               S   W      	   
-               ~         	   
-                  Å      	   
-               Å   Ñ      	   
-               Ñ   Ü      	   
-               Ü   à      	   
-               à   å      	   
-                  	   	   
-   
-                  "   	   
-   
-               D   F   	   
-   
-               K   M   	   
-   
-               b   d   	   
-   
-               d   g   	   
-   
-               à   å   	   
-   
-                     
-      
-                  	   
-      
-                   &   
-      
-               ,   .   
-      
-               D   F   
-      
-               F   G   
-      
-               J   K   
-      
-               K   M   
-      
-               e   g   
-      
-               p   r   
-      
-               à   å   
-      
-                           
-               G   H         
-               H   J         
-               ä   å         
-                  	         
-               F   G         
-               J   M         
-               à   ä         
-               	   
-         
-               E   F         
-               M   N         
-                           
-                  	         
-               D   F         
-               F   H         
-               H   J         
-               J   K         
-               K   M         
-               M   N         
-               à   ä         
-               ä   å         
-                  	         
-               D   F         
-               J   K         
-               K   M         
-               M   O         
-               à   ä         
-                           
-               F   H         
-               H   J         
-               ä   å         
-                           
-                  	         
-               1   4         
-               4   9         
-               9   =         
-               G   H         
-               H   J         
-               K   M         
-               T   W         
-               W   \         
-               \   `         
-               u   x         
-               x   ~         
-               à   ä         
-               ä   å         
-                  	         
-               0   4         
-               4   =         
-      	         F   G         
-               J   K         
-               K   M         
-               S   W         
-               W   `         
-      	         u   ~         
-      	         à   ä         
-               E   F         
-               M   N         
-                  	         
-               1   4         
-               4   9         
-               9   =         
-               D   F         
-               G   H      !   
-               H   J         
-               K   M         
-               T   W         
-               W   \         
-               \   `         
-               u   x         
-               x   ~         
-               à   å         
-                           
-                  	         
-               	   
-         
-               
-            
-                           
-                           
-                           
-                           
-                           
-               &   )         
-               ,   .         
-               .   0         
-               0   4         
-               4   =         
-      	         =   ?         
-               C   D         
-               D   F         
-               F   G         
-               J   K         
-               K   S         
-               S   W         
-               W   `         
-      	         `   b         
-               g   j         
-               r   u         
-               u   ~         
-      	         ~   Å         
-               Ç   Ñ         
-               Ñ   Ü         
-               Ü   à         
-               à   ä         
-               ä   å          
-                   &         
-               A   C         
-               e   g         
-               j   n         
-               p   r         
-               
-            
-                           
-                           
-                           
-                           
-                           
-                  "         
-               "   &         
-               &   )         
-               +   .         
-               .   0         
-               0   4         
-               4   9         
-               9   =         
-               =   ?         
-               @   C         
-               H   J      !   
-               M   S         
-               S   W         
-               W   \         
-               \   `         
-               `   d         
-               d   j         
-               j   n         
-               o   u         
-               u   ~         
-      	         ~   Ñ         
-               Ñ   Ü         
-                  
-      !   
-               
-         !   
-                        !   
-                        !   
-                        !   
-                        !   
-                        !   
-                  &      !   
-               &   )      !   
-               *   .          
-               .   0      !   
-               0   4      !   
-               4   9      !   
-               9   =      !   
-               =   ?      !   
-               ?   @      !   
-               @   C      !   
-               C   G      !   
-               J   M      !   
-               M   S      !   
-               S   W      !   
-               W   \      !   
-               \   `      !   
-               `   b      !   
-               b   d          
-               d   g          
-               g   j      !   
-               j   n      !   
-               n   r          
-               r   u          
-               u   ~      !   
-      	         ~   Ñ      !   
-               Ñ   Ü      !   
-               Ü   ä      !   
-                                                                        	                        	                                                                                                                                          "                        "   &                        &   )                        ,   0                        0   4                        4   9                        9   =                        =   ?                        ?   C                        C   D                        D   F                        F   H                        H   J                        J   K                        K   M                        M   Q                        Q   S                        U   W                        W   \                        \   `                        `   b                        b   g                        g   j                        j   n                        n   o                        p   r                        r   u                        u   x                        x   ~                           Å                        Å   Ñ                        Ñ   Ü                        Ü   à                        à   é                        S   T                                 	                                                                                                                                  &                        '   )                        .   0                        =   ?                        ?   C                        C   F                        F   G                        G   M                        M   Q                        Q   S                        b   d                        d   g                        h   j                        l   n                        Ñ   Ü                        Ü   á                        á   ä                        ä   å                        å   é                                 	                           	                           	                           	                           	                  9   =      	                  =   ?      	                  ?   C      	                  C   F      	                  F   G                        G   J                        J   M      	                  M   Q      	                  Q   S      	                  S   T      	                  T   U      	                  U   W      	                  ~         	                     Å      	                  Å   Ñ      	                  Ñ   Ü      	                  Ü   á      	                  á   ä      	                  ä   å                        å   é      	                           	                           	                           	                           	                           	                      "      	                  "   &      	                  &   '      	                  '   )      	                  )   ,      	                  .   0      	                  0   2      	                  2   6      	                  6   7      	                  7   9      	                  W   Y      	                  Y   Z      	                  Z   d      	                  d   g      	                  g   h      	                  h   j      	                  j   l      	                  l   n      	                  n   p      	                  u   v      	                  v   ~      	                  s   u      	                     	   	                     	      	   
-                        	   
-                        	   
-                        	   
-                  "   &   	   
-                  &   )   	   
-                  ,   0   	   
-                  2   6   	   
-                  7   ?   	   
-                  @   C   	   
-                  C   D   	                     D   F   	                     J   M   	   
-                  M   Q   	   
-                  Q   S   	   
-                  U   Y   	   
-                  Z   b   	   
-                  g   j   	   
-                  j   n   	   
-                  p   r   	   
-                  r   u   	   
-                  v   ~   	   
-                     Å   	   
-                  Å   Ñ   	   
-                  Ñ   Ü   	   
-                  á   ä   	   
-                  å   é   	                     	      
-                           
-                           
-                           
-                           
-                           
-                           
-                        "   
-                     "   &   
-                     &   )   
-                     )   +   
-                     +   .   
-                     .   0   
-                     0   2   
-                     2   6   
-                     6   7   
-                     7   ?   
-                     ?   @   
-                     @   C   
-                     J   M   
-                     M   Q   
-                     Q   S   
-                     S   U   
-                     U   Y   
-                     Y   Z   
-                     Z   d   
-                     d   j   
-                     j   n   
-                     n   o   
-                     o   u   
-                     u   v   
-                     v   ~   
-                     ~      
-                        Å   
-                     Å   Ñ   
-                     Ñ   Ü   
-                     Ü   á   
-                     á   ä   
-                        	                        
-                                                                                     &                        &   )                        ,   0                        2   6                        7   ?                        A   C                        D   F                        F   H                        H   J                        K   S                        U   Y                        Z   d                        e   g                        j   l                        p   r                        s   u                        v   ~                           Å                        Ç   Ü                        à   ä                        ä   é                                                      	                            "                        "   &                        )   *                        C   D                        D   F                        F   H                        H   J                        M   S                        g   h                        j   l                        Ü   à                        à   ä                        
-                                                                                                                                                                                                                             "                        +   ,                        ,   0                        0   2                        2   6                        6   7                        7   ?                        ?   A                        A   C                        J   M                        M   S                        S   U                        U   Y                        Y   Z                        Z   d                        d   e                        e   g                        o   p                        p   r                        r   s                        s   u                        u   v                        v   ~                        ~                              Å                        Å   Ç                        Ç   Ü                        
-                                                                                                                "                        ,   0                        2   6                        7   ?                        A   C                        J   K                        K   M                        O   S                        U   Y                        Z   d                        e   g                        h   j                        l   n                        p   r                        s   u                        v   ~                           Å                        Ç   Ü                        á   ä                        ä   é                        	   
-                        
-                                                                                                                                                                                                                             "                        *   ,                        ,   0                        0   2                        2   6                        6   7                        7   ;                        =   ?                        ?   A                        A   C                        J   K                        K   M                        M   O                        O   S                        S   U                        U   Y                        Y   Z                        Z   ^                        `   d                        d   e                        e   g                        n   p                        p   r                        r   s                        s   u                        u   v                        v   ~                        ~                              Å                        Å   Ç                        Ç   Ü                                                      	                                                                                                         "   &                        )   *                        1   2                        2   4                        4   6                        6   9                        9   =                        =   ?                        C   D                        F   H                        H   J                        M   O                        T   U                        U   W                        W   Y                        Y   \                        \   `                        `   b                        b   d                        g   h                        h   n                        u   x                        x   z                        z   ~                        ~                              Å                        á   ä                           	                                                                                                         1   4                        9   =                        F   G                        G   M                        T   W                        \   `                        u   x                        ~   Å                        ä   é                        
-                                                          &                        &   )                        ,   0                        A   C                        D   F                        F   H                        H   J                        J   K                        K   M                        M   S                        `   d                        e   g                        h   n                        p   r                        s   u                        ~   Å                        Ç   Ü                        á   ä                        ä   é                                                                                                                                        "                        "   &                        )   *                        0   4                        4   =               	         C   D                        D   F                        F   H      $                  H   J      $                  S   W                        W   `               	         g   h                        j   n                        u   ~               	         Ü   á                        á   ä                        
-                                                                                                                                                                                                                             "                        +   ,                        ,   0                        0   4                        4   =               	         =   ?                        ?   A                        A   C                        J   K                        K   M                        M   S                        S   W                        W   `               	         `   d                        d   e                        e   g                        o   p                        p   r                        r   s                        s   u                        u   ~               	         ~   Å                        Å   Ç                        Ç   Ü                                                      	                        	                                                                                                               "                        "   &                        &   )                        +   .                        .   0                        0   4                        4   =               	         =   ?                        @   C                        C   D      $                  D   F      $                  M   Q                        Q   S                        S   W                        W   `               	         `   d                        d   g                        g   j      !                  o   u                        u   ~               	         ~   Ñ                        Ñ   Ü                        á   ä                        ä   é                        	                                                         "                        "   &                        )   +                        +   .                        ?   @                        @   C                        J   M                        M   Q                        Q   S                        b   d                        d   g                        j   n                        n   o                        o   r                        Å   Ñ                        Ü   á                        á   ä                        ä   é                                 !                           !                     	      !                  	         $                           !                           !                           !                           !                                                "                        "   &                        &   )      $                  )   +                        +   .      !                  .   0                        0   4                        4   =      $         	         =   ?      $                  ?   C      $                  J   K      !                  K   M      !                  M   Q      $                  Q   S      !                  S   W      !                  W   `      $         	         `   b                        b   g                        j   n                        n   r                        r   u                        u   ~      $         	         ~   Ñ                        Ñ   Ü      $                  Ü   á      $                  á   à      !                  à   ä      !                  ä   é                                 !                     "      !                  "   &      !                  )   *      !                  *   +      !                  .   0      !                  0   4      !                  `   b      !                  b   g      !                  j   n      !                  n   r      !                  r   u      !                  ~   Ñ      !                  ä   é      !                        !   "                     	   !   "                        !   $                        !   $                     &   !   "                  )   *   !   "                  *   .   !   "                  .   4   !   $                  J   K   !   $                  K   M   !   $                  Q   W   !   $                  `   b   !   $                  b   g   !   $                  g   j   !   "                  j   n   !   "                  n   u   !   $                  ~   Ñ   !   $                  á   à   !   $                  à   ä   !   $                  ä   é   !   "                     	   "   $                                                                                                      "                        "   &                        &   )                        )   ,                        ,   0                        0   4                        W   \                        \   `                        `   b                        b   g                        g   j                        j   n                        o   p                        p   r                        u   x                        x   ~                           Å                                                       "                        "   &                        &   )                        .   0                        4   6                        9   =                        T   W                        W   Y                        \   `                        `   b                        g   j                        j   l                        s   u                        x   z                        ~   Å                                                                                                                                    "   &                        '   )                        .   0                        0   1                        1   4                        4   6                        6   9                        9   =                        T   W                        W   Y                        Y   \                        \   `                        `   b                        h   j                        u   x                        x   z                        z   ~                        ~   Å                                  	                      "      	                  ,   .      	                  b   d      	                  p   s      	                  s   u      	                     	   	                     	      	                           	                           	                        "   	                     "   &   	                     &   )   	                     )   +   	                     ,   .   	   
-                  =   ?   	                     ?   @   	                     @   C   	                     Q   S   	                     S   T   	                     b   g   	                     g   j   	                     j   n   	                     n   o   	                     r   u   	                     Å   Ñ   	                     Ü   ä   	   
-                  +   ,   
-                     ,   .   
-                     o   p   
-                     p   r   
-                     Ü   ä   
-                                                                                                                                                               "                        "   &                        )   *                        +   .                        .   0                        1   4                        4   6                        6   9                        9   =                        =   ?                        @   C                        K   M                        M   Q                        Q   S                        T   W                        W   Y                        Y   \                        \   `                        `   d                        d   g                        g   j                        j   n                        o   x                        x   z                        z   ~                        ~   Ñ                        Ñ   Ü                        á   ä                                                                                                                                                                                                                        "                        *   +                        +   .                        .   0                        0   1                        1   4                        4   6                        6   9                        9   =                        =   ?                        ?   @                        @   C                        C   D                        Q   S                        S   T                        T   W                        W   Y                        Y   \                        \   `                        `   d                        d   g                        n   o                        o   x                        x   z                        z   ~                        ~   Ñ                        Ñ   Ü                        Ü   á                        á   ä                        M   Q                        "   &                        )   *                        1   2                        2   4                        C   F                        M   Q                        T   U                        U   W                        g   j                        j   n                        ~                              Å                        Å   Ñ                        Ü   ä                        M   Q                                                                                                                                                                  "                        "   &                        *   +                        +   .                        .   0                        ?   @                        @   F                        M   Q                        Q   S                        d   g                        n   o                        o   u                        Å   Ñ                        Ñ   Ü                        Ü   ä                           	                        	                                                      @   C                        C   D                        D   F                        g   h                        h   n                                                                                 "                        "   &                        +   .                        .   0                        =   ?                        @   C                        M   Q                        Q   S                        `   d                        d   g                        g   h                        h   n                        o   u                        ~   Ñ                        Ñ   Ü                        Ü   ä                                                                                                                                                                                                                        "                        "   &                        *   +                        +   .                        .   0                        1   4                        4   9                        9   =                        =   ?                        ?   @                        @   C                        Q   S                        T   W                        W   \                        \   `                        `   d                        d   g                        n   o                        o   u                        u   x                        x   ~                        ~   Ñ                        Ñ   Ü                        Ü   ä                                                                              0   1                        1   4                        4   9                        9   =                        M   Q                        S   T                        T   W                        W   \                        \   `                        u   x                        x   ~                                                      	                        	                                                                                 &   )                        )   *                        0   4                        4   =               	         S   W                        W   `               	         u   ~               	         J   K                        K   M                                                                                                                                           &                         &   )                         )   .                         .   4                         4   =                	         =   C                         C   Q                         Q   W                         W   `                	         `   u                         u   ~                	         ~   ä                         ä   é                         é   ê                                                                                   	                        	                                                                                                               &                        &   )                        )   *                        *   .                        .   4                        4   =               	         =   C                        C   F                        F   J                        J   Q                        Q   S                        S   W                        W   `               	         `   g                        g   j                        j   r                        r   u                        u   ~               	         ~   Ñ                        Ñ   Ü                        Ü   é                        é   ê                        ê   ë                                  	                           	                                                                           	                           "                        *   +                        +   .                        .   0                        4   9                        9   =                        F   G                        G   M                        M   Q                        S   T                        T   W                        o   r                        ~   Ñ                        Ü   á                        á   ä                        ä   é                        é   ê      	                  ê   ë      	                           	                           	                     	      	                  	         	                           	                           	                           	                     "                        ,   .                        .   0      	                  0   4      	                  4   9      	                  9   =      	                  =   C      	                  C   F      	                  F   G      	                  G   M      	                  M   Q      	                  Q   S      	                  S   T      	                  T   W      	                  W   \      	                  \   `      	                  b   g                        l   n                        p   r                        r   u                        u   x      	                  x   ~      	                  ~   Ñ      	                  Ñ   Ü      	                  Ü   á      	                  á   ä      	                  ä   é      	                           	                     "      	                  "   &      	                  &   )      	                  )   ,      	                  ,   .      	                  b   g      	                  g   j      	                  j   n      	                  n   p      	                  p   r      	                  r   u      	                         	                           	                           	                           	                           	                        "   	                     &   )   	                     )   *   	                     *   +   	                     +   .   	                     .   0   	                     0   4   	                     4   9   	                     9   =   	                     ?   C   	                     C   F   	                     F   G   	                     G   M   	                     M   Q   	                     S   W   	                     W   \   	                     \   `   	                     g   j   	                     j   n   	                     o   r   	                     u   x   	                     x   Ñ   	                     Ñ   Ü   	                     Ü   ä   	                     ä   é   	                     é   ê   	                     ê   ë   	                                                   	                        	                                                                                                               "                        *   +                        +   .                        .   0                        0   4                        4   9                        9   =                        =   ?                        ?   C                        C   F                        F   G                        G   J                        M   Q                        Q   S                        S   W                        W   \                        \   `                        `   b                        b   g                        n   o                        o   x                        x   Ñ                        Ñ   Ü                        Ü   ä                        J   K                        K   M                        M   Q                                                                                  	                        	                                                                                                               &                        &   )                        )   *                        *   .                        .   0                        0   1                        1   4                        4   9                        9   =                        =   ?                        ?   C                        C   F                        F   G                        G   J                        J   M                        Q   S                        S   T                        T   W                        W   \                        \   `                        `   b                        b   g                        j   r                        r   x                        x   ~                        ~   Ñ                        Ñ   ä                        ä   é                        é   ê                        ê   ë                        J   M                        M   Q                                  !                           !                                             	                                                                                    &                        &   )                        )   *                        *   .                        .   0                        0   4                        4   =               	         =   ?                        ?   C                        C   F                        F   G                        G   J                        J   Q                        Q   S                        S   W                        W   `               	         `   b                        b   g                        g   j                        j   n                        n   r                        r   u                        u   ~               	         ~   Ñ                        Ñ   Ü                        Ü   ä                        ä   é                        é   ê      !                  ê   ë      !                                                	                        	                                                                                                               &                        )   *                        *   .                        0   4                        4   =               	         =   ?                        ?   C                        C   F                        F   G                        G   J                        J   M                        M   Q                        S   W                        W   `               	         `   b                        b   g                        n   r                        r   u                        u   ~               	         ~   Ñ                        Ñ   Ü                        Ü   ä                                                   .   0                        0   4                        4   =               	         J   M      $                  M   Q      $                  Q   S                        S   W                        W   `               	         u   ~               	                  !                           !                     	      !                  	         !                           $                           !                     &      !                  *   .                        .   4      $                  4   =      !         	         =   ?      !                  ?   C      !                  C   F      !                  F   G      !                  G   J      !                  Q   W      !                  W   `      !         	         `   b      !                  b   g      !                  g   j      !                  j   r      !                  r   u      !                  u   ~      !         	         ~   Ñ      $                  Ñ   Ü      !                  Ü   á      $                  á   ä      $                  ä   é      $                  &   )      $                  *   .                        )   *      !                  *   .      !                         !   $                        !   $                     	   !   $                  	      !   $                        !   $                     &   !   $                  )   .   !   $                  4   =   !   $         	         =   C   !   $                  C   F   !   $                  F   G   !   $                  G   J   !   $                  Q   W   !   $                  W   `   !   $         	         `   u   !   $                  u   ~   !   $         	         Ñ   Ü   !   $                  é   ê   !   $                  ê   ë   !   $                        $   &                        $   &                        $   &                        $   &                     .   $   &                  .   4   $   &                  4   =   $   &         	         =   C   $   &                  C   F   $   %                  F   J   $   %                  J   Q   $   &                  Q   W   $   &                  W   `   $   &         	         `   u   $   &                  u   ~   $   &         	         ~   Ñ   $   &                  Ñ   Ü   $   %                  Ü   é   $   %                  é   ê   $   &                  C   J   %   &                  Ñ   ä   %   &                  ä   é   %   &                                                                                                   =   C                        C   J                        Q   W                        Ñ   ä                        ä   é                                 	                     	      	                  	         	                           	                           	                           	                  .   4      	                  4   =      	         	         =   C      	                  C   F      	                  F   J      	                  J   Q      	                  Q   S      	                  S   W      	                  W   `      	         	         u   ~      	         	         ~   Ñ      	                  Ñ   Ü      	                  Ü   é      	                     &      	                  &   )      	                  )   +      	                  +   .      	                  `   g      	                  g   j      	                  j   n      	                  n   o      	                  o   u      	                        	                           	                           	                           	                        &   	                     *   .   	                     .   4   	                     4   =   	            	         =   C   	                     C   F   	                     F   J   	                     J   M   	                     Q   W   	                     W   `   	            	         `   g   	                     j   r   	                     r   u   	                     u   ~   	            	         ~   ä   	                     J   M                        M   Q                                                      	                                                                                 &                        )   .                        0   4                        4   =               	         =   C                        F   J                        J   Q                        S   W                        W   `               	         `   u                        u   ~               	         ~   Ñ                                                                                                            &      !                  )   .                        .   4                        =   C      !                  C   F                        F   J      !                  Q   W                        `   u      !                  ~   ä                                                   .   4                        4   =               	         J   Q                        Q   W                        W   `               	         u   ~               	            	      !                           !                  )   .      !                  .   4      !                  J   Q      !                  ~   Ñ      !                  Ü   é      !                  &   )      !                        !   $                     	   !   $                        !   $                  &   .   !   $                  .   4   !   $                  F   J   !   $                  J   Q   !   $                  ~   Ñ   !   $                  Ü   é   !   $                  C   J   $   %                  Ñ   ä   $   %                  ä   é   $   %                  &   .                         )   .                        `   u                           	      	                           	                     &      	                  &   )      	                  )   *      	                  *   .      	                  C   J      	                  Q   W      	                  `   g      	                  g   j      	                  j   r      	                  r   u      	                  Ñ   ä      	                  ä   é      	                        	                     )   .   	                     C   Q   	                     g   u   	                                                &   .                        .   4                        C   J                        Q   W                                                   &   .      !                  .   4                        4   =               	         C   Q                        Q   W                        W   `               	         u   ~               	            	      !                  C   J      !                  Ñ   ä      !                  ä   é      !                  C   J   !   $                  Ñ   ä   !   $                  ä   é   !   $               
-}

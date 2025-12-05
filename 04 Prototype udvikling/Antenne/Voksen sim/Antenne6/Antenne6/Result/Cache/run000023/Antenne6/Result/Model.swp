@@ -1,0 +1,34 @@
+2025-11-05 13:54:12   Some of the upcoming parameter combinations were already performed previously and will be skipped.
+                      Potential changes in the result settings like Template Based Post Processing are not taken into account. The feature can be deactivated via "Parameter Sweep -> Options..."
+2025-11-05 13:54:12   ==========================================================================
+                      Sequence: Sequence 1
+                      ==========================================================================
+
+2025-11-05 13:54:12   --------------------------------------------------------------------------
+                      Parameter Values: 
+
+                         Wp = 42
+2025-11-05 13:54:12   
+                      Simulation for this parameter combination has already been performed (Run ID found).
+2025-11-05 13:54:12   --------------------------------------------------------------------------
+                      Parameter Values: 
+
+                         Wp = 42.1
+2025-11-05 13:54:14   
+                      Structure update: Successful [0 hours, 0 min., 2 sec.]
+2025-11-05 13:55:59              Solver: Successful [0 hours, 1 min., 45 sec.]
+2025-11-05 13:55:59   --------------------------------------------------------------------------
+                      Parameter Values: 
+
+                         Wp = 42.2
+2025-11-05 13:56:01   
+                      Structure update: Successful [0 hours, 0 min., 1 sec.]
+2025-11-05 13:56:58             Solver: Aborted
+2025-11-05 13:56:58        Solver time: 0 hours, 0 min., 57 sec.
+2025-11-05 13:56:58   --------------------------------------------------------------------------
+2025-11-05 13:56:58   1 parameter combinations were skipped in the parameter sweep because they were already performed previously.
+2025-11-05 13:56:58   
+                      ==========================================================================
+                      Total structure update time: 0 hours, 0 min., 3 sec.
+                            Total evaluation time: 0 hours, 2 min., 42 sec.
+                      ==========================================================================
