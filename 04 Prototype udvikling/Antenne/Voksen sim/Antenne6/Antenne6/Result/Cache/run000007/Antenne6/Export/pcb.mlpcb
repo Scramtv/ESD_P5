@@ -1,0 +1,170 @@
+{
+    "unit": {
+        "value": 2,
+        "$type": "LengthUnit"
+    },
+    "layer": [
+        {
+            "name": "0",
+            "use_file": "0",
+            "thickness": 0.035,
+            "color": {
+                "red": 1.0,
+                "green": 1.0,
+                "blue": 0.0,
+                "alpha": 1,
+                "$type": "Color"
+            },
+            "material": "Copper (annealed)",
+            "type": {
+                "value": 0,
+                "$type": "LayerType"
+            },
+            "$type": "Layer"
+        },
+        {
+            "name": "1",
+            "use_file": "1",
+            "thickness": 1.6099999999999999,
+            "color": {
+                "red": 0.9372549019607843,
+                "green": 0.8196078431372549,
+                "blue": 0.7568627450980392,
+                "alpha": 1,
+                "$type": "Color"
+            },
+            "material": "FR-4 (lossy)",
+            "type": {
+                "value": 2,
+                "$type": "LayerType"
+            },
+            "$type": "Layer"
+        },
+        {
+            "name": "2",
+            "use_file": "2",
+            "thickness": 0.03500000000000014,
+            "color": {
+                "red": 1.0,
+                "green": 1.0,
+                "blue": 0.0,
+                "alpha": 1,
+                "$type": "Color"
+            },
+            "material": "Copper (annealed)",
+            "type": {
+                "value": 0,
+                "$type": "LayerType"
+            },
+            "$type": "Layer"
+        }
+    ],
+    "layerinput": {
+        "0": {
+            "filename": "0.art",
+            "positive": true,
+            "settings": null,
+            "$type": "LayerInput"
+        },
+        "1": {
+            "filename": "1.art",
+            "positive": true,
+            "settings": null,
+            "$type": "LayerInput"
+        },
+        "2": {
+            "filename": "2.art",
+            "positive": true,
+            "settings": null,
+            "$type": "LayerInput"
+        }
+    },
+    "drill": [],
+    "materials": {
+        "Copper (annealed)": {
+            "mattype": {
+                "value": 1,
+                "$type": "MatType"
+            },
+            "matname": "Copper (annealed)",
+            "sigma": 58000000.0,
+            "eps": 1.0,
+            "mu": 1.0,
+            "$type": "Material"
+        },
+        "FR-4 (lossy)": {
+            "mattype": {
+                "value": 0,
+                "$type": "MatType"
+            },
+            "matname": "FR-4 (lossy)",
+            "sigma": 0.0,
+            "eps": 4.3,
+            "mu": 1.0,
+            "$type": "Material"
+        }
+    },
+    "testpoint_file": null,
+    "version": 2,
+    "cst": {
+        "unit": "mm",
+        "graphical_input_files": {
+            "0": {
+                "filename": "0.art",
+                "positive": true,
+                "settings": null
+            },
+            "1": {
+                "filename": "1.art",
+                "positive": true,
+                "settings": null
+            },
+            "2": {
+                "filename": "2.art",
+                "positive": true,
+                "settings": null
+            }
+        },
+        "layers": [
+            {
+                "name": "0",
+                "use_file": "0",
+                "mat_type": "METAL"
+            },
+            {
+                "name": "1",
+                "use_file": "1",
+                "mat_type": "DIELECTRIC"
+            },
+            {
+                "name": "2",
+                "use_file": "2",
+                "mat_type": "METAL"
+            }
+        ],
+        "drills": [],
+        "testpoint_file": null,
+        "pycmds": [
+            "m = pcb.create_conductor_material(\"Copper (annealed)\", rename_unique=False)",
+            "m.sigma = 58000000.0",
+            "m.epsilon = 1.0",
+            "m.mu = 1.0",
+            "m = pcb.create_dielectric_material(\"FR-4 (lossy)\", rename_unique=False)",
+            "m.epsilon = 4.3",
+            "m.mu = 1.0",
+            "layer = pcb.layer(\"0\")",
+            "layer.thickness = 0.035",
+            "layer.material = pcb.material(\"Copper (annealed)\")",
+            "layer.color = (255, 255, 0)",
+            "layer = pcb.layer(\"1\")",
+            "layer.thickness = 1.6099999999999999",
+            "layer.material = pcb.material(\"FR-4 (lossy)\")",
+            "layer.color = (239, 209, 193)",
+            "layer = pcb.layer(\"2\")",
+            "layer.thickness = 0.03500000000000014",
+            "layer.material = pcb.material(\"Copper (annealed)\")",
+            "layer.color = (255, 255, 0)"
+        ]
+    },
+    "$type": "MultiLayerSetup"
+}
