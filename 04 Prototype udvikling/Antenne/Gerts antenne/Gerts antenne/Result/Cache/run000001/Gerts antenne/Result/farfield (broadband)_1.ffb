@@ -1,0 +1,14 @@
+Version = 201708220 
+Nfiles = 1 
+First1D = 0 
+First2D = -1 
+// Buffer Files 
+ Buffer:
+farfield (broadband)_1_buffer1.ffp
+ Source:
+farfield (broadband)1D_1.ffp
+ IsTimeDomain = 0 
+ Frequency = 2.450000e+00 
+ Time  = 0.000000e+00 
+ Step  = 1.000000e+00 
+ Step2 = -1.000000e+00 

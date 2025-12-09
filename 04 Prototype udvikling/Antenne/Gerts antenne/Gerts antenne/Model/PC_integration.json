@@ -1,0 +1,104 @@
+{
+   "execution": {
+      "classname": "SMAPowerByEmagHPCFrame",
+      "libname": "SMAPowerByEmagUI"
+   },
+   "inputVariables": [
+      {
+         "name": "Wp",
+         "type": "float",
+         "value": 37.74
+      },
+      {
+         "name": "Lp",
+         "type": "float",
+         "value": 29.26
+      },
+      {
+         "name": "y0",
+         "type": "float",
+         "value": 19.04
+      },
+      {
+         "name": "Ws",
+         "type": "float",
+         "value": 56.5
+      },
+      {
+         "name": "Ls",
+         "type": "float",
+         "value": 52.3
+      },
+      {
+         "name": "Wavelength",
+         "type": "float",
+         "value": 2.63
+      },
+      {
+         "name": "WavelengthsNumber",
+         "type": "float",
+         "value": 2.63
+      },
+      {
+         "name": "Wf",
+         "type": "float",
+         "value": 2.63
+      },
+      {
+         "name": "tc",
+         "type": "float",
+         "value": 0.035
+      },
+      {
+         "name": "h",
+         "type": "float",
+         "value": 1.61
+      },
+      {
+         "name": "Wcon",
+         "type": "float",
+         "value": 12.7
+      },
+      {
+         "name": "hcon",
+         "type": "float",
+         "value": 1.7
+      },
+      {
+         "name": "Pincon",
+         "type": "float",
+         "value": 1.2
+      },
+      {
+         "name": "PinInsCon",
+         "type": "float",
+         "value": 4.1
+      },
+      {
+         "name": "hightSkrue",
+         "type": "float",
+         "value": 8.0
+      },
+      {
+         "name": "tykSkrue",
+         "type": "float",
+         "value": 6.2
+      },
+      {
+         "name": "Pinlength",
+         "type": "float",
+         "value": 17.9
+      },
+      {
+         "name": "pinHole",
+         "type": "float",
+         "value": 2.4
+      },
+      {
+         "name": "conPlaceX",
+         "type": "float",
+         "value": 0.0
+      }
+   ],
+   "outputVariables": []
+}

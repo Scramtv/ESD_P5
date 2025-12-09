@@ -2,23 +2,23 @@ clc
 clear all
 close all
 
-%Recivered power
-f_Low = 2400*10^6;
-f_High = 2483.5*10^6;
-f = [f_Low f_High];
-P_T = 10^((17-30)/10);
-G_T = 1;
-G_R = 10^(27/10);
-L = sqrt((8*10^3)^2+(2.5*10^3)^2);
-fprintf('Power transmitted: %.3f mW\n', P_T*10^3);
+% %Recivered power
+% f_Low = 2400*10^6;
+% f_High = 2483.5*10^6;
+% f = [f_Low f_High];
+% P_T = 10^((17-30)/10);
+% G_T = 1;
+% G_R = 10^(27/10);
+% L = sqrt((8*10^3)^2+(2.5*10^3)^2);
+% fprintf('Power transmitted: %.3f mW\n', P_T*10^3);
+% 
+% Lambda = (3*10^8)./f;
+% 
+% 
+% fprintf('Wavelength: %.3f mm\n', Lambda*10^3);
 
-Lambda = (3*10^8)./f;
 
-
-fprintf('Wavelength: %.3f mm\n', Lambda*10^3);
-
-
-P_R = P_T*G_T*G_R*(Lambda./(4*pi*L)).^2;
+P_R = 10^((-74.5-30)/10);
 fprintf('Received power: %.3f pW\n', P_R*10^12);
 P_R_dBm = 10*log10(P_R)+30;
 fprintf('Received power: %.3f dBm\n', P_R_dBm);
@@ -40,4 +40,8 @@ fprintf('Gain of LNA in dB: %.3f dB\n', G_LNA_dB);
 
 
 
+%%
+x = linspace(1, 3, 1);
+Pep = sum(2.^x);
+disp(Pep)
 

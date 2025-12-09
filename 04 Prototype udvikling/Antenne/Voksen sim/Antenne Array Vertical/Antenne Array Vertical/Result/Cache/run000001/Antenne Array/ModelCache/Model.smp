@@ -1,0 +1,36 @@
+With MeshSettings
+     With .ItemMeshSettings ("solid$component1:groundplane")
+          .SetMeshType "All" 
+          .Set "Transform", "6.12323e-17", "1", "0", "-1", "6.12323e-17", "0", "0", "0", "1" 
+     End With
+End With
+With MeshSettings
+     With .ItemMeshSettings ("solid$component1:substrate")
+          .SetMeshType "All" 
+          .Set "Transform", "6.12323e-17", "1", "0", "-1", "6.12323e-17", "0", "0", "0", "1" 
+     End With
+End With
+With MeshSettings
+     With .ItemMeshSettings ("solid$component1:patch")
+          .SetMeshType "All" 
+          .Set "Transform", "6.12323e-17", "1", "0", "-1", "6.12323e-17", "0", "0", "0", "1" 
+     End With
+End With
+With MeshSettings
+     With .ItemMeshSettings ("solid$component1_2:groundplane")
+          .SetMeshType "All" 
+          .Set "Transform", "6.12323e-17", "1", "0", "-1", "6.12323e-17", "0", "0", "0", "1" 
+     End With
+End With
+With MeshSettings
+     With .ItemMeshSettings ("solid$component1_2:substrate")
+          .SetMeshType "All" 
+          .Set "Transform", "6.12323e-17", "1", "0", "-1", "6.12323e-17", "0", "0", "0", "1" 
+     End With
+End With
+With MeshSettings
+     With .ItemMeshSettings ("solid$component1_2:patch")
+          .SetMeshType "All" 
+          .Set "Transform", "6.12323e-17", "1", "0", "-1", "6.12323e-17", "0", "0", "0", "1" 
+     End With
+End With
