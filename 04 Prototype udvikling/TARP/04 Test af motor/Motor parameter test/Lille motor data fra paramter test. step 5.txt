@@ -1,0 +1,49 @@
+Sker ikke noget før 5.5 V
+
+6V
+Scope 66
+486 R/M
+
+7V
+Scope 67
+657 R/M
+
+8V
+Scope 68
+982 R/M
+
+9V
+Scope 69
+1220 R/M
+
+10V
+Scope 70
+1584 R/M
+
+11V Lugter brandt så vi stopped
+
+
+
+
+
+
+MED GEAR
+6V 41.10 rpm
+
+
+7V 48.93 rpm
+
+
+8V 56.63 rpm
+
+
+9V 64.29 rpm
+
+
+10V 71.89 rmp
+
+
+11V 80.02 rmp
+
+
+12V 86.34 rmp

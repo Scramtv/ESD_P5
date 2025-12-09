@@ -1,0 +1,4 @@
+Lille motor test resultater
+12V 2A forsyning
+Rotation fra knap til knap (cirka 180 grader)
+5.979916*10^(-6)
