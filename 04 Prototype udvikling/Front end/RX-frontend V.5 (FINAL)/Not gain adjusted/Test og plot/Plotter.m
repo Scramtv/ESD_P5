@@ -77,9 +77,6 @@ hold off
 
 
 
-%% FFT 2442 MHz
-
-
 %% 2500 MHz
 
 I1 = real(x2500MHz_RX1.Ch1);
