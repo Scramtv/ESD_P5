@@ -27,7 +27,7 @@ X_n = X + 0.0 * n
 ## FUNCTIONALITY TEST
 print("SUBDIVISIONS, ELAPSED TIME (s), AOA")
 for i in range(1,16):
-    angle_subdiv = 2**(i)
+    angle_subdiv = 2**i
     start = time.perf_counter()
     theta_sweep = np.linspace(-1 * np.pi / 2, np.pi / 2, angle_subdiv)
     results = []
