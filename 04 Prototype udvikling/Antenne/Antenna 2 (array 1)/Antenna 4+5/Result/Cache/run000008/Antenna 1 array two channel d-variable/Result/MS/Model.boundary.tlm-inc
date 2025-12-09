@@ -1,0 +1,3 @@
+(define) include_external_boundaries
+  !allow_material_overlap yes
+  !open_layers 5
