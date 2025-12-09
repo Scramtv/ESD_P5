@@ -1,0 +1,60 @@
+{
+    "parameters": [
+        {
+            "expr": "35",
+            "name": "Wp",
+            "value": "35"
+        },
+        {
+            "expr": "29.4",
+            "name": "Lp",
+            "value": "29.4"
+        },
+        {
+            "expr": "2",
+            "name": "Wf",
+            "value": "2"
+        },
+        {
+            "expr": "10",
+            "name": "y0",
+            "value": "10"
+        },
+        {
+            "expr": "1.61",
+            "name": "h",
+            "value": "1.61"
+        },
+        {
+            "expr": "0.035",
+            "name": "tp",
+            "value": "0.035"
+        },
+        {
+            "expr": "56.5",
+            "name": "Wm",
+            "value": "56.5"
+        },
+        {
+            "expr": "52.3",
+            "name": "Lm",
+            "value": "52.3"
+        },
+        {
+            "expr": "126.85",
+            "name": "Wavelength",
+            "value": "126.85"
+        },
+        {
+            "expr": "Wavelength/4",
+            "name": "d",
+            "value": "31.7125"
+        },
+        {
+            "expr": "4",
+            "name": "WaveAmount",
+            "value": "4"
+        }
+    ],
+    "version": 1
+}
