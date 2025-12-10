@@ -4,6 +4,7 @@ close all
 
 load("Antenne0.mat")
 load("antenna0v.mat")
+load("matlabny.mat")
 
 temp = sqrt((Antenne0_Meas.Re).^2 + (Antenne0_Meas.Im).^2);
 s_para = 20*log10(temp);
@@ -31,8 +32,9 @@ hold off
 
 figure
 hold on
-plot(Antenne0v.Freq, Antenne0v.S11, DisplayName="Simulated")
-plot(Antenne0_Meas.Freq/(10^9), s_para, DisplayName="Measured")
+plot(Gertsantennes_11.x,Gertsantennes_11.y, 'DisplayName', 'Calculated antenna')
+plot(Antenne0v.Freq, Antenne0v.S11, DisplayName="Simulated Antenna 0")
+plot(Antenne0_Meas.Freq/(10^9), s_para, DisplayName="Measured Antenna 0")
 grid on
 ylabel("S-11 [dB]")
 xlabel("Frequency [GHz]")
