@@ -15,7 +15,6 @@ class sdr_ctrl:
         self.rx1 = self.sdr.Channel(_bladerf.CHANNEL_RX(0))
         self.rx1.frequency = center_freq
         self.rx1.sample_rate = sample_rate
-        # BW is set to the maximum based on samplerate (nyquist)
         self.rx1.bandwidth = sample_rate
         self.rx1.gain_mode = _bladerf.GainMode.Manual
         self.rx1.gain = 0
