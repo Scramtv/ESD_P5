@@ -1,9 +1,9 @@
 {
     "general": {
-        "version": "2025.0",
-        "date": "2024-08-30",
+        "version": "2025.5",
+        "date": "2025-05-30",
         "acis": "34.0.1",
-        "buildnumber": "20240830",
+        "buildnumber": "20250530",
         "project_type": "MWS",
         "length": "mm",
         "frequency": {
