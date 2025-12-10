@@ -1,0 +1,2 @@
+2.45GHZ
+197mV (Valgt fordi det passede med 0.6 for kanal 1 ved 0dB)

@@ -1,0 +1,178 @@
+sample_size_accuracy_runtime_test_0_deg
+
+---Clean Test Start---
+SAMPLE SIZE, ELAPSED TIME (s), AOA
+1, 0.011725, -0.0900901
+2, 0.008083, 0.0900901
+3, 0.007977, 0.0900901
+4, 0.007974, -0.0900901
+5, 0.007903, -0.0900901
+6, 0.008105, -0.0900901
+7, 0.008370, -0.0900901
+8, 0.011468, 0.0900901
+9, 0.010048, -0.0900901
+10, 0.008032, -0.0900901
+20, 0.007974, -0.0900901
+30, 0.008001, -0.0900901
+40, 0.008158, -0.0900901
+50, 0.008585, -0.0900901
+60, 0.008394, 0.0900901
+70, 0.011891, -0.0900901
+80, 0.013432, 0.0900901
+90, 0.008769, -0.0900901
+100, 0.008523, -0.0900901
+200, 0.008927, -0.0900901
+300, 0.016861, 0.0900901
+400, 0.011101, -0.0900901
+500, 0.011879, -0.0900901
+600, 0.010320, -0.0900901
+700, 0.011978, 0.0900901
+800, 0.010346, -0.0900901
+900, 0.010797, 0.0900901
+1000, 0.010292, 0.0900901
+2000, 0.014217, -0.0900901
+3000, 0.130344, -0.0900901
+4000, 0.133065, -0.0900901
+5000, 0.138395, -0.0900901
+6000, 0.140415, -0.0900901
+7000, 0.128782, -0.0900901
+8000, 0.149474, -0.0900901
+9000, 0.145727, -0.0900901
+10000, 0.146140, 0.0900901
+20000, 0.159301, -0.0900901
+30000, 0.173685, -0.0900901
+40000, 0.169979, 0.0900901
+50000, 0.173373, -0.0900901
+60000, 0.187121, -0.0900901
+70000, 0.548270, 0.0900901
+80000, 0.603628, 0.0900901
+90000, 0.684786, 0.0900901
+100000, 0.778604, 0.0900901
+200000, 1.459254, 0.0900901
+300000, 2.049286, 0.0900901
+400000, 2.498012, 0.0900901
+500000, 3.294806, -0.0900901
+600000, 3.671087, -0.0900901
+700000, 4.697379, -0.0900901
+800000, 5.034864, 0.0900901
+900000, 5.938459, -0.0900901
+1000000, 6.765561, -0.0900901
+
+---Dirty Test Start---
+SAMPLE SIZE, ELAPSED TIME (s), AOA
+1, 0.008031, 4.0540541
+2, 0.007832, -0.9909910
+3, 0.007843, -0.2702703
+4, 0.007872, -0.0900901
+5, 0.008008, 1.3513514
+6, 0.007857, -2.4324324
+7, 0.007909, -0.6306306
+8, 0.007877, 0.2702703
+9, 0.007920, -0.0900901
+10, 0.007828, 0.2702703
+20, 0.008462, 0.0900901
+30, 0.007890, 0.2702703
+40, 0.007956, 0.2702703
+50, 0.007969, -0.0900901
+60, 0.007978, -0.0900901
+70, 0.007952, -0.4504505
+80, 0.008330, 0.2702703
+90, 0.008518, -0.0900901
+100, 0.008363, 0.2702703
+200, 0.011107, 0.0900901
+300, 0.009218, 0.0900901
+400, 0.009087, -0.0900901
+500, 0.009507, 0.0900901
+600, 0.009946, 0.0900901
+700, 0.010496, 0.0900901
+800, 0.011994, -0.0900901
+900, 0.011782, -0.0900901
+1000, 0.011302, 0.0900901
+2000, 0.012782, -0.0900901
+3000, 0.154832, -0.6306306
+4000, 0.152709, 0.0900901
+5000, 0.173846, 0.0900901
+6000, 0.172344, -2.0720721
+7000, 0.216636, -0.6306306
+8000, 0.176347, -0.0900901
+9000, 0.178669, 0.2702703
+10000, 0.173882, 0.2702703
+20000, 0.195440, -0.2702703
+30000, 0.226026, -0.0900901
+40000, 0.243999, 4.2342342
+50000, 0.254237, -0.6306306
+60000, 0.261073, 0.2702703
+70000, 0.795595, 0.4504505
+80000, 0.789305, 9.0990991
+90000, 0.840415, -1.8918919
+100000, 0.916362, -0.2702703
+200000, 1.639036, -0.4504505
+300000, 2.420727, -1.7117117
+400000, 2.990703, -1.8918919
+500000, 3.241759, -4.0540541
+600000, 3.718536, 1.3513514
+700000, 4.453012, -6.2162162
+800000, 5.337371, 1.7117117
+900000, 6.091957, 3.3333333
+1000000, 6.276497, -0.6306306
+
+##########################################################################
+TEST CODE
+##########################################################################
+import time
+import numpy as np
+
+def beamforming_das(rx, distance, no_ele):
+    theta_sweep = np.linspace(-1*np.pi/2, np.pi/2, 1000) # Deler -pi/2 til pi/2 op i 1000 segmenter og gemmer i et array
+    results = [] # Laver tomt array til resultater
+    for thetas in theta_sweep: # For alle de værdier i theta sweep, kører vi
+       w = np.exp(2j * np.pi * distance * np.arange(no_ele) * np.sin(thetas)) # Weight vektor tilsvarende "steering vektoren" køres for theta
+       y = w.conj().T @ rx # Vi kompleks konjugere for at modarbejde faseforskydningen og transponerer så matricen har den rigtige form
+       results.append(np.abs(np.sum(y))) # Vi finder modulus af de to beamformede datapunkter summeret og gemmer dem i arrayet
+    return np.rad2deg(theta_sweep[np.argmax(results)]) # Vi kigger efter den theta hvor amplituden er størst og returnere den i grader
+
+sample_space = np.concatenate([np.arange(1, 10) * 10**k for k in range(6)])
+sample_space = np.append(sample_space, 1000000)
+sample_rate = 61.44e6
+f = 2e4
+d = 0.5 # half wavelength spacing
+theta_deg = 0 # Angle of arrival
+theta_rad = np.deg2rad(theta_deg)
+elements = 2
+k = np.arange(elements)
+
+print('---Clean Test Start---')
+print('SAMPLE SIZE, ELAPSED TIME (s), AOA')
+for sample_size in sample_space:
+    N = sample_size # samples
+    t = np.arange(N)/sample_rate # time vector
+    tx = np.exp(2j * np.pi * f * t)
+    s = np.exp(2j * np.pi * d * k * np.sin(theta_rad))
+    s = s.reshape(-1,1) # make s a column vector
+    tx = tx.reshape(1,-1) # make tx a row vector
+    X = s @ tx
+    n = np.random.randn(elements, N) + 1j*np.random.randn(elements, N) #Noise
+    X_n = X + 0 * n
+
+    start = time.perf_counter()
+    results = beamforming_das(X_n, d, elements)
+    stop = time.perf_counter()
+    print(f'{N}, {stop - start:.6f}, {results:.7f}')
+print()
+
+print('---Dirty Test Start---')
+print('SAMPLE SIZE, ELAPSED TIME (s), AOA')
+for sample_size in sample_space:
+    N = sample_size # samples
+    t = np.arange(N)/sample_rate # time vector
+    tx = np.exp(2j * np.pi * f * t)
+    s = np.exp(2j * np.pi * d * k * np.sin(theta_rad))
+    s = s.reshape(-1,1) # make s a column vector
+    tx = tx.reshape(1,-1) # make tx a row vector
+    X = s @ tx
+    n = np.random.randn(elements, N) + 1j*np.random.randn(elements, N) #Noise
+    X_n = X + 0.1 * n
+    start = time.perf_counter()
+    results = beamforming_das(X_n, d, elements)
+    stop = time.perf_counter()
+    print(f'{N}, {stop - start:.6f}, {results:.7f}')
