@@ -15,7 +15,7 @@ motor.tilt(155)
 sleep(1)
 
 while True:
-    arr = sdr.sample(4)
+    arr = sdr.sample(900)
     azi_pos, tilt_pos = motor.read_pos()
     bf = beamforming_das(arr, 0.5, 2) 
     print("bf: ", bf)
