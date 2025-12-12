@@ -2,8 +2,9 @@ import numpy as np
 
 
 def beamforming_das(rx, distance, no_ele):
-    # Deler -pi/2 til pi/2 op i 1000 segmenter og gemmer i et array
-    theta_sweep = np.linspace(-1*np.pi/2, np.pi/2, 1000)
+    # Deler -pi/2 til pi/2 op i 78948 segmenter og gemmer i et array -> tal valgt for at overholde resolution krav
+
+    theta_sweep = np.linspace(-1*np.pi/2, np.pi/2, 78948)
     results = []  # Laver tomt array til resultater
     for thetas in theta_sweep:  # For alle de værdier i theta sweep, kører vi
         # Weight vektor tilsvarende "steering vektoren" køres for theta
