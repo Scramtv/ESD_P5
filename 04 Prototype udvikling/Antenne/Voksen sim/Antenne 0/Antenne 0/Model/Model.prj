@@ -7,7 +7,7 @@
    "Mesh Cells": "361,600",
    "Mesh Type": "Hexahedral",
    "Modeler Unique ID": "5:antenne 0.cst?6ca2f12e40d8bde5acf4cb251f54c2d4?17391:numberofparameters=17:port=1>mode=1>zre=50>zim=0:::lp?ls?pininscon?pincon?pinlength?wcon?wp?ws?conplacex?conplacey?h?hcon?hightskrue?pinhole?tc?tykskrue?y0",
-   "ProjectVersion": "'# MWS Version: Version 2025.0 - Aug 30 2024 - ACIS 34.0.1 -",
+   "ProjectVersion": "'# MWS Version: Version 2025.5 - May 30 2025 - ACIS 34.0.1 -",
    "Results": "Time Domain: S-Parameter",
    "Version": "3"
 }
