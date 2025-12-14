@@ -7,7 +7,7 @@ N = 10000 # samples
 t = np.arange(N)/sample_rate # time vector
 
 ### TX SIGNAL
-theta_deg = 31 # Angle of arrival
+theta_deg = 45 # Angle of arrival
 theta_rad = np.deg2rad(theta_deg)
 f = 2e4
 tx = np.exp(2j * np.pi * f * t)
@@ -42,7 +42,7 @@ for thetas in theta_sweep:
 ## Polar beamforming plot
 
 fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-ax.plot(np.linspace(-1*np.pi/2, np.pi/2, 1000), results)
+ax.plot(np.linspace(-1*np.pi/2, np.pi/2, 1000), 10*np.log10(results))
 ax.set_theta_zero_location('N')
 ax.set_theta_direction(-1)
 ax.set_rlabel_position(55)  # Move grid labels away from other labels
