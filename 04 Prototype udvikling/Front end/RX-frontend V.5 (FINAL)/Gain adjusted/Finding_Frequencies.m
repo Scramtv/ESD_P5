@@ -4,17 +4,17 @@ close all;
 
 load("data.mat");
 
-IQ1 = x2442MHz_RX1.Ch1*0.625;
-IQ2 = x2442MHz_RX2.Ch2*0.625;
+IQ1 = x2442MHz_1.Ch1*0.625;
+IQ2 = x2442MHz_2.Ch2*0.625;
 
 % Sample rate
-Fs = 61.44e6;
+Fs = 40e6;
 
 % ================================
 % Process IQ1 and IQ2
 % ================================
-processIQ(IQ1, Fs, 'IQ1');
-processIQ(IQ2, Fs, 'IQ2');
+processIQ(IQ1, Fs, 'Channel 1');
+processIQ(IQ2, Fs, 'Channel 2');
 
 % ================================
 % Local function
