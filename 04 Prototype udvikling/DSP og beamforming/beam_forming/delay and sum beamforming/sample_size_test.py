@@ -2,7 +2,7 @@ import time
 import numpy as np
 
 def beamforming_das(rx, distance, no_ele):
-    theta_sweep = np.linspace(-1*np.pi/2, np.pi/2, 1000) # Deler -pi/2 til pi/2 op i 1000 segmenter og gemmer i et array
+    theta_sweep = np.linspace(-1*np.pi/2, np.pi/2, 78948) # Deler -pi/2 til pi/2 op i 1000 segmenter og gemmer i et array
     results = [] # Laver tomt array til resultater
     for thetas in theta_sweep: # For alle de værdier i theta sweep, kører vi
        w = np.exp(2j * np.pi * distance * np.arange(no_ele) * np.sin(thetas)) # Weight vektor tilsvarende "steering vektoren" køres for theta
@@ -20,38 +20,23 @@ theta_rad = np.deg2rad(theta_deg)
 elements = 2
 k = np.arange(elements)
 
-print('---Clean Test Start---')
+
+print('---Noisy Test Start---')
 print('SAMPLE SIZE, ELAPSED TIME (s), AOA')
 for sample_size in sample_space:
-    N = sample_size # samples
-    t = np.arange(N)/sample_rate # time vector
-    tx = np.exp(2j * np.pi * f * t)
-    s = np.exp(2j * np.pi * d * k * np.sin(theta_rad))
-    s = s.reshape(-1,1) # make s a column vector
-    tx = tx.reshape(1,-1) # make tx a row vector
-    X = s @ tx
-    n = np.random.randn(elements, N) + 1j*np.random.randn(elements, N) #Noise
-    X_n = X + 0 * n
-
-    start = time.perf_counter()
-    results = beamforming_das(X_n, d, elements)
-    stop = time.perf_counter()
-    print(f'{N}, {stop - start:.6f}, {results:.7f}')
-print()
-
-print('---Dirty Test Start---')
-print('SAMPLE SIZE, ELAPSED TIME (s), AOA')
-for sample_size in sample_space:
-    N = sample_size # samples
-    t = np.arange(N)/sample_rate # time vector
-    tx = np.exp(2j * np.pi * f * t)
-    s = np.exp(2j * np.pi * d * k * np.sin(theta_rad))
-    s = s.reshape(-1,1) # make s a column vector
-    tx = tx.reshape(1,-1) # make tx a row vector
-    X = s @ tx
-    n = np.random.randn(elements, N) + 1j*np.random.randn(elements, N) #Noise
-    X_n = X + 0.1 * n
-    start = time.perf_counter()
-    results = beamforming_das(X_n, d, elements)
-    stop = time.perf_counter()
-    print(f'{N}, {stop - start:.6f}, {results:.7f}')
+    N = sample_size  # samples
+    print(N)
+    for i in range(101):
+        t = np.arange(N)/sample_rate # time vector
+        tx = np.exp(2j * np.pi * f * t)
+        s = np.exp(2j * np.pi * d * k * np.sin(theta_rad))
+        s = s.reshape(-1,1) # make s a column vector
+        tx = tx.reshape(1,-1) # make tx a row vector
+        X = s @ tx
+        n = np.random.randn(elements, N) + 1j*np.random.randn(elements, N) #Noise
+        X_n = X + 0.1 * n
+        start = time.perf_counter()
+        results = beamforming_das(X_n, d, elements)
+        stop = time.perf_counter()
+        print(f'{results:.6f}', end=', ')
+    print('')
