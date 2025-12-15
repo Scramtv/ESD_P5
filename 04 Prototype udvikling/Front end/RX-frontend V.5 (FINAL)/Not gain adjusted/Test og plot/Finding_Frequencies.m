@@ -2,14 +2,10 @@ clc;
 clear;
 close all;
 
-% ================================
-% Load data
-% ================================
 load("data.mat");
 
-% Complex IQ from BladeRF
-IQ1 = x2442MHz_RX1.Ch1;
-IQ2 = x2442MHz_RX2.Ch2;
+IQ1 = x2442MHz_RX1.Ch1*0.625;
+IQ2 = x2442MHz_RX2.Ch2*0.625;
 
 % Sample rate
 Fs = 61.44e6;
