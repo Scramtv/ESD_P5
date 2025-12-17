@@ -1,0 +1,73 @@
+-45
+35.86570737330107, 35.84974729882072, 35.87026739458116, 35.84518727754063, 35.84746728818067, 
+
+-30
+-89.15183604190153, -89.40947724422713, -89.06519563757965, -89.67167846783285, 88.86911472253536, 
+
+-15
+-31.17344547607889, -31.1415253271182, -31.16660544415874, -31.175725486718946, -31.180285507999034, 
+
+0
+0.012540058520264356, 0.005700026600117848, 0.0011400053200159364, 0.010260047880219761, -0.019380090440423586, 
+
+15
+31.17572548671892, 31.178005497358978, 31.17572548671892, 31.171165465438833, 31.168885454798772, 
+
+30
+89.2749566164642, -89.29091669094456, -89.16095608446173, -88.67303380749111, -89.02871546733886, 
+
+45
+-35.87026739458118, -35.86798738394113, -35.85886734138093, -35.886227469061524, -35.86114735202098, 
+
+
+### CODE ###
+import numpy as np
+import timeit
+
+def beamforming_das(rx, distance, no_ele):
+    theta_sweep = np.linspace(-1*np.pi/2, np.pi/2, 78948)
+    results = []
+    for thetas in theta_sweep:
+       w = np.exp(2j * np.pi * distance * np.arange(no_ele) * np.sin(thetas))
+       y = w.conj().T @ rx
+       results.append(np.abs(np.sum(y)))
+    return np.rad2deg(theta_sweep[np.argmax(results)])
+
+sample_rate = 61.44e6
+N = 900 # sample size
+t = np.arange(N)/sample_rate # time vector
+
+for AoA in np.arange(-45, 46, 15):
+    print(AoA)
+    for i in range(5):
+        ### TX SIGNAL
+        theta_deg = AoA # reference AoA
+        theta_rad = np.deg2rad(theta_deg)
+        f = 2e4 # base-band signal frequency
+        tx = np.exp(2j * np.pi * f * t) # base-band signal
+        d = 1 # distance between elements
+        elements = 2 # number of elements in the array
+        k = np.arange(elements)
+
+        s = np.exp(2j * np.pi * d * k * np.sin(theta_rad)) # steering vector
+        s = s.reshape(-1,1) # row -> column
+        tx = tx.reshape(1,-1) # column -> row
+
+        ### RX SIGNAL
+        X = s @ tx # received signal matrix
+        n = np.random.randn(elements, N) + 1j*np.random.randn(elements, N) # AWGN Noise
+        X_n = X + 0.01 * n
+
+        ### TEST CODE
+        ## FUNCTIONALITY TEST
+        #
+        bf_signal_c = beamforming_das(X_n, 0.5, elements)
+        print(bf_signal_c, end=', ')
+        if i == 5:
+            print()
+
+### TEST CODE
+# reps = 10
+# runtime = timeit.timeit(lambda: beamforming_das(X_n, d, elements), number=reps)
+# print("REPETITIONS, TOTAL RUNTIME, AVG RUNTIME")
+# print(f'{reps}, {runtime}, {runtime / reps}')
