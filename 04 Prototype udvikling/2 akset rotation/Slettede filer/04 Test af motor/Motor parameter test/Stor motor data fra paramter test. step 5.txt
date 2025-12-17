@@ -1,0 +1,39 @@
+3V
+scope 55
+844 RPM
+
+4V
+Scope 57
+1214 RPM
+
+5V
+Scope 58
+1596 RPM
+
+6V
+Scope 59
+2010
+
+7V
+Scope 60
+2370
+
+8V
+scope 61
+2640
+
+9V
+Scope 62
+3100
+
+10V
+Scope 63
+3670
+
+11V
+Scope 64
+4010
+
+12V
+Scope 64
+4410
