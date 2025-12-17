@@ -59,15 +59,7 @@ for AoA in np.arange(-45, 46, 15):
         X_n = X + 0.01 * n
 
         ### TEST CODE
-        ## FUNCTIONALITY TEST
-        #
         bf_signal_c = beamforming_das(X_n, 0.5, elements)
         print(bf_signal_c, end=', ')
         if i == 5:
             print()
-
-### TEST CODE
-# reps = 10
-# runtime = timeit.timeit(lambda: beamforming_das(X_n, d, elements), number=reps)
-# print("REPETITIONS, TOTAL RUNTIME, AVG RUNTIME")
-# print(f'{reps}, {runtime}, {runtime / reps}')
