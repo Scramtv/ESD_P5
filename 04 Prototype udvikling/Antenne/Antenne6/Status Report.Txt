@@ -1,0 +1,22 @@
+Output: Gerber X2 Files
+Type  : GerberX2
+From  : Variant [[No Variations]] of Project [Free Documents]
+   Generated File[Antenne6_Copper_Signal_Top.gbr]
+   Generated File[Antenne6_Copper_Signal_Bot.gbr]
+   Generated File[Antenne6_Legend_Top.gbr]
+   Generated File[Antenne6_Legend_Bot.gbr]
+   Generated File[Antenne6_Soldermask_Top.gbr]
+   Generated File[Antenne6_Soldermask_Bot.gbr]
+   Generated File[Antenne6_Paste_Top.gbr]
+   Generated File[Antenne6_Paste_Bot.gbr]
+   Generated File[Antenne6_Profile.gbr]
+   Generated File[Antenne6_NPTH_Drill.gbr]
+   Generated File[Antenne6_PTH_Drill.gbr]
+   Generated File[Antenne6.EXTREP]
+   Generated File[Antenne6.REP]
+
+
+Files Generated   : 13
+Documents Printed : 0
+
+Finished Output Generation At 11.18.54 On 06/11/2025

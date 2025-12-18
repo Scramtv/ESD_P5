@@ -1,0 +1,61 @@
+linspace_resolution_test__0_degrees
+
+SUBDIVISIONS, ELAPSED TIME (s), AOA
+9, 0.002641, 0.0
+18, 0.003777, 5.294117647058822
+36, 0.006987, -2.5714285714285716
+72, 0.011736, 1.2676056338028132
+144, 0.022152, 0.62937062937063
+288, 0.046261, 0.3135888501742204
+576, 0.092051, 0.15652173913043776
+1152, 0.171634, -0.07819287576020617
+2304, 0.328858, -0.03907946157187319
+4608, 0.585184, -0.019535489472548958
+9216, 1.170367, -0.00976668475312112
+18432, 2.346869, 0.004883077423906904
+36864, 5.078828, 0.0024414724791794874
+73728, 10.545222, 0.0012207196820737108
+147456, 19.562056, 0.0006103557017294096
+
+##########################################################################
+TEST CODE
+##########################################################################
+import time
+import numpy as np
+
+sample_rate = 61.44e6
+N = 10000 # samples
+t = np.arange(N)/sample_rate # time vector
+
+### TX SIGNAL
+theta_deg = 0 # Angle of arrival
+theta_rad = np.deg2rad(theta_deg)
+f = 2e4
+tx = np.exp(2j * np.pi * f * t)
+d = 0.5 # wavelength spacing
+elements = 2
+k = np.arange(elements)
+
+s = np.exp(2j * np.pi * d * k * np.sin(theta_rad))
+s = s.reshape(-1,1) # make s a column vector
+tx = tx.reshape(1,-1) # make tx a row vector
+
+### RX SIGNAL
+X = s @ tx
+n = np.random.randn(elements, N) + 1j*np.random.randn(elements, N) #Noiseh
+X_n = X + 0.0 * n
+
+### TEST CODE
+## FUNCTIONALITY TEST
+print("SUBDIVISIONS, ELAPSED TIME (s), AOA")
+for i in range(1,16):
+    angle_subdiv = 9*2**(i-1)
+    start = time.perf_counter()
+    theta_sweep = np.linspace(-1 * np.pi / 2, np.pi / 2, angle_subdiv)
+    results = []
+    for thetas in theta_sweep:
+        w = np.exp(2j * np.pi * d * k * np.sin(thetas))
+        y = w.conj().T @ X_n
+        results.append(np.abs(np.sum(y)))
+    stop = time.perf_counter()
+    print(f"{angle_subdiv}, {stop-start:.6f}, {np.rad2deg(theta_sweep[np.argmax(results)])}")

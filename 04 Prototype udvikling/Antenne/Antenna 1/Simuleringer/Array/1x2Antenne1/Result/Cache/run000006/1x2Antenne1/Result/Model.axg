@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CSTAuxiliaryGeometry version="20170928" creator="modeler">
+  <Objects>
+    <Object name="Ports\port1" id="9">
+      <LineSet points="-11.1752005 -26.1499996 10.2102003 11.1752005 -26.1499996 10.2102003 11.1752005 -26.1499996 -1.61000001 -11.1752005 -26.1499996 -1.61000001 -11.1752005 -26.1499996 10.2102003" stripped="1" material="$PortMaterial$" text="1" short="1"/>
+    </Object>
+    <Object name="Ports\port2" id="10">
+      <LineSet points="44.966465 -26.1499996 10.2102003 67.316864 -26.1499996 10.2102003 67.316864 -26.1499996 -1.61000001 44.966465 -26.1499996 -1.61000001 44.966465 -26.1499996 10.2102003" stripped="1" material="$PortMaterial$" text="2" short="2"/>
+    </Object>
+  </Objects>
+  <Materials/>
+  <Groups/>
+</CSTAuxiliaryGeometry>

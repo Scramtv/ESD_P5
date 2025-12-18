@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CSTAuxiliaryGeometry version="20170928">
+  <Objects>
+    <Object name="Ports\port1" id="6">
+      <LineSet points="18.8248005 -27.1000004 10.2102003 41.1752014 -27.1000004 10.2102003 41.1752014 -27.1000004 -1.61000001 18.8248005 -27.1000004 -1.61000001 18.8248005 -27.1000004 10.2102003" stripped="1" material="$PortMaterial$" text="1" short="1"/>
+    </Object>
+  </Objects>
+  <Materials>
+    <Material name="$noSnappingMaterial$">
+      <Drawstyle color="0 0 0" transparency="0" linestrength="5"/>
+    </Material>
+    <Material name="">
+      <Drawstyle color="0 0 0.949999988" transparency="0.600000024" linestrength="0"/>
+    </Material>
+  </Materials>
+  <Groups/>
+</CSTAuxiliaryGeometry>

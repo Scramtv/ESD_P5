@@ -1,0 +1,28 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Side-1" id="v7kf46WumyyBNVznjMcP">
+    <mxGraphModel dx="761" dy="453" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3OSRbnSmx6XEJX4o2KLV-1" value="PNA Network analyzer&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3OSRbnSmx6XEJX4o2KLV-2" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="229.57999999999998" y="390" as="sourcePoint" />
+            <mxPoint x="229.57999999999998" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3OSRbnSmx6XEJX4o2KLV-3" value="Flexible test port cable" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="230" y="320" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3OSRbnSmx6XEJX4o2KLV-7" value="Connector adapter" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="200" y="220" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3OSRbnSmx6XEJX4o2KLV-8" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_1;direction=east;" vertex="1" parent="1">
+          <mxGeometry x="190" y="120" width="80" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -35,6 +35,7 @@ legend('Azimuth', 'Tilt');
 grid("on");
 
 
+
 %% P-controller
 d_azi=24.83;
 d_tilt=4.32;
@@ -42,28 +43,34 @@ d_tilt=4.32;
 CL_azi=(d_azi*sys_azi)/(1+d_azi*sys_azi);
 CL_tilt=(d_tilt*sys_tilt)/(1+d_tilt*sys_tilt);
 
+d_azi=1;
+d_tilt=1;
+azi=(d_azi*sys_azi)/(1+d_azi*sys_azi);
+tilt=(d_tilt*sys_tilt)/(1+d_tilt*sys_tilt);
+
+
 figure;
-step(CL_azi, RespConfig('StepAmplitude', 90));
+step(CL_azi, RespConfig('StepAmplitude', 120));
 hold on
+step(azi, RespConfig('StepAmplitude', 120));
 t_limits = get(gca, 'XLim'); 
-plot(t_limits, [90 90], 'Color', [0.5 0.5 0.5])
-
+plot(t_limits, [120 120], 'Color', [0.5 0.5 0.5])
 title('Closed loop azimuth step response');
-legend('Azimuth', 'Target');
+legend('P = 24.83', 'P = 1', 'Target');
 grid("on")
-
 hold off
+
+
 
 figure;
 step(CL_tilt, RespConfig('StepAmplitude', 45));
 hold on
+step(tilt, RespConfig('StepAmplitude', 45));
 t_limits = get(gca, 'XLim'); 
 plot(t_limits, [45 45], 'Color', [0.5 0.5 0.5])
-
 title('Closed loop tilt step response');
-legend('Tilt', 'Target');
+legend('P = 4.32','P = 1', 'Target');
 grid("on")
-
 hold off
 
 
