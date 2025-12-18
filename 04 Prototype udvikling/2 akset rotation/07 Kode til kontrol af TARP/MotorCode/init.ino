@@ -72,23 +72,19 @@ void IRAM_ATTR PinZ_R_tilt() {
     //rot_tilt--;
   }
 }
-
 //tilt buttons
 void IRAM_ATTR btnYellowInterrupt() {
   yellow_interrupt = !READ_PIN(btn_yellow);
 }
-
 void IRAM_ATTR btnBlueInterrupt() {
   blue_interrupt = !READ_PIN(btn_blue);
 }
-
 // Samplerate timer interrupt
 void IRAM_ATTR timer_callback(void* arg) {
 BaseType_t higherWoken = pdFALSE;
     vTaskNotifyGiveFromISR(core1, &higherWoken);
     if(higherWoken) portYIELD_FROM_ISR();
 }
-
 
 void attachInt() {
   //Interrups:
@@ -110,10 +106,8 @@ void attachInt() {
 }
 
 void init_sample_rate_timer() {
-
     // Declare a timer handle
   esp_timer_handle_t periodic_timer;
-
   // Define the timer creation arguments
   const esp_timer_create_args_t timer_args = {
     .callback = &timer_callback,
@@ -121,11 +115,9 @@ void init_sample_rate_timer() {
   };
   // Create the timer
   ESP_ERROR_CHECK(esp_timer_create(&timer_args, &periodic_timer));
-
   // 3. Start the Timer Periodically
   ESP_ERROR_CHECK(esp_timer_start_periodic(periodic_timer, sampleRate));
 }
-
 void pinSetup() {
   //Init azi pins
   //Motor:
@@ -135,12 +127,10 @@ void pinSetup() {
   pinMode(dir_azi, OUTPUT);
   digitalWrite(ena_pin_azi, 0);
   digitalWrite(dir_azi, 0);
-
   //Encoder:
   pinMode(pinA_azi, INPUT_PULLUP);
   pinMode(pinB_azi, INPUT_PULLUP);
   pinMode(pinZ_azi, INPUT_PULLUP);
-
   //Init tilt:
   //Motor:
   pinMode(ena_pin_tilt, OUTPUT);
@@ -151,7 +141,6 @@ void pinSetup() {
   digitalWrite(ena_pin_tilt, 0);
   digitalWrite(dir1_tilt, 0);
   digitalWrite(dir2_tilt, 0);
-
   //Encoder:
   pinMode(pinA_tilt, INPUT_PULLUP);
   pinMode(pinB_tilt, INPUT_PULLUP);
@@ -159,7 +148,6 @@ void pinSetup() {
 
   //Encoder_motor:
   pinMode(pinA_tilt_motor, INPUT_PULLUP);
-
   //buttons:
   pinMode(btn_yellow, INPUT_PULLUP);
   pinMode(btn_blue, INPUT_PULLUP);

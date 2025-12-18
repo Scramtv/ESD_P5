@@ -19,21 +19,22 @@ CL_tilt=(d_tilt*sys_tilt)/(1+d_tilt*sys_tilt);
 
 
 %% ------- plot for TARP motor code V3.3 -----------------
-% x_azi = (0:numel(x24_83TiltGain)-1)*10^(-4);
-% x_tilt = (0:numel(x4_32AziGain)-1)*10^(-4);
-% figure
-% plot(x_azi,x4_32AziGain.Position, DisplayName="Azimut")
-% hold on
-% plot(x_tilt,x24_83TiltGain.Position, DisplayName="Tilt")
-% hold off
-% grid on
-% yline(180,color='black', DisplayName="Target Angle Azimut")
-% yline(160, color = 'green', DisplayName="Target Angle Tilt")
-% ylabel("Position [degrees]")
-% xlabel("Time [s]")
-% title("P regulator Tilt vs Azimut")
-% % xlim([0 4.5])
-% legend show
+x_azi = (0:numel(x4_32AziGain_20kHzPWM)-1)' * 0.0005;
+x_tilt = (0:numel(x24_83TiltGain_20kHz)-1)' *0.0005 ;
+figure
+plot(x_azi,120/90*x4_32AziGain_20kHzPWM.Position, DisplayName="Azimut")
+hold on
+plot(x_tilt,x24_83TiltGain_20kHz.GiveMeAnAngle, DisplayName="Tilt")
+hold off
+grid on
+yline(120,color='black', DisplayName="Target Angle Azimut")
+yline(45, color = 'green', DisplayName="Target Angle Tilt")
+ylabel("Position [degrees]")
+xlabel("Time [s]")
+xlim([0, 6])
+title("P regulator Tilt vs Azimut")
+% xlim([0 4.5])
+legend show
 
 
 
@@ -44,21 +45,21 @@ x_azi = (0:numel(x4_32AziGain_20kHzPWM)-1)' * 0.0005;
 
 Ts = 1e-4;                 % same as real data
 t_azi = 0:Ts:x_azi(end);   % simulation time vector
-u = 90 * ones(size(t_azi));   % step input
+u = 120 * ones(size(t_azi));   % step input
 
 azi_sim = lsim(CL_azi, u, t_azi);
 
 % --- Plot ---
 figure
-plot(x_azi, x4_32AziGain_20kHzPWM.Position, 'DisplayName','Physical version')
+plot(x_azi, 120/90*x4_32AziGain_20kHzPWM.Position, 'DisplayName','Physical version')
  hold on
 plot(t_azi, azi_sim, 'DisplayName','Simulated version')
-yline(90, 'DisplayName','Target')
+yline(120, 'DisplayName','Target')
 grid on
 xlabel('Time [s]')
 ylabel('Position [degrees]')
 xlim([0, 6])
-ylim([0, 160])
+ylim([0, 210])
 legend show
 title('Azimuth P regulator: simulated vs physical')
 

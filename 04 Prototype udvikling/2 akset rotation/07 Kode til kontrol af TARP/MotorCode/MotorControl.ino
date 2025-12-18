@@ -1,4 +1,3 @@
-
 void tiltHome() {
   digitalWrite(dir1_tilt, 0);  // homing
   digitalWrite(dir2_tilt, 1);

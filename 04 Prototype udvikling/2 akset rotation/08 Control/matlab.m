@@ -4,8 +4,11 @@ close all;
 clear all;
 
 s=tf('s');
-sys_azi=(17.63*10^3)/(s*((7.73*s+3.97)*(724.31+1.88*s)+17.63*810.90));
-sys_tilt=(404.91* 10^3)/(s*((15.44*s + 5.16)*(6.73* 10^3 + 3.87*s) + 404.91*285.57));
+sys_azi=24.83*(17.63*10^3)/(s*((7.73*s+3.97)*(724.31+1.88*s)+17.63*810.90));
+sys_tilt=4.32*(404.91* 10^3)/(s*((15.44*s + 5.16)*(6.73* 10^3 + 3.87*s) + 404.91*285.57));
+
+
+
 
 figure;
 bode(sys_azi, sys_tilt)
@@ -23,7 +26,7 @@ axesHandles = findall(h,'type','axes');
 magAx = axesHandles(1);
 phaseAx = axesHandles(2); 
 
-ylim(magAx, [-40, 10]);
+ylim(magAx, [-40, 40]);
 xlim(magAx, [1 15]);
 xlim(phaseAx, [1 15]);
 ylim(phaseAx, [-180,-90]);

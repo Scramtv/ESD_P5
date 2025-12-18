@@ -63,15 +63,33 @@ function processIQ(IQ, Fs, label)
     figure;
     plot(f/1e3, magdB, 'LineWidth', 1.2);
     xlabel('Frequency [kHz]');
+    hold on;
     ylabel('Magnitude [dB]');
     title(['Complex Baseband FFT - ' label]);
     grid on;
     xlim([-500 500]);
-    ylim([-120 0])
+    ylim([-120 0]);
 
-    % ================================
-    % Peak frequency estimation
-    % ================================
+    % --- Add vertical lines at the requested frequencies (Hz) ---
+    freqs_hz = [-247750, 0, 247750];
+    freqs_khz = freqs_hz / 1e3;
+    % Use xline for clarity (R2018b+). If unavailable, use plot().
+    try
+        xline(freqs_khz(1), '--r', 'LineWidth', 1.2);
+        xline(freqs_khz(2), ':k',  'LineWidth', 1.2);
+        xline(freqs_khz(3), '--r', 'LineWidth', 1.2);
+    catch
+        % Fallback for older MATLAB: draw using plot
+        yl = ylim;
+        plot([freqs_khz(1) freqs_khz(1)], yl, '--r', 'LineWidth', 1.2);
+        plot([freqs_khz(2) freqs_khz(2)], yl, ':k',  'LineWidth', 1.2);
+        plot([freqs_khz(3) freqs_khz(3)], yl, '--r', 'LineWidth', 1.2);
+    end
+
+   
+    hold off;
+
+    % Peak frequency estimation (unchanged)
     idx = find(f > -500e3 & f < 500e3);
     [~, krel] = max(P(idx));
     k = idx(krel);

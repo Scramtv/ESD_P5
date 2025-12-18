@@ -1,0 +1,11 @@
+Antenna microstrip array
+-- mutual coupling - scan blindness (s. 834)
+
+
+broadside array
+- endfire er shit med patch. pga. ground plan
+- lambda/2 er valgt som vægtning mellem gain og sidelobes
+-- færrer sidelobes antager giver færrer problemer i beamforming
+-- se simuleringer
+- lambda = d giver store side lobes
+- lambda/4 er ikke fysisk muligt
