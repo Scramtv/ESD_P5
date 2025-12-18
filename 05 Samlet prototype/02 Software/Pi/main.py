@@ -4,19 +4,26 @@ from bf import beamforming_das
 from sdr_ctrl import sdr_ctrl
 from time import sleep
 
+from div_useful_funcs import plot_sample, take_sample_and_save
+
 sdr = sdr_ctrl(40e6, 2.44175e9) 
-esp = Serial(port='/dev/ttyUSB0', baudrate=115200, timeout=1)
-motor = MotorCtrl(esp)
+#esp = Serial(port='/dev/ttyUSB0', baudrate=115200, timeout=1)
+#motor = MotorCtrl(esp)
 
+take_sample_and_save(sdr, "minus45deg")
+exit()
 
-motor.azi(180)
+#plot_sample(sdr, 900)
+#exit()
+
+#motor.azi(180)
 sleep(1)
-motor.tilt(155)
+#motor.tilt(155)
 sleep(1)
 
 while True:
-    arr = sdr.sample(900)
-    azi_pos, tilt_pos = motor.read_pos()
+    arr = sdr.sample(900) #900
+#    azi_pos, tilt_pos = motor.read_pos()
     bf = beamforming_das(arr, 0.5, 2) 
     print("bf: ", bf)
-    motor.azi(azi_pos+bf)  # Move to biggest signal
+#    motor.azi(azi_pos+bf)  # Move to biggest signal
