@@ -20,8 +20,8 @@ t = np.arange(N)/sample_rate
 angles = np.arange(-90, 91, 1)
 print("ANGLE, BEAMFORMING OUTPUT AOA, DELTA, COMPUTE TIME")
 for angle in angles:
-    theta_deg = 0 # Angle of arrival
-    theta_rad = np.deg2rad(angle)
+    theta_deg = angle # Angle of arrival
+    theta_rad = np.deg2rad(theta_deg)
     f = 2e4
     tx = np.exp(2j * np.pi * f * t)
     d = 0.5
