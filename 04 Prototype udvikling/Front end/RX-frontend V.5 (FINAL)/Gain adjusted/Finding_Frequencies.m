@@ -18,9 +18,7 @@ processIQ(IQ2, Fs, 'Channel 2');
 
 % ================================
 % Local function
-% ===============================
-
-
+% ================================
 function processIQ(IQ, Fs, label)
 
     fprintf('\n===== Processing %s =====\n', label);
@@ -40,25 +38,32 @@ function processIQ(IQ, Fs, label)
         error('%s: Signal too short for frequency analysis.', label);
     end
 
+    % ================================
     % FFT parameters
+    % ================================
     nfft = 2^nextpow2(N) * 4;   % zero padding
 
     % Window
     w  = hann(N);
     IQw = IQ .* w;
 
+    % ================================
     % FFT
+    % ================================
     X = fftshift(fft(IQw, nfft));
     P = abs(X) / sum(w);
     magdB = 20*log10(max(P, eps));
 
-    % Frequency axis (Hz)
+    % Frequency axis
     f = (-nfft/2:nfft/2-1) * (Fs/nfft);
 
-    % Plot (convert to kHz)
+    % ================================
+    % Plot
+    % ================================
     figure;
-    plot(f/1e3, magdB, 'LineWidth', 1.2); hold on;
+    plot(f/1e3, magdB, 'LineWidth', 1.2);
     xlabel('Frequency [kHz]');
+    hold on;
     ylabel('Magnitude [dB]');
     title(['Complex Baseband FFT - ' label]);
     grid on;

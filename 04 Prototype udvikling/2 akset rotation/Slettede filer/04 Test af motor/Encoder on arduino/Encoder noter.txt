@@ -1,0 +1,12 @@
+1000 steps pr. encoder turn (Hvis man tager alle 4 signal skift)
+
+
+
+nederst encoder 5 turns pr. rotation
+
+Blå + shield = 0V
+Rød = 5V
+Brun = Pin A
+Sort = Pin B
+Gul = Pin Z
+Resterende er inverteret og bliver ikke brugt
