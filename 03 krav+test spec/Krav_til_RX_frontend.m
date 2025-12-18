@@ -18,7 +18,7 @@ close all
 % fprintf('Wavelength: %.3f mm\n', Lambda*10^3);
 
 
-P_R = 10^((-74.5-30)/10);
+P_R = 10^((-89.6 -30)/10);
 fprintf('Received power: %.3f pW\n', P_R*10^12);
 P_R_dBm = 10*log10(P_R)+30;
 fprintf('Received power: %.3f dBm\n', P_R_dBm);
@@ -33,15 +33,8 @@ V_Peak = Volt_RMS*sqrt(2);
 fprintf('Input voltage peak: %.3f µV\n', V_Peak*10^6);
 
 
-G_LNA = 1.25./V_Peak;
+G_LNA = 0.625./V_Peak;
 fprintf('Gain of LNA: %.3f \n', G_LNA);
 G_LNA_dB = 20*log10(G_LNA);
 fprintf('Gain of LNA in dB: %.3f dB\n', G_LNA_dB);
-
-
-
-%%
-x = linspace(1, 3, 1);
-Pep = sum(2.^x);
-disp(Pep)
 

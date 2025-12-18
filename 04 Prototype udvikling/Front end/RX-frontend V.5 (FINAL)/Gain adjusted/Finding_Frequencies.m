@@ -18,7 +18,9 @@ processIQ(IQ2, Fs, 'Channel 2');
 
 % ================================
 % Local function
-% ================================
+% ===============================
+
+
 function processIQ(IQ, Fs, label)
 
     fprintf('\n===== Processing %s =====\n', label);
@@ -38,40 +40,51 @@ function processIQ(IQ, Fs, label)
         error('%s: Signal too short for frequency analysis.', label);
     end
 
-    % ================================
     % FFT parameters
-    % ================================
     nfft = 2^nextpow2(N) * 4;   % zero padding
 
     % Window
     w  = hann(N);
     IQw = IQ .* w;
 
-    % ================================
     % FFT
-    % ================================
     X = fftshift(fft(IQw, nfft));
     P = abs(X) / sum(w);
     magdB = 20*log10(max(P, eps));
 
-    % Frequency axis
+    % Frequency axis (Hz)
     f = (-nfft/2:nfft/2-1) * (Fs/nfft);
 
-    % ================================
-    % Plot
-    % ================================
+    % Plot (convert to kHz)
     figure;
-    plot(f/1e3, magdB, 'LineWidth', 1.2);
+    plot(f/1e3, magdB, 'LineWidth', 1.2); hold on;
     xlabel('Frequency [kHz]');
     ylabel('Magnitude [dB]');
     title(['Complex Baseband FFT - ' label]);
     grid on;
     xlim([-500 500]);
-    ylim([-120 0])
+    ylim([-120 0]);
 
-    % ================================
-    % Peak frequency estimation
-    % ================================
+    % --- Add vertical lines at the requested frequencies (Hz) ---
+    freqs_hz = [-247750, 0, 247750];
+    freqs_khz = freqs_hz / 1e3;
+    % Use xline for clarity (R2018b+). If unavailable, use plot().
+    try
+        xline(freqs_khz(1), '--r', 'LineWidth', 1.2);
+        xline(freqs_khz(2), ':k',  'LineWidth', 1.2);
+        xline(freqs_khz(3), '--r', 'LineWidth', 1.2);
+    catch
+        % Fallback for older MATLAB: draw using plot
+        yl = ylim;
+        plot([freqs_khz(1) freqs_khz(1)], yl, '--r', 'LineWidth', 1.2);
+        plot([freqs_khz(2) freqs_khz(2)], yl, ':k',  'LineWidth', 1.2);
+        plot([freqs_khz(3) freqs_khz(3)], yl, '--r', 'LineWidth', 1.2);
+    end
+
+   
+    hold off;
+
+    % Peak frequency estimation (unchanged)
     idx = find(f > -500e3 & f < 500e3);
     [~, krel] = max(P(idx));
     k = idx(krel);
