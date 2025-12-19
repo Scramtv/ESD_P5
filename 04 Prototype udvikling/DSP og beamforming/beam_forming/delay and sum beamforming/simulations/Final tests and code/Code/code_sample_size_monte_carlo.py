@@ -1,4 +1,3 @@
-import time
 import numpy as np
 
 def beamforming_das(rx, distance, no_ele):
@@ -18,27 +17,25 @@ def snr_to_peak_amplitude(SNR):
     return a_noise
 
 sample_rate = 61.44e6
-N = 10000
-t = np.arange(N)/sample_rate
-angles = np.concatenate(([-89.9], np.arange(-89, 90, 1), [89.9]))
+sample_sizes = np.concatenate([np.arange(1, 10) * 10**k for k in range(6)]+[[1000000]])
 f = 2e4
 d = 0.5
 elements = 2
 k = np.arange(elements)
-tx = np.exp(2j * np.pi * f * t)
+theta_deg = 0
+theta_rad = np.deg2rad(theta_deg)
 
-print("SNR, THETA_REF, THETA_MEAS, DELTA, COMPUTE TIME")
-for snr in np.arange(-50, 110, 10):
-    for theta_deg in angles:
-        theta_rad = np.deg2rad(theta_deg)
-        s = np.exp(2j * np.pi * d * k * np.sin(theta_rad))
-        s = s.reshape(-1,1)
-        tx = tx.reshape(1,-1)
-        X = s @ tx
+print("N, THETA_REF, THETA_MEAS, DELTA, COMPUTE TIME")
+for sample_size in sample_sizes:
+    N = sample_size
+    t = np.arange(N) / sample_rate
+    tx = np.exp(2j * np.pi * f * t)
+    s = np.exp(2j * np.pi * d * k * np.sin(theta_rad))
+    s = s.reshape(-1, 1)
+    tx = tx.reshape(1, -1)
+    X = s @ tx
+    for i in range(50):
         n = np.random.randn(elements, N) + 1j * np.random.randn(elements, N)
-        X_n = X + snr_to_peak_amplitude(snr) * n
-
-        start = time.perf_counter()
+        X_n = X + snr_to_peak_amplitude(5) * n
         bf_signal = beamforming_das(X_n, d, elements)
-        stop = time.perf_counter()
-        print(f"{snr}, {theta_deg}, {bf_signal:.6f}, {np.abs(theta_deg-bf_signal):.6f}, {stop-start:.4f}")
+        print(f"{N}, {theta_deg}, {bf_signal:.6f}, {np.abs(theta_deg-bf_signal):.6f}")
