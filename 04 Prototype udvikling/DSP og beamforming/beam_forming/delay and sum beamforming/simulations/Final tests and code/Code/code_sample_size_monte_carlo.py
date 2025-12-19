@@ -17,7 +17,7 @@ def snr_to_peak_amplitude(SNR):
     return a_noise
 
 sample_rate = 61.44e6
-sample_sizes = np.concatenate([np.arange(1, 10) * 10**k for k in range(6)]+[[1000000]])
+sample_sizes = np.concatenate([np.arange(1, 10) * 10**k for k in range(5)]+[[100000]])
 f = 2e4
 d = 0.5
 elements = 2
