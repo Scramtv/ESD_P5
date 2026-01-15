@@ -18,7 +18,7 @@ def snr_to_peak_amplitude(SNR):
     return a_noise
 
 sample_rate = 61.44e6
-N = 10000
+N = 900
 t = np.arange(N)/sample_rate
 angles = np.concatenate(([-89.9], np.arange(-89, 90, 1), [89.9]))
 f = 2e4
@@ -37,7 +37,7 @@ for snr in np.arange(-50, 110, 10):
         X = s @ tx
         n = np.random.randn(elements, N) + 1j * np.random.randn(elements, N)
         X_n = X + snr_to_peak_amplitude(snr) * n
-
+    
         start = time.perf_counter()
         bf_signal = beamforming_das(X_n, d, elements)
         stop = time.perf_counter()
