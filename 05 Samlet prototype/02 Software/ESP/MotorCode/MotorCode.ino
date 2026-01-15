@@ -32,7 +32,7 @@ static int btn_blue = 41;
 //-------------------------------------------------------------------------------//
 #include "soc/gpio_struct.h"
 #include "driver/gpio.h"
-#include <WiFi.h>
+//#include <WiFi.h>
 #include "esp_timer.h"  //used for setting a specific sampling rate
 // Fast read
 #define READ_PIN(pin) ((pin) < 32 ? ((GPIO.in >> (pin)) & 1) : ((GPIO.in1.val >> ((pin)-32)) & 1))
@@ -64,8 +64,8 @@ static int tiltOffset = 300;              // 300 - minimum voltage required for 
 static int sampleRate = 200;              // sample rate in micros seconds
 //------------------MAX 150 micros seconds right now!!!!!!!
 
-WiFiServer server(1234);  // TCP server on port 1234
-WiFiClient client;
+//WiFiServer server(1234);  // TCP server on port 1234
+//WiFiClient client;
 
 //setting up 2 cores to run in parallel (FreeRTOS)
 TaskHandle_t core1;
