@@ -15,7 +15,7 @@ class sdr_ctrl:
         self.rx1.sample_rate = sample_rate
         self.rx1.bandwidth = sample_rate
         self.rx1.gain_mode = _bladerf.GainMode.Manual
-        self.rx1.gain = 0
+        self.rx1.gain = 20
 
         # --- Setup RX2 ---
         self.rx2 = self.sdr.Channel(_bladerf.CHANNEL_RX(1))
